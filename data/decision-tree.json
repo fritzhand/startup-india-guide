@@ -1,0 +1,178 @@
+{
+ "intro": "Answer the questions below in order. Each branch points you to the most relevant schemes. You can appear in more than one branch.",
+ "questions": [
+  {
+   "id": 1,
+   "question": "Are you a student or early-stage researcher / aspiring entrepreneur (not yet a registered startup)?",
+   "branches": [
+    {
+     "label": "Yes",
+     "note": "",
+     "schemes": [
+      "NIDHI-EIR",
+      "E-YUVA",
+      "SITARE",
+      "Atal Tinkering Labs"
+     ]
+    },
+    {
+     "label": "No",
+     "note": "You are either a registered or incorporated startup. Continue below.",
+     "schemes": []
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "question": "What is your current startup stage?",
+   "branches": [
+    {
+     "label": "Idea / PoC Stage: Grants to start",
+     "note": "",
+     "schemes": [
+      "BIG",
+      "PRAYAS 2.0",
+      "RKVY",
+      "SPARSH",
+      "GREAT"
+     ]
+    },
+    {
+     "label": "Prototype and beyond: Ready to build",
+     "note": "",
+     "schemes": [
+      "SISFS",
+      "NIDHI-SSP",
+      "TIDE 2.0",
+      "iDEX",
+      "IN-SPACe Seed Fund",
+      "DCIS"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "question": "What type of support do you primarily need?",
+   "branches": [
+    {
+     "label": "Grant (funding with no repayment)",
+     "note": "",
+     "schemes": [
+      "SISFS",
+      "BIG",
+      "iDEX",
+      "ADITI",
+      "PRAYAS 2.0",
+      "DCIS",
+      "IN-SPACe Seed Fund",
+      "RKVY",
+      "SPARSH",
+      "GREAT",
+      "NQM"
+     ]
+    },
+    {
+     "label": "Equity Investment (you give a stake)",
+     "note": "",
+     "schemes": [
+      "FFS",
+      "Startup India FoF 2.0",
+      "AcE",
+      "AgriSURE",
+      "BIRAC SEED",
+      "LEAP Fund",
+      "SAMRIDH",
+      "Antariksh VCF",
+      "NIDHI-SSP"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "question": "Do you need a loan / credit or IP / Other support?",
+   "branches": [
+    {
+     "label": "Loan / Credit Guarantee",
+     "note": "",
+     "schemes": [
+      "CGSS",
+      "CGTMSE",
+      "PMMY",
+      "Stand Up India"
+     ]
+    },
+    {
+     "label": "IP Protection / Market Access",
+     "note": "",
+     "schemes": [
+      "SIPP",
+      "GeM Startup Runway"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "question": "Are you in a specific strategic or deep-tech sector?",
+   "branches": [
+    {
+     "label": "Defence / Allied",
+     "note": "",
+     "schemes": [
+      "iDEX",
+      "ADITI",
+      "TDF"
+     ]
+    },
+    {
+     "label": "Space",
+     "note": "",
+     "schemes": [
+      "IN-SPACe Seed Fund",
+      "Antariksh VCF",
+      "Space TAF"
+     ]
+    },
+    {
+     "label": "Biotech / Allied",
+     "note": "",
+     "schemes": [
+      "BIG",
+      "BIRAC SEED",
+      "LEAP Fund",
+      "SPARSH",
+      "AcE",
+      "SBIRI"
+     ]
+    },
+    {
+     "label": "Agriculture / Food",
+     "note": "",
+     "schemes": [
+      "RKVY",
+      "AgriSURE",
+      "BHARATI"
+     ]
+    },
+    {
+     "label": "Semicon / Electronics",
+     "note": "",
+     "schemes": [
+      "DLI",
+      "Chips to Startup (C2S)",
+      "GENESIS"
+     ]
+    },
+    {
+     "label": "Quantum Technology",
+     "note": "",
+     "schemes": [
+      "NQM Startup Support"
+     ]
+    }
+   ]
+  }
+ ]
+}
