@@ -112,6 +112,16 @@ kbd {
   display: grid;
   grid-template-columns: 268px minmax(0, 1fr);
 }
+/* paint the rail on the grid itself so it runs unbroken from topbar to
+   footer even when the page is taller than the sticky sidebar */
+@media (min-width: 1024px) {
+  .layout {
+    background: linear-gradient(to right,
+      var(--sidebar-bg) calc(268px - 1px),
+      var(--border) calc(268px - 1px) 268px,
+      transparent 268px);
+  }
+}
 .content {
   padding: 30px clamp(18px, 4vw, 56px) 72px;
   min-width: 0;
@@ -120,7 +130,13 @@ kbd {
   margin: 0 auto;
 }
 @media (min-width: 1700px) {
-  .layout { grid-template-columns: 300px minmax(0, 1fr); }
+  .layout {
+    grid-template-columns: 300px minmax(0, 1fr);
+    background: linear-gradient(to right,
+      var(--sidebar-bg) calc(300px - 1px),
+      var(--border) calc(300px - 1px) 300px,
+      transparent 300px);
+  }
 }
 .content-with-toc { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; }
 @media (min-width: 1280px) {
