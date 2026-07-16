@@ -27,7 +27,7 @@ The generated site lives in `docs/`. To publish it:
 
 1. Repo **Settings → Pages**
 2. Source: **Deploy from a branch**
-3. Branch: your default branch, folder **`/docs`**
+3. Branch: **`gh-pages`**, folder **`/` (root)** — already set up; the `Publish site to gh-pages` workflow refreshes it on every push to `main`
 4. Save — the site appears at `https://<user>.github.io/startup-india-guide/`
 
 ## Repo tour
