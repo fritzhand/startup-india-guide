@@ -669,7 +669,7 @@ a.org-card:hover { text-decoration: none; border-color: var(--border-strong); bo
 .org-card .o-link svg { width: 12px; height: 12px; flex: none; }
 
 /* ---------- footer ---------- */
-.footer { border-top: 1px solid var(--border); margin-top: 30px; background: var(--sidebar-bg); }
+.footer { border-top: 1px solid var(--border); background: var(--sidebar-bg); }
 .footer-inner {
   max-width: 1460px; margin: 0 auto; padding: 34px clamp(18px, 4vw, 56px);
   display: flex; flex-wrap: wrap; gap: 26px; align-items: center; justify-content: space-between;
