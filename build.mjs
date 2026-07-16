@@ -19,7 +19,16 @@ const DATA = join(ROOT, "data");
 const SITE = join(ROOT, "site");
 const OUT = join(ROOT, "docs");
 const PDF_NAME = "Startup-Schemes-Playbook-June-2026.pdf";
-const SITE_BASE = "https://fritzhand.github.io/startup-india-guide/"; // used for sitemap + og:url only
+
+/* site.config.json — the template knobs: where the site is hosted and what
+   it is called. Everything else is content (data/) or skin (site/). */
+const CONFIG = existsSync(join(ROOT, "site.config.json"))
+  ? JSON.parse(readFileSync(join(ROOT, "site.config.json"), "utf8"))
+  : {};
+const SITE_NAME = CONFIG.siteName || "Startup Schemes Playbook";
+const SITE_BASE = CONFIG.siteBase || "https://fritzhand.github.io/startup-india-guide/"; // sitemap + og
+const PATH_PREFIX = CONFIG.pathPrefix ?? "/startup-india-guide/"; // 404 page absolute links
+const REPO_URL = CONFIG.repo || "https://github.com/fritzhand/startup-india-guide";
 
 /* ---------------- utilities ---------------- */
 const readJSON = (f) => JSON.parse(readFileSync(join(DATA, f), "utf8"));
@@ -255,8 +264,12 @@ const themeBoot = `<script>(function(){var t;try{t=localStorage.getItem("playboo
 if(t!=="light"&&t!=="dark"){t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}
 document.documentElement.setAttribute("data-theme",t)})();</script>`;
 
+const brandParts = SITE_NAME.split(" ");
+const brandMain = brandParts.length > 1 ? brandParts.slice(0, -1).join(" ") : SITE_NAME;
+const brandThin = brandParts.length > 1 ? brandParts[brandParts.length - 1] : "";
+
 function shell({ root, active, title, description, body, extraHead = "", pageClass = "", toc = "" }) {
-  const fullTitle = title ? `${title} · Startup Schemes Playbook` : "Startup Schemes Playbook — Government Schemes for Indian Startups";
+  const fullTitle = title ? `${title} · ${SITE_NAME}` : `${SITE_NAME} — Government Schemes for Indian Startups`;
   return `<!doctype html>
 <html lang="en" data-root="${root}">
 <head>
@@ -269,7 +282,7 @@ function shell({ root, active, title, description, body, extraHead = "", pageCla
 <meta property="og:title" content="${attr(fullTitle)}">
 <meta property="og:description" content="${attr(description)}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Startup Schemes Playbook">
+<meta property="og:site_name" content="${attr(SITE_NAME)}">
 <meta property="og:image" content="${SITE_BASE}assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="${root}assets/favicon.svg">
@@ -287,7 +300,7 @@ ${extraHead}
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">${ICONS.menu}</button>
   <a class="brand" href="${root}index.html">
     <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" width="18" height="18"><rect x="6" y="14" width="52" height="9" rx="4.5" fill="#e2621b"/><rect x="6" y="27.5" width="52" height="9" rx="4.5" fill="#ffffff"/><rect x="6" y="41" width="52" height="9" rx="4.5" fill="#359a4c"/></svg></span>
-    <span class="brand-name">Startup Schemes <span class="thin">Playbook</span></span>
+    <span class="brand-name">${esc(brandMain)}${brandThin ? ` <span class="thin">${esc(brandThin)}</span>` : ""}</span>
   </a>
   <span class="topbar-spacer"></span>
   <button class="searchbtn" data-search-open type="button" aria-label="Search schemes">
@@ -321,6 +334,7 @@ ${toc ? `<div class="content-with-toc"><div class="content-main">${body}</div>${
     <a href="${root}about.html">About &amp; disclaimer</a>
     <a href="${root}assets/${PDF_NAME}" download>Source PDF</a>
     <a href="https://www.startupindia.gov.in/" target="_blank" rel="noopener">startupindia.gov.in ↗</a>
+    <a href="${attr(REPO_URL)}" target="_blank" rel="noopener">GitHub ↗</a>
   </div>
 </div></footer>
 <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Search">
@@ -883,9 +897,9 @@ ${rel.length ? `
 
 /* ================= 404 ================= */
 write("404.html", shell({
-  root: "/startup-india-guide/", active: "", title: "Page not found",
+  root: PATH_PREFIX, active: "", title: "Page not found",
   description: "Page not found.",
-  body: `<div class="empty-state" style="margin-top:60px"><div class="big">🧭</div><h1 style="font-size:1.5rem">That page doesn't exist</h1><p class="muted" style="margin-top:8px">The scheme may have been renamed. Try the search (<kbd>⌘K</kbd>) or start from the directory.</p><p style="margin-top:18px"><a class="btn btn-primary" href="/startup-india-guide/directory.html">Browse all schemes</a></p></div>`,
+  body: `<div class="empty-state" style="margin-top:60px"><div class="big">🧭</div><h1 style="font-size:1.5rem">That page doesn't exist</h1><p class="muted" style="margin-top:8px">The scheme may have been renamed. Try the search (<kbd>⌘K</kbd>) or start from the directory.</p><p style="margin-top:18px"><a class="btn btn-primary" href="${PATH_PREFIX}directory.html">Browse all schemes</a></p></div>`,
 }));
 
 /* ================= SEARCH INDEX ================= */
