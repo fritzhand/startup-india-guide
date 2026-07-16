@@ -286,7 +286,7 @@ ${extraHead}
 <header class="topbar">
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">${ICONS.menu}</button>
   <a class="brand" href="${root}index.html">
-    <span class="brand-mark" aria-hidden="true">SP</span>
+    <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" width="18" height="18"><rect x="6" y="14" width="52" height="9" rx="4.5" fill="#e2621b"/><rect x="6" y="27.5" width="52" height="9" rx="4.5" fill="#ffffff"/><rect x="6" y="41" width="52" height="9" rx="4.5" fill="#359a4c"/></svg></span>
     <span class="brand-name">Startup Schemes <span class="thin">Playbook</span></span>
   </a>
   <span class="topbar-spacer"></span>
@@ -305,7 +305,18 @@ ${toc ? `<div class="content-with-toc"><div class="content-main">${body}</div>${
 </main>
 </div>
 <footer class="footer"><div class="footer-inner">
-  <div>Built from the official <strong>Playbook of Government Schemes and Initiatives for Startups</strong> (June 2026). Not a government website — always verify on the linked official portals.</div>
+  <div class="footer-author">
+    <img class="author-avatar" src="${root}assets/jeremy.png" alt="Jeremy Fritzhand" width="54" height="54" loading="lazy">
+    <div class="author-meta">
+      <div class="author-role">Built &amp; maintained by</div>
+      <div class="author-name">Jeremy Fritzhand</div>
+      <div class="author-links">
+        <a href="https://github.com/fritzhand" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/fritzhand/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-note">Built from the official <strong>Playbook of Government Schemes and Initiatives for Startups</strong> (June 2026). Not a government website — always verify on the linked official portals.</div>
   <div class="f-links">
     <a href="${root}about.html">About &amp; disclaimer</a>
     <a href="${root}assets/${PDF_NAME}" download>Source PDF</a>
@@ -896,6 +907,7 @@ cpSync(join(SITE, "tokens.css"), join(OUT, "assets", "tokens.css"));
 cpSync(join(SITE, "site.css"), join(OUT, "assets", "site.css"));
 cpSync(join(SITE, "site.js"), join(OUT, "assets", "site.js"));
 if (existsSync(join(SITE, "og.png"))) cpSync(join(SITE, "og.png"), join(OUT, "assets", "og.png"));
+if (existsSync(join(SITE, "jeremy.png"))) cpSync(join(SITE, "jeremy.png"), join(OUT, "assets", "jeremy.png"));
 if (existsSync(join(ROOT, PDF_NAME))) cpSync(join(ROOT, PDF_NAME), join(OUT, "assets", PDF_NAME));
 else warn(`source PDF ${PDF_NAME} not found — download link will 404`);
 
