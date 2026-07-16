@@ -392,7 +392,7 @@ const write = (rel, html) => { mkdirSync(dirname(join(OUT, rel)), { recursive: t
 <h2 class="home-h2">Browse by type of support<a class="more" href="directory.html">All schemes →</a></h2>
 <div class="grid grid-3">
   ${Object.keys(CAT_ICON).map((c) => `
-  <a class="card" href="directory.html?support=${c === "mixed" ? "" : c}${c === "mixed" ? "" : ""}">
+  <a class="card" href="directory.html?support=${c}">
     <h3><span class="card-icon ${CAT_TONE[c]}">${ICONS[CAT_ICON[c]]}</span>${esc(CAT_LABEL[c])}</h3>
     <p>${esc(CAT_DESC[c])}.</p>
     <p><strong>${catCounts[c]}</strong> scheme${catCounts[c] === 1 ? "" : "s"}</p>
@@ -835,7 +835,7 @@ ${rel.length ? `
 <section class="section" id="related">
   <h2><span class="sec-icon">${ICONS.layers}</span>Related schemes</h2>
   <div class="related">${rel.map((r) => `
-    <a href="${root}schemes/${r.slug}.html"><span class="rn">${esc(r.shortName || r.name)}</span><span class="rm">${esc(CAT_LABEL[r.category])} · ${esc(r.name)}</span></a>`).join("")}</div>
+    <a href="${root}schemes/${r.slug}.html"><span class="rn">${esc(r.shortName || r.name)}</span><span class="rm">${esc(CAT_LABEL[r.category])}${r.shortName && r.shortName !== r.name ? ` · ${esc(r.name)}` : ""}</span></a>`).join("")}</div>
 </section>` : ""}
 
 <nav class="pagenav" aria-label="Adjacent schemes">

@@ -384,11 +384,11 @@ table.data .num { font-family: var(--font-mono); font-size: 0.8rem; white-space:
 
 /* ---------- detail page: facts panel ---------- */
 .facts {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 1px;
+  display: flex; flex-wrap: wrap; gap: 1px;
   background: var(--border); border: 1px solid var(--border);
   border-radius: var(--radius-lg); overflow: hidden; margin: 24px 0;
 }
-.fact { background: var(--surface); padding: 14px 18px; }
+.fact { background: var(--surface); padding: 14px 18px; flex: 1 1 190px; min-width: min(190px, 100%); }
 .fact .k { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-faint); margin-bottom: 6px; }
 .fact .v { font-size: 0.92rem; font-weight: 600; }
 .fact .v .badge { margin: 2px 4px 2px 0; }
@@ -445,7 +445,7 @@ table.data .num { font-family: var(--font-mono); font-size: 0.8rem; white-space:
 }
 .keylink:hover { border-color: var(--link); box-shadow: var(--shadow-1); text-decoration: none; }
 .keylink svg { width: 15px; height: 15px; flex: none; }
-.keylink .url { font-weight: 400; font-size: 0.76rem; color: var(--text-faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 320px; }
+.keylink .url { display: block; font-weight: 400; font-size: 0.76rem; color: var(--text-faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: min(420px, 62vw); }
 .keylink .ext { color: var(--text-faint); }
 
 /* callout */

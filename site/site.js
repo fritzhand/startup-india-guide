@@ -169,7 +169,7 @@
 
     const matches = (s) =>
       (!state.part || s.part === state.part) &&
-      (!state.support || s.supportTypes.includes(state.support)) &&
+      (!state.support || s.category === state.support || s.supportTypes.includes(state.support)) &&
       (!state.stage || s.stages.includes(state.stage)) &&
       (!state.sector || s.sectors.includes(state.sector)) &&
       (!state.audience || s.audience.includes(state.audience)) &&
