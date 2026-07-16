@@ -1,8 +1,7 @@
-# Deploys docs/ to GitHub Pages.
-# Enable once in repo Settings → Pages → Source: "GitHub Actions".
-# (Alternative: skip this workflow entirely and set Pages Source to
-#  "Deploy from a branch" → main → /docs.)
-name: Deploy site to GitHub Pages
+# Publishes docs/ to the gh-pages branch, which GitHub Pages serves.
+# (Pages was auto-enabled when the gh-pages branch was first created.
+#  Source: Settings → Pages → Deploy from a branch → gh-pages → / root.)
+name: Publish site to gh-pages
 
 on:
   push:
@@ -11,27 +10,21 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Push docs/ as the gh-pages root
+        run: |
+          TREE=$(git rev-parse HEAD:docs)
+          COMMIT=$(git -c user.name="github-actions[bot]" \
+                       -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                       commit-tree "$TREE" -m "Deploy site (docs/ from $GITHUB_SHA)")
+          git push --force origin "$COMMIT":refs/heads/gh-pages
