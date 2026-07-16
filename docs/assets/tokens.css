@@ -49,19 +49,19 @@
 
   --text: #182234;
   --text-muted: #4a566b;
-  --text-faint: #7a869c;
+  --text-faint: #626e85;        /* AA: 4.5:1+ on every light surface */
 
   --primary: #1f3864;           /* navy — nav, headings, hero */
   --primary-contrast: #ffffff;
-  --accent: #d95a14;            /* saffron — primary actions, highlights */
-  --accent-strong: #bf4c0e;
+  --accent: #bf4c0e;            /* saffron — AA with white text and on bg */
+  --accent-strong: #b04a0f;
   --accent-contrast: #ffffff;
   --accent-tint: #fdeee3;
   --link: #2456a6;
   --link-hover: #1a4488;
-  --success: #2e8b44;
+  --success: #27753a;           /* AA as small bold text on white */
   --success-tint: #e7f4ea;
-  --warning: #b7791f;
+  --warning: #8f5e12;
   --warning-tint: #fdf3e1;
   --danger: #c0392b;
 
@@ -73,15 +73,15 @@
   --topbar-bg: rgb(253 253 252 / 0.85);
   --code-bg: #f2f4f7;
   --kbd-bg: #ffffff;
-  --scrim: rgb(15 23 42 / 0.45);
+  --scrim: rgb(15 23 42 / 0.55);
 
-  /* support-category hues (badges, dots, cards) */
-  --cat-grant: #2e8b44;         --cat-grant-tint: #e7f4ea;
+  /* support-category hues (badges, dots, cards) — all AA on their tints */
+  --cat-grant: #1f7237;         --cat-grant-tint: #e7f4ea;
   --cat-equity: #6d4fc4;        --cat-equity-tint: #f0ecfb;
-  --cat-loan: #b7791f;          --cat-loan-tint: #fdf3e1;
+  --cat-loan: #8f5e12;          --cat-loan-tint: #fdf3e1;
   --cat-incubation: #0e7490;    --cat-incubation-tint: #e4f4f8;
   --cat-market: #2456a6;        --cat-market-tint: #e9f0fa;
-  --cat-mixed: #d95a14;         --cat-mixed-tint: #fdeee3;
+  --cat-mixed: #b04a0f;         --cat-mixed-tint: #fdeee3;
   --cat-other: #5b6474;         --cat-other-tint: #eef0f3;
 
   /* lifecycle stage hues */
@@ -105,7 +105,7 @@
 
   --text: #e6ecf5;
   --text-muted: #a7b4c9;
-  --text-faint: #74839d;
+  --text-faint: #8291ab;        /* AA on raised dark surfaces */
 
   --primary: #93b4e6;
   --primary-contrast: #0d1420;
@@ -129,7 +129,7 @@
   --topbar-bg: rgb(13 20 32 / 0.85);
   --code-bg: #182338;
   --kbd-bg: #182338;
-  --scrim: rgb(2 6 14 / 0.62);
+  --scrim: rgb(2 6 14 / 0.72);
 
   --cat-grant: #4cc26b;         --cat-grant-tint: #12301b;
   --cat-equity: #a68cf0;        --cat-equity-tint: #251d40;

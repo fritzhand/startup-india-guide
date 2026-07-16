@@ -169,7 +169,7 @@ function resolveScheme(printed, context) {
 }
 const resolveList = (list, context) => (list || []).map((n) => {
   const r = resolveScheme(n, context);
-  return { name: r.name, qual: r.qual, slug: r.scheme?.slug ?? null, category: r.scheme?.category ?? "other" };
+  return { name: r.name, qual: r.qual, slug: r.scheme?.slug ?? null, category: r.scheme?.category ?? "other", full: r.scheme?.name ?? "", tagline: r.scheme?.tagline ?? "" };
 });
 
 /* resolve nav structures */
@@ -237,11 +237,11 @@ const sidebar = (root, active) => {
       ${g.items.map((it) => link(it.href, it.title, it.icon)).join("\n")}
       ${g.group === "Browse" ? `
       <details${active.startsWith("schemes/") && partA.some((s) => `schemes/${s.slug}.html` === active) ? " open" : ""}>
-        <summary>Startup-specific (Part A) <span class="count-pill">${partA.length}</span> ${ICONS.chevron}</summary>
+        <summary><span class="sum-label">Part A · Startup-specific</span> <span class="count-pill">${partA.length}</span> ${ICONS.chevron}</summary>
         <div>${partA.map(schemeLink).join("\n")}</div>
       </details>
       <details${active.startsWith("schemes/") && partB.some((s) => `schemes/${s.slug}.html` === active) ? " open" : ""}>
-        <summary>Startup-relevant (Part B) <span class="count-pill">${partB.length}</span> ${ICONS.chevron}</summary>
+        <summary><span class="sum-label">Part B · Startup-relevant</span> <span class="count-pill">${partB.length}</span> ${ICONS.chevron}</summary>
         <div>${partB.map(schemeLink).join("\n")}</div>
       </details>` : ""}
     </div>`).join("\n");
@@ -315,7 +315,8 @@ ${toc ? `<div class="content-with-toc"><div class="content-main">${body}</div>${
 <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Search">
   <div class="backdrop"></div>
   <div class="search-panel">
-    <div class="search-head">${ICONS.search}<input id="search-input" type="text" placeholder="Search 69 schemes, glossary, states…" autocomplete="off"></div>
+    <div class="search-head">${ICONS.search}<input id="search-input" type="text" placeholder="Search 69 schemes, glossary, states…" autocomplete="off" aria-label="Search schemes, glossary and states"></div>
+    <div class="sr-only" id="search-status" role="status" aria-live="polite"></div>
     <div class="results" id="search-results"></div>
     <div class="search-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div>
   </div>
@@ -337,7 +338,7 @@ const crumbs = (root, items) => `<nav class="crumbs" aria-label="Breadcrumb">${i
   .join('<span class="sep">/</span>')}</nav>`;
 const schemeCardHTML = (root, s) => `
   <a class="scheme-card" href="${root}schemes/${s.slug}.html">
-    <div class="top"><span class="abbr">${esc(s.shortName || "Scheme")} · Part ${s.part}</span>${catBadge(s.category)}</div>
+    <div class="top"><span class="abbr">${s.shortName ? `${esc(s.shortName)} · ` : ""}Part ${s.part}</span>${catBadge(s.category)}</div>
     <h3>${esc(s.name)}</h3>
     <div class="ministry">${esc(s.ministry)}</div>
     <p class="tagline">${esc(s.tagline)}</p>
@@ -473,6 +474,7 @@ ${crumbs("", [["Home", "index.html"], ["All schemes", null]])}
     <button class="btn btn-ghost" id="f-reset" type="button">Reset</button>
   </div>
   <div class="result-count" id="f-count" role="status" aria-live="polite"></div>
+  <h2 class="sr-only">Results</h2>
   <div id="dir-out"></div>
 </div>
 <script type="application/json" id="directory-data">${JSON.stringify(lean)}</script>`;
@@ -506,7 +508,7 @@ ${treeResolved.questions.map((q) => `
     <div class="tree-branches">
       ${q.branches.map((b, i) => `
       <div class="tree-branch">
-        <div class="b-head" style="background:${["var(--brand-saffron)", "var(--brand-green)", "var(--brand-navy)", "var(--cat-incubation)", "var(--cat-equity)", "var(--warning)"][i % 6]}">${esc(b.label)}</div>
+        <div class="b-head h-${i % 6}">${esc(b.label)}</div>
         <div class="b-body">
           ${b.note ? `<p class="b-note">${esc(b.note)}</p>` : ""}
           ${b.schemes.length ? pillList("", b.schemes) : ""}
@@ -568,8 +570,8 @@ ${needsResolved.rows.map((r) => `
 <div class="tree-q" style="margin-top:18px">
   <h3>${esc(r.need)}${r.needNote ? ` <span class="muted" style="font-weight:400;font-size:0.85rem">${esc(r.needNote)}</span>` : ""}</h3>
   <div class="tree-branches">
-    <div class="tree-branch"><div class="b-head" style="background:var(--brand-saffron)">Startup-specific</div><div class="b-body">${r.startupSpecific.length ? pillList("", r.startupSpecific) : '<p class="b-note">—</p>'}</div></div>
-    <div class="tree-branch"><div class="b-head" style="background:var(--brand-green)">Startup-relevant</div><div class="b-body">${r.startupRelevant.length ? pillList("", r.startupRelevant) : '<p class="b-note">—</p>'}</div></div>
+    <div class="tree-branch"><div class="b-head h-0">Startup-specific</div><div class="b-body">${r.startupSpecific.length ? pillList("", r.startupSpecific) : '<p class="b-note">—</p>'}</div></div>
+    <div class="tree-branch"><div class="b-head h-1">Startup-relevant</div><div class="b-body">${r.startupRelevant.length ? pillList("", r.startupRelevant) : '<p class="b-note">—</p>'}</div></div>
   </div>
 </div>`).join("")}`;
 
@@ -600,6 +602,7 @@ ${crumbs("", [["Home", "index.html"], ["Compare", null]])}
     <select aria-label="Second scheme"></select>
     <select aria-label="Third scheme"></select>
   </div>
+  <div class="sr-only" id="compare-status" role="status" aria-live="polite"></div>
   <div id="compare-out"></div>
 </div>
 <script type="application/json" id="compare-data">${JSON.stringify(cmpData)}</script>`;
@@ -626,7 +629,7 @@ ${psu.programs.map((p) => p.url ? `
     <span class="o-org">${esc(p.organization)}</span>
     <span class="o-name">${esc(p.program)}</span>
     ${p.description ? `<span class="o-desc">${esc(p.description)}</span>` : ""}
-    <span class="o-link">${ICONS.external} ${esc(new URL(p.url).hostname)}</span>
+    <span class="o-link">${ICONS.external} <span class="host">${esc(new URL(p.url).hostname)}</span></span>
   </a>` : `
   <div class="org-card">
     <span class="o-org">${esc(p.organization)}</span>
@@ -658,7 +661,7 @@ ${sorted.map((st) => st.url ? `
   <a class="org-card" id="${slugify(st.name)}" href="${attr(st.url)}" target="_blank" rel="noopener">
     <span class="o-org">${esc(st.name)}</span>
     ${st.program ? `<span class="o-name">${esc(st.program)}</span>` : ""}
-    <span class="o-link">${ICONS.external} ${esc(new URL(st.url).hostname)}</span>
+    <span class="o-link">${ICONS.external} <span class="host">${esc(new URL(st.url).hostname)}</span></span>
   </a>` : `
   <div class="org-card" id="${slugify(st.name)}">
     <span class="o-org">${esc(st.name)}</span>
@@ -710,14 +713,21 @@ ${crumbs("", [["Home", "index.html"], ["About", null]])}
 <div class="page-head">
   <div class="kicker">Reference</div>
   <h1>About this playbook</h1>
-  <p class="lede">${esc(about.title || "Playbook of Government Schemes and Initiatives for Startups")} — ${esc(about.edition || "June 2026")} edition.</p>
+  <p class="lede">A navigable edition of the Government of India's <em>Playbook of Government Schemes and Initiatives for Startups</em> (June 2026).</p>
 </div>
 <div class="prose">
   <h2>Objective</h2>
   ${paras(about.objective)}
   <h2>Who it is for</h2>
   <ul>${(about.whoItIsFor || []).map((w) => `<li>${esc(w)}</li>`).join("")}</ul>
-  ${about.howToUse ? `<h2>How to use it</h2>${paras(about.howToUse)}` : ""}
+  ${(() => {
+    if (!about.howToUse) return "";
+    const [stepsPart, legendPart] = String(about.howToUse).split(/Startup Focus Legend[:\s]*/i);
+    const steps = stepsPart.split(/(?=\b\d{1,2}\.\s)/).map((s) => s.replace(/^\d{1,2}\.\s*/, "").trim()).filter(Boolean);
+    return `<h2>How to use it</h2>
+      ${steps.length > 1 ? `<ol>${steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>` : paras(stepsPart)}
+      ${legendPart ? `<h3>Startup focus legend</h3>${paras(legendPart)}` : ""}`;
+  })()}
   ${about.structure ? `<h2>How it is organised</h2>${paras(about.structure)}` : ""}
   <h2>The six types of support</h2>
 </div>

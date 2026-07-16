@@ -18,21 +18,32 @@
   const STAGE_LABEL = { ideation: "Ideation", prototype: "Prototype / PoC", "early-stage": "Seed / Early-Stage", growth: "Growth / Scaling", "market-access": "Market Access & IP" };
   const badge = (cat) => `<span class="badge b-${esc(cat)}">${esc(CAT_LABEL[cat] || cat)}</span>`;
 
+  const motionOK = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const scrollBehavior = motionOK ? "smooth" : "auto";
+
   /* ---------- theme ---------- */
   const themeBtn = $("#theme-toggle");
   if (themeBtn) {
+    const syncLabel = () => {
+      const dark = document.documentElement.getAttribute("data-theme") === "dark";
+      themeBtn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+    };
+    syncLabel();
     themeBtn.addEventListener("click", () => {
-      const cur = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
-      const next = cur === "dark" ? "light" : "dark";
+      const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
       try { localStorage.setItem("playbook-theme", next); } catch {}
+      syncLabel();
     });
   }
 
   /* ---------- mobile nav ---------- */
   const navToggle = $("#nav-toggle");
   const scrim = $("#scrim");
-  const closeNav = () => document.body.classList.remove("nav-open");
+  const closeNav = () => {
+    document.body.classList.remove("nav-open");
+    navToggle && navToggle.setAttribute("aria-expanded", "false");
+  };
   if (navToggle) {
     navToggle.addEventListener("click", () => {
       const open = document.body.classList.toggle("nav-open");
@@ -59,7 +70,7 @@
     const onScroll = () => toTop.classList.toggle("show", window.scrollY > 700);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: scrollBehavior }));
   }
 
   /* ---------- toc scroll-spy ---------- */
@@ -88,17 +99,43 @@
   if (modal) {
     const input = $("#search-input");
     const results = $("#search-results");
+    const status = $("#search-status");
     let sel = -1;
+    let lastTrigger = null;
 
-    const open = () => { modal.classList.add("open"); input.value = ""; render(""); input.focus(); };
-    const close = () => { modal.classList.remove("open"); sel = -1; };
+    input.setAttribute("role", "combobox");
+    input.setAttribute("aria-controls", "search-results");
+    input.setAttribute("aria-expanded", "true");
+    input.setAttribute("aria-autocomplete", "list");
+    results.setAttribute("role", "listbox");
+
+    const open = () => {
+      lastTrigger = document.activeElement;
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+      input.value = ""; render(""); input.focus();
+    };
+    const close = () => {
+      modal.classList.remove("open"); sel = -1;
+      document.body.style.overflow = "";
+      if (lastTrigger && lastTrigger.focus) lastTrigger.focus();
+    };
+
+    // keep Tab inside the dialog while open
+    modal.addEventListener("keydown", (e) => {
+      if (e.key !== "Tab") return;
+      const focusables = [input, ...$$(".hit", results)];
+      const first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
 
     $$("[data-search-open]").forEach((b) => b.addEventListener("click", open));
     $(".backdrop", modal).addEventListener("click", close);
     window.addEventListener("keydown", (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); modal.classList.contains("open") ? close() : open(); }
       else if (e.key === "/" && !modal.classList.contains("open") && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) { e.preventDefault(); open(); }
-      else if (e.key === "Escape") close();
+      else if (e.key === "Escape" && modal.classList.contains("open")) close();
     });
 
     const score = (item, q) => {
@@ -132,9 +169,11 @@
           .sort((a, b) => b[0] - a[0]).slice(0, 12).map(([, x]) => x);
       }
       sel = -1;
+      input.removeAttribute("aria-activedescendant");
+      if (status) status.textContent = q ? `${hits.length} result${hits.length === 1 ? "" : "s"}` : "";
       if (!hits.length) { results.innerHTML = `<div class="none">No matches for “${esc(qRaw)}”. Try a scheme abbreviation like “SISFS”.</div>`; return; }
-      results.innerHTML = hits.map((h) => `
-        <a class="hit" href="${ROOT}${esc(h.u)}">
+      results.innerHTML = hits.map((h, i) => `
+        <a class="hit" role="option" id="hit-${i}" href="${ROOT}${esc(h.u)}">
           <div class="h-name">${mark(h.t, q)}${h.s ? ` <span class="abbr muted">· ${mark(h.s, q)}</span>` : ""}${h.c ? " " + badge(h.c) : ""}</div>
           ${h.d ? `<div class="h-sub">${mark(h.d, q)}</div>` : ""}
         </a>`).join("");
@@ -147,7 +186,10 @@
         e.preventDefault();
         sel = e.key === "ArrowDown" ? Math.min(sel + 1, hits.length - 1) : Math.max(sel - 1, 0);
         hits.forEach((h, i) => h.classList.toggle("sel", i === sel));
-        hits[sel] && hits[sel].scrollIntoView({ block: "nearest" });
+        if (hits[sel]) {
+          hits[sel].scrollIntoView({ block: "nearest" });
+          input.setAttribute("aria-activedescendant", hits[sel].id);
+        }
       } else if (e.key === "Enter" && sel >= 0 && hits[sel]) {
         window.location.href = hits[sel].href;
       }
@@ -178,7 +220,7 @@
     const cardHTML = (s) => `
       <a class="scheme-card" href="${ROOT}schemes/${esc(s.slug)}.html">
         <div class="top">
-          <span class="abbr">${esc(s.shortName || "Scheme")} · Part ${esc(s.part)}</span>
+          <span class="abbr">${s.shortName ? `${esc(s.shortName)} · ` : ""}Part ${esc(s.part)}</span>
           ${badge(s.category)}
         </div>
         <h3>${esc(s.name)}</h3>
@@ -186,17 +228,18 @@
         <p class="tagline">${esc(s.tagline)}</p>
         <div class="meta">
           ${s.stages.map((st) => `<span class="badge b-plain b-part">${esc(STAGE_LABEL[st] || st)}</span>`).join("")}
+          ${state.support && s.category !== state.support && s.supportTypes.includes(state.support) ? `<span class="badge b-${esc(state.support)}">Also: ${esc(CAT_LABEL[state.support])}</span>` : ""}
           ${s.maxFunding ? `<span class="amount">${esc(s.maxFunding)}</span>` : ""}
         </div>
       </a>`;
 
     const rowHTML = (s) => `
       <tr>
-        <td><a href="${ROOT}schemes/${esc(s.slug)}.html"><strong>${esc(s.shortName || s.name)}</strong></a><span class="sub">${esc(s.name)}</span></td>
-        <td>${esc(s.ministry)}</td>
+        <td class="cell-scheme"><a href="${ROOT}schemes/${esc(s.slug)}.html"><strong>${esc(s.shortName || s.name)}</strong></a><span class="sub">${esc(s.name)}</span></td>
+        <td class="cell-ministry">${esc(s.ministry)}</td>
         <td>${badge(s.category)}</td>
-        <td>${s.stages.map((st) => STAGE_LABEL[st] || st).map(esc).join(", ")}</td>
-        <td class="num">${esc(s.maxFunding || "—")}</td>
+        <td class="cell-stages">${s.stages.map((st) => `<span class="badge b-plain b-part">${esc(STAGE_LABEL[st] || st)}</span>`).join("")}</td>
+        <td class="num cell-amount">${esc(s.maxFunding || "—")}</td>
       </tr>`;
 
     const render = () => {
@@ -257,11 +300,16 @@
         ${TREE.questions.map((_, i) => `<span class="seg ${i < step ? "done" : ""}"><span class="fill"></span></span>`).join("")}
       </div>`;
 
-    const schemePills = (schemes) => `
-      <div class="pill-list">${schemes.map((s) => s.slug
-        ? `<a href="${ROOT}schemes/${esc(s.slug)}.html">${esc(s.name)}${s.qual ? ` <span class="qual">${esc(s.qual)}</span>` : ""}</a>`
+    const resultCards = (schemes) => `
+      <div class="related" style="margin-top:12px">${schemes.map((s) => s.slug
+        ? `<a href="${ROOT}schemes/${esc(s.slug)}.html"><span class="rn">${esc(s.name)}${s.qual ? ` <span class="qual">${esc(s.qual)}</span>` : ""}</span>${s.full && s.full !== s.name ? `<span class="rm">${esc(s.full)}</span>` : s.tagline ? `<span class="rm">${esc(s.tagline)}</span>` : ""}</a>`
         : `<span class="dead">${esc(s.name)}</span>`).join("")}
       </div>`;
+
+    const focusHeading = () => {
+      const h = $("h2", wizRoot);
+      if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+    };
 
     const renderStep = () => {
       const q = TREE.questions[step];
@@ -291,10 +339,11 @@
         }
         step += 1;
         step < TREE.questions.length ? renderStep() : renderResults();
-        wizRoot.scrollIntoView({ behavior: "smooth", block: "start" });
+        wizRoot.scrollIntoView({ behavior: scrollBehavior, block: "start" });
+        focusHeading();
       }));
       const back = $("[data-back]", wizRoot);
-      back && back.addEventListener("click", () => { step -= 1; renderStep(); });
+      back && back.addEventListener("click", () => { step -= 1; renderStep(); focusHeading(); });
     };
 
     const renderResults = () => {
@@ -306,9 +355,9 @@
           ${answered.length ? "" : `<p class="muted" style="margin-top:10px">You skipped every question — here's the full playbook instead.</p>`}
           ${answered.map((p) => `
             <div class="r-group">
-              <h3>${esc(p.label)}</h3>
-              <p class="r-note">${esc(p.q)}</p>
-              ${schemePills(p.schemes)}
+              <h3>${esc(p.q)}</h3>
+              <p class="r-note">You answered: <strong>${esc(p.label)}</strong>${p.schemes.length ? ` — ${p.schemes.length} matching scheme${p.schemes.length > 1 ? "s" : ""}` : ""}</p>
+              ${resultCards(p.schemes)}
             </div>`).join("")}
           <div class="restart-row">
             <button class="btn btn-secondary" id="wiz-restart">↺ Start over</button>
@@ -316,7 +365,7 @@
             <a class="btn btn-ghost" href="${ROOT}compare.html">Compare schemes</a>
           </div>
         </div>`;
-      $("#wiz-restart").addEventListener("click", () => { picks.length = 0; step = 0; renderStep(); });
+      $("#wiz-restart").addEventListener("click", () => { picks.length = 0; step = 0; renderStep(); focusHeading(); });
     };
 
     renderStep();
@@ -349,12 +398,14 @@
       const params = new URLSearchParams();
       selects.forEach((s, i) => s.value && params.set(`s${i + 1}`, s.value));
       history.replaceState(null, "", params.toString() ? `?${params}` : location.pathname);
+      const statusEl = $("#compare-status");
+      if (statusEl) statusEl.textContent = chosen.length >= 2 ? `Comparing ${chosen.map((s) => s.shortName || s.name).join(" and ")}` : "";
       if (chosen.length < 2) {
         out.innerHTML = `<div class="empty-state"><div class="big">⚖️</div><p>Pick at least two schemes above to compare them side by side.</p></div>`;
         return;
       }
       out.innerHTML = `<div class="compare-table-wrap"><table class="compare">
-        <thead><tr><th></th>${chosen.map((s) => `<th class="col-head"><a href="${ROOT}schemes/${esc(s.slug)}.html">${esc(s.shortName || s.name)}</a><span class="m">${esc(s.name)}</span></th>`).join("")}</tr></thead>
+        <thead><tr><td></td>${chosen.map((s) => `<th scope="col" class="col-head"><a href="${ROOT}schemes/${esc(s.slug)}.html">${esc(s.shortName || s.name)}</a><span class="m">${esc(s.name)}</span></th>`).join("")}</tr></thead>
         <tbody>${rowsSpec.map(([label, fn]) => `<tr><th scope="row">${label}</th>${chosen.map((s) => `<td>${fn(s)}</td>`).join("")}</tr>`).join("")}</tbody>
       </table></div>`;
     };

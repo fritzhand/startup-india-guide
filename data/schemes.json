@@ -1571,9 +1571,9 @@
     "aspiring-founders",
     "students"
    ],
-   "maxFunding": "Up to ₹30,000 per month for 18 months",
+   "maxFunding": "₹10,000–₹30,000/month for 12 months (extendable to 18)",
    "category": "grant",
-   "howMuch": "₹10,000–₹30,000 per month for up to 12 months",
+   "howMuch": "₹10,000–₹30,000 per month for 12 months, extendable up to 18 months",
    "stageFocus": "Ideation (Just an idea)"
   },
   {
@@ -2448,7 +2448,7 @@
   },
   {
    "slug": "msme-champions",
-   "name": "MSME Champions Scheme (erstwhile Credit Linked Capital Subsidy Scheme for Technology Upgradation)",
+   "name": "MSME Champions Scheme (erstwhile Credit Linked Capital Subsidy Scheme for Technology Upgradation (CLCS-TU))",
    "shortName": "CLCS-TU",
    "ministry": "Ministry of MSME",
    "part": "B",

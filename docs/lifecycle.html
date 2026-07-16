@@ -58,7 +58,7 @@ document.documentElement.setAttribute("data-theme",t)})();</script>
 <a class="nav-link" href="compare.html"><span class="card-icon" style="width:22px;height:22px;border-radius:6px;background:transparent;color:var(--text-faint)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="15" height="15"><path d="M12 3v18M8 21h8M7 7 3 12h8L7 7Zm10 0-4 5h8l-4-5Z"/><path d="M3 12a4 4 0 0 0 8 0m2 0a4 4 0 0 0 8 0"/></svg></span>Compare schemes</a>
       
       <details>
-        <summary>Startup-specific (Part A) <span class="count-pill">30</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="chev"><path d="m9 6 6 6-6 6"/></svg></summary>
+        <summary><span class="sum-label">Part A · Startup-specific</span> <span class="count-pill">30</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="chev"><path d="m9 6 6 6-6 6"/></svg></summary>
         <div><a class="nav-link" href="schemes/sisfs.html"><span class="cat-dot" style="background:var(--cat-mixed)"></span>SISFS</a>
 <a class="nav-link" href="schemes/ffs.html"><span class="cat-dot" style="background:var(--cat-equity)"></span>FFS</a>
 <a class="nav-link" href="schemes/ffs-2.html"><span class="cat-dot" style="background:var(--cat-equity)"></span>FoF 2.0</a>
@@ -91,7 +91,7 @@ document.documentElement.setAttribute("data-theme",t)})();</script>
 <a class="nav-link" href="schemes/st-prism.html"><span class="cat-dot" style="background:var(--cat-grant)"></span>S&amp;T-PRISM</a></div>
       </details>
       <details>
-        <summary>Startup-relevant (Part B) <span class="count-pill">39</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="chev"><path d="m9 6 6 6-6 6"/></svg></summary>
+        <summary><span class="sum-label">Part B · Startup-relevant</span> <span class="count-pill">39</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="chev"><path d="m9 6 6 6-6 6"/></svg></summary>
         <div><a class="nav-link" href="schemes/nidhi-eir.html"><span class="cat-dot" style="background:var(--cat-grant)"></span>NIDHI-EIR</a>
 <a class="nav-link" href="schemes/nm-icps.html"><span class="cat-dot" style="background:var(--cat-incubation)"></span>NM-ICPS</a>
 <a class="nav-link" href="schemes/nidhi-tbi.html"><span class="cat-dot" style="background:var(--cat-incubation)"></span>NIDHI-TBI</a>
@@ -230,7 +230,8 @@ document.documentElement.setAttribute("data-theme",t)})();</script>
 <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Search">
   <div class="backdrop"></div>
   <div class="search-panel">
-    <div class="search-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input id="search-input" type="text" placeholder="Search 69 schemes, glossary, states…" autocomplete="off"></div>
+    <div class="search-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input id="search-input" type="text" placeholder="Search 69 schemes, glossary, states…" autocomplete="off" aria-label="Search schemes, glossary and states"></div>
+    <div class="sr-only" id="search-status" role="status" aria-live="polite"></div>
     <div class="results" id="search-results"></div>
     <div class="search-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div>
   </div>
