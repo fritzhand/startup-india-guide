@@ -51,6 +51,8 @@ const about = readJSON("about.json");
 const psu = readJSON("psu.json");
 const states = readJSON("states.json");
 const glossary = readJSON("glossary.json");
+const incubators = readJSON("incubators.json");
+const indiaMap = readJSON("india-map.json");
 
 /* ---------------- taxonomy labels ---------------- */
 const CAT_LABEL = { grant: "Grant", equity: "Equity", "loan-credit": "Loan / Credit", incubation: "Incubation", "market-access": "Market Access", mixed: "Mixed", other: "Other" };
@@ -119,6 +121,10 @@ const ICONS = {
   chart: I('<path d="M3 3v18h18"/><path d="M7 15v-4m5 4V8m5 7v-6"/>'),
   ip: I('<circle cx="12" cy="12" r="10"/><path d="M9 8h1v8H9m4-8h2.5a2 2 0 0 1 0 4.5H13V8Zm0 4.5V16"/>'),
   download: I('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5m-5 5V3"/>'),
+  pin: I('<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>'),
+  phone: I('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/>'),
+  mail: I('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>'),
+  globe: I('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/>'),
 };
 
 /* ---------------- normalize & index schemes ---------------- */
@@ -226,6 +232,7 @@ const NAV_PAGES = [
     { href: "compare.html", title: "Compare schemes", icon: "scale" },
   ]},
   { group: "Beyond central schemes", items: [
+    { href: "incubators.html", title: "Incubators directory", icon: "pin" },
     { href: "psu.html", title: "PSU & regulator programs", icon: "building" },
     { href: "states.html", title: "State & UT initiatives", icon: "map" },
   ]},
@@ -447,7 +454,8 @@ const write = (rel, html) => { mkdirSync(dirname(join(OUT, rel)), { recursive: t
 <div class="grid grid-2">${flagship.map((s) => schemeCardHTML("", s)).join("")}</div>
 
 <h2 class="home-h2">Beyond central schemes</h2>
-<div class="grid grid-2">
+<div class="grid grid-3">
+  <a class="card" href="incubators.html"><h3><span class="card-icon tone-teal">${ICONS.pin}</span>Incubators directory</h3><p>${incubators.incubators.length} technology business incubators, Atal Incubation Centres and startup hubs across India — on an interactive map, searchable and state-wise.</p><span class="go">${ICONS.arrow}</span></a>
   <a class="card" href="psu.html"><h3><span class="card-icon tone-blue">${ICONS.building}</span>PSU &amp; regulator programs</h3><p>${psu.programs.length} startup initiatives run by public sector undertakings and regulators — ONGC, BHEL, GAIL, IFSCA and more.</p><span class="go">${ICONS.arrow}</span></a>
   <a class="card" href="states.html"><h3><span class="card-icon tone-green">${ICONS.map}</span>State &amp; UT startup portals</h3><p>Every state and union territory runs its own startup policy — find your state's portal and incentives.</p><span class="go">${ICONS.arrow}</span></a>
 </div>
@@ -702,6 +710,81 @@ ${sorted.map((st) => st.url ? `
   }));
 }
 
+/* ================= INCUBATORS ================= */
+{
+  const INC_TYPE = {
+    TBI: "Technology Business Incubator", AIC: "Atal Incubation Centre", Academic: "Academic / University",
+    Government: "Government", Private: "Private / Corporate", "Sector-specific": "Sector-specific",
+  };
+  const list = incubators.incubators;
+  const nStates = new Set(list.map((r) => r.state)).size;
+  const nCities = new Set(list.map((r) => `${r.city}|${r.state}`)).size;
+  const nDst = list.filter((r) => /DST|NIDHI/i.test(r.supportedBy)).length;
+  const nAic = list.filter((r) => r.type === "AIC").length;
+
+  const usedTypes = new Set(list.map((r) => r.type));
+  const usedStates = [...new Set(list.map((r) => r.state))].sort();
+  const usedSupport = [...new Set(list.map((r) => {
+    const s = r.supportedBy;
+    if (/DST|NIDHI/i.test(s)) return "DST-NIDHI";
+    if (/\bAIM\b|Atal/i.test(s)) return "AIM";
+    if (/MeitY/i.test(s)) return "MeitY";
+    if (/BIRAC|DBT/i.test(s)) return "BIRAC / DBT";
+    if (/State/i.test(s)) return "State government";
+    return "";
+  }).filter(Boolean))].sort();
+
+  const typeOpts = Object.entries(INC_TYPE).filter(([k]) => usedTypes.has(k)).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+  const stateOpts = usedStates.map((s) => `<option value="${attr(s)}">${esc(s)}</option>`).join("");
+  const supportOpts = usedSupport.map((s) => `<option value="${attr(s)}">${esc(s)}</option>`).join("");
+
+  const body = `
+${crumbs("", [["Home", "index.html"], ["Incubators directory", null]])}
+<div class="page-head">
+  <div class="kicker">Beyond central schemes</div>
+  <h1>India's startup incubators, mapped</h1>
+  <p class="lede">${esc(incubators.intro)}</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="n">${list.length}</div><div class="l">Incubators indexed</div></div>
+  <div class="stat"><div class="n">${nStates}</div><div class="l">States &amp; UTs covered</div></div>
+  <div class="stat"><div class="n">${nCities}</div><div class="l">Cities &amp; towns</div></div>
+  <div class="stat"><div class="n">${nDst}</div><div class="l">DST-NIDHI supported</div></div>
+  <div class="stat"><div class="n">${nAic}</div><div class="l">Atal Incubation Centres</div></div>
+</div>
+
+<div id="incubators">
+  <div class="toolbar">
+    <div class="field">${ICONS.search}<input id="i-q" type="search" placeholder="Search name, host institution, city, sector…" aria-label="Search incubators"></div>
+    <select id="i-state" aria-label="Filter by state"><option value="">State: all</option>${stateOpts}</select>
+    <select id="i-type" aria-label="Filter by type"><option value="">Type: all</option>${typeOpts}</select>
+    <select id="i-support" aria-label="Filter by support"><option value="">Support: all</option>${supportOpts}</select>
+    <div class="view-toggle" id="i-view-toggle" role="group" aria-label="View">
+      <button data-view="map" aria-pressed="true">${ICONS.pin} Map</button>
+      <button data-view="cards" aria-pressed="false">${ICONS.grid} Cards</button>
+      <button data-view="table" aria-pressed="false">${ICONS.menu} Table</button>
+      <button data-view="state" aria-pressed="false">${ICONS.map} By state</button>
+    </div>
+    <button class="btn btn-ghost" id="i-reset" type="button">Reset</button>
+  </div>
+  <div class="result-count" id="i-count" role="status" aria-live="polite"></div>
+  <h2 class="sr-only">Incubators</h2>
+  <div id="inc-out"></div>
+</div>
+
+<div class="callout tone-info" style="margin-top:30px"><span class="ic">${ICONS.info}</span><div>Compiled from DST-NIDHI, Atal Innovation Mission (AIM), MeitY and state startup-mission listings plus each incubator's own site. Contact details change and some fields are intentionally left blank where they could not be verified — always confirm on the incubator's official website before reaching out. Spotted an error or a missing incubator? <a href="${attr(REPO_URL)}" target="_blank" rel="noopener">Open an issue on GitHub</a>.</div></div>
+
+<script type="application/json" id="incubators-data">${JSON.stringify(list)}</script>
+<script type="application/json" id="india-map-data">${JSON.stringify(indiaMap)}</script>`;
+
+  write("incubators.html", shell({
+    root: "", active: "incubators.html", title: "Incubators Directory",
+    description: `A searchable, mappable directory of ${list.length} technology business incubators, Atal Incubation Centres and startup hubs across ${nStates} Indian states and union territories — with locations, websites and contacts.`,
+    body,
+  }));
+}
+
 /* ================= GLOSSARY ================= */
 {
   const items = glossary.terms.map((t) => ({ ...t, id: slugify(t.term) }));
@@ -913,6 +996,7 @@ write("404.html", shell({
   for (const t of glossary.terms) idx.push({ t: t.term, u: `glossary.html#${slugify(t.term)}`, k: "glossary", d: t.definition.slice(0, 110) });
   for (const p of psu.programs) idx.push({ t: p.program, m: p.organization, u: "psu.html", k: "psu", d: `${p.organization} startup initiative`, g: p.organization });
   for (const st of states.states) idx.push({ t: `${st.name} startup portal`, u: `states.html#${slugify(st.name)}`, k: "state", d: st.program || "", g: st.name });
+  for (const r of incubators.incubators) idx.push({ t: r.name, m: r.host, u: `incubators.html?q=${encodeURIComponent(r.name)}`, k: "incubator", d: `${r.type === "AIC" ? "Atal Incubation Centre" : r.type} · ${r.city}, ${r.state}`, g: `${r.host} ${r.city} ${r.state} ${(r.sectors || []).join(" ")}` });
   writeFileSync(join(OUT, "assets", "search-index.js"), `window.SEARCH_INDEX=${JSON.stringify(idx)};`);
 }
 

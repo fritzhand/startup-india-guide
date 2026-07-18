@@ -44,6 +44,7 @@ Four views from the [live site](https://fritzhand.github.io/startup-india-guide/
 | [Compare](https://fritzhand.github.io/startup-india-guide/compare.html) | Up to three schemes side by side |
 | [Lifecycle Map](https://fritzhand.github.io/startup-india-guide/lifecycle.html) | Ideation → prototype → seed → growth → market access |
 | [What do you need?](https://fritzhand.github.io/startup-india-guide/needs.html) | From a need (grant / loan / lab / buyers / IP) to the schemes that provide it |
+| [Incubators directory](https://fritzhand.github.io/startup-india-guide/incubators.html) | 220+ technology business incubators, Atal Incubation Centres & startup hubs on an interactive India map (choropleth + city markers) — searchable, filterable, cards / table / state-wise views, with locations, websites and contacts |
 | [PSU & regulators](https://fritzhand.github.io/startup-india-guide/psu.html) · [States & UTs](https://fritzhand.github.io/startup-india-guide/states.html) | 17 PSU/regulator programs; every state startup portal |
 | [Glossary](https://fritzhand.github.io/startup-india-guide/glossary.html) · [About](https://fritzhand.github.io/startup-india-guide/about.html) | Definitions, abbreviations, disclaimer, method |
 
@@ -61,7 +62,7 @@ site/tokens.css + site.css + site.js            the skin (PDF-sampled palette) +
       │
       │  node build.mjs                         zero dependencies, fails loudly
       ▼
-docs/  →  GitHub Pages                          80 static pages, ⌘K search, no runtime deps
+docs/  →  GitHub Pages                          81 static pages, ⌘K search, no runtime deps
 ```
 
 1. **Extract** — every PDF page rendered to text *and* image; scheme one-pagers parsed to structured JSON; hyperlinks taken from the PDF's link annotations, never retyped.
@@ -91,13 +92,16 @@ startup-india-guide/
 │   ├── decision-tree.json   # the 5-question finder
 │   ├── lifecycle.json       # stage → schemes map
 │   ├── needs-index.json     # need → schemes map
+│   ├── incubators.json      # 220+ incubators: location, type, sectors, website, contacts, lat/lng
+│   ├── india-map.json       # projected + simplified India state polygons (see scripts/) for the map
 │   ├── psu.json · states.json · glossary.json · about.json
 │   └── aliases.json         # printed-name → slug overrides for cross-references
 ├── site/                    # the engine — consumed by build.mjs
 │   ├── tokens.css           # the skin: PDF-sampled palette, light + dark
 │   ├── site.css             # layout & component vocabulary; reads only tokens
-│   └── site.js              # search, filters, wizard, compare, theme toggle
+│   └── site.js              # search, filters, wizard, compare, incubator map, theme toggle
 ├── build.mjs                # data + site → docs/   (zero dependencies, Node ≥ 18)
+├── scripts/build-india-map.mjs   # one-off: district GeoJSON → data/india-map.json (state paths + projection)
 ├── docs/                    # GENERATED — never hand-edit; what GitHub Pages serves
 └── .github/workflows/deploy-pages.yml   # publishes docs/ → gh-pages on push to main
 ```

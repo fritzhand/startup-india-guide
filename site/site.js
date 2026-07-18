@@ -417,4 +417,204 @@
     });
     render();
   }
+
+  /* ================= INCUBATORS ================= */
+  const incRoot = $("#incubators");
+  if (incRoot) {
+    const DATA = readJSON("incubators-data") || [];
+    const MAP = readJSON("india-map-data");
+
+    const svg = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="14" height="14">${d}</svg>`;
+    const IC = {
+      pin: svg('<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>'),
+      globe: svg('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/>'),
+      phone: svg('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/>'),
+      mail: svg('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>'),
+      close: svg('<path d="M18 6 6 18M6 6l12 12"/>'),
+    };
+    const TYPE_LABEL = { TBI: "Technology Business Incubator", AIC: "Atal Incubation Centre", Academic: "Academic", Government: "Government", Private: "Private", "Sector-specific": "Sector-specific" };
+    const TYPE_SHORT = { TBI: "TBI", AIC: "AIC", Academic: "Academic", Government: "Govt", Private: "Private", "Sector-specific": "Sector" };
+    const typeCls = (t) => t.toLowerCase().replace(/[^a-z]+/g, "-");
+    const supportTag = (s) => {
+      if (/DST|NIDHI/i.test(s)) return "DST-NIDHI";
+      if (/\bAIM\b|Atal/i.test(s)) return "AIM";
+      if (/MeitY/i.test(s)) return "MeitY";
+      if (/BIRAC|DBT/i.test(s)) return "BIRAC / DBT";
+      if (/State/i.test(s)) return "State government";
+      return "";
+    };
+    const telHref = (p) => p.replace(/[^+\d]/g, "");
+
+    const state = { q: "", state: "", type: "", support: "", view: "map", city: "" };
+    const els = {
+      q: $("#i-q"), state: $("#i-state"), type: $("#i-type"), support: $("#i-support"),
+      count: $("#i-count"), out: $("#inc-out"), viewBtns: $$("#i-view-toggle button"), reset: $("#i-reset"),
+    };
+
+    const matches = (r) =>
+      (!state.type || r.type === state.type) &&
+      (!state.state || r.state === state.state) &&
+      (!state.support || supportTag(r.supportedBy) === state.support) &&
+      (!state.q || `${r.name} ${r.host} ${r.city} ${r.state} ${r.sectors.join(" ")} ${r.supportedBy}`.toLowerCase().includes(state.q));
+
+    const contactRow = (r) => {
+      const b = [];
+      if (r.website) b.push(`<a class="i-chip" href="${esc(r.website)}" target="_blank" rel="noopener">${IC.globe} Website</a>`);
+      if (r.phone) b.push(`<a class="i-chip" href="tel:${esc(telHref(r.phone))}">${IC.phone} ${esc(r.phone)}</a>`);
+      if (r.email) b.push(`<a class="i-chip" href="mailto:${esc(r.email)}">${IC.mail} Email</a>`);
+      return b.length ? `<div class="i-contact">${b.join("")}</div>` : "";
+    };
+
+    const cardHTML = (r) => `
+      <div class="inc-card">
+        <div class="inc-top">
+          <span class="inc-badge t-${typeCls(r.type)}" title="${esc(TYPE_LABEL[r.type] || r.type)}">${esc(TYPE_SHORT[r.type] || r.type)}</span>
+          ${supportTag(r.supportedBy) ? `<span class="inc-support">${esc(supportTag(r.supportedBy))}</span>` : ""}
+        </div>
+        <h3>${r.website ? `<a href="${esc(r.website)}" target="_blank" rel="noopener">${esc(r.name)}</a>` : esc(r.name)}</h3>
+        ${r.host ? `<div class="inc-host">${esc(r.host)}</div>` : ""}
+        <div class="inc-loc">${IC.pin}<span>${esc(r.city)}, ${esc(r.state)}</span></div>
+        ${r.sectors.length ? `<div class="inc-sectors">${r.sectors.slice(0, 5).map((s) => `<span class="inc-sec">${esc(s)}</span>`).join("")}</div>` : ""}
+        ${r.contact ? `<div class="inc-poc">${esc(r.contact)}</div>` : ""}
+        ${contactRow(r)}
+      </div>`;
+
+    const rowHTML = (r) => `
+      <tr>
+        <td class="cell-scheme">${r.website ? `<a href="${esc(r.website)}" target="_blank" rel="noopener"><strong>${esc(r.name)}</strong></a>` : `<strong>${esc(r.name)}</strong>`}${r.host ? `<span class="sub">${esc(r.host)}</span>` : ""}</td>
+        <td>${esc(r.city)}<span class="sub">${esc(r.state)}</span></td>
+        <td><span class="inc-badge t-${typeCls(r.type)}">${esc(TYPE_SHORT[r.type] || r.type)}</span></td>
+        <td>${esc(supportTag(r.supportedBy) || "—")}</td>
+        <td class="i-tcontact">${[r.phone ? `<a href="tel:${esc(telHref(r.phone))}">${esc(r.phone)}</a>` : "", r.email ? `<a href="mailto:${esc(r.email)}">${IC.mail}</a>` : ""].filter(Boolean).join(" ") || "—"}</td>
+      </tr>`;
+
+    const emptyState = () => `<div class="empty-state"><div class="big">🔍</div><p>No incubators match those filters.</p><p class="small"><button class="btn-ghost btn" id="i-reset2">Reset all filters</button></p></div>`;
+    const wireReset2 = () => { const r2 = $("#i-reset2"); r2 && r2.addEventListener("click", reset); };
+
+    /* ---- map view ---- */
+    const bucket = (n) => (n === 0 ? 0 : n <= 2 ? 1 : n <= 5 ? 2 : n <= 10 ? 3 : n <= 20 ? 4 : 5);
+    const panelItem = (r) => `
+      <div class="inc-pi">
+        <div class="inc-pi-h">${r.website ? `<a href="${esc(r.website)}" target="_blank" rel="noopener">${esc(r.name)}</a>` : esc(r.name)} <span class="inc-badge t-${typeCls(r.type)}">${esc(TYPE_SHORT[r.type] || r.type)}</span></div>
+        ${r.host ? `<div class="inc-pi-sub">${esc(r.host)}</div>` : ""}
+        <div class="inc-pi-sub">${esc(r.city)}, ${esc(r.state)}${supportTag(r.supportedBy) ? ` · ${esc(supportTag(r.supportedBy))}` : ""}</div>
+        ${contactRow(r)}
+      </div>`;
+
+    const renderMap = () => {
+      const found = DATA.filter(matches);
+      const counts = {};
+      found.forEach((r) => (counts[r.state] = (counts[r.state] || 0) + 1));
+      const [W, H] = MAP.viewBox;
+      const p = MAP.proj;
+      const P = (lng, lat) => [p.pad + (lng * p.cosLat0 - p.rxMin) * p.s, p.pad + (p.ryMax - lat) * p.s];
+
+      const paths = Object.entries(MAP.states).map(([name, st]) => {
+        const n = counts[name] || 0;
+        const sel = state.state === name ? " sel" : "";
+        return `<path d="${st.d}" class="h${bucket(n)}${sel}" data-state="${esc(name)}" tabindex="0" role="button" aria-label="${esc(name)}: ${n} incubator${n === 1 ? "" : "s"}"></path>`;
+      }).join("");
+
+      // aggregate markers by exact city coords
+      const cityMap = {};
+      found.forEach((r) => {
+        const k = `${r.lat},${r.lng}`;
+        (cityMap[k] = cityMap[k] || { lat: r.lat, lng: r.lng, city: r.city, items: [] }).items.push(r);
+      });
+      const markers = Object.values(cityMap).sort((a, b) => a.items.length - b.items.length).map((c) => {
+        const [x, y] = P(c.lng, c.lat);
+        const n = c.items.length;
+        const rad = Math.min(15, 3.5 + Math.sqrt(n) * 2.3);
+        const active = state.city === `${c.lat},${c.lng}` ? " active" : "";
+        return `<circle class="inc-marker${active}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${rad.toFixed(1)}" data-key="${c.lat},${c.lng}" tabindex="0" role="button" aria-label="${esc(c.city)}: ${n} incubator${n === 1 ? "" : "s"}"><title>${esc(c.city)}: ${n}</title></circle>`;
+      }).join("");
+
+      // panel scope
+      let panelItems, scopeLabel;
+      if (state.city) {
+        panelItems = found.filter((r) => `${r.lat},${r.lng}` === state.city);
+        scopeLabel = `${panelItems[0] ? esc(panelItems[0].city) : "City"} · ${panelItems.length}`;
+      } else {
+        panelItems = found;
+        scopeLabel = `${state.state ? esc(state.state) : "All India"} · ${found.length}`;
+      }
+      const legend = [["h1", "1–2"], ["h2", "3–5"], ["h3", "6–10"], ["h4", "11–20"], ["h5", "20+"]]
+        .map(([c, l]) => `<span class="inc-leg"><span class="sw ${c}"></span>${l}</span>`).join("");
+
+      els.out.innerHTML = `
+        <div class="inc-mapwrap">
+          <div class="inc-map-col">
+            <div class="inc-map-scroll">
+              <svg class="inc-map" viewBox="0 0 ${W} ${H}" role="group" aria-label="Map of India — incubators by state. Select a state to filter.">${paths}${markers}</svg>
+            </div>
+            <div class="inc-legend"><span class="inc-leg-t">Incubators per state</span>${legend}<span class="inc-leg-m"><span class="dot"></span>city</span></div>
+          </div>
+          <aside class="inc-panel" aria-label="Incubators list">
+            <div class="inc-panel-head">
+              <span class="inc-scope">${scopeLabel}</span>
+              ${state.state || state.city ? `<button class="i-chip i-clear" id="i-clear-sel">${IC.close} Clear</button>` : ""}
+            </div>
+            <div class="inc-panel-list">${panelItems.length ? panelItems.map(panelItem).join("") : `<p class="muted small" style="padding:12px">No incubators here. ${state.q || state.type || state.support ? "Try clearing filters." : ""}</p>`}</div>
+          </aside>
+        </div>`;
+
+      $$(".inc-map path", els.out).forEach((el) => {
+        const pick = () => { const nm = el.dataset.state; state.state = state.state === nm ? "" : nm; state.city = ""; els.state.value = state.state; render(); };
+        el.addEventListener("click", pick);
+        el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      });
+      $$(".inc-marker", els.out).forEach((el) => {
+        const pick = () => { state.city = state.city === el.dataset.key ? "" : el.dataset.key; render(); };
+        el.addEventListener("click", pick);
+        el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      });
+      const clr = $("#i-clear-sel");
+      clr && clr.addEventListener("click", () => { state.state = ""; state.city = ""; els.state.value = ""; render(); });
+    };
+
+    const render = () => {
+      const found = DATA.filter(matches);
+      els.count.innerHTML = `Showing <b>${found.length}</b> of ${DATA.length} incubators`;
+      els.viewBtns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === state.view)));
+      if (state.view === "map") { renderMap(); return; }
+      if (!found.length) { els.out.innerHTML = emptyState(); wireReset2(); return; }
+      if (state.view === "cards") {
+        els.out.innerHTML = `<div class="inc-grid">${found.map(cardHTML).join("")}</div>`;
+      } else if (state.view === "table") {
+        els.out.innerHTML = `<div class="table-wrap"><table class="data inc-table">
+          <thead><tr><th>Incubator</th><th>City</th><th>Type</th><th>Support</th><th>Contact</th></tr></thead>
+          <tbody>${found.map(rowHTML).join("")}</tbody></table></div>`;
+      } else if (state.view === "state") {
+        const byState = {};
+        found.forEach((r) => (byState[r.state] = byState[r.state] || []).push(r));
+        els.out.innerHTML = Object.keys(byState).sort().map((st) => `
+          <section class="inc-state-group">
+            <h3 class="inc-state-h">${esc(st)} <span class="count-pill">${byState[st].length}</span></h3>
+            <div class="inc-grid">${byState[st].map(cardHTML).join("")}</div>
+          </section>`).join("");
+      }
+    };
+
+    const reset = () => {
+      state.q = state.state = state.type = state.support = state.city = "";
+      els.q.value = ""; [els.state, els.type, els.support].forEach((el) => el && (el.value = ""));
+      render();
+    };
+
+    els.q.addEventListener("input", () => { state.q = els.q.value.trim().toLowerCase(); state.city = ""; render(); });
+    ["state", "type", "support"].forEach((k) => els[k] && els[k].addEventListener("change", () => { state[k] = els[k].value; state.city = ""; render(); }));
+    els.reset && els.reset.addEventListener("click", reset);
+    els.viewBtns.forEach((b) => b.addEventListener("click", () => { state.view = b.dataset.view; state.city = ""; render(); }));
+
+    // deep links: incubators.html?q=...&state=...&type=...&view=...
+    const params = new URLSearchParams(location.search);
+    if (params.get("q")) { state.q = params.get("q").toLowerCase(); els.q.value = params.get("q"); }
+    ["state", "type", "support", "view"].forEach((k) => {
+      const v = params.get(k);
+      if (!v) return;
+      if (k === "view" && els.viewBtns.some((b) => b.dataset.view === v)) state.view = v;
+      else if (els[k] && [...els[k].options].some((o) => o.value === v)) { state[k] = v; els[k].value = v; }
+    });
+    render();
+  }
 })();
