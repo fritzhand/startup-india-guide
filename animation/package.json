@@ -1,0 +1,24 @@
+{
+  "name": "startup-india-guide-animation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Remotion promo animation for the Startup Schemes Playbook",
+  "license": "MIT",
+  "scripts": {
+    "fonts": "node scripts/fetch-fonts.mjs",
+    "audio": "node scripts/make-audio.mjs",
+    "studio": "remotion studio",
+    "render": "remotion render StartupIndiaGuide out/startup-india-guide.mp4 --codec=h264",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.491"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.491",
+    "@types/react": "19.0.0",
+    "typescript": "5.5.4"
+  }
+}

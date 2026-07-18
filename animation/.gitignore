@@ -1,0 +1,5 @@
+node_modules
+out
+.remotion
+# Raw woff2 subsets are inlined into src/fonts-face.ts; regenerate with `npm run fonts`.
+public/fonts
