@@ -7,6 +7,11 @@ the Government of India's 107-page playbook, rebuilt as a searchable guide.
 Everything — picture **and** the soundtrack — is generated from code. No stock
 footage, no licensed music.
 
+Ships in two aspect ratios from the **same** scenes, which reflow by orientation:
+
+- `StartupIndiaGuide` — **16:9** 1920×1080 (YouTube, site hero)
+- `StartupIndiaGuideVertical` — **9:16** 1080×1920 (Reels, Shorts, Stories)
+
 ## What's in it
 
 Six scenes, cut to a shared timeline (`src/timeline.js`) so the music lands on
@@ -25,9 +30,11 @@ matching `site/tokens.css`.
 
 ## The soundtrack
 
-`scripts/make-audio.mjs` synthesises the whole track procedurally — a D-major
-pad progression, sub bass, a bell arpeggio, plus SFX (transition whooshes,
-count-up ticks, an impact boom) — all scheduled against `src/timeline.js`. It
+`scripts/make-audio.mjs` synthesises the whole track procedurally — a **126 BPM
+techno / dance** groove: four-on-the-floor kick, backbeat clap, closed + open
+hats, an offbeat synth bass and a plucky arp lead over a sidechained pad, plus
+SFX (riser + whoosh into each drop, count-up ticks, an impact boom). Everything
+is scheduled against `src/timeline.js`, so the drops land on the scene cuts. It
 writes `public/soundtrack.wav` (Remotion plays it directly; if a full ffmpeg is
 present it is shrunk to MP3).
 
@@ -36,8 +43,9 @@ present it is shrunk to MP3).
 ```bash
 npm install
 npm run audio     # (re)generate public/soundtrack.wav
-npm run studio    # open Remotion Studio to preview/scrub
-npm run render    # render out/startup-india-guide.mp4 (1920×1080, 30fps)
+npm run studio           # open Remotion Studio to preview/scrub
+npm run render           # 16:9  -> out/startup-india-guide.mp4 (1920×1080, 30fps)
+npm run render:vertical  # 9:16  -> out/startup-india-guide-vertical.mp4 (1080×1920)
 ```
 
 ## Numbers

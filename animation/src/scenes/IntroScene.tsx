@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Backdrop, Particles, Tricolor, useReveal, useSceneFade} from '../components';
+import {Backdrop, Particles, Tricolor, useLayout, useReveal, useSceneFade} from '../components';
 import {COLORS} from '../theme';
 import {displayFont, bodyFont, monoFont} from '../fonts';
 import {sceneDuration} from '../timeline';
@@ -8,6 +8,7 @@ import {sceneDuration} from '../timeline';
 export const IntroScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const {fs, portrait} = useLayout();
   const fade = useSceneFade(sceneDuration('intro'));
 
   const kicker = useReveal(6, 14);
@@ -30,20 +31,20 @@ export const IntroScene: React.FC = () => {
           transform: `scale(${scale})`,
         }}
       >
-        <div style={{textAlign: 'center', maxWidth: 1400, padding: 40}}>
+        <div style={{textAlign: 'center', maxWidth: portrait ? 960 : 1400, padding: 40}}>
           <div
             style={{
               ...kicker,
               fontFamily: monoFont,
-              letterSpacing: 6,
-              fontSize: 22,
+              letterSpacing: portrait ? 4 : 6,
+              fontSize: fs(22, 18),
               fontWeight: 600,
               color: COLORS.heroFaint,
               textTransform: 'uppercase',
               marginBottom: 30,
             }}
           >
-            Government of India · June 2026 Playbook
+            {portrait ? 'Government of India · 2026' : 'Government of India · June 2026 Playbook'}
           </div>
 
           <h1
@@ -52,7 +53,7 @@ export const IntroScene: React.FC = () => {
               color: COLORS.heroText,
               fontWeight: 800,
               lineHeight: 1.02,
-              fontSize: 132,
+              fontSize: fs(132, 100),
               margin: 0,
               letterSpacing: -3,
             }}
@@ -62,7 +63,7 @@ export const IntroScene: React.FC = () => {
           </h1>
 
           <div style={{display: 'flex', justifyContent: 'center', margin: '38px 0 30px'}}>
-            <Tricolor width={320} height={10} startFrame={30} />
+            <Tricolor width={portrait ? 260 : 320} height={10} startFrame={30} />
           </div>
 
           <p
@@ -70,14 +71,14 @@ export const IntroScene: React.FC = () => {
               ...sub,
               fontFamily: bodyFont,
               color: COLORS.heroMuted,
-              fontSize: 34,
+              fontSize: fs(34, 29),
               lineHeight: 1.4,
               margin: 0,
               fontWeight: 400,
             }}
           >
             Every central government scheme for Indian startups —
-            <br />
+            {portrait ? ' ' : <br />}
             one searchable, comparable, verified guide.
           </p>
         </div>

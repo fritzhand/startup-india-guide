@@ -6,7 +6,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {Backdrop, useReveal, useSceneFade} from '../components';
+import {Backdrop, useLayout, useReveal, useSceneFade} from '../components';
 import {COLORS, LIFECYCLE} from '../theme';
 import {displayFont, bodyFont, monoFont} from '../fonts';
 import {sceneDuration} from '../timeline';
@@ -20,41 +20,168 @@ const lerpHex = (a: string, b: string, t: number) => {
   return `#${c.map((v) => v.toString(16).padStart(2, '0')).join('')}`;
 };
 
+const Bubble: React.FC<{i: number; on: number; pop: number; tone: string; size: number}> = ({
+  i,
+  on,
+  pop,
+  tone,
+  size,
+}) => (
+  <div
+    style={{
+      width: size,
+      height: size,
+      borderRadius: 999,
+      background: `radial-gradient(circle at 35% 30%, ${tone}, ${tone}bb)`,
+      border: '3px solid rgba(255,255,255,0.85)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: displayFont,
+      fontWeight: 800,
+      fontSize: size * 0.42,
+      color: '#fff',
+      transform: `scale(${interpolate(pop, [0, 1], [0.3, 1])})`,
+      opacity: on,
+      boxShadow: `0 0 34px ${tone}${on > 0.5 ? '99' : '00'}`,
+      flexShrink: 0,
+    }}
+  >
+    {i + 1}
+  </div>
+);
+
 export const LifecycleScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const {fs, portrait} = useLayout();
   const fade = useSceneFade(sceneDuration('lifecycle'));
   const heading = useReveal(2, 22);
 
   const n = LIFECYCLE.length;
-  const trackW = 1500;
-  const gap = trackW / (n - 1);
-  // the connecting line fills across the stages
   const lineP = interpolate(frame, [26, 150], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
+  const headingEl = (
+    <div
+      style={{
+        ...heading,
+        fontFamily: displayFont,
+        color: COLORS.heroText,
+        fontWeight: 700,
+        fontSize: fs(54, 46),
+        marginBottom: portrait ? 70 : 90,
+        textAlign: 'center',
+      }}
+    >
+      A path for <span style={{color: COLORS.saffronSoft}}>every stage</span> of the journey
+    </div>
+  );
+
+  const footer = (
+    <div
+      style={{
+        marginTop: portrait ? 64 : 96,
+        fontFamily: monoFont,
+        fontSize: fs(18, 15),
+        letterSpacing: 2,
+        color: COLORS.heroFaint,
+        textAlign: 'center',
+        opacity: interpolate(frame, [120, 150], [0, 1], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        }),
+      }}
+    >
+      ideation → prototype → seed → growth → market access
+    </div>
+  );
+
+  // ----- vertical pipeline (9:16) -----
+  if (portrait) {
+    const trackH = 1180;
+    const gap = trackH / (n - 1);
+    const bubbleSize = 108;
+    const railX = 120; // rail centre x within the (centred) track container
+    return (
+      <AbsoluteFill style={{opacity: fade}}>
+        <Backdrop glow={COLORS.saffron} />
+        <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+          {headingEl}
+          <div style={{position: 'relative', width: 820, height: trackH}}>
+            <div
+              style={{
+                position: 'absolute',
+                left: railX - 3,
+                top: 0,
+                width: 6,
+                height: '100%',
+                borderRadius: 999,
+                background: 'rgba(255,255,255,0.12)',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                left: railX - 3,
+                top: 0,
+                width: 6,
+                height: `${lineP * 100}%`,
+                borderRadius: 999,
+                background: `linear-gradient(180deg, ${COLORS.saffron}, ${COLORS.green})`,
+                boxShadow: `0 0 22px ${COLORS.saffron}88`,
+              }}
+            />
+            {LIFECYCLE.map((stage, i) => {
+              const tone = lerpHex(COLORS.saffron, COLORS.green, i / (n - 1));
+              const delay = 30 + i * 20;
+              const pop = spring({frame: frame - delay, fps, config: {damping: 170, mass: 0.6}});
+              const on = interpolate(pop, [0, 1], [0, 1]);
+              return (
+                <div
+                  key={stage.title}
+                  style={{
+                    position: 'absolute',
+                    left: railX,
+                    top: i * gap,
+                    transform: 'translateY(-50%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 30,
+                  }}
+                >
+                  <div style={{marginLeft: -bubbleSize / 2, flexShrink: 0}}>
+                    <Bubble i={i} on={on} pop={pop} tone={tone} size={bubbleSize} />
+                  </div>
+                  <div style={{transform: `translateX(${interpolate(pop, [0, 1], [20, 0])}px)`, opacity: on}}>
+                    <div style={{fontFamily: displayFont, fontWeight: 700, fontSize: 42, color: COLORS.heroText}}>
+                      {stage.title}
+                    </div>
+                    <div style={{fontFamily: bodyFont, fontSize: 25, color: COLORS.heroFaint, marginTop: 4}}>
+                      {stage.hint}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {footer}
+        </AbsoluteFill>
+      </AbsoluteFill>
+    );
+  }
+
+  // ----- horizontal pipeline (16:9) -----
+  const trackW = 1500;
+  const gap = trackW / (n - 1);
   return (
     <AbsoluteFill style={{opacity: fade}}>
       <Backdrop glow={COLORS.saffron} />
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
-        <div
-          style={{
-            ...heading,
-            fontFamily: displayFont,
-            color: COLORS.heroText,
-            fontWeight: 700,
-            fontSize: 54,
-            marginBottom: 90,
-            textAlign: 'center',
-          }}
-        >
-          A path for <span style={{color: COLORS.saffronSoft}}>every stage</span> of the journey
-        </div>
-
+        {headingEl}
         <div style={{position: 'relative', width: trackW, height: 220}}>
-          {/* base track */}
           <div
             style={{
               position: 'absolute',
@@ -66,7 +193,6 @@ export const LifecycleScene: React.FC = () => {
               background: 'rgba(255,255,255,0.12)',
             }}
           />
-          {/* filled track */}
           <div
             style={{
               position: 'absolute',
@@ -79,7 +205,6 @@ export const LifecycleScene: React.FC = () => {
               boxShadow: `0 0 22px ${COLORS.saffron}88`,
             }}
           />
-
           {LIFECYCLE.map((stage, i) => {
             const tone = lerpHex(COLORS.saffron, COLORS.green, i / (n - 1));
             const delay = 30 + i * 20;
@@ -97,27 +222,8 @@ export const LifecycleScene: React.FC = () => {
                   width: 240,
                 }}
               >
-                <div
-                  style={{
-                    width: 96,
-                    height: 96,
-                    borderRadius: 999,
-                    margin: '0 auto',
-                    background: `radial-gradient(circle at 35% 30%, ${tone}, ${tone}bb)`,
-                    border: '3px solid rgba(255,255,255,0.85)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontFamily: displayFont,
-                    fontWeight: 800,
-                    fontSize: 40,
-                    color: '#fff',
-                    transform: `scale(${interpolate(pop, [0, 1], [0.3, 1])})`,
-                    opacity: on,
-                    boxShadow: `0 0 34px ${tone}${on > 0.5 ? '99' : '00'}`,
-                  }}
-                >
-                  {i + 1}
+                <div style={{margin: '0 auto', width: 96}}>
+                  <Bubble i={i} on={on} pop={pop} tone={tone} size={96} />
                 </div>
                 <div
                   style={{
@@ -148,22 +254,7 @@ export const LifecycleScene: React.FC = () => {
             );
           })}
         </div>
-
-        <div
-          style={{
-            marginTop: 96,
-            fontFamily: monoFont,
-            fontSize: 18,
-            letterSpacing: 2,
-            color: COLORS.heroFaint,
-            opacity: interpolate(frame, [120, 150], [0, 1], {
-              extrapolateLeft: 'clamp',
-              extrapolateRight: 'clamp',
-            }),
-          }}
-        >
-          ideation → prototype → seed → growth → market access
-        </div>
+        {footer}
       </AbsoluteFill>
     </AbsoluteFill>
   );

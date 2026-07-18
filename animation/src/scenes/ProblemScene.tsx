@@ -6,7 +6,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {Backdrop, useReveal, useSceneFade} from '../components';
+import {Backdrop, useLayout, useReveal, useSceneFade} from '../components';
 import {COLORS} from '../theme';
 import {displayFont, bodyFont, monoFont} from '../fonts';
 import {sceneDuration} from '../timeline';
@@ -195,6 +195,7 @@ const BrowserMock: React.FC = () => {
 
 export const ProblemScene: React.FC = () => {
   const frame = useCurrentFrame();
+  const {fs, portrait} = useLayout();
   const fade = useSceneFade(sceneDuration('problem'));
   const heading = useReveal(2, 20);
   const arrow = interpolate(frame, [30, 46], [0, 1], {
@@ -212,14 +213,23 @@ export const ProblemScene: React.FC = () => {
             fontFamily: displayFont,
             color: COLORS.heroText,
             fontWeight: 700,
-            fontSize: 52,
-            marginBottom: 54,
+            fontSize: fs(52, 44),
+            marginBottom: portrait ? 40 : 54,
             textAlign: 'center',
+            maxWidth: portrait ? 900 : undefined,
+            lineHeight: 1.15,
           }}
         >
           One 107-page PDF, <span style={{color: COLORS.saffronSoft}}>rebuilt to actually use</span>
         </div>
-        <div style={{display: 'flex', alignItems: 'center', gap: 40}}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: portrait ? 24 : 40,
+            flexDirection: portrait ? 'column' : 'row',
+          }}
+        >
           <PdfStack />
           <div
             style={{
@@ -227,10 +237,14 @@ export const ProblemScene: React.FC = () => {
               flexDirection: 'column',
               alignItems: 'center',
               opacity: arrow,
-              transform: `translateX(${interpolate(arrow, [0, 1], [-16, 0])}px)`,
+              transform: portrait
+                ? `translateY(${interpolate(arrow, [0, 1], [-16, 0])}px)`
+                : `translateX(${interpolate(arrow, [0, 1], [-16, 0])}px)`,
             }}
           >
-            <div style={{fontSize: 64, color: COLORS.heroMuted, lineHeight: 1}}>→</div>
+            <div style={{fontSize: 64, color: COLORS.heroMuted, lineHeight: 1}}>
+              {portrait ? '↓' : '→'}
+            </div>
             <div style={{fontFamily: monoFont, color: COLORS.heroFaint, fontSize: 15, marginTop: 8}}>
               extract · verify
             </div>

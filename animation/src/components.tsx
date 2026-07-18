@@ -9,6 +9,22 @@ import {
 } from 'remotion';
 import {COLORS, HERO_BG} from './theme';
 
+// Orientation helper: the same scenes render in both 16:9 and 9:16, so each
+// one reads this to switch between side-by-side and stacked layouts and to
+// scale type for the narrower vertical frame.
+export const useLayout = () => {
+  const {width, height} = useVideoConfig();
+  const portrait = height > width;
+  return {
+    width,
+    height,
+    portrait,
+    // a gentle type scale for the 1080-wide vertical frame
+    fs: (landscape: number, vertical?: number) =>
+      portrait ? vertical ?? landscape * 0.82 : landscape,
+  };
+};
+
 // Full-frame navy hero backdrop with a slow drifting glow + vignette. Cheap to
 // render (a couple of gradients), gives the flat scenes some depth.
 export const Backdrop: React.FC<{glow?: string}> = ({glow = COLORS.blue}) => {

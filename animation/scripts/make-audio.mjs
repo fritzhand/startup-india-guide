@@ -1,11 +1,13 @@
-// Procedural soundtrack for the Startup Schemes Playbook film.
+// Procedural soundtrack for the Startup Schemes Playbook film — techno / dance.
 //
-// No third-party samples: a warm D-major pad progression, a sub bass, a bell
-// arpeggio carrying the melody, plus SFX (whoosh transitions, count-up ticks,
-// an impact boom) all scheduled against the SAME scene timeline the video uses
-// (../src/timeline.js), so picture and sound land on the same frames.
+// No third-party samples: a 126 BPM four-on-the-floor kit (kick, clap, closed +
+// open hats), an offbeat synth bass, a warm sidechained pad, a plucky arp lead,
+// plus SFX (riser + whoosh transitions, count-up ticks, an impact boom). Drums
+// run continuously like a DJ set; the arrangement (filter/energy) is keyed to
+// the SAME scene timeline the video uses (../src/timeline.js) so drops land on
+// the scene cuts.
 //
-// Renders a 16-bit stereo WAV, then encodes it to a small MP3 with ffmpeg.
+// Renders a 16-bit stereo WAV, then encodes to MP3 if a capable ffmpeg exists.
 
 import {execFileSync} from 'node:child_process';
 import {existsSync, mkdirSync, writeFileSync, rmSync} from 'node:fs';
@@ -23,8 +25,13 @@ const DURATION = TOTAL_FRAMES / FPS; // seconds, exactly matches the video
 const N = Math.ceil(DURATION * SR);
 const L = new Float32Array(N);
 const R = new Float32Array(N);
-
 const TAU = Math.PI * 2;
+
+// tempo
+const BPM = 126;
+const BEAT = 60 / BPM; // 0.4762s
+const EIGHTH = BEAT / 2;
+const SIXTEENTH = BEAT / 4;
 
 // Deterministic noise so the render is reproducible.
 let seed = 0x1a2b3c4d;
@@ -35,173 +42,304 @@ const rand = () => {
   return ((seed >>> 0) / 0xffffffff) * 2 - 1;
 };
 
-// ---- notes -----------------------------------------------------------------
-const NOTE = {
-  D2: 73.42, G2: 98.0, A2: 110.0, B2: 123.47, D3: 146.83, E3: 164.81,
-  Fs3: 185.0, G3: 196.0, A3: 220.0, B3: 246.94, Cs4: 277.18, D4: 293.66,
-  E4: 329.63, Fs4: 369.99, G4: 392.0, A4: 440.0, B4: 493.88, Cs5: 554.37,
-  D5: 587.33, E5: 659.25, Fs5: 739.99, A5: 880.0,
-};
-
-// pad voicings + bass root + a bell scale (ascending) per chord
-const CHORDS = {
-  D: {pad: [NOTE.D3, NOTE.Fs3, NOTE.A3, NOTE.D4], bass: NOTE.D2, bells: [NOTE.D4, NOTE.Fs4, NOTE.A4, NOTE.D5, NOTE.Fs5]},
-  A: {pad: [NOTE.A3, NOTE.Cs4, NOTE.E4, NOTE.A4], bass: NOTE.A2, bells: [NOTE.E4, NOTE.A4, NOTE.Cs5, NOTE.E5, NOTE.A5]},
-  Bm: {pad: [NOTE.B3, NOTE.D4, NOTE.Fs4, NOTE.B4], bass: NOTE.B2, bells: [NOTE.D4, NOTE.Fs4, NOTE.B4, NOTE.D5, NOTE.Fs5]},
-  G: {pad: [NOTE.G3, NOTE.B3, NOTE.D4, NOTE.G4], bass: NOTE.G2, bells: [NOTE.D4, NOTE.G4, NOTE.B4, NOTE.D5, NOTE.G4]},
-};
-
-// Chord schedule — arranged to follow the emotional arc of the scenes.
-const PROG = [
-  {t: 0.0, chord: 'D'},   // intro — home, warm
-  {t: 4.8, chord: 'Bm'},  // problem — a little tension
-  {t: 9.4, chord: 'G'},   // stats — lift
-  {t: 12.0, chord: 'D'},
-  {t: 14.8, chord: 'A'},  // stats — building
-  {t: 17.6, chord: 'A'},  // lifecycle
-  {t: 20.6, chord: 'Bm'},
-  {t: 23.6, chord: 'G'},  // finder
-  {t: 27.1, chord: 'D'},
-  {t: 30.6, chord: 'A'},  // outro — build
-  {t: 32.4, chord: 'D'},  // resolve home
-];
-
 const add = (buf, i, v) => {
   if (i >= 0 && i < N) buf[i] += v;
 };
+const addLR = (i, v, pan = 0) => {
+  add(L, i, v * (1 - Math.max(0, pan)));
+  add(R, i, v * (1 + Math.min(0, pan)));
+};
 
-// ---- pad + bass ------------------------------------------------------------
-// Each segment fades in/out so neighbouring chords crossfade cleanly.
-for (let s = 0; s < PROG.length; s++) {
-  const seg = PROG[s];
-  const c = CHORDS[seg.chord];
-  const t0 = seg.t;
-  const t1 = s + 1 < PROG.length ? PROG[s + 1].t : DURATION;
-  const segDur = t1 - t0;
-  const fade = Math.min(0.6, segDur / 2);
-  const i0 = Math.floor(t0 * SR);
-  const i1 = Math.min(N, Math.ceil((t1 + fade) * SR));
+// ---- notes -----------------------------------------------------------------
+const NOTE = {
+  D1: 36.71, A1: 55.0, B1: 61.74, G1: 49.0,
+  D2: 73.42, G2: 98.0, A2: 110.0, B2: 123.47,
+  D3: 146.83, E3: 164.81, Fs3: 185.0, G3: 196.0, A3: 220.0, B3: 246.94,
+  Cs4: 277.18, D4: 293.66, E4: 329.63, Fs4: 369.99, G4: 392.0, A4: 440.0,
+  B4: 493.88, Cs5: 554.37, D5: 587.33, E5: 659.25, Fs5: 739.99, A5: 880.0,
+};
 
-  for (let i = i0; i < i1; i++) {
-    const t = i / SR;
-    const local = t - t0;
-    // crossfading envelope
-    let env = 1;
-    if (local < fade) env = local / fade;
-    else if (t > t1 - fade) env = Math.max(0, (t1 + fade - t) / (2 * fade));
-    if (env <= 0) continue;
-    // slow breathing tremolo
-    const trem = 0.85 + 0.15 * Math.sin(TAU * 0.12 * t);
+const CHORDS = {
+  D: {pad: [NOTE.D3, NOTE.Fs3, NOTE.A3], bass: NOTE.D2, sub: NOTE.D1, arp: [NOTE.D4, NOTE.Fs4, NOTE.A4, NOTE.D5]},
+  A: {pad: [NOTE.A3, NOTE.Cs4, NOTE.E4], bass: NOTE.A1, sub: NOTE.A1, arp: [NOTE.E4, NOTE.A4, NOTE.Cs5, NOTE.E5]},
+  Bm: {pad: [NOTE.B3, NOTE.D4, NOTE.Fs4], bass: NOTE.B1, sub: NOTE.B1, arp: [NOTE.Fs4, NOTE.B4, NOTE.D5, NOTE.Fs5]},
+  G: {pad: [NOTE.G3, NOTE.B3, NOTE.D4], bass: NOTE.G1, sub: NOTE.G1, arp: [NOTE.D4, NOTE.G4, NOTE.B4, NOTE.D5]},
+};
 
-    // pad: detuned stereo, soft harmonics
-    let padL = 0;
-    let padR = 0;
-    for (const f of c.pad) {
-      const a = TAU * f * t;
-      const aDetune = TAU * f * 1.004 * t;
-      const voice =
-        Math.sin(a) + 0.22 * Math.sin(2 * a) + 0.1 * Math.sin(3 * a);
-      const voiceD =
-        Math.sin(aDetune) + 0.22 * Math.sin(2 * aDetune);
-      padL += voice;
-      padR += voiceD;
-    }
-    padL /= c.pad.length;
-    padR /= c.pad.length;
-    const padGain = 0.14 * env * trem;
-    add(L, i, padL * padGain);
-    add(R, i, padR * padGain);
-
-    // sub bass: root, one octave down, with 2nd harmonic
-    const bf = c.bass;
-    const ab = TAU * bf * t;
-    const bass = (Math.sin(ab) + 0.3 * Math.sin(2 * ab)) * 0.16 * env;
-    add(L, i, bass);
-    add(R, i, bass);
-  }
-}
-
-// ---- bell arpeggio (the melody) --------------------------------------------
-// Eighth notes at ~100 BPM. Amplitude ducks under the intro, opens up for the
-// stats/outro. Alternating pan for width.
+// Chord schedule — follows the emotional arc of the scenes.
+const PROG = [
+  {t: 0.0, chord: 'D'},
+  {t: 4.8, chord: 'Bm'},
+  {t: 9.4, chord: 'G'},
+  {t: 12.0, chord: 'D'},
+  {t: 14.8, chord: 'A'},
+  {t: 17.6, chord: 'A'},
+  {t: 20.6, chord: 'Bm'},
+  {t: 23.6, chord: 'G'},
+  {t: 27.1, chord: 'D'},
+  {t: 30.6, chord: 'A'},
+  {t: 32.4, chord: 'D'},
+];
 const chordAt = (t) => {
   let cur = PROG[0];
   for (const p of PROG) if (p.t <= t + 1e-6) cur = p;
   return CHORDS[cur.chord];
 };
-const STEP = 0.3; // seconds per bell
-let step = 0;
-for (let t = 1.2; t < DURATION - 1.0; t += STEP, step++) {
-  const c = chordAt(t);
-  const bells = c.bells;
-  // a gently rising/falling contour rather than a straight run
-  const contour = [0, 1, 2, 3, 4, 3, 2, 1];
-  const idx = contour[step % contour.length] % bells.length;
-  const f = bells[idx];
-  // dynamics: quieter in intro, brighter during stats + outro
-  let vel = 0.5;
-  if (t >= startSeconds('stats') && t < startSeconds('lifecycle')) vel = 0.8;
-  if (t >= startSeconds('outro')) vel = 0.9;
-  const accent = step % 4 === 0 ? 1.15 : 0.9;
-  const amp = 0.15 * vel * accent;
-  const pan = step % 2 === 0 ? -0.4 : 0.4; // -1 left .. +1 right
-  const gL = amp * (1 - Math.max(0, pan));
-  const gR = amp * (1 + Math.min(0, pan));
-  const dur = 0.9;
-  const i0 = Math.floor(t * SR);
-  const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
+
+// ---- energy / arrangement --------------------------------------------------
+// Drums fade in over the intro, drop to full at the first scene cut, then run.
+// A brief "beat-out" the beat before the outro boom makes the drop hit harder.
+const outroT = startSeconds('outro');
+const energyAt = (t) => {
+  let e = Math.min(1, Math.max(0, (t - 1.0) / 3.2)); // intro build
+  if (t >= 4.6 && t < 4.8) e = 0.0; // tiny gap before the first drop
+  if (t >= outroT - BEAT * 1.5 && t < outroT + 0.05) e = 0.0; // beat-out into boom
+  return e;
+};
+
+// Sidechain pump: pad/sub duck hard on each kick and recover across the beat.
+const duckAt = (t, energy) => {
+  const ph = (t % BEAT) / BEAT;
+  const base = 0.32 + 0.68 * Math.min(1, ph / 0.42);
+  return 1 - energy * (1 - base);
+};
+
+// ---- pad + sub (sidechained bed) -------------------------------------------
+for (let s = 0; s < PROG.length; s++) {
+  const seg = PROG[s];
+  const c = CHORDS[seg.chord];
+  const t0 = seg.t;
+  const t1 = s + 1 < PROG.length ? PROG[s + 1].t : DURATION;
+  const fade = Math.min(0.5, (t1 - t0) / 2);
+  const i0 = Math.floor(t0 * SR);
+  const i1 = Math.min(N, Math.ceil((t1 + fade) * SR));
   for (let i = i0; i < i1; i++) {
-    const lt = (i - i0) / SR;
-    const decay = Math.exp(-lt / 0.28);
-    const a = TAU * f * (i / SR);
-    const tone =
-      (Math.sin(a) + 0.5 * Math.sin(2 * a) + 0.25 * Math.sin(3 * a)) * decay;
-    add(L, i, tone * gL);
-    add(R, i, tone * gR);
+    const t = i / SR;
+    const local = t - t0;
+    let env = 1;
+    if (local < fade) env = local / fade;
+    else if (t > t1 - fade) env = Math.max(0, (t1 + fade - t) / (2 * fade));
+    if (env <= 0) continue;
+    const energy = energyAt(t);
+    const duck = duckAt(t, energy);
+
+    let pad = 0;
+    let padR = 0;
+    for (const f of c.pad) {
+      const a = TAU * f * t;
+      const aD = TAU * f * 1.005 * t;
+      pad += Math.sin(a) + 0.18 * Math.sin(2 * a);
+      padR += Math.sin(aD) + 0.18 * Math.sin(2 * aD);
+    }
+    pad /= c.pad.length;
+    padR /= c.pad.length;
+    const pg = 0.1 * env * duck;
+    add(L, i, pad * pg);
+    add(R, i, padR * pg);
+
+    // deep sub, also ducked, gives the track weight under the kick's tail
+    const sf = c.sub;
+    const sub = Math.sin(TAU * sf * t) * 0.12 * env * duck;
+    add(L, i, sub);
+    add(R, i, sub);
   }
 }
 
-// ---- SFX helpers -----------------------------------------------------------
-const whoosh = (center, gain = 0.22) => {
-  // band-limited noise that opens then closes — a soft transition swoosh
-  const dur = 0.85;
-  const t0 = center - 0.45;
-  const i0 = Math.floor(t0 * SR);
-  const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
-  let lp = 0;
-  for (let i = Math.max(0, i0); i < i1; i++) {
-    const lt = (i - i0) / SR;
-    const p = lt / dur; // 0..1
-    const env = Math.sin(Math.PI * p) ** 1.5; // rise and fall
-    // sweep the lowpass cutoff up then down for a "swish"
-    const cutoff = 0.03 + 0.25 * Math.sin(Math.PI * p);
-    lp += cutoff * (rand() - lp);
-    add(L, i, lp * env * gain);
-    add(R, i, lp * env * gain * 0.92);
-  }
-};
-
-const tick = (t, freq = 1650, gain = 0.09) => {
-  const dur = 0.06;
+// ---- drum voices -----------------------------------------------------------
+const kick = (t, gain) => {
+  if (gain <= 0.001) return;
+  const dur = 0.34;
   const i0 = Math.floor(t * SR);
   const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
   for (let i = i0; i < i1; i++) {
     const lt = (i - i0) / SR;
-    const decay = Math.exp(-lt / 0.012);
-    const v = Math.sin(TAU * freq * (i / SR)) * decay * gain;
+    const amp = Math.exp(-lt / 0.13);
+    const pitch = 48 + 95 * Math.exp(-lt / 0.03); // 143Hz -> 48Hz
+    const click = lt < 0.006 ? (1 - lt / 0.006) * 0.6 : 0;
+    const v = (Math.sin(TAU * pitch * lt) * amp + click) * gain;
     add(L, i, v);
     add(R, i, v);
   }
 };
 
-const boom = (t, freq = 55, gain = 0.3) => {
-  const dur = 1.4;
+const clap = (t, gain) => {
+  if (gain <= 0.001) return;
+  const dur = 0.18;
+  const i0 = Math.floor(t * SR);
+  const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
+  let bp = 0;
+  let prev = 0;
+  for (let i = i0; i < i1; i++) {
+    const lt = (i - i0) / SR;
+    // 3 quick bursts -> clap texture
+    const burst =
+      (lt < 0.01 ? 1 : 0) +
+      (lt > 0.012 && lt < 0.022 ? 0.9 : 0) +
+      (lt > 0.024 && lt < 0.034 ? 0.8 : 0);
+    const body = Math.exp(-lt / 0.05);
+    const nz = rand();
+    // crude bandpass (difference of one-poles) centred ~1.8kHz
+    bp += 0.35 * (nz - bp);
+    const hp = nz - prev;
+    prev = nz;
+    const v = (hp * 0.6 + bp * 0.4) * (burst + body) * 0.5 * gain;
+    add(L, i, v);
+    add(R, i, v * 0.95);
+  }
+};
+
+const hat = (t, gain, open) => {
+  if (gain <= 0.001) return;
+  const dur = open ? 0.16 : 0.035;
+  const i0 = Math.floor(t * SR);
+  const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
+  let prev = 0;
+  for (let i = i0; i < i1; i++) {
+    const lt = (i - i0) / SR;
+    const amp = Math.exp(-lt / (open ? 0.05 : 0.008));
+    const nz = rand();
+    const hp = nz - prev; // high-pass -> metallic
+    prev = nz;
+    const v = hp * amp * gain;
+    add(L, i, v * 0.9);
+    add(R, i, v);
+  }
+};
+
+// plucky offbeat synth bass (saw-ish, lowpass decay)
+const bass = (t, freq, gain) => {
+  if (gain <= 0.001) return;
+  const dur = EIGHTH * 0.95;
+  const i0 = Math.floor(t * SR);
+  const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
+  let lp = 0;
+  for (let i = i0; i < i1; i++) {
+    const lt = (i - i0) / SR;
+    const env = Math.min(1, lt / 0.004) * Math.exp(-lt / 0.16);
+    // saw via summed harmonics
+    let saw = 0;
+    for (let h = 1; h <= 6; h++) saw += Math.sin(TAU * freq * h * lt) / h;
+    lp += 0.28 * (saw - lp); // lowpass for warmth
+    const v = lp * env * gain;
+    add(L, i, v);
+    add(R, i, v);
+  }
+};
+
+// plucky lead (detuned saw, short) for the arp melody
+const pluck = (t, freq, gain, pan) => {
+  if (gain <= 0.001) return;
+  const dur = 0.42;
+  const i0 = Math.floor(t * SR);
+  const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
+  let lp = 0;
+  for (let i = i0; i < i1; i++) {
+    const lt = (i - i0) / SR;
+    const env = Math.min(1, lt / 0.003) * Math.exp(-lt / 0.14);
+    let saw = 0;
+    for (let h = 1; h <= 5; h++) {
+      saw += Math.sin(TAU * freq * h * lt) / h;
+      saw += Math.sin(TAU * freq * 1.006 * h * lt) / h; // detune
+    }
+    lp += 0.4 * (saw - lp);
+    addLR(i, lp * env * gain * 0.5, pan);
+  }
+};
+
+// ---- schedule the groove ---------------------------------------------------
+const nBeats = Math.floor(DURATION / BEAT) + 1;
+let arpStep = 0;
+for (let b = 0; b < nBeats; b++) {
+  const t = b * BEAT;
+  const energy = energyAt(t);
+  const beatInBar = b % 4;
+
+  // kick — four on the floor
+  kick(t, 0.95 * (0.25 + 0.75 * energy));
+
+  // clap/snare on the backbeat (2 and 4)
+  if (beatInBar === 1 || beatInBar === 3) clap(t, 0.4 * energy);
+
+  // hats: closed on every 8th, open on the offbeat "and"
+  hat(t, 0.09 * energy, false);
+  hat(t + EIGHTH, 0.16 * energy, true); // open hat offbeat = classic house
+  // extra 16th closed hats once the track is going
+  if (energy > 0.6) {
+    hat(t + SIXTEENTH, 0.05 * energy, false);
+    hat(t + SIXTEENTH * 3, 0.06 * energy, false);
+  }
+
+  // bass on the offbeats (between the kicks) — the driving pulse
+  const c = chordAt(t + EIGHTH);
+  bass(t + EIGHTH, c.bass, 0.5 * energy);
+  if (energy > 0.7) bass(t + SIXTEENTH * 3, c.bass, 0.22 * energy);
+
+  // pluck arp lead — 8th notes, brighter in the busy scenes
+  const lead = energy > 0.45;
+  if (lead) {
+    for (const off of [0, EIGHTH]) {
+      const cc = chordAt(t + off);
+      const contour = [0, 1, 2, 3, 2, 1];
+      const idx = contour[arpStep % contour.length] % cc.arp.length;
+      const brighten = t >= startSeconds('stats') ? 1.0 : 0.7;
+      pluck(t + off, cc.arp[idx], 0.2 * energy * brighten, arpStep % 2 ? 0.35 : -0.35);
+      arpStep++;
+    }
+  }
+}
+
+// ---- SFX -------------------------------------------------------------------
+const riser = (endT, dur = 1.6, gain = 0.16) => {
+  // rising filtered noise + pitch that builds into a drop
+  const t0 = endT - dur;
+  const i0 = Math.max(0, Math.floor(t0 * SR));
+  const i1 = Math.min(N, Math.ceil(endT * SR));
+  let lp = 0;
+  for (let i = i0; i < i1; i++) {
+    const p = (i - i0) / (i1 - i0); // 0..1
+    const env = p * p;
+    const cutoff = 0.02 + 0.5 * p;
+    lp += cutoff * (rand() - lp);
+    const v = lp * env * gain;
+    add(L, i, v);
+    add(R, i, v * 0.92);
+  }
+};
+
+const whoosh = (center, gain = 0.2) => {
+  const dur = 0.7;
+  const i0 = Math.max(0, Math.floor((center - 0.4) * SR));
+  const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
+  let lp = 0;
+  for (let i = i0; i < i1; i++) {
+    const p = (i - i0) / (i1 - i0);
+    const env = Math.sin(Math.PI * p) ** 1.5;
+    const cutoff = 0.04 + 0.28 * Math.sin(Math.PI * p);
+    lp += cutoff * (rand() - lp);
+    add(L, i, lp * env * gain);
+    add(R, i, lp * env * gain * 0.9);
+  }
+};
+
+const tick = (t, freq = 1650, gain = 0.07) => {
+  const dur = 0.05;
   const i0 = Math.floor(t * SR);
   const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
   for (let i = i0; i < i1; i++) {
     const lt = (i - i0) / SR;
-    const decay = Math.exp(-lt / 0.5);
-    // slight downward pitch drop for a cinematic hit
+    const v = Math.sin(TAU * freq * (i / SR)) * Math.exp(-lt / 0.011) * gain;
+    add(L, i, v);
+    add(R, i, v);
+  }
+};
+
+const boom = (t, freq = 50, gain = 0.32) => {
+  const dur = 1.6;
+  const i0 = Math.floor(t * SR);
+  const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
+  for (let i = i0; i < i1; i++) {
+    const lt = (i - i0) / SR;
+    const decay = Math.exp(-lt / 0.55);
     const f = freq * (1 + 0.4 * Math.exp(-lt / 0.15));
     const v = Math.sin(TAU * f * lt) * decay * gain;
     add(L, i, v);
@@ -209,51 +347,35 @@ const boom = (t, freq = 55, gain = 0.3) => {
   }
 };
 
-// transitions between scenes
-['problem', 'stats', 'lifecycle', 'finder', 'outro'].forEach((name) =>
-  whoosh(startSeconds(name)),
-);
+// risers + whooshes into each scene drop
+['problem', 'stats', 'lifecycle', 'finder', 'outro'].forEach((name) => {
+  const t = startSeconds(name);
+  riser(t);
+  whoosh(t);
+});
 
 // count-up ticks across the stats scene
 const statsStart = startSeconds('stats');
 const statsEnd = startSeconds('lifecycle');
-for (let t = statsStart + 0.25; t < statsEnd - 0.3; t += 0.42) {
-  tick(t);
-}
+for (let t = statsStart + 0.25; t < statsEnd - 0.3; t += 0.42) tick(t);
 
-// cinematic impact into the outro, then a resolving bell flourish
-boom(startSeconds('outro'));
+// cinematic impact into the outro + a resolving pluck flourish
+boom(outroT);
 const flourish = [NOTE.D5, NOTE.Fs5, NOTE.A5];
-flourish.forEach((f, k) => {
-  const t = startSeconds('outro') + 1.9 + k * 0.16;
-  const dur = 1.2;
-  const i0 = Math.floor(t * SR);
-  const i1 = Math.min(N, i0 + Math.ceil(dur * SR));
-  for (let i = i0; i < i1; i++) {
-    const lt = (i - i0) / SR;
-    const decay = Math.exp(-lt / 0.4);
-    const a = TAU * f * (i / SR);
-    const tone = (Math.sin(a) + 0.4 * Math.sin(2 * a)) * decay * 0.16;
-    add(L, i, tone);
-    add(R, i, tone);
-  }
-});
+flourish.forEach((f, k) => pluck(outroT + 1.9 + k * 0.14, f, 0.2, 0));
 
-// ---- master: normalise, gentle soft-clip, global fades ---------------------
+// ---- master: normalise, soft-clip, global fades ----------------------------
 let peak = 0;
+for (let i = 0; i < N; i++) peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
+const norm = peak > 0 ? 0.95 / peak : 1;
+const fadeIn = 0.25 * SR;
+const fadeOut = 1.4 * SR;
 for (let i = 0; i < N; i++) {
-  peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
-}
-const norm = peak > 0 ? 0.92 / peak : 1;
-const fadeIn = 0.4 * SR;
-const fadeOut = 1.2 * SR;
-for (let i = 0; i < N; i++) {
-  let gain = norm;
-  if (i < fadeIn) gain *= i / fadeIn;
-  if (i > N - fadeOut) gain *= Math.max(0, (N - i) / fadeOut);
-  // tanh soft clip keeps peaks musical
-  L[i] = Math.tanh(L[i] * gain * 1.05);
-  R[i] = Math.tanh(R[i] * gain * 1.05);
+  let g = norm;
+  if (i < fadeIn) g *= i / fadeIn;
+  if (i > N - fadeOut) g *= Math.max(0, (N - i) / fadeOut);
+  L[i] = Math.tanh(L[i] * g * 1.1);
+  R[i] = Math.tanh(R[i] * g * 1.1);
 }
 
 // ---- write WAV (16-bit PCM stereo) -----------------------------------------
@@ -265,8 +387,8 @@ buf.writeUInt32LE(36 + dataSize, 4);
 buf.write('WAVE', 8);
 buf.write('fmt ', 12);
 buf.writeUInt32LE(16, 16);
-buf.writeUInt16LE(1, 20); // PCM
-buf.writeUInt16LE(2, 22); // stereo
+buf.writeUInt16LE(1, 20);
+buf.writeUInt16LE(2, 22);
 buf.writeUInt32LE(SR, 24);
 buf.writeUInt32LE(SR * 2 * bytesPerSample, 28);
 buf.writeUInt16LE(2 * bytesPerSample, 32);
@@ -282,14 +404,9 @@ for (let i = 0; i < N; i++) {
 }
 if (!existsSync(OUT_DIR)) mkdirSync(OUT_DIR, {recursive: true});
 writeFileSync(WAV_PATH, buf);
-console.log(`WAV written: ${WAV_PATH} (${(buf.length / 1e6).toFixed(2)} MB, ${DURATION.toFixed(2)}s)`);
+console.log(`WAV written: ${WAV_PATH} (${(buf.length / 1e6).toFixed(2)} MB, ${DURATION.toFixed(2)}s, ${BPM} BPM)`);
 
 // ---- optionally encode to MP3 ----------------------------------------------
-// Remotion decodes WAV natively (Chromium) and muxes audio with its own
-// compositor, so an MP3 is a nice-to-have, not a requirement. If a fully
-// featured ffmpeg with an MP3 encoder is on PATH we shrink the asset; otherwise
-// we keep the WAV. (The Playwright ffmpeg in this image is --disable-everything
-// and can't do it, which is fine — the video references SOUNDTRACK below.)
 const hasMp3Encoder = (bin) => {
   try {
     const out = execFileSync(bin, ['-hide_banner', '-encoders'], {
@@ -317,7 +434,6 @@ if (capable) {
   console.log('No MP3-capable ffmpeg found — keeping WAV (Remotion plays it directly).');
 }
 
-// Record which asset the video should load, so src stays in sync with reality.
 writeFileSync(
   resolve(__dirname, '..', 'src', 'audio-file.ts'),
   `// Generated by scripts/make-audio.mjs — do not edit.\nexport const SOUNDTRACK = '${chosen}';\n`,

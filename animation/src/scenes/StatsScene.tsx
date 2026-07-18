@@ -7,7 +7,7 @@ import {
   useVideoConfig,
   Easing,
 } from 'remotion';
-import {Backdrop, useReveal, useSceneFade} from '../components';
+import {Backdrop, useLayout, useReveal, useSceneFade} from '../components';
 import {COLORS, STATS} from '../theme';
 import {displayFont, bodyFont} from '../fonts';
 import {sceneDuration} from '../timeline';
@@ -91,6 +91,7 @@ const StatCard: React.FC<{stat: (typeof STATS)[number]; index: number}> = ({
 };
 
 export const StatsScene: React.FC = () => {
+  const {fs, portrait} = useLayout();
   const fade = useSceneFade(sceneDuration('stats'));
   const heading = useReveal(2, 22);
 
@@ -104,8 +105,8 @@ export const StatsScene: React.FC = () => {
             fontFamily: displayFont,
             color: COLORS.heroText,
             fontWeight: 700,
-            fontSize: 54,
-            marginBottom: 48,
+            fontSize: fs(54, 46),
+            marginBottom: portrait ? 40 : 48,
             textAlign: 'center',
           }}
         >
@@ -114,8 +115,8 @@ export const StatsScene: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 400px)',
-            gap: 26,
+            gridTemplateColumns: portrait ? 'repeat(2, 460px)' : 'repeat(3, 400px)',
+            gap: portrait ? 22 : 26,
           }}
         >
           {STATS.map((s, i) => (

@@ -5,6 +5,9 @@
 export const FPS = 30;
 export const WIDTH = 1920;
 export const HEIGHT = 1080;
+// 9:16 vertical (Reels / Shorts / Stories)
+export const V_WIDTH = 1080;
+export const V_HEIGHT = 1920;
 
 // Ordered scenes. durationInFrames drives both the <Series> and the music.
 export const SCENES = [

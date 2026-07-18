@@ -6,7 +6,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {Backdrop, useReveal, useSceneFade} from '../components';
+import {Backdrop, useLayout, useReveal, useSceneFade} from '../components';
 import {COLORS, FINDER_QUESTIONS} from '../theme';
 import {displayFont, bodyFont, monoFont} from '../fonts';
 import {sceneDuration} from '../timeline';
@@ -25,6 +25,8 @@ const MATCHES = [
 export const FinderScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const {fs, portrait} = useLayout();
+  const cardW = portrait ? 960 : 1120;
   const fade = useSceneFade(sceneDuration('finder'));
   const heading = useReveal(2, 22);
 
@@ -46,9 +48,10 @@ export const FinderScene: React.FC = () => {
             fontFamily: displayFont,
             color: COLORS.heroText,
             fontWeight: 700,
-            fontSize: 54,
+            fontSize: fs(54, 44),
             marginBottom: 44,
             textAlign: 'center',
+            maxWidth: portrait ? 900 : undefined,
           }}
         >
           Answer <span style={{color: COLORS.blueSoft}}>5 questions</span>, get your shortlist
@@ -57,11 +60,11 @@ export const FinderScene: React.FC = () => {
         {/* Question card */}
         <div
           style={{
-            width: 1120,
+            width: cardW,
             background: 'rgba(255,255,255,0.06)',
             border: '1px solid rgba(255,255,255,0.12)',
             borderRadius: 24,
-            padding: '40px 48px',
+            padding: portrait ? '36px 40px' : '40px 48px',
             boxShadow: '0 30px 70px -34px rgba(0,0,0,0.85)',
           }}
         >
@@ -81,10 +84,10 @@ export const FinderScene: React.FC = () => {
             style={{
               fontFamily: displayFont,
               fontWeight: 700,
-              fontSize: 46,
+              fontSize: fs(46, 40),
               lineHeight: 1.15,
               color: COLORS.heroText,
-              minHeight: 108,
+              minHeight: portrait ? 140 : 108,
               opacity: interpolate(qEnter, [0, 1], [0, 1]),
               transform: `translateY(${interpolate(qEnter, [0, 1], [18, 0])}px)`,
             }}
@@ -125,7 +128,7 @@ export const FinderScene: React.FC = () => {
         </div>
 
         {/* Accumulating matches */}
-        <div style={{marginTop: 40, textAlign: 'center', width: 1120}}>
+        <div style={{marginTop: 40, textAlign: 'center', width: cardW}}>
           <div
             style={{
               fontFamily: bodyFont,
