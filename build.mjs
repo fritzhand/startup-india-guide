@@ -410,6 +410,7 @@ const write = (rel, html) => { mkdirSync(dirname(join(OUT, rel)), { recursive: t
 <div class="stats">
   <div class="stat"><div class="n">${schemes.length}</div><div class="l">Schemes documented in full</div></div>
   <div class="stat"><div class="n">${esc(about.stats?.ministries || "35+")}</div><div class="l">Ministries, departments &amp; PSUs</div></div>
+  <a class="stat" href="incubators.html"><div class="n">${incubators.incubators.length}</div><div class="l">Incubators mapped nationwide</div></a>
   <div class="stat"><div class="n">6</div><div class="l">Types of support</div></div>
   <div class="stat"><div class="n">5</div><div class="l">Lifecycle stages covered</div></div>
 </div>
