@@ -44,6 +44,7 @@ Four views from the [live site](https://fritzhand.github.io/startup-india-guide/
 | [Compare](https://fritzhand.github.io/startup-india-guide/compare.html) | Up to three schemes side by side |
 | [Lifecycle Map](https://fritzhand.github.io/startup-india-guide/lifecycle.html) | Ideation → prototype → seed → growth → market access |
 | [What do you need?](https://fritzhand.github.io/startup-india-guide/needs.html) | From a need (grant / loan / lab / buyers / IP) to the schemes that provide it |
+| [State & UT schemes](https://fritzhand.github.io/startup-india-guide/state-schemes.html) | 320+ state-level startup schemes & incentives (seed grants, subsidies, reimbursements, procurement) across every state and UT — straight from each official state startup policy, by-state / all-schemes / map views. Kept separate from the central schemes |
 | [Incubators directory](https://fritzhand.github.io/startup-india-guide/incubators.html) | 220+ technology business incubators, Atal Incubation Centres & startup hubs on an interactive India map (choropleth + city markers) — searchable, filterable, cards / table / state-wise views, with locations, websites and contacts |
 | [PSU & regulators](https://fritzhand.github.io/startup-india-guide/psu.html) · [States & UTs](https://fritzhand.github.io/startup-india-guide/states.html) | 17 PSU/regulator programs; every state startup portal |
 | [Glossary](https://fritzhand.github.io/startup-india-guide/glossary.html) · [About](https://fritzhand.github.io/startup-india-guide/about.html) | Definitions, abbreviations, disclaimer, method |
@@ -62,7 +63,7 @@ site/tokens.css + site.css + site.js            the skin (PDF-sampled palette) +
       │
       │  node build.mjs                         zero dependencies, fails loudly
       ▼
-docs/  →  GitHub Pages                          81 static pages, ⌘K search, no runtime deps
+docs/  →  GitHub Pages                          82 static pages, ⌘K search, no runtime deps
 ```
 
 1. **Extract** — every PDF page rendered to text *and* image; scheme one-pagers parsed to structured JSON; hyperlinks taken from the PDF's link annotations, never retyped.
@@ -92,8 +93,9 @@ startup-india-guide/
 │   ├── decision-tree.json   # the 5-question finder
 │   ├── lifecycle.json       # stage → schemes map
 │   ├── needs-index.json     # need → schemes map
+│   ├── state-schemes.json   # 320+ state/UT startup schemes & incentives, by state
 │   ├── incubators.json      # 220+ incubators: location, type, sectors, website, contacts, lat/lng
-│   ├── india-map.json       # projected + simplified India state polygons (see scripts/) for the map
+│   ├── india-map.json       # projected + simplified India state polygons (see scripts/) for the maps
 │   ├── psu.json · states.json · glossary.json · about.json
 │   └── aliases.json         # printed-name → slug overrides for cross-references
 ├── site/                    # the engine — consumed by build.mjs

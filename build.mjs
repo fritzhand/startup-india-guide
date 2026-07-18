@@ -53,6 +53,7 @@ const states = readJSON("states.json");
 const glossary = readJSON("glossary.json");
 const incubators = readJSON("incubators.json");
 const indiaMap = readJSON("india-map.json");
+const stateSchemes = readJSON("state-schemes.json");
 
 /* ---------------- taxonomy labels ---------------- */
 const CAT_LABEL = { grant: "Grant", equity: "Equity", "loan-credit": "Loan / Credit", incubation: "Incubation", "market-access": "Market Access", mixed: "Mixed", other: "Other" };
@@ -232,9 +233,10 @@ const NAV_PAGES = [
     { href: "compare.html", title: "Compare schemes", icon: "scale" },
   ]},
   { group: "Beyond central schemes", items: [
+    { href: "state-schemes.html", title: "State & UT schemes", icon: "layers" },
     { href: "incubators.html", title: "Incubators directory", icon: "pin" },
     { href: "psu.html", title: "PSU & regulator programs", icon: "building" },
-    { href: "states.html", title: "State & UT initiatives", icon: "map" },
+    { href: "states.html", title: "State portals", icon: "map" },
   ]},
   { group: "Reference", items: [
     { href: "glossary.html", title: "Glossary", icon: "book" },
@@ -456,6 +458,7 @@ const write = (rel, html) => { mkdirSync(dirname(join(OUT, rel)), { recursive: t
 
 <h2 class="home-h2">Beyond central schemes</h2>
 <div class="grid grid-3">
+  <a class="card" href="state-schemes.html"><h3><span class="card-icon tone-green">${ICONS.layers}</span>State &amp; UT schemes</h3><p>${stateSchemes.states.flatMap((s) => s.schemes).length} state-level startup schemes &amp; incentives — seed grants, subsidies, reimbursements — that stack on top of central schemes. By state, searchable, on a map.</p><span class="go">${ICONS.arrow}</span></a>
   <a class="card" href="incubators.html"><h3><span class="card-icon tone-teal">${ICONS.pin}</span>Incubators directory</h3><p>${incubators.incubators.length} technology business incubators, Atal Incubation Centres and startup hubs across India — on an interactive map, searchable and state-wise.</p><span class="go">${ICONS.arrow}</span></a>
   <a class="card" href="psu.html"><h3><span class="card-icon tone-blue">${ICONS.building}</span>PSU &amp; regulator programs</h3><p>${psu.programs.length} startup initiatives run by public sector undertakings and regulators — ONGC, BHEL, GAIL, IFSCA and more.</p><span class="go">${ICONS.arrow}</span></a>
   <a class="card" href="states.html"><h3><span class="card-icon tone-green">${ICONS.map}</span>State &amp; UT startup portals</h3><p>Every state and union territory runs its own startup policy — find your state's portal and incentives.</p><span class="go">${ICONS.arrow}</span></a>
@@ -786,6 +789,62 @@ ${crumbs("", [["Home", "index.html"], ["Incubators directory", null]])}
   }));
 }
 
+/* ================= STATE SCHEMES ================= */
+{
+  const SS_TYPE = ["Grant", "Seed funding", "Subsidy", "Reimbursement", "Incentive", "Incubation", "Loan/Credit", "Procurement", "Other"];
+  const sts = stateSchemes.states;
+  const allSchemes = sts.flatMap((s) => s.schemes);
+  const withPolicy = sts.filter((s) => s.schemes.length).length;
+  const usedTypes = new Set(allSchemes.map((s) => s.type));
+  const usedStates = sts.filter((s) => s.schemes.length).map((s) => s.state);
+
+  const typeOpts = SS_TYPE.filter((t) => usedTypes.has(t)).map((t) => `<option value="${attr(t)}">${esc(t)}</option>`).join("");
+  const stateOpts = usedStates.map((s) => `<option value="${attr(s)}">${esc(s)}</option>`).join("");
+
+  const body = `
+${crumbs("", [["Home", "index.html"], ["State & UT schemes", null]])}
+<div class="page-head">
+  <div class="kicker">Beyond central schemes</div>
+  <h1>State &amp; UT startup schemes</h1>
+  <p class="lede">${esc(stateSchemes.intro)}</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="n">${withPolicy}</div><div class="l">States &amp; UTs with schemes</div></div>
+  <div class="stat"><div class="n">${allSchemes.length}</div><div class="l">Schemes &amp; incentives indexed</div></div>
+  <div class="stat"><div class="n">${usedTypes.size}</div><div class="l">Types of support</div></div>
+  <a class="stat" href="incubators.html"><div class="n">${incubators.incubators.length}</div><div class="l">State &amp; central incubators →</div></a>
+</div>
+
+<div id="state-schemes">
+  <div class="toolbar">
+    <div class="field">${ICONS.search}<input id="s-q" type="search" placeholder="Search scheme, benefit, keyword…" aria-label="Search state schemes"></div>
+    <select id="s-state" aria-label="Filter by state"><option value="">State: all</option>${stateOpts}</select>
+    <select id="s-type" aria-label="Filter by support type"><option value="">Type: all</option>${typeOpts}</select>
+    <div class="view-toggle" id="s-view-toggle" role="group" aria-label="View">
+      <button data-view="state" aria-pressed="true">${ICONS.map} By state</button>
+      <button data-view="list" aria-pressed="false">${ICONS.grid} All schemes</button>
+      <button data-view="map" aria-pressed="false">${ICONS.pin} Map</button>
+    </div>
+    <button class="btn btn-ghost" id="s-reset" type="button">Reset</button>
+  </div>
+  <div class="result-count" id="s-count" role="status" aria-live="polite"></div>
+  <h2 class="sr-only">State schemes</h2>
+  <div id="ss-out"></div>
+</div>
+
+<div class="callout tone-info" style="margin-top:30px"><span class="ic">${ICONS.info}</span><div>State incentives <strong>stack with central schemes</strong> — a startup can draw on both. Amounts, windows and eligibility come from each state's official startup policy and change often; blank fields are left blank rather than guessed. Always confirm on the state portal before applying. Spotted an error or a missing scheme? <a href="${attr(REPO_URL)}" target="_blank" rel="noopener">Open an issue on GitHub</a>.</div></div>
+
+<script type="application/json" id="state-schemes-data">${JSON.stringify(sts)}</script>
+<script type="application/json" id="india-map-data">${JSON.stringify(indiaMap)}</script>`;
+
+  write("state-schemes.html", shell({
+    root: "", active: "state-schemes.html", title: "State & UT Startup Schemes",
+    description: `A searchable index of ${allSchemes.length} state and union-territory startup schemes and incentives across ${withPolicy} states — seed grants, subsidies, reimbursements and more, straight from each official state startup policy. Kept separate from central schemes.`,
+    body,
+  }));
+}
+
 /* ================= GLOSSARY ================= */
 {
   const items = glossary.terms.map((t) => ({ ...t, id: slugify(t.term) }));
@@ -998,6 +1057,10 @@ write("404.html", shell({
   for (const p of psu.programs) idx.push({ t: p.program, m: p.organization, u: "psu.html", k: "psu", d: `${p.organization} startup initiative`, g: p.organization });
   for (const st of states.states) idx.push({ t: `${st.name} startup portal`, u: `states.html#${slugify(st.name)}`, k: "state", d: st.program || "", g: st.name });
   for (const r of incubators.incubators) idx.push({ t: r.name, m: r.host, u: `incubators.html?q=${encodeURIComponent(r.name)}`, k: "incubator", d: `${r.type === "AIC" ? "Atal Incubation Centre" : r.type} · ${r.city}, ${r.state}`, g: `${r.host} ${r.city} ${r.state} ${(r.sectors || []).join(" ")}` });
+  for (const st of stateSchemes.states) {
+    if (st.schemes.length) idx.push({ t: `${st.state} startup schemes`, u: `state-schemes.html?state=${encodeURIComponent(st.state)}`, k: "state-scheme", d: st.policy || `${st.schemes.length} state schemes & incentives`, g: st.state });
+    for (const sc of st.schemes) idx.push({ t: sc.name, m: st.state, u: `state-schemes.html?state=${encodeURIComponent(st.state)}&q=${encodeURIComponent(sc.name)}`, k: "state-scheme", d: `${st.state} · ${sc.type}${sc.benefit ? ` · ${sc.benefit}` : ""}`, g: `${st.state} ${sc.type}` });
+  }
   writeFileSync(join(OUT, "assets", "search-index.js"), `window.SEARCH_INDEX=${JSON.stringify(idx)};`);
 }
 

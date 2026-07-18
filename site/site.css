@@ -858,3 +858,62 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
   .inc-panel { max-height: 460px; position: static; }
   .inc-map { max-height: 64vh; }
 }
+
+/* ============================================================
+   STATE & UT SCHEMES (state-schemes.html)
+   Reuses .inc-map* / .inc-panel* for the map view.
+   ============================================================ */
+#state-schemes { margin-top: 6px; }
+
+/* type badges */
+.ss-badge {
+  display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+  font-size: 0.7rem; font-weight: 700; padding: 3px 9px; border-radius: var(--radius-pill);
+  background: var(--cat-other-tint); color: var(--cat-other);
+}
+.ss-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.ss-badge.s-grant { background: var(--cat-grant-tint); color: var(--cat-grant); }
+.ss-badge.s-seed-funding { background: var(--cat-equity-tint); color: var(--cat-equity); }
+.ss-badge.s-subsidy { background: var(--cat-loan-tint); color: var(--cat-loan); }
+.ss-badge.s-reimbursement { background: var(--cat-market-tint); color: var(--cat-market); }
+.ss-badge.s-incentive { background: var(--cat-mixed-tint); color: var(--cat-mixed); }
+.ss-badge.s-incubation { background: var(--cat-incubation-tint); color: var(--cat-incubation); }
+.ss-badge.s-loan-credit { background: var(--warning-tint); color: var(--warning); }
+.ss-badge.s-procurement, .ss-badge.s-other { background: var(--cat-other-tint); color: var(--cat-other); }
+
+/* state group + header */
+.ss-group { margin-top: 26px; }
+.ss-state-head { padding-bottom: 12px; border-bottom: 2px solid var(--border); margin-bottom: 16px; }
+.ss-state-title { display: flex; align-items: center; gap: 10px; }
+.ss-state-title h3 { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: -0.01em; }
+.ss-policy { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: 3px; }
+.ss-summary { font-size: 0.9rem; color: var(--text-muted); margin-top: 7px; max-width: 70ch; }
+.ss-metarow { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; margin-top: 10px; }
+.ss-agency { font-size: 0.75rem; color: var(--text-faint); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 2px 9px; }
+
+/* scheme grid + cards */
+.ss-schemes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
+.ss-flat { margin-top: 18px; }
+.ss-scheme {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  padding: 14px 15px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow-1);
+}
+.ss-scheme-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ss-benefit { font-size: 0.8rem; font-weight: 700; color: var(--success); }
+.ss-state-tag { font-size: 0.68rem; font-weight: 600; color: var(--text-faint); background: var(--surface-sunken); border-radius: var(--radius-pill); padding: 2px 8px; margin-left: auto; }
+.ss-scheme h4 { font-family: var(--font-display); font-size: 0.98rem; font-weight: 700; line-height: 1.25; }
+.ss-scheme h4 a { color: var(--text); }
+.ss-scheme h4 a:hover { color: var(--link); text-decoration: none; }
+.ss-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; }
+.ss-elig { font-size: 0.78rem; color: var(--text-faint); line-height: 1.45; }
+.ss-elig span { font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.66rem; }
+
+/* map-panel: stacked scheme cards + state picker rows */
+.ss-panel-list .ss-state-head { padding: 12px 14px 10px; margin: 0; border-bottom: 1px solid var(--border); }
+.ss-panel-list .ss-scheme { border: none; border-bottom: 1px solid var(--border); border-radius: 0; box-shadow: none; }
+.ss-pick {
+  display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 8px;
+  padding: 9px 14px; font-size: 0.85rem; font-weight: 600; color: var(--text); text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.ss-pick:hover { background: var(--surface-alt); color: var(--link); }

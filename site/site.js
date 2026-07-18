@@ -617,4 +617,161 @@
     });
     render();
   }
+
+  /* ================= STATE SCHEMES ================= */
+  const ssRoot = $("#state-schemes");
+  if (ssRoot) {
+    const DATA = readJSON("state-schemes-data") || []; // array of state objects
+    const MAP = readJSON("india-map-data");
+    const svg2 = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="14" height="14">${d}</svg>`;
+    const I2 = {
+      ext: svg2('<path d="M15 3h6v6m0-6L10 14M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>'),
+      close: svg2('<path d="M18 6 6 18M6 6l12 12"/>'),
+    };
+    const tCls = (t) => t.toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "");
+    const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "portal"; } };
+
+    const byState = new Map(DATA.map((s) => [s.state, s]));
+    const flat = DATA.flatMap((s) => s.schemes.map((sc) => ({ ...sc, state: s.state, policy: s.policy })));
+
+    const st = { q: "", state: "", type: "", view: "state" };
+    const els = {
+      q: $("#s-q"), state: $("#s-state"), type: $("#s-type"),
+      count: $("#s-count"), out: $("#ss-out"), viewBtns: $$("#s-view-toggle button"), reset: $("#s-reset"),
+    };
+
+    const schemeMatches = (sc, stateName, policy) =>
+      (!st.type || sc.type === st.type) &&
+      (!st.state || stateName === st.state) &&
+      (!st.q || `${sc.name} ${sc.benefit} ${sc.description} ${sc.eligibility} ${sc.type} ${stateName} ${policy}`.toLowerCase().includes(st.q));
+
+    const schemeCard = (sc, showState) => `
+      <div class="ss-scheme">
+        <div class="ss-scheme-top">
+          <span class="ss-badge s-${tCls(sc.type)}">${esc(sc.type)}</span>
+          ${sc.benefit ? `<span class="ss-benefit">${esc(sc.benefit)}</span>` : ""}
+          ${showState ? `<span class="ss-state-tag">${esc(sc.state)}</span>` : ""}
+        </div>
+        <h4>${sc.url ? `<a href="${esc(sc.url)}" target="_blank" rel="noopener">${esc(sc.name)}</a>` : esc(sc.name)}</h4>
+        ${sc.description ? `<p class="ss-desc">${esc(sc.description)}</p>` : ""}
+        ${sc.eligibility ? `<p class="ss-elig"><span>Eligibility</span> ${esc(sc.eligibility)}</p>` : ""}
+      </div>`;
+
+    const stateHeader = (s, n) => `
+      <div class="ss-state-head">
+        <div class="ss-state-title"><h3>${esc(s.state)}</h3>${n != null ? `<span class="count-pill">${n}</span>` : ""}</div>
+        ${s.policy ? `<div class="ss-policy">${esc(s.policy)}${s.period ? ` · ${esc(s.period)}` : ""}</div>` : ""}
+        ${s.summary ? `<p class="ss-summary">${esc(s.summary)}</p>` : ""}
+        <div class="ss-metarow">
+          ${s.nodalAgency ? `<span class="ss-agency">${esc(s.nodalAgency)}</span>` : ""}
+          ${(s.sectors || []).slice(0, 6).map((x) => `<span class="inc-sec">${esc(x)}</span>`).join("")}
+          ${s.portal ? `<a class="i-chip" href="${esc(s.portal)}" target="_blank" rel="noopener">${I2.ext} ${esc(host(s.portal))}</a>` : ""}
+        </div>
+      </div>`;
+
+    const emptyMsg = () => `<div class="empty-state"><div class="big">🔍</div><p>No state schemes match those filters.</p><p class="small"><button class="btn-ghost btn" id="s-reset2">Reset all filters</button></p></div>`;
+
+    const renderStateView = (matchByState) => {
+      const names = [...matchByState.keys()].sort();
+      els.out.innerHTML = names.map((name) => {
+        const s = byState.get(name);
+        const list = matchByState.get(name);
+        return `<section class="ss-group">${stateHeader(s, list.length)}<div class="ss-schemes">${list.map((sc) => schemeCard(sc, false)).join("")}</div></section>`;
+      }).join("");
+    };
+
+    const bucket = (n) => (n === 0 ? 0 : n <= 3 ? 1 : n <= 6 ? 2 : n <= 9 ? 3 : n <= 12 ? 4 : 5);
+    const renderMap = (matchByState) => {
+      // choropleth reflects q + type but NOT the state selection, so the
+      // whole distribution stays visible while one state is highlighted
+      const counts = {};
+      for (const s of DATA) {
+        const n = s.schemes.filter((sc) =>
+          (!st.type || sc.type === st.type) &&
+          (!st.q || `${sc.name} ${sc.benefit} ${sc.description} ${sc.eligibility} ${sc.type} ${s.state} ${s.policy}`.toLowerCase().includes(st.q))
+        ).length;
+        if (n) counts[s.state] = n;
+      }
+      const [W, H] = MAP.viewBox;
+      const paths = Object.entries(MAP.states).map(([name, sp]) => {
+        const n = counts[name] || 0;
+        const sel = st.state === name ? " sel" : "";
+        return `<path d="${sp.d}" class="h${bucket(n)}${sel}" data-state="${esc(name)}" tabindex="0" role="button" aria-label="${esc(name)}: ${n} scheme${n === 1 ? "" : "s"}"></path>`;
+      }).join("");
+      const legend = [["h1", "1–3"], ["h2", "4–6"], ["h3", "7–9"], ["h4", "10–12"], ["h5", "13+"]]
+        .map(([c, l]) => `<span class="inc-leg"><span class="sw ${c}"></span>${l}</span>`).join("");
+
+      let panel;
+      if (st.state && byState.get(st.state)) {
+        const s = byState.get(st.state);
+        const list = matchByState.get(st.state) || [];
+        panel = `<div class="inc-panel-head"><span class="inc-scope">${esc(st.state)} · ${list.length}</span><button class="i-chip i-clear" id="s-clear-sel">${I2.close} Clear</button></div>
+          <div class="inc-panel-list ss-panel-list">${stateHeader(s, null)}${list.map((sc) => schemeCard(sc, false)).join("") || `<p class="muted small" style="padding:12px">No schemes match filters in ${esc(st.state)}.</p>`}</div>`;
+      } else {
+        const tot = [...matchByState.values()].reduce((a, l) => a + l.length, 0);
+        const rows = [...matchByState.entries()].sort((a, b) => b[1].length - a[1].length)
+          .map(([name, list]) => `<button class="ss-pick" data-pick="${esc(name)}"><span>${esc(name)}</span><span class="count-pill">${list.length}</span></button>`).join("");
+        panel = `<div class="inc-panel-head"><span class="inc-scope">All India · ${tot}</span></div>
+          <div class="inc-panel-list"><p class="muted small" style="padding:10px 12px 4px">Select a state on the map, or:</p>${rows}</div>`;
+      }
+
+      els.out.innerHTML = `
+        <div class="inc-mapwrap">
+          <div class="inc-map-col">
+            <div class="inc-map-scroll"><svg class="inc-map" viewBox="0 0 ${W} ${H}" role="group" aria-label="Map of India — state schemes by count. Select a state to filter.">${paths}</svg></div>
+            <div class="inc-legend"><span class="inc-leg-t">Schemes per state</span>${legend}</div>
+          </div>
+          <aside class="inc-panel" aria-label="State schemes">${panel}</aside>
+        </div>`;
+
+      $$(".inc-map path", els.out).forEach((el) => {
+        const pick = () => { const nm = el.dataset.state; st.state = st.state === nm ? "" : nm; els.state.value = st.state; render(); };
+        el.addEventListener("click", pick);
+        el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      });
+      $$("[data-pick]", els.out).forEach((b) => b.addEventListener("click", () => { st.state = b.dataset.pick; els.state.value = st.state; render(); }));
+      const clr = $("#s-clear-sel");
+      clr && clr.addEventListener("click", () => { st.state = ""; els.state.value = ""; render(); });
+    };
+
+    const render = () => {
+      // group matching schemes by state
+      const matchByState = new Map();
+      for (const s of DATA) {
+        const list = s.schemes.filter((sc) => schemeMatches(sc, s.state, s.policy));
+        if (list.length) matchByState.set(s.state, list);
+      }
+      const total = [...matchByState.values()].reduce((a, l) => a + l.length, 0);
+      els.count.innerHTML = `Showing <b>${total}</b> of ${flat.length} schemes across <b>${matchByState.size}</b> states`;
+      els.viewBtns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === st.view)));
+
+      if (st.view === "map") { renderMap(matchByState); return; }
+      if (!total) { els.out.innerHTML = emptyMsg(); const r2 = $("#s-reset2"); r2 && r2.addEventListener("click", reset); return; }
+      if (st.view === "state") { renderStateView(matchByState); return; }
+      // list view: flat cards
+      const items = flat.filter((sc) => schemeMatches(sc, sc.state, sc.policy));
+      els.out.innerHTML = `<div class="ss-schemes ss-flat">${items.map((sc) => schemeCard(sc, true)).join("")}</div>`;
+    };
+
+    const reset = () => {
+      st.q = st.state = st.type = ""; els.q.value = "";
+      [els.state, els.type].forEach((el) => el && (el.value = ""));
+      render();
+    };
+
+    els.q.addEventListener("input", () => { st.q = els.q.value.trim().toLowerCase(); render(); });
+    ["state", "type"].forEach((k) => els[k] && els[k].addEventListener("change", () => { st[k] = els[k].value; render(); }));
+    els.reset && els.reset.addEventListener("click", reset);
+    els.viewBtns.forEach((b) => b.addEventListener("click", () => { st.view = b.dataset.view; render(); }));
+
+    const params = new URLSearchParams(location.search);
+    if (params.get("q")) { st.q = params.get("q").toLowerCase(); els.q.value = params.get("q"); }
+    ["state", "type", "view"].forEach((k) => {
+      const v = params.get(k);
+      if (!v) return;
+      if (k === "view" && els.viewBtns.some((b) => b.dataset.view === v)) st.view = v;
+      else if (els[k] && [...els[k].options].some((o) => o.value === v)) { st[k] = v; els[k].value = v; }
+    });
+    render();
+  }
 })();
