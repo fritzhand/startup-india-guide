@@ -69,6 +69,19 @@ const news = (() => {
 })();
 const hostOf = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
 const tickerItem = (n) => `<a class="ticker-item" href="${attr(n.url)}" target="_blank" rel="noopener"><span class="ti-src">${esc(n.source || hostOf(n.url))}</span><span class="ti-title">${esc(n.title)}</span></a>`;
+const NEWS_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const fmtNewsDate = (iso) => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || ""); return m ? `${NEWS_MONTHS[+m[2] - 1]} ${+m[3]}, ${m[1]}` : ""; };
+const newsSlug = (n) => (n.id || "n-" + hostOf(n.url) + "-" + (n.date || "")).replace(/[^a-z0-9-]/gi, "-").toLowerCase();
+const newsCard = (n) => `
+  <article class="news-card" id="${newsSlug(n)}">
+    <div class="nc-head">
+      <span class="nc-src">${esc(n.source || hostOf(n.url))}</span>
+      ${n.date ? `<time class="nc-date" datetime="${attr(n.date)}">${esc(fmtNewsDate(n.date))}</time>` : ""}
+    </div>
+    <h3 class="nc-title"><a href="${attr(n.url)}" target="_blank" rel="noopener">${esc(n.title)} ${ICONS.external}</a></h3>
+    ${n.summary ? `<p class="nc-summary">${esc(n.summary)}</p>` : ""}
+    <div class="nc-foot">${(n.tags || []).map((t) => `<span class="nc-tag">${esc(t)}</span>`).join("")}<span class="nc-host">${esc(hostOf(n.url))}</span></div>
+  </article>`;
 
 /* ---------------- taxonomy labels ---------------- */
 const CAT_LABEL = { grant: "Grant", equity: "Equity", "loan-credit": "Loan / Credit", incubation: "Incubation", "market-access": "Market Access", mixed: "Mixed", other: "Other" };
@@ -243,6 +256,7 @@ const NAV_PAGES = [
     { href: "finder.html", title: "Scheme Finder", icon: "compass" },
     { href: "lifecycle.html", title: "Lifecycle Map", icon: "sprout" },
     { href: "needs.html", title: "What do you need?", icon: "target" },
+    { href: "news.html", title: "Ecosystem news", icon: "news" },
   ]},
   { group: "Browse", items: [
     { href: "directory.html", title: "All schemes", icon: "grid" },
@@ -463,13 +477,14 @@ const write = (rel, html) => { mkdirSync(dirname(join(OUT, rel)), { recursive: t
   const seq = tickerItems.map(tickerItem).join("");
   const tickerHTML = tickerItems.length ? `
 <div class="news-ticker" role="region" aria-label="Latest Indian startup ecosystem news">
-  <span class="ticker-tag">${ICONS.news}<span>News</span></span>
+  <a class="ticker-tag" href="news.html">${ICONS.news}<span>News</span></a>
   <div class="ticker-viewport">
     <div class="ticker-track" style="animation-duration:${tickerDur}s">
       <div class="ticker-seq">${seq}</div>
       <div class="ticker-seq" aria-hidden="true">${seq}</div>
     </div>
   </div>
+  <a class="ticker-more" href="news.html">All news ${ICONS.arrow}</a>
 </div>` : "";
 
   const body = `
@@ -1120,6 +1135,40 @@ ${rel.length ? `
     extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>`,
   }));
 });
+
+/* ================= NEWS ================= */
+{
+  const srcNames = [...new Set(news.map((n) => n.source).filter(Boolean))];
+  const latest = news.length ? fmtNewsDate(news[0].date) : "";
+  const intro = news.length
+    ? `The latest coverage of India's startup ecosystem — ${news.length} stories from ${srcNames.length} source${srcNames.length === 1 ? "" : "s"}, each linking straight to the publisher.`
+    : `A source-linked feed of the latest coverage of India's startup ecosystem.`;
+  const body = `
+${crumbs("", [["Home", "index.html"], ["Ecosystem news", null]])}
+<div class="page-head">
+  <div class="kicker">Startup ecosystem${latest ? ` · latest ${esc(latest)}` : ""}</div>
+  <h1>Ecosystem news</h1>
+  <p class="lede">${esc(intro)}</p>
+</div>
+${news.length ? `
+<div class="news-meta">
+  <div class="callout tone-info" style="margin:0 0 22px">
+    <span class="ic">${ICONS.info}</span>
+    <div>Headlines are curated from reputable outlets covering India's startup ecosystem — each links straight to the publisher. Nothing here is written or edited by this site; always verify scheme details on the official portals.</div>
+  </div>
+  <div class="news-sources"><span class="ns-label">Sources in this feed</span>${srcNames.map((s) => `<span class="nc-tag">${esc(s)}</span>`).join("")}</div>
+</div>
+<div class="news-grid">
+  ${news.map((n) => newsCard(n)).join("")}
+</div>` : `
+<div class="empty-state" style="margin-top:40px">
+  <div class="big">📰</div>
+  <h2 style="font-size:1.3rem">No news yet</h2>
+  <p class="muted" style="margin-top:8px">This feed is populated from <code>data/news.json</code>. Add source-linked headlines there and rebuild.</p>
+  <p style="margin-top:18px"><a class="btn btn-primary" href="directory.html">Browse all schemes</a></p>
+</div>`}`;
+  write("news.html", shell({ root: "", active: "news.html", title: "Ecosystem news", description: "Source-linked news about India's startup ecosystem — funding, policy, schemes and incubators.", body }));
+}
 
 /* ================= 404 ================= */
 write("404.html", shell({
