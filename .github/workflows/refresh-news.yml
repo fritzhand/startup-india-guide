@@ -1,0 +1,66 @@
+# Refreshes the ecosystem news feed daily: fetches vetted headlines, rebuilds
+# docs/, commits data/news.json + docs/ to main, and deploys to gh-pages.
+#
+# Why deploy here instead of letting deploy-pages.yml handle it: pushes made
+# with the default GITHUB_TOKEN do NOT trigger other workflows (GitHub's
+# loop-prevention), so this job publishes docs/ to gh-pages itself, mirroring
+# deploy-pages.yml's final step.
+name: Refresh ecosystem news
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # daily ~06:00 UTC (~11:30 IST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-news
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch latest vetted headlines
+        run: python3 scripts/fetch-india-news.py
+
+      - name: Rebuild site
+        run: node build.mjs
+
+      - name: Commit refreshed news + site
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.json docs
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No news changes — nothing to publish."
+          else
+            git commit -m "chore(news): refresh ecosystem news feed [skip ci]"
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy docs/ to gh-pages
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          TREE=$(git rev-parse HEAD:docs)
+          COMMIT=$(git -c user.name="github-actions[bot]" \
+                       -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                       commit-tree "$TREE" -m "Deploy site (news refresh $(git rev-parse --short HEAD))")
+          git push --force origin "$COMMIT":refs/heads/gh-pages
