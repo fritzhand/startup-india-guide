@@ -212,7 +212,11 @@ kbd {
 @media (min-width: 1024px) {
   /* explicit width so the sidebar slides off intact instead of squishing
      while the grid column animates shut */
-  .sidebar { width: 268px; transition: transform 240ms var(--ease), visibility 0s; }
+  /* the .layout gradient already paints the 1px rail divider at the column
+     edge, so drop the sidebar's own border-right on desktop — otherwise the
+     two divider lines separate during the collapse/expand slide (a ghost
+     "second rail"). The gradient border also runs unbroken to the footer. */
+  .sidebar { width: 268px; border-right: none; transition: transform 240ms var(--ease), visibility 0s; }
   .layout { transition: grid-template-columns 240ms var(--ease); }
   :root.rail-collapsed .layout { grid-template-columns: 0 minmax(0, 1fr); background: none; }
   :root.rail-collapsed .sidebar {
