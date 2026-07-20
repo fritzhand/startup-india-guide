@@ -273,6 +273,21 @@ const themeBoot = `<script>(function(){var t;try{t=localStorage.getItem("playboo
 if(t!=="light"&&t!=="dark"){t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}
 document.documentElement.setAttribute("data-theme",t)})();</script>`;
 
+/* Google Analytics 4 (gtag.js). Measurement ID lives in site.config.json
+   (analyticsId); omit it there to build the site without the tag. */
+const GA_MEASUREMENT_ID = CONFIG.analyticsId || "";
+const analyticsTag = GA_MEASUREMENT_ID
+  ? `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${GA_MEASUREMENT_ID}');
+</script>`
+  : "";
+
 const brandParts = SITE_NAME.split(" ");
 const brandMain = brandParts.length > 1 ? brandParts.slice(0, -1).join(" ") : SITE_NAME;
 const brandThin = brandParts.length > 1 ? brandParts[brandParts.length - 1] : "";
@@ -284,6 +299,7 @@ function shell({ root, active, title, description, body, extraHead = "", pageCla
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+${analyticsTag}
 <title>${esc(fullTitle)}</title>
 <meta name="description" content="${attr(description)}">
 <meta name="color-scheme" content="light dark">

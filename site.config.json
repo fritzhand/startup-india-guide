@@ -2,5 +2,6 @@
   "siteName": "Startup Schemes Playbook",
   "siteBase": "https://fritzhand.github.io/startup-india-guide/",
   "pathPrefix": "/startup-india-guide/",
-  "repo": "https://github.com/fritzhand/startup-india-guide"
+  "repo": "https://github.com/fritzhand/startup-india-guide",
+  "analyticsId": "G-4993PH3ZP5"
 }
