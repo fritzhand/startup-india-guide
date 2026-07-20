@@ -37,17 +37,54 @@
     });
   }
 
-  /* ---------- mobile nav ---------- */
+  /* ---------- nav: off-canvas drawer on mobile, rail collapse on desktop ---------- */
   const navToggle = $("#nav-toggle");
   const scrim = $("#scrim");
+  const openNav = () => {
+    const y = window.scrollY || 0;
+    document.body.dataset.lockY = String(y);
+    document.body.style.top = `-${y}px`;         // freeze the page at its scroll offset
+    document.body.classList.add("nav-open");
+    document.documentElement.classList.add("nav-open");
+    const sb = $("#sidebar"); if (sb) sb.scrollTop = 0;
+    navToggle && navToggle.setAttribute("aria-expanded", "true");
+  };
   const closeNav = () => {
+    if (!document.body.classList.contains("nav-open")) return;
     document.body.classList.remove("nav-open");
+    document.documentElement.classList.remove("nav-open");
+    const y = parseInt(document.body.dataset.lockY || "0", 10);
+    document.body.style.top = "";
+    // restore the pre-open position instantly, then once more next frame to
+    // win over the browser's scroll anchoring
+    window.scrollTo({ top: y, left: 0, behavior: "instant" });
+    requestAnimationFrame(() => window.scrollTo({ top: y, left: 0, behavior: "instant" }));
     navToggle && navToggle.setAttribute("aria-expanded", "false");
   };
   if (navToggle) {
+    // one button, two jobs: off-canvas drawer on mobile, rail collapse on desktop
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const syncToggle = () => {
+      if (desktop.matches) {
+        const open = !document.documentElement.classList.contains("rail-collapsed");
+        navToggle.setAttribute("aria-expanded", String(open));
+        navToggle.setAttribute("aria-label", open ? "Collapse sidebar" : "Expand sidebar");
+      } else {
+        const open = document.body.classList.contains("nav-open");
+        navToggle.setAttribute("aria-expanded", String(open));
+        navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+      }
+    };
+    syncToggle();
+    desktop.addEventListener && desktop.addEventListener("change", syncToggle);
     navToggle.addEventListener("click", () => {
-      const open = document.body.classList.toggle("nav-open");
-      navToggle.setAttribute("aria-expanded", String(open));
+      if (desktop.matches) {
+        const collapsed = document.documentElement.classList.toggle("rail-collapsed");
+        try { localStorage.setItem("rail-collapsed", collapsed ? "1" : "0"); } catch {}
+      } else {
+        document.body.classList.contains("nav-open") ? closeNav() : openNav();
+      }
+      syncToggle();
     });
     scrim && scrim.addEventListener("click", closeNav);
     window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeNav(); });

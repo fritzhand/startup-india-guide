@@ -55,6 +55,21 @@ const incubators = readJSON("incubators.json");
 const indiaMap = readJSON("india-map.json");
 const stateSchemes = readJSON("state-schemes.json");
 
+/* ---- external news (optional): a vetted feed powering the overview ticker.
+   data/news.json is a flat array of { title, url, source, date }. If the file
+   is absent or empty, the ticker is simply omitted from the build. */
+const news = (() => {
+  if (!existsSync(join(DATA, "news.json"))) return [];
+  try {
+    const raw = JSON.parse(readFileSync(join(DATA, "news.json"), "utf8"));
+    return Array.isArray(raw)
+      ? raw.filter((n) => n && n.title && n.url).sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")))
+      : [];
+  } catch { return []; }
+})();
+const hostOf = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
+const tickerItem = (n) => `<a class="ticker-item" href="${attr(n.url)}" target="_blank" rel="noopener"><span class="ti-src">${esc(n.source || hostOf(n.url))}</span><span class="ti-title">${esc(n.title)}</span></a>`;
+
 /* ---------------- taxonomy labels ---------------- */
 const CAT_LABEL = { grant: "Grant", equity: "Equity", "loan-credit": "Loan / Credit", incubation: "Incubation", "market-access": "Market Access", mixed: "Mixed", other: "Other" };
 const CAT_DESC = {
@@ -126,6 +141,7 @@ const ICONS = {
   phone: I('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/>'),
   mail: I('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>'),
   globe: I('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/>'),
+  news: I('<path d="M4 22h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z"/>'),
 };
 
 /* ---------------- normalize & index schemes ---------------- */
@@ -271,7 +287,8 @@ const sidebar = (root, active) => {
 
 const themeBoot = `<script>(function(){var t;try{t=localStorage.getItem("playbook-theme")}catch(e){}
 if(t!=="light"&&t!=="dark"){t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}
-document.documentElement.setAttribute("data-theme",t)})();</script>`;
+document.documentElement.setAttribute("data-theme",t);
+try{if(localStorage.getItem("rail-collapsed")==="1")document.documentElement.classList.add("rail-collapsed")}catch(e){}})();</script>`;
 
 /* Google Analytics 4 (gtag.js). Measurement ID lives in site.config.json
    (analyticsId); omit it there to build the site without the tag. */
@@ -322,7 +339,7 @@ ${extraHead}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar">
-  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">${ICONS.menu}</button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span class="hb" aria-hidden="true"><span class="hb-t"></span><span class="hb-m"></span><span class="hb-b"></span></span></button>
   <a class="brand" href="${root}index.html">
     <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" width="18" height="18"><rect x="6" y="14" width="52" height="9" rx="4.5" fill="#e2621b"/><rect x="6" y="27.5" width="52" height="9" rx="4.5" fill="#ffffff"/><rect x="6" y="41" width="52" height="9" rx="4.5" fill="#359a4c"/></svg></span>
     <span class="brand-name">${esc(brandMain)}${brandThin ? ` <span class="thin">${esc(brandThin)}</span>` : ""}</span>
@@ -344,7 +361,7 @@ ${toc ? `<div class="content-with-toc"><div class="content-main">${body}</div>${
 </div>
 <footer class="footer"><div class="footer-inner">
   <div class="footer-author">
-    <img class="author-avatar" src="${root}assets/jeremy.png" alt="Jeremy Fritzhand" width="54" height="54" loading="lazy">
+    <img class="author-avatar" src="${root}assets/jeremy.png" alt="Jeremy Fritzhand" width="32" height="32" loading="lazy">
     <div class="author-meta">
       <div class="author-role">Built &amp; maintained by</div>
       <div class="author-name">Jeremy Fritzhand</div>
@@ -413,15 +430,65 @@ const write = (rel, html) => { mkdirSync(dirname(join(OUT, rel)), { recursive: t
   const CAT_ICON = { grant: "gift", equity: "chart", "loan-credit": "banknote", incubation: "sprout", "market-access": "send", mixed: "layers" };
   const CAT_TONE = { grant: "tone-green", equity: "tone-violet", "loan-credit": "tone-amber", incubation: "tone-teal", "market-access": "tone-blue", mixed: "" };
 
+  // hero mini-map: the real India choropleth, states shaded by incubator count
+  // + city dots, linking to the incubators directory. Server-rendered (no JS).
+  let heroMap = "";
+  if (indiaMap) {
+    const counts = {};
+    incubators.incubators.forEach((o) => { if (o.state) counts[o.state] = (counts[o.state] || 0) + 1; });
+    const bucket = (n) => (n === 0 ? 0 : n <= 2 ? 1 : n <= 5 ? 2 : n <= 10 ? 3 : n <= 20 ? 4 : 5);
+    const [W, H] = indiaMap.viewBox;
+    const pr = indiaMap.proj;
+    const P = (lng, lat) => [pr.pad + (lng * pr.cosLat0 - pr.rxMin) * pr.s, pr.pad + (pr.ryMax - lat) * pr.s];
+    const paths = Object.entries(indiaMap.states).map(([name, r]) =>
+      `<path d="${r.d}" class="hm${bucket(counts[name] || 0)}"/>`).join("");
+    const cityKeys = new Set();
+    const dots = incubators.incubators.filter((o) => o.lat != null && o.lng != null).map((o) => {
+      const k = `${o.lat},${o.lng}`;
+      if (cityKeys.has(k)) return "";
+      cityKeys.add(k);
+      const [x, y] = P(o.lng, o.lat);
+      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6"/>`;
+    }).join("");
+    heroMap = `<a class="hero-map" href="incubators.html" aria-label="Explore the incubators map — ${incubators.incubators.length} incubators mapped across India">
+      <svg viewBox="0 0 ${W} ${H}" role="img" aria-hidden="true">${paths}${dots}</svg>
+    </a>`;
+  }
+
+  // News ticker — an auto-scrolling marquee of the latest headlines, pinned at
+  // the top of the overview. Pure-CSS marquee (two duplicated sequences); pauses
+  // on hover and honours prefers-reduced-motion. Omitted when there is no news.
+  const tickerItems = news.slice(0, 14);
+  const tickerDur = Math.max(30, tickerItems.length * 5);
+  const seq = tickerItems.map(tickerItem).join("");
+  const tickerHTML = tickerItems.length ? `
+<div class="news-ticker" role="region" aria-label="Latest Indian startup ecosystem news">
+  <span class="ticker-tag">${ICONS.news}<span>News</span></span>
+  <div class="ticker-viewport">
+    <div class="ticker-track" style="animation-duration:${tickerDur}s">
+      <div class="ticker-seq">${seq}</div>
+      <div class="ticker-seq" aria-hidden="true">${seq}</div>
+    </div>
+  </div>
+</div>` : "";
+
   const body = `
-<section class="hero">
-  <div class="kicker">🇮🇳 Government of India · June 2026 edition</div>
-  <h1>Every central government scheme for your startup, in one place.</h1>
-  <p>${schemes.length} schemes across ${about.stats?.ministries || "35+"} ministries — grants, equity, loans, incubation and market access — extracted from the official playbook and organised so you can find what you're eligible for in minutes.</p>
-  <button class="hero-search" data-search-open type="button">${ICONS.search} Search schemes, e.g. “seed fund”, “defence”, “SISFS”… <kbd>⌘K</kbd></button>
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="finder.html">${ICONS.compass} Find your scheme in 5 questions</a>
-    <a class="btn btn-secondary" href="directory.html">Browse all ${schemes.length} schemes</a>
+${tickerHTML}
+<section class="hero glass">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="kicker">🇮🇳 Government of India · June 2026 edition</div>
+      <h1>Every central government scheme for your startup, in one place.</h1>
+      <p>${schemes.length} schemes across ${about.stats?.ministries || "35+"} ministries — grants, equity, loans, incubation and market access — extracted from the official playbook and organised so you can find what you're eligible for in minutes.</p>
+    </div>
+    ${heroMap}
+    <div class="hero-cta">
+      <button class="hero-search" data-search-open type="button">${ICONS.search} Search schemes, e.g. “seed fund”, “defence”, “SISFS”… <kbd>⌘K</kbd></button>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="finder.html">${ICONS.compass} Find your scheme in 5 questions</a>
+        <a class="btn btn-secondary" href="directory.html">Browse all ${schemes.length} schemes</a>
+      </div>
+    </div>
   </div>
 </section>
 
