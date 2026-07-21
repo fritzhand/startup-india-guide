@@ -28,6 +28,50 @@ the same frames as the picture:
 The palette is sampled from the same PDF the site uses (navy / saffron / green),
 matching `site/tokens.css`.
 
+## How it's built (advanced patterns)
+
+The scenes are sequenced with **`@remotion/transitions`** — real overlapping
+transitions, not hard cuts:
+
+| Between | Transition |
+| --- | --- |
+| intro → problem | `fade` (dark → light dissolve) |
+| problem → stats | `slide` from-bottom (numbers drop in) |
+| stats → lifecycle | `wipe` from-left |
+| lifecycle → finder | `iris` (focus opens onto the tool) |
+| finder → outro | `clockWipe` (radial sweep into the CTA) |
+
+A deliberate **light / dark rhythm** runs through it — the two "product" scenes
+(problem, finder) are light screens that punctuate the dark hero flow, and each
+flip is carried by a transition. A small, offline-safe **component kit** in
+`src/kit/` does the heavy lifting:
+
+- `backgrounds.tsx` — `Aurora` (orbiting blurred gradient blobs), `ParticleField`,
+  `PulseRings`, `PerspectiveGrid`, `GlowOrb`, `LightBackdrop` (all pure CSS +
+  `@remotion/noise`, no WebGL)
+- `type.tsx` — `KineticHeadline` (word spring-stagger with noise jitter),
+  `GradientText`, `WordHighlight` (highlighter sweep), `CharacterReveal`
+- `surfaces.tsx` — `GlassCard`, `BrowserChrome`, `Connector` (animated SVG edge
+  via `@remotion/paths` `evolvePath`)
+
+Stat numbers are sized with **`@remotion/layout-utils` `fitText`** so `323` and
+`35+` share one optical size and never overflow the 1080-wide vertical frame.
+
+Everything renders **fully offline / headless**: only the pure-DOM transition
+presentations are used (no WebGL shader transitions, no light-leak assets), and
+fonts are base64-inlined (`src/fonts.ts`) with no `delayRender`, so the render
+never hangs waiting on a network font.
+
+### Keeping audio in sync with overlapping transitions
+
+Because a `TransitionSeries` transition *overlaps* its two scenes, the timeline
+shortens and scene starts move earlier. To keep the procedural soundtrack
+locked to the picture, each scene's raw duration in `timeline.js` is **padded by
+half of each adjacent transition**, so every transition's *midpoint* (the visual
+cross-over) lands on the exact frame where the soundtrack already places its
+whoosh / drop / boom (`AUDIO_CUES` = 144, 282, 528, 708, 918). Net composition
+stays **1050 frames / 35.0s**, and `public/soundtrack.wav` is reused untouched.
+
 ## The soundtrack
 
 `scripts/make-audio.mjs` synthesises the whole track procedurally — a **126 BPM

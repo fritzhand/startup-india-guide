@@ -117,6 +117,24 @@ export const useSceneFade = (
   );
 };
 
+// Edge fades for the two scenes that border black (intro head, outro tail).
+// Interior scene edges are handled by the TransitionSeries overlap, so those
+// scenes must NOT fade themselves (that would double-dip to black).
+export const useHeadFade = (frames = 14) => {
+  const frame = useCurrentFrame();
+  return interpolate(frame, [0, frames], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+};
+export const useTailFade = (durationInFrames: number, frames = 18) => {
+  const frame = useCurrentFrame();
+  return interpolate(frame, [durationInFrames - frames, durationInFrames], [1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+};
+
 // A field of faint drifting particles — subtle motion behind hero content.
 export const Particles: React.FC<{count?: number; color?: string}> = ({
   count = 26,

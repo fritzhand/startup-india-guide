@@ -6,19 +6,20 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {Backdrop, useLayout, useReveal, useSceneFade} from '../components';
+import {useLayout, useReveal} from '../components';
+import {LightBackdrop} from '../kit/backgrounds';
+import {BrowserChrome} from '../kit/surfaces';
+import {WordHighlight} from '../kit/type';
 import {COLORS} from '../theme';
 import {displayFont, bodyFont, monoFont} from '../fonts';
-import {sceneDuration} from '../timeline';
 
 const PdfStack: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const s = spring({frame: frame - 6, fps, config: {damping: 200, mass: 0.8}});
-  const count = Math.round(interpolate(frame, [10, 46], [1, 107], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  }));
+  const count = Math.round(
+    interpolate(frame, [10, 46], [1, 107], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
+  );
   return (
     <div style={{position: 'relative', width: 300, height: 380}}>
       {[3, 2, 1, 0].map((i) => (
@@ -31,11 +32,11 @@ const PdfStack: React.FC = () => {
             width: 260,
             height: 340,
             borderRadius: 14,
-            background: '#fbfcfe',
-            border: '1px solid rgba(0,0,0,0.08)',
-            boxShadow: '0 20px 50px -18px rgba(0,0,0,0.6)',
+            background: '#ffffff',
+            border: '1px solid rgba(15,30,60,0.08)',
+            boxShadow: '0 26px 60px -22px rgba(15,30,60,0.45)',
             transform: `translateY(${interpolate(s, [0, 1], [40, 0])}px)`,
-            opacity: interpolate(s, [0, 1], [0, i === 0 ? 1 : 0.55]),
+            opacity: interpolate(s, [0, 1], [0, i === 0 ? 1 : 0.5]),
           }}
         >
           {i === 0 && (
@@ -87,7 +88,7 @@ const PdfStack: React.FC = () => {
           fontSize: 26,
           padding: '10px 18px',
           borderRadius: 12,
-          boxShadow: '0 10px 24px -8px rgba(0,0,0,0.6)',
+          boxShadow: '0 12px 26px -8px rgba(226,98,27,0.6)',
         }}
       >
         {count} pages
@@ -96,99 +97,62 @@ const PdfStack: React.FC = () => {
   );
 };
 
-const BrowserMock: React.FC = () => {
+const SiteMock: React.FC<{fontMono: string}> = ({fontMono}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const s = spring({frame: frame - 40, fps, config: {damping: 160, mass: 0.7}});
-  const scale = interpolate(s, [0, 1], [0.85, 1]);
   const rows = ['SISFS · Seed Fund', 'FFS · Fund of Funds', 'CGSS · Credit Guarantee', 'iDEX · Defence'];
   return (
     <div
       style={{
         width: 560,
-        borderRadius: 18,
-        overflow: 'hidden',
-        background: '#ffffff',
-        boxShadow: '0 30px 70px -24px rgba(0,0,0,0.7)',
-        transform: `scale(${scale})`,
+        transform: `scale(${interpolate(s, [0, 1], [0.85, 1])})`,
         opacity: interpolate(s, [0, 1], [0, 1]),
       }}
     >
-      <div
-        style={{
-          height: 52,
-          background: '#eef0f3',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 8,
-          padding: '0 18px',
-        }}
-      >
-        {[COLORS.saffron, '#f4c024', COLORS.green].map((c) => (
-          <div key={c} style={{width: 13, height: 13, borderRadius: 999, background: c}} />
-        ))}
-        <div
-          style={{
-            marginLeft: 14,
-            flex: 1,
-            height: 26,
-            borderRadius: 999,
-            background: '#fff',
-            border: '1px solid #dfe3ea',
-            display: 'flex',
-            alignItems: 'center',
-            padding: '0 14px',
-            fontFamily: bodyFont,
-            fontSize: 15,
-            color: '#8a94a6',
-          }}
-        >
-          ⌘K · Search 69 schemes…
-        </div>
-      </div>
-      <div style={{padding: 22}}>
-        {rows.map((r, k) => {
-          const rs = interpolate(frame, [54 + k * 6, 66 + k * 6], [0, 1], {
-            extrapolateLeft: 'clamp',
-            extrapolateRight: 'clamp',
-          });
-          return (
-            <div
-              key={r}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 14,
-                padding: '14px 16px',
-                marginBottom: 10,
-                borderRadius: 12,
-                background: COLORS.surfaceAlt,
-                border: '1px solid #e4e7ec',
-                opacity: rs,
-                transform: `translateX(${interpolate(rs, [0, 1], [24, 0])}px)`,
-              }}
-            >
-              <div style={{width: 10, height: 10, borderRadius: 999, background: COLORS.green}} />
-              <div style={{fontFamily: bodyFont, fontWeight: 600, color: COLORS.ink, fontSize: 18}}>
-                {r}
-              </div>
+      <BrowserChrome url="⌘K · Search 69 schemes…" fontFamily={bodyFont}>
+        <div style={{padding: 22}}>
+          {rows.map((r, k) => {
+            const rs = interpolate(frame, [54 + k * 6, 66 + k * 6], [0, 1], {
+              extrapolateLeft: 'clamp',
+              extrapolateRight: 'clamp',
+            });
+            return (
               <div
+                key={r}
                 style={{
-                  marginLeft: 'auto',
-                  fontFamily: monoFont,
-                  fontSize: 13,
-                  color: '#fff',
-                  background: COLORS.blue,
-                  padding: '3px 10px',
-                  borderRadius: 999,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 14,
+                  padding: '14px 16px',
+                  marginBottom: 10,
+                  borderRadius: 12,
+                  background: COLORS.surfaceAlt,
+                  border: '1px solid #e4e7ec',
+                  opacity: rs,
+                  transform: `translateX(${interpolate(rs, [0, 1], [24, 0])}px)`,
                 }}
               >
-                grant
+                <div style={{width: 10, height: 10, borderRadius: 999, background: COLORS.green}} />
+                <div style={{fontFamily: bodyFont, fontWeight: 600, color: COLORS.ink, fontSize: 18}}>{r}</div>
+                <div
+                  style={{
+                    marginLeft: 'auto',
+                    fontFamily: fontMono,
+                    fontSize: 13,
+                    color: '#fff',
+                    background: COLORS.blue,
+                    padding: '3px 10px',
+                    borderRadius: 999,
+                  }}
+                >
+                  grant
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </BrowserChrome>
     </div>
   );
 };
@@ -196,7 +160,6 @@ const BrowserMock: React.FC = () => {
 export const ProblemScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {fs, portrait} = useLayout();
-  const fade = useSceneFade(sceneDuration('problem'));
   const heading = useReveal(2, 20);
   const arrow = interpolate(frame, [30, 46], [0, 1], {
     extrapolateLeft: 'clamp',
@@ -204,29 +167,32 @@ export const ProblemScene: React.FC = () => {
   });
 
   return (
-    <AbsoluteFill style={{opacity: fade}}>
-      <Backdrop glow={COLORS.saffron} />
+    <AbsoluteFill>
+      <LightBackdrop glow={COLORS.saffron} />
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
         <div
           style={{
             ...heading,
             fontFamily: displayFont,
-            color: COLORS.heroText,
+            color: COLORS.ink,
             fontWeight: 700,
             fontSize: fs(52, 44),
-            marginBottom: portrait ? 40 : 54,
+            marginBottom: portrait ? 44 : 58,
             textAlign: 'center',
             maxWidth: portrait ? 900 : undefined,
             lineHeight: 1.15,
           }}
         >
-          One 107-page PDF, <span style={{color: COLORS.saffronSoft}}>rebuilt to actually use</span>
+          One 107-page PDF,{' '}
+          <WordHighlight color={COLORS.saffron} delay={26} style={{color: '#fff'}}>
+            rebuilt to actually use
+          </WordHighlight>
         </div>
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: portrait ? 24 : 40,
+            gap: portrait ? 22 : 40,
             flexDirection: portrait ? 'column' : 'row',
           }}
         >
@@ -242,14 +208,12 @@ export const ProblemScene: React.FC = () => {
                 : `translateX(${interpolate(arrow, [0, 1], [-16, 0])}px)`,
             }}
           >
-            <div style={{fontSize: 64, color: COLORS.heroMuted, lineHeight: 1}}>
-              {portrait ? '↓' : '→'}
-            </div>
-            <div style={{fontFamily: monoFont, color: COLORS.heroFaint, fontSize: 15, marginTop: 8}}>
+            <div style={{fontSize: 64, color: COLORS.inkMuted, lineHeight: 1}}>{portrait ? '↓' : '→'}</div>
+            <div style={{fontFamily: monoFont, color: COLORS.inkMuted, fontSize: 15, marginTop: 8}}>
               extract · verify
             </div>
           </div>
-          <BrowserMock />
+          <SiteMock fontMono={monoFont} />
         </div>
       </AbsoluteFill>
     </AbsoluteFill>

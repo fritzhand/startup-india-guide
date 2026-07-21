@@ -1,20 +1,19 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Backdrop, Particles, Tricolor, useLayout, useReveal, useSceneFade} from '../components';
+import {Backdrop, Tricolor, useHeadFade, useLayout, useReveal} from '../components';
+import {Aurora, GlowOrb, ParticleField} from '../kit/backgrounds';
+import {KineticHeadline} from '../kit/type';
 import {COLORS} from '../theme';
 import {displayFont, bodyFont, monoFont} from '../fonts';
-import {sceneDuration} from '../timeline';
 
 export const IntroScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const {fs, portrait} = useLayout();
-  const fade = useSceneFade(sceneDuration('intro'));
+  const fade = useHeadFade(14); // fade up from black at the very start only
 
   const kicker = useReveal(6, 14);
-  const line1 = useReveal(16, 34);
-  const line2 = useReveal(26, 34);
-  const sub = useReveal(44);
+  const sub = useReveal(48);
 
   // gentle push-in on the whole composition
   const zoom = spring({frame, fps, config: {damping: 200, mass: 1.4}});
@@ -23,7 +22,11 @@ export const IntroScene: React.FC = () => {
   return (
     <AbsoluteFill style={{opacity: fade}}>
       <Backdrop glow={COLORS.blue} />
-      <Particles />
+      <Aurora colors={[COLORS.blue, COLORS.saffron, COLORS.green, COLORS.blueSoft]} opacity={0.42} />
+      <GlowOrb x="30%" y="34%" size={620} color={COLORS.blue} />
+      <GlowOrb x="72%" y="64%" size={520} color={COLORS.saffron} delay={40} />
+      <ParticleField count={42} color={COLORS.heroMuted} />
+
       <AbsoluteFill
         style={{
           alignItems: 'center',
@@ -47,20 +50,22 @@ export const IntroScene: React.FC = () => {
             {portrait ? 'Government of India · 2026' : 'Government of India · June 2026 Playbook'}
           </div>
 
-          <h1
-            style={{
-              fontFamily: displayFont,
-              color: COLORS.heroText,
-              fontWeight: 800,
-              lineHeight: 1.02,
-              fontSize: fs(132, 100),
-              margin: 0,
-              letterSpacing: -3,
-            }}
-          >
-            <div style={line1}>Startup Schemes</div>
-            <div style={{...line2, color: COLORS.saffronSoft}}>Playbook</div>
-          </h1>
+          <KineticHeadline
+            words={[{text: 'Startup', color: COLORS.heroText}, {text: 'Schemes', color: COLORS.heroText}]}
+            fontFamily={displayFont}
+            fontSize={fs(132, 100)}
+            baseDelay={8}
+            stagger={5}
+            letterSpacing="-0.03em"
+          />
+          <KineticHeadline
+            words={[{text: 'Playbook', gradient: [COLORS.saffronSoft, COLORS.saffron]}]}
+            fontFamily={displayFont}
+            fontSize={fs(132, 100)}
+            baseDelay={22}
+            letterSpacing="-0.03em"
+            style={{marginTop: 4}}
+          />
 
           <div style={{display: 'flex', justifyContent: 'center', margin: '38px 0 30px'}}>
             <Tricolor width={portrait ? 260 : 320} height={10} startFrame={30} />

@@ -13,7 +13,7 @@ import {execFileSync} from 'node:child_process';
 import {existsSync, mkdirSync, writeFileSync, rmSync} from 'node:fs';
 import {dirname, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {TOTAL_FRAMES, FPS, startSeconds} from '../src/timeline.js';
+import {TOTAL_FRAMES, FPS, cueSeconds} from '../src/timeline.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = resolve(__dirname, '..', 'public');
@@ -21,6 +21,14 @@ const WAV_PATH = resolve(OUT_DIR, 'soundtrack.wav');
 const MP3_PATH = resolve(OUT_DIR, 'soundtrack.mp3');
 
 const SR = 44100;
+// Guard the audio contract: the soundtrack is authored to a fixed 1050-frame
+// timeline whose transition midpoints (AUDIO_CUES) coincide with these SFX.
+if (TOTAL_FRAMES !== 1050) {
+  throw new Error(
+    `make-audio expects TOTAL_FRAMES===1050 (got ${TOTAL_FRAMES}). ` +
+      `If you deliberately changed the timeline, re-place the cues and remove this guard.`,
+  );
+}
 const DURATION = TOTAL_FRAMES / FPS; // seconds, exactly matches the video
 const N = Math.ceil(DURATION * SR);
 const L = new Float32Array(N);
@@ -89,7 +97,7 @@ const chordAt = (t) => {
 // ---- energy / arrangement --------------------------------------------------
 // Drums fade in over the intro, drop to full at the first scene cut, then run.
 // A brief "beat-out" the beat before the outro boom makes the drop hit harder.
-const outroT = startSeconds('outro');
+const outroT = cueSeconds('outro');
 const energyAt = (t) => {
   let e = Math.min(1, Math.max(0, (t - 1.0) / 3.2)); // intro build
   if (t >= 4.6 && t < 4.8) e = 0.0; // tiny gap before the first drop
@@ -281,7 +289,7 @@ for (let b = 0; b < nBeats; b++) {
       const cc = chordAt(t + off);
       const contour = [0, 1, 2, 3, 2, 1];
       const idx = contour[arpStep % contour.length] % cc.arp.length;
-      const brighten = t >= startSeconds('stats') ? 1.0 : 0.7;
+      const brighten = t >= cueSeconds('stats') ? 1.0 : 0.7;
       pluck(t + off, cc.arp[idx], 0.2 * energy * brighten, arpStep % 2 ? 0.35 : -0.35);
       arpStep++;
     }
@@ -349,14 +357,14 @@ const boom = (t, freq = 50, gain = 0.32) => {
 
 // risers + whooshes into each scene drop
 ['problem', 'stats', 'lifecycle', 'finder', 'outro'].forEach((name) => {
-  const t = startSeconds(name);
+  const t = cueSeconds(name);
   riser(t);
   whoosh(t);
 });
 
 // count-up ticks across the stats scene
-const statsStart = startSeconds('stats');
-const statsEnd = startSeconds('lifecycle');
+const statsStart = cueSeconds('stats');
+const statsEnd = cueSeconds('lifecycle');
 for (let t = statsStart + 0.25; t < statsEnd - 0.3; t += 0.42) tick(t);
 
 // cinematic impact into the outro + a resolving pluck flourish

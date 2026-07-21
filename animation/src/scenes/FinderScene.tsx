@@ -6,28 +6,19 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {Backdrop, useLayout, useReveal, useSceneFade} from '../components';
+import {useLayout, useReveal} from '../components';
+import {LightBackdrop} from '../kit/backgrounds';
+import {GradientText} from '../kit/type';
 import {COLORS, FINDER_QUESTIONS} from '../theme';
 import {displayFont, bodyFont, monoFont} from '../fonts';
-import {sceneDuration} from '../timeline';
 
-const MATCHES = [
-  'NIDHI-EIR',
-  'BIG',
-  'PRAYAS 2.0',
-  'SISFS',
-  'iDEX SPARK',
-  'CGSS',
-  'GENESIS',
-  'ADITI',
-];
+const MATCHES = ['NIDHI-EIR', 'BIG', 'PRAYAS 2.0', 'SISFS', 'iDEX SPARK', 'CGSS', 'GENESIS', 'ADITI'];
 
 export const FinderScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const {fs, portrait} = useLayout();
   const cardW = portrait ? 960 : 1120;
-  const fade = useSceneFade(sceneDuration('finder'));
   const heading = useReveal(2, 22);
 
   const perQ = 34;
@@ -39,14 +30,14 @@ export const FinderScene: React.FC = () => {
   const qEnter = spring({frame: frame - qStart, fps, config: {damping: 190, mass: 0.6}});
 
   return (
-    <AbsoluteFill style={{opacity: fade}}>
-      <Backdrop glow={COLORS.blue} />
+    <AbsoluteFill>
+      <LightBackdrop glow={COLORS.blue} />
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
         <div
           style={{
             ...heading,
             fontFamily: displayFont,
-            color: COLORS.heroText,
+            color: COLORS.ink,
             fontWeight: 700,
             fontSize: fs(54, 44),
             marginBottom: 44,
@@ -54,18 +45,18 @@ export const FinderScene: React.FC = () => {
             maxWidth: portrait ? 900 : undefined,
           }}
         >
-          Answer <span style={{color: COLORS.blueSoft}}>5 questions</span>, get your shortlist
+          Answer <GradientText from={COLORS.blue} to={COLORS.blueSoft}>5 questions</GradientText>, get your shortlist
         </div>
 
-        {/* Question card */}
+        {/* Question card — a light product surface */}
         <div
           style={{
             width: cardW,
-            background: 'rgba(255,255,255,0.06)',
-            border: '1px solid rgba(255,255,255,0.12)',
+            background: '#ffffff',
+            border: '1px solid #e4e7ec',
             borderRadius: 24,
             padding: portrait ? '36px 40px' : '40px 48px',
-            boxShadow: '0 30px 70px -34px rgba(0,0,0,0.85)',
+            boxShadow: '0 40px 90px -34px rgba(15,30,60,0.45)',
           }}
         >
           <div
@@ -73,8 +64,9 @@ export const FinderScene: React.FC = () => {
               fontFamily: monoFont,
               fontSize: 18,
               letterSpacing: 3,
-              color: COLORS.blueSoft,
+              color: COLORS.blue,
               marginBottom: 18,
+              fontWeight: 600,
             }}
           >
             QUESTION {qIndex + 1} / {FINDER_QUESTIONS.length}
@@ -86,7 +78,7 @@ export const FinderScene: React.FC = () => {
               fontWeight: 700,
               fontSize: fs(46, 40),
               lineHeight: 1.15,
-              color: COLORS.heroText,
+              color: COLORS.ink,
               minHeight: portrait ? 140 : 108,
               opacity: interpolate(qEnter, [0, 1], [0, 1]),
               transform: `translateY(${interpolate(qEnter, [0, 1], [18, 0])}px)`,
@@ -129,14 +121,7 @@ export const FinderScene: React.FC = () => {
 
         {/* Accumulating matches */}
         <div style={{marginTop: 40, textAlign: 'center', width: cardW}}>
-          <div
-            style={{
-              fontFamily: bodyFont,
-              fontSize: 20,
-              color: COLORS.heroMuted,
-              marginBottom: 18,
-            }}
-          >
+          <div style={{fontFamily: bodyFont, fontSize: 20, color: COLORS.inkMuted, marginBottom: 18}}>
             Your matches
           </div>
           <div style={{display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center'}}>
@@ -150,11 +135,12 @@ export const FinderScene: React.FC = () => {
                     fontFamily: monoFont,
                     fontWeight: 600,
                     fontSize: 22,
-                    color: COLORS.heroText,
-                    background: 'rgba(36,86,166,0.30)',
-                    border: `1px solid ${COLORS.blueSoft}66`,
+                    color: COLORS.blue,
+                    background: '#ffffff',
+                    border: `1px solid ${COLORS.blueSoft}`,
                     padding: '12px 22px',
                     borderRadius: 999,
+                    boxShadow: '0 8px 20px -10px rgba(36,86,166,0.4)',
                     opacity: interpolate(cs, [0, 1], [0, 1]),
                     transform: `translateY(${interpolate(cs, [0, 1], [16, 0])}px) scale(${interpolate(
                       cs,

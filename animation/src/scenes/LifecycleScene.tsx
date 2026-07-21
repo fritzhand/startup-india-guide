@@ -6,10 +6,10 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {Backdrop, useLayout, useReveal, useSceneFade} from '../components';
+import {Backdrop, useLayout, useReveal} from '../components';
+import {Aurora, ParticleField} from '../kit/backgrounds';
 import {COLORS, LIFECYCLE} from '../theme';
 import {displayFont, bodyFont, monoFont} from '../fonts';
-import {sceneDuration} from '../timeline';
 
 // blend saffron -> green across the journey, returning a #rrggbb hex so alpha
 // suffixes like `${tone}bb` stay valid CSS
@@ -55,8 +55,15 @@ export const LifecycleScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const {fs, portrait} = useLayout();
-  const fade = useSceneFade(sceneDuration('lifecycle'));
   const heading = useReveal(2, 22);
+
+  const atmosphere = (
+    <>
+      <Backdrop glow={COLORS.saffron} />
+      <Aurora colors={[COLORS.saffron, COLORS.green, COLORS.saffronSoft]} opacity={0.32} />
+      <ParticleField count={30} color={COLORS.saffronSoft} />
+    </>
+  );
 
   const n = LIFECYCLE.length;
   const lineP = interpolate(frame, [26, 150], [0, 1], {
@@ -106,8 +113,8 @@ export const LifecycleScene: React.FC = () => {
     const bubbleSize = 108;
     const railX = 120; // rail centre x within the (centred) track container
     return (
-      <AbsoluteFill style={{opacity: fade}}>
-        <Backdrop glow={COLORS.saffron} />
+      <AbsoluteFill>
+        {atmosphere}
         <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
           {headingEl}
           <div style={{position: 'relative', width: 820, height: trackH}}>
@@ -177,8 +184,8 @@ export const LifecycleScene: React.FC = () => {
   const trackW = 1500;
   const gap = trackW / (n - 1);
   return (
-    <AbsoluteFill style={{opacity: fade}}>
-      <Backdrop glow={COLORS.saffron} />
+    <AbsoluteFill>
+      {atmosphere}
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
         {headingEl}
         <div style={{position: 'relative', width: trackW, height: 220}}>

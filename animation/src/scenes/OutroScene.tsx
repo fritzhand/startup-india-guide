@@ -6,7 +6,8 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {Backdrop, Particles, Tricolor, useLayout, useReveal, useSceneFade} from '../components';
+import {Backdrop, Tricolor, useLayout, useReveal, useTailFade} from '../components';
+import {Aurora, GlowOrb, ParticleField, PulseRings} from '../kit/backgrounds';
 import {COLORS} from '../theme';
 import {displayFont, bodyFont, monoFont} from '../fonts';
 import {sceneDuration} from '../timeline';
@@ -15,7 +16,7 @@ export const OutroScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const {fs, portrait} = useLayout();
-  const fade = useSceneFade(sceneDuration('outro'), 10, 16);
+  const fade = useTailFade(sceneDuration('outro'), 18); // fade to black at the very end only
 
   const title = spring({frame, fps, config: {damping: 160, mass: 0.9}});
   const url = useReveal(30);
@@ -24,7 +25,10 @@ export const OutroScene: React.FC = () => {
   return (
     <AbsoluteFill style={{opacity: fade}}>
       <Backdrop glow={COLORS.saffron} />
-      <Particles count={34} color="rgba(240,135,63,0.5)" />
+      <Aurora colors={[COLORS.saffron, COLORS.saffronSoft, COLORS.blue]} opacity={0.4} />
+      <PulseRings count={4} color="rgba(226,98,27,0.35)" maxSize={portrait ? 1200 : 1500} speed={0.5} />
+      <GlowOrb x="50%" y="42%" size={700} color={COLORS.saffron} maxOpacity={0.5} />
+      <ParticleField count={34} color="rgba(240,135,63,0.55)" />
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
         <div style={{marginBottom: 40}}>
           <Tricolor width={portrait ? 300 : 360} height={11} startFrame={4} />
