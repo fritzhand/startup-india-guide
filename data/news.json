@@ -1,5 +1,20 @@
 [
   {
+    "id": "ext-df38bb5e0326",
+    "type": "external",
+    "title": "Startup news and updates: daily roundup (July 23, 2026)",
+    "date": "2026-07-23",
+    "year": 2026,
+    "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Thursday, July 23, 2026.",
+    "url": "https://yourstory.com/2026/07/startup-news-and-updates-daily-roundup-july-23-2026",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiiAFBVV95cUxQU05ETlpDaE9zbVNacGRvMlg2UGdBVUhHbnpNNy1vMGZSZi13d3VlMW1NWnJtYVQ4NHRxekQwcG5FS2hTQmRseXk5N1hmU0EwS2lid2w1dVJtcl94NTNlUFdpSVdScFo0UFVrV01wVmtQSGxCRHJUcHBoeVpLMjlxMVlYX2tEWWJ4"
+  },
+  {
     "id": "ext-9a55735dcd79",
     "type": "external",
     "title": "Medtech startup Bioscan Research raises $1 Mn in seed round led by Unicorn India Ventures",
@@ -43,6 +58,21 @@
       "Policy"
     ],
     "gnId": "CBMie0FVX3lxTFAxRDFQcGF3bHBDRXA5NUZublVIRmpqblFMXy1NUS1CaTNvUnZJaXBabDBlVlVXLWhheTItSk9xREFzdm5ndWJ6dmpTS1ZhbjFEVnpQNTdQSXBta1dhbWJfMDRWbVNRNEVELTVtMHdJbTF4U2xuUjBaSkh6Yw"
+  },
+  {
+    "id": "ext-6412528bd271",
+    "type": "external",
+    "title": "Selective funding slows startup creation in India",
+    "date": "2026-07-17",
+    "year": 2026,
+    "summary": "",
+    "url": "https://m.economictimes.com/news/company/corporate-trends/selective-funding-slows-startup-creation-in-india/articleshow/132469467.cms",
+    "source": "The Economic Times",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMizgFBVV95cUxOdklnM192blp3aS1lSmRLX181SDdvUEZuQVA4dU9lQ0puZ2NXREpDamFUdTV6TF9HRkNlWmxGcEVuVEJYQjYxVHBoNk5OS2wzaG05R1NjVTBvRmdUWU9yMms3aUszTDJNU3BiZlZxN1J0bmZxSWRmS2ZtNDMxYWRBdW5yMWIxdTJHQ0JYSmN2MF9tRjRyX3FJZ1hGTjNSN1F0YUVTSU1aeGdidDJhR25HZDBTVXR2QVpkbGcyZzM4M0JTUVJ5X3VxeVJPOGh5UdIB0wFBVV95cUxOUjhSeXQxeTg4aTBMYS1pUV9fQWViZk96aXBwVzZEbUhXdWVROV9EUmRiUG82Y0ZGY3dXekVnYU5DM3hZSy1WU1R3NmctZUhyLTJaNzRNakZBYjFhdG9oWWRUOEltQVNtd2dlY0thZUNGNWoxRzdLRUZweDdLU3dvaTlBdUZmREU1d2tSSVdJbEtQYkpOenBOWWdGUVJCNFYwaURySHNISEY5RXZkb2FKb092LTg5NkNlSkZZZjlHaERxTExRRDVQN0FtS1l1T1A2Y3l3"
   },
   {
     "id": "ext-520e1300729f",
@@ -315,21 +345,6 @@
     "gnId": "CBMi5AFBVV95cUxQNVJWZGRQWkdvTGRwODVSeWFOWGhyMzJZQjBQRGRyTUZRRXFQX05oNGM3Z1d2ZUdsdnNueHdhUlFRdFBKdENlbHA1R25qX0JxSS1MajhvNU1MT0M3Ump6UVlEbW0wVFFMOWh6MVB1UjJSVFJ3X2hIUXVITFZFRk4wOUpYbjNzZDdlOE5zMjY0YlFqWE5HajFlRGVkYkJYVTlja3FfNEVwa3FUU1g5UnNHaEVZMTlCZHBkSmdWODF5WERVcFBuaTJ5NVM1aHFiazQ1OHY1WXdadzVieGU5Z2F6OFF6cEvSAeQBQVVfeXFMUDVSVmRkUFpHb0xkcDg1UnlhTlhocjMyWUIwUERkck1GUUVxUF9OaDRjN2dXdmVHbHZzbnh3YVJRUXRQSnRDZWxwNUdual9CcUktTGo4bzVNTE9DN1JqelFZRG1tMFRRTDloejFQdVIyUlRSd19oSFF1SExWRUZOMDlKWG4zc2Q3ZThOczI2NGJRalhOR2oxZURlZGJCWFU5Y2txXzRFcGtxVFNYOVJzR2hFWTE5QmRwZEpnVjgxeVhEVXBQbmkyeTVTNWhxYms0NTh2NVl3Wnc1YnhlOWdhejhRenBL"
   },
   {
-    "id": "ext-ec0c340249b6",
-    "type": "external",
-    "title": "MeitY Signals AI Law: A Big Policy Shift for India's Startup Ecosystem",
-    "date": "2026-07-03",
-    "year": 2026,
-    "summary": "MeitY says the time may be right for a dedicated AI law. Here",
-    "url": "https://www.tice.news/governance-policy/india-ai-law-meity-ai-regulation-startups-12130030",
-    "source": "TICE News",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMilAFBVV95cUxNejRHMDlldlpScnBUYVJYTFBHRjRpN2NGQUk1dGFuSjd6NDJSZk1LTHZuY3I0Uzgzby1iRkpwaklNck1kWW40VTdfYkdkTFFjNGF1Y2FsTjRBZDJwU1BkcWRhaUdRUjFBRENzcEZqLTdaZzFHM1JkNlZXTnJiS3h4ZVBXUUNSc08ySmlVQVM2anRJRTVt0gGUAUFVX3lxTE16NEcwOWV2WlJycFRhUlhMUEdGNGk3Y0ZBSTV0YW5KN3o0MlJmTUtMdm5jcjRTODNvLWJGSnBqSU1yTWRZbjRVN19iR2RMUWM0YXVjYWxONEFkMnBTUGRxZGFpR1FSMUFEQ3NwRmotN1pnMUczUmQ2VldOcmJLeHhlUFdRQ1JzTzJKaVVBUzZqdElFNW0"
-  },
-  {
     "id": "ext-2577da65d698",
     "type": "external",
     "title": "The mismatch between Startup India and Viksit Bharat",
@@ -388,6 +403,21 @@
       "Business"
     ],
     "gnId": "CBMi2gFBVV95cUxPUHl4TGxZZzdkVElvajBDVTJJM3B2b2k2bUd6cUVPajdES1YzQ2dYNXdkRVNYSjlJVGotZkZVeUJmNVhDQTBseFpiNEVRVi1ZZ0RkLWUwdjlYYnhiaFFHeFIyZ1JGMU5fd3BZUHIxLU9PRFRTV3ZTUnZPV2ZNRXd6MzNZWFpvMnVSenV1ZDMxQTA0a0xfd0ltNmZMV2JydmlDUVJTVkxienJoQ1JMVURYS1FoV0N4ZFFzXzZteXJGcUlJdnprTWRqdm5hdUlzdjFSeVF0X2pJTkw5Z9IB3wFBVV95cUxNWnZabmVJUmJVZENmTGZ5M2VCdGthbms3b0Z1dDFodEpfaURrNWtsQ1lOQmV0ZkRab0xKcHRxMnM4X1VBcXptaVFfdnFaZ01xbHZoN3BFaEx3cVhFeTVWLUhUTnRwb0hZcjBGTE1PaG1jOVBoLXd5WG1yTXlaN3B6X19fVVZHQUZOQ2VzVk55S3FxbzJRVnNPdTlUeW9CLUtUbnY5akhCd0YwWTZUaUw2elNDR21GZVZ4cmFpejVKNTNvbkhXd19SRlFyb2VvemtOMGd4S19zSDNMVlNxRmk0"
+  },
+  {
+    "id": "ext-254a6d6f2b86",
+    "type": "external",
+    "title": "Fintech Startups To Watch: Startups That Caught Our Eye In June",
+    "date": "2026-06-28",
+    "year": 2026,
+    "summary": "Amid funding activity, IPO preparations and tighter regulations, India's fintech landscape remained one of the country's most dynamic startup sectors, setting the stage for the latest edition of Inc42's Five Fintech Startups To Watch",
+    "url": "https://inc42.com/features/fintech-startups-to-watch-startups-that-caught-our-eye-in-june/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMilAFBVV95cUxNT3NxT05QN3hqelA4bzBHM2JyTkI4dlZ6T2lUYW44eDFVbkNvZ1NYdUo0SEdOSV8zeWU2NTB2VUpuT3VoYVdEVVBQdDFyQ0JYLWJHVVFDMFVCaGxLQ3VSR1A3TVFhcWFMT19jOXVla0FmeEgtdzBOMURpU2RNUGRuamFvSUlKZVU3bWNiS01nSy1JWjhZ"
   },
   {
     "id": "ext-860ce91b4206",
@@ -568,35 +598,5 @@
       "Startups"
     ],
     "gnId": "CBMitgFBVV95cUxQd1IwNzRTc0R1VnFBX0tVRU5nenN2ZGp4SG52bFdIWWhKYmJ0YkpXb2dzNXVIZEdwU096NUZZZzFzbjVXZlpqaE1FRXVmZHNSZVZfSVRBLXFtd21fZWpZQkdOWjd3bUN3RlFZZ0UtU2xmUVVqWFB4UmhXOFNPNUIycFdtcnlsRWVhc2pjWlFmUDFBVHRzcV9fNDBHQnlvc19SVzdiMk9RYkRIR2lVOF8ybGI2M1hhZ9IBtgFBVV95cUxQd1IwNzRTc0R1VnFBX0tVRU5nenN2ZGp4SG52bFdIWWhKYmJ0YkpXb2dzNXVIZEdwU096NUZZZzFzbjVXZlpqaE1FRXVmZHNSZVZfSVRBLXFtd21fZWpZQkdOWjd3bUN3RlFZZ0UtU2xmUVVqWFB4UmhXOFNPNUIycFdtcnlsRWVhc2pjWlFmUDFBVHRzcV9fNDBHQnlvc19SVzdiMk9RYkRIR2lVOF8ybGI2M1hhZw"
-  },
-  {
-    "id": "ext-739748a23e25",
-    "type": "external",
-    "title": "KickSky Space Lab and Ideabaaz Partner to Boost India\u2019s DeepTech and SpaceTech Startup Ecosystem",
-    "date": "2026-06-22",
-    "year": 2026,
-    "summary": "Announced at VivaTech 2026 in Paris, the partnership between KickSky Space Lab and Ideabaaz aims to accelerate the growth of Indian DeepTech and SpaceTech startups through strategic investments, mentorship, global access, and ecosystem support.",
-    "url": "https://www.tice.news/tice-dispatch/indias-first-vc-backed-spacetech-accelerator-joins-hands-with-ideabaaz-to-build-the-next-generation-of-deeptech-startups-12062521",
-    "source": "TICE News",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMi-AFBVV95cUxPN19JTlpJYXRndDl0M29GQVRIY19hSGM3bzMzQ3RXM0JId3Ezb21SamVpT1MwcFVIbGRUTmY3RkJ4Y2FTMHdoa1FOSEFGWWFrQ1R6eUszS0tNZ2RFQndPV3doQkVwUk1zem9VVXFpcjFZNkF5aUtDVVB4UFM2dVBROGlRM0xYRk1Mc091dHBqQndUcklOa2Z1UHdlQm0zR2huTUpZSnc1MzZHaTZ3V0FZM1UyV0hJV3J3ZW05SVBVbFRVQ291MUlGOG1aSTVYd2NTdUROXzZ1UThkZ3ZEZURuZTdIZHRydkdvazdWZC1OeFRYckpEejRTSdIB-AFBVV95cUxPN19JTlpJYXRndDl0M29GQVRIY19hSGM3bzMzQ3RXM0JId3Ezb21SamVpT1MwcFVIbGRUTmY3RkJ4Y2FTMHdoa1FOSEFGWWFrQ1R6eUszS0tNZ2RFQndPV3doQkVwUk1zem9VVXFpcjFZNkF5aUtDVVB4UFM2dVBROGlRM0xYRk1Mc091dHBqQndUcklOa2Z1UHdlQm0zR2huTUpZSnc1MzZHaTZ3V0FZM1UyV0hJV3J3ZW05SVBVbFRVQ291MUlGOG1aSTVYd2NTdUROXzZ1UThkZ3ZEZURuZTdIZHRydkdvazdWZC1OeFRYckpEejRTSQ"
-  },
-  {
-    "id": "ext-5c26bf3fc191",
-    "type": "external",
-    "title": "Indian deep-tech to see funding surge amid sovereign push: Celesta\u2019s Viswanathan",
-    "date": "2026-06-22",
-    "year": 2026,
-    "summary": "Sovereign investment avenues have gained prominence over the past 12 months amid rising geopolitical tensions. US government\u2019s move to restrict access to Anthropic\u2019s latest frontier models has sparked debate in India on the need to build domestic capabilities in AI, other critica",
-    "url": "https://www.livemint.com/companies/news/indian-deep-tech-to-see-funding-surge-amid-sovereign-push-celesta-s-viswanathan-11782036944376.html",
-    "source": "Mint",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi1gFBVV95cUxNZU9wYlNvQlRnSkRYREVHUUREZUdOeGlFWG5FMlJmRzRIeW9YblJNQWtzUVBJZUtKZXBVLVRhZjZiSTJCc2FrbXFKMmdYczNoOHh1R2lPdGkxUUd6cUlYZlppQmhpQWx3SmVac3VkYnZRT1QtMVBNb2JWZVloRHJwZjNYcVF6amhSYWhNeTlwY3Z6SThLaElBQWJERzB3TU5oMjJoMFdZS01LN3R4enJZN2VZQm5adXlLcm9kMFdCSE8xaV9PWDBiMDQyeEdaUGF4MWp5eVBR0gHbAUFVX3lxTE1sUUhYRVBZOTBmUVZZODJyclVHT3JMSldXX0JfNGdWbTEzbURtRi1QTkdwa3BRWUNIWkZwU1BIcTBGS1RDRUVxWS00bjJhZlFxS2k2RFV0cXlIaFphcmFLUkl4WTVKemMxNXNyNFNXN0NjcGhTNEtGNW9JcmRqWUtibl9jVy1EVldLaHFFUE4zeGlqaTMta203dVZLNHhCZE5KZXhEbWNwQTAtdjRjQVRiYkVLb2t5VGZuaGlkLW42bmg1VkowT3pBaVlTVzNDWFZpTEd5SlN4bWRQdw"
   }
 ]
