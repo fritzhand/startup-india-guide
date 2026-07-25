@@ -1,5 +1,20 @@
 [
   {
+    "id": "ext-843c26541b34",
+    "type": "external",
+    "title": "[Weekly funding roundup July 18-24] VC inflow into Indian startups plummets",
+    "date": "2026-07-24",
+    "year": 2026,
+    "summary": "The clear absence of large deals resulted in sharp decline in venture capital funding into Indian startups this week.",
+    "url": "https://yourstory.com/2026/07/weekly-funding-roundup-july-18-24-sharp-fall-vc-inflow-indian-startups",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiogFBVV95cUxNeV84T2REeHBzM040SmhJQTk3V3hic2x6emtILVgzVWVKUllTekFDTzV3dXZDWEFQYXBpMEZaT1BTbGdwWDEzWURLdTJzQkFXRDk4VEdqbXZXZFVLTEFSM0JMak1QT2ZQbVBuZ0V2UHMyUUQ3OGdDNXlYM0tOX2RDNU5fTmtmLWFPckJHa1FpT3BKaGs4cENsTlFxX3I0RFVldGc"
+  },
+  {
     "id": "ext-df38bb5e0326",
     "type": "external",
     "title": "Startup news and updates: daily roundup (July 23, 2026)",
@@ -75,19 +90,19 @@
     "gnId": "CBMizgFBVV95cUxOdklnM192blp3aS1lSmRLX181SDdvUEZuQVA4dU9lQ0puZ2NXREpDamFUdTV6TF9HRkNlWmxGcEVuVEJYQjYxVHBoNk5OS2wzaG05R1NjVTBvRmdUWU9yMms3aUszTDJNU3BiZlZxN1J0bmZxSWRmS2ZtNDMxYWRBdW5yMWIxdTJHQ0JYSmN2MF9tRjRyX3FJZ1hGTjNSN1F0YUVTSU1aeGdidDJhR25HZDBTVXR2QVpkbGcyZzM4M0JTUVJ5X3VxeVJPOGh5UdIB0wFBVV95cUxOUjhSeXQxeTg4aTBMYS1pUV9fQWViZk96aXBwVzZEbUhXdWVROV9EUmRiUG82Y0ZGY3dXekVnYU5DM3hZSy1WU1R3NmctZUhyLTJaNzRNakZBYjFhdG9oWWRUOEltQVNtd2dlY0thZUNGNWoxRzdLRUZweDdLU3dvaTlBdUZmREU1d2tSSVdJbEtQYkpOenBOWWdGUVJCNFYwaURySHNISEY5RXZkb2FKb092LTg5NkNlSkZZZjlHaERxTExRRDVQN0FtS1l1T1A2Y3l3"
   },
   {
-    "id": "ext-520e1300729f",
+    "id": "ext-fabf6268e3c1",
     "type": "external",
-    "title": "India's fintech sector raises $2 bn in H1 2026, led by late-stage funding",
-    "date": "2026-07-16",
+    "title": "Emergent turns unicorn with $130-million funding",
+    "date": "2026-07-17",
     "year": 2026,
-    "summary": "",
-    "url": "https://www.business-standard.com/finance/news/india-s-fintech-sector-raises-2-bn-in-h1-2026-led-by-late-stage-funding-126071601258_1.html",
-    "source": "Business Standard",
-    "sourceTier": "Business daily",
+    "summary": "The vibe-coding platform startup has seen its valuation grow rapidly, as co-founder Mukund Jha plans to make it the go-to operating system for small businesses globally",
+    "url": "https://www.forbesindia.com/article/news/emergent-turns-unicorn-with-130-million-funding/2996003/1",
+    "source": "Forbes India",
+    "sourceTier": "Business",
     "tags": [
       "Business"
     ],
-    "gnId": "CBMi1AFBVV95cUxOQlNFQUdtVHJWU01TRm9TTmJYSXE0bWt1cXlUX3VzdDZjb3dGNVphTXBWMi1oQzVpTXB5SDBQRXlfc3NfTFQzWGFZX0JQMlNDekVPSnRmb25CT2t0NzFNNlJVdVhiOGV4QzZwOHhrWnhxVGc2TDNVTk5DT1ZxeXpNYW1KVU5LU1lWSmFnMHd2VUV1cWxvbGpkX0VjdXRvYmo3aTlNc3hWMFBhTUoyNHJvaUlfcXhDdU9hb2tqd3NBTVlxS2g5SmNKemVtaU1yNHVRRlMwZ9IB2gFBVV95cUxPQnlPcE1aTUQ4Ty1IT3Z3S0hXelBoLTh4bnJ5cDdsODBvcnhZMXNQcmI5cjlmbDU0dm51anpKN0I5aHZTM3BySklSWjVTcjh5T2tfNFJJWEhWZFl5UlRLVFlqR3JBNkdzSGp5bFBhN0xZa3ByTEFKeWNPRFpLbER2dk5MSnYxS0xBQ2hfWkhGd3FJUm9KcU8wRUNXZGo4U3dNZWFfVl83N3hFZmJXejI2aHpmMXRHZEpTZy10Q29FYzM2N3E2RzZBS3l5MktkaHcwQjRCS2JyODljZw"
+    "gnId": "CBMinwFBVV95cUxPVE4yWnEyVmtfaGF5d0oxdGMwUHo3eGpzc1NUVXhpRGNkSnBESi1mOERXZXA2bmdjSnV1UXA3NHhqRFBIV1RZQl9xVEhjR3NILUd0RWlNNTAxSmJMZkczZnc2eGRwZUNDcENjUVRBTF95QWtZeTVBNHNuZ1FuTk00MlJjRTlxQ2NHSWxZb1JOQkxEclJlZTdwMDlTaVRKcXPSAaQBQVVfeXFMT3BsSlBBRUo1dzFvcFpiUGllU25FaVBNTTJIcVRlWlB2ZGtISWlVLTV3Si1DbTRiRkp1dlE2UGVMRFFXUzFMRy1Ra0RIVk9sQTJENXdUaEtxajVLVDhFVlYwRXg4dU5tQWhseHhMSDBadDFmbzZQTHhSLVZjekJZaUJPNDNkR19UNkE4VjFZRUZXOS1jcEJfS0JWcjhsc0lURHhNTzE"
   },
   {
     "id": "ext-0acbee1a55a3",
@@ -118,6 +133,21 @@
       "Business"
     ],
     "gnId": "CBMiygFBVV95cUxOeEIyZi14X1I3Nzh1UFpqbFpmZkh5MmtPaVhmYm5Hbjl4V3BjV2I0eU84RVhFalUyNy1RU1NoWk8tX1BCbklaeU8tWHEwNGk0RV9ySGVrOHVvd3pBNHFEN3ExTnRndlY1MEZvUDZiUlJEMkRKcXY4S2hzN0Y1b3ZCcGtxRExIY1RhemNPSm1rdE44ZzZwM1pDWFVldktqUFBwSGdVS1RDTm1SMVhQemlhWS1oSV9fWEdXUEQzTW1aOU9pUExRVWg4V1RB0gHPAUFVX3lxTE1BX1NpamtoOUdwQkU2MlBLNWxhQXphU2xDM2p4Y3hpeVZBem8wcTBBMFdCYW13U1E0ajdkeXlsMFU4dUg3YWhsNkp4cDdNajJjdjd0b29pVk12QVZtbjNCcXd3X0NlbG1DQmxaN0s3Zi1YX2stc2RJRGtaRzE2ZW8ydHdIeGFsVE9UUE9QbXV1NWM3X2hmeklUZnBNVklyUGlXOUJxTUJWc2VPN0x2Mjh0LXNZQmx5SWhPWXBWMjVFd1RPOUlUeTZNTTlXd2RHZw"
+  },
+  {
+    "id": "ext-520e1300729f",
+    "type": "external",
+    "title": "India's fintech sector raises $2 bn in H1 2026, led by late-stage funding",
+    "date": "2026-07-16",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.business-standard.com/finance/news/india-s-fintech-sector-raises-2-bn-in-h1-2026-led-by-late-stage-funding-126071601258_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi1AFBVV95cUxOQlNFQUdtVHJWU01TRm9TTmJYSXE0bWt1cXlUX3VzdDZjb3dGNVphTXBWMi1oQzVpTXB5SDBQRXlfc3NfTFQzWGFZX0JQMlNDekVPSnRmb25CT2t0NzFNNlJVdVhiOGV4QzZwOHhrWnhxVGc2TDNVTk5DT1ZxeXpNYW1KVU5LU1lWSmFnMHd2VUV1cWxvbGpkX0VjdXRvYmo3aTlNc3hWMFBhTUoyNHJvaUlfcXhDdU9hb2tqd3NBTVlxS2g5SmNKemVtaU1yNHVRRlMwZ9IB2gFBVV95cUxPQnlPcE1aTUQ4Ty1IT3Z3S0hXelBoLTh4bnJ5cDdsODBvcnhZMXNQcmI5cjlmbDU0dm51anpKN0I5aHZTM3BySklSWjVTcjh5T2tfNFJJWEhWZFl5UlRLVFlqR3JBNkdzSGp5bFBhN0xZa3ByTEFKeWNPRFpLbER2dk5MSnYxS0xBQ2hfWkhGd3FJUm9KcU8wRUNXZGo4U3dNZWFfVl83N3hFZmJXejI2aHpmMXRHZEpTZy10Q29FYzM2N3E2RzZBS3l5MktkaHcwQjRCS2JyODljZw"
   },
   {
     "id": "ext-0d3cb7efebb6",
@@ -165,21 +195,6 @@
     "gnId": "CBMikAFBVV95cUxOUkFnTVRHRVVrQ2g3Y0QxZ1ZxYzFjUzlxcjcxdnZnZXFRUG9rNEt0czBKZDR6ZDk3ejFSV05CYUF5eEZVVndNTEphSHNoRWgxTGxTQ080cHYzdVN5d3ZuVTVxb1I5WVNwdnBlWlBGdC00LWJTTDU5Z2t3b181QnUyZ0RLNG1YNmh0anpXWi1CX2fSAZABQVVfeXFMTlJBZ01UR0VVa0NoN2NEMWdWcWMxY1M5cXI3MXZ2Z2VxUVBvazRLdHMwSmQ0emQ5N3oxUldOQmFBeXhGVVZ3TUxKYUhzaEVoMUxsU0NPNHB2M3VTeXd2blU1cW9SOVlTcHZwZVpQRnQtNC1iU0w1OWdrd29fNUJ1MmdESzRtWDZodGp6V1otQl9n"
   },
   {
-    "id": "ext-81c50e532dbb",
-    "type": "external",
-    "title": "Ficci launches Family Office Forum to unlock $30 billion for startups",
-    "date": "2026-07-14",
-    "year": 2026,
-    "summary": "",
-    "url": "https://www.business-standard.com/economy/news/ficci-launches-family-office-forum-to-unlock-30-billion-for-startups-126071401491_1.html",
-    "source": "Business Standard",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi0AFBVV95cUxNRFB3MURqOWJKYWx5Sm12QktINFdaM0tWbzJ0cmNuZGZqamtBTU13MFJSOGVqbThtNmhoQnExdFlUbVFBdzlwZkQ3RVhBWWJzTU9LdmhGTjROS0J3cXllTkdSczdCcVF2UW1mQkNZV0pjSXpfWWs2NDU4Nm96Z3NkUkg2WUR6LW5RSy1HVG5RVjljNVcwNnk1c2t1UmhDVVRwZ1FUTzI3OTFfdlJvY3hUV1RqejNyNHRwTFpWcGw3M3JKejlfdjJueHVpYnJHbXNN0gHWAUFVX3lxTFB4dHlEY0tZdjFwRTFjeTU0N09pVXptdUVObURGelpCYXJCcmpfWG5qTzNrd1pfUktSVkRiY1JYZzBGekVEcy12YXFwcEtoWW5Fc0h3eHl0ZkVUUWtsMUlmVTdtZUZneEZDU0YyaVVzY0ZIb2dDTGF6WGYxUUgwVFVLQ0ZVTHZFX0pVMW5LTl9CQVc3a0Myc29ETGhDS1BGc1YxaVp0b0hScjV5OWpfX2pwelU4NU1EUVB5X25iUnV3VTRiaE9MdEwxTjNwQ2Nfc0JQUXQ1V0E"
-  },
-  {
     "id": "ext-24bb70af6731",
     "type": "external",
     "title": "DPIIT Launches Startup Playbook Mapping 65+ Government Schemes",
@@ -208,6 +223,21 @@
       "Business"
     ],
     "gnId": "CBMi4gFBVV95cUxPVDgySkZoZng0bnkwMjliSU1jQUZrVW1NYVBVVF9iX09VRGl2bU1JQjd6MDVmMHFKblRXdnN6d295UXlwOE1pdFM5Z2h6VlRnYWE0bXFEZDl2ODFmZ2VTemNZd0dqS000ZlJySHBZN20zM0RWOTdwUkltZlRUcXJ1NWVydzFYN1ZmUE1DeWduUlNjci1OQWpnSnZmRE8zY1YxZ0NCX1EyTHAyV3BNLW5xQW91UkdReVZpYjdsOVBJMDBqeHcxRk1sbXR3ajhwX1dfWTFIUXNEVFZicFdVT1VoaHVn0gHnAUFVX3lxTE1HcTJ1VFpQZ05nejlhSElURmFNVkJndEd5TG9ZLThTUFl6VTRpRmE4YlhDZDNyZjVTNDRQSG13Q0NhZzBpS0oxRHc0bHpTbFp6YVh2LVpFMTU5aURybWV1WFZFQUFBckRmbjViNUNUV3A5ZWNmOFFWdjFyQkFVUnJFX2puMTFFRVJtSENYN3E2MzF6bEVXSzRWdm51blBaVjAyT19XSnFxUWk1cjBhVm1qc29Kd1UtSmhIQmJrRXQyY2EtbFYtNjFDa2JpTWRraTlvZEoxdkNWRG4zLUxmbnNHR25lWVBVNA"
+  },
+  {
+    "id": "ext-81c50e532dbb",
+    "type": "external",
+    "title": "Ficci launches Family Office Forum to unlock $30 billion for startups",
+    "date": "2026-07-14",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.business-standard.com/economy/news/ficci-launches-family-office-forum-to-unlock-30-billion-for-startups-126071401491_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi0AFBVV95cUxNRFB3MURqOWJKYWx5Sm12QktINFdaM0tWbzJ0cmNuZGZqamtBTU13MFJSOGVqbThtNmhoQnExdFlUbVFBdzlwZkQ3RVhBWWJzTU9LdmhGTjROS0J3cXllTkdSczdCcVF2UW1mQkNZV0pjSXpfWWs2NDU4Nm96Z3NkUkg2WUR6LW5RSy1HVG5RVjljNVcwNnk1c2t1UmhDVVRwZ1FUTzI3OTFfdlJvY3hUV1RqejNyNHRwTFpWcGw3M3JKejlfdjJueHVpYnJHbXNN0gHWAUFVX3lxTFB4dHlEY0tZdjFwRTFjeTU0N09pVXptdUVObURGelpCYXJCcmpfWG5qTzNrd1pfUktSVkRiY1JYZzBGekVEcy12YXFwcEtoWW5Fc0h3eHl0ZkVUUWtsMUlmVTdtZUZneEZDU0YyaVVzY0ZIb2dDTGF6WGYxUUgwVFVLQ0ZVTHZFX0pVMW5LTl9CQVc3a0Myc29ETGhDS1BGc1YxaVp0b0hScjV5OWpfX2pwelU4NU1EUVB5X25iUnV3VTRiaE9MdEwxTjNwQ2Nfc0JQUXQ1V0E"
   },
   {
     "id": "ext-4d0ba44b7aea",
@@ -330,6 +360,21 @@
     "gnId": "CBMizwFBVV95cUxPdmFycGx2TGJIcmFkMC1oYm5EMkhYMUdxOWVvU0RPVzUxcTAySFlCbDlqdVRrN3ZPTlNFRUtyVGhqUkM1UnlYOEVHemJDanU4UVpkWHg1aHdVMjdyNDNtUFB4bUJjYUh4VWRVWUNvWWZqRkZwT1JWamU0QTludXd3aW1faW1SNkRVbi1NSU9oNmlacmhCVVJwR0NLVnpxd0NHM25UU0cwR3psR0g0Q2xZQ2MzTFZwNnljaFN5cjJvTmktdVRvU0VQaXpyZ3lQS2_SAdQBQVVfeXFMUGhIdmxrd09yS0JfN1ktWk9YQV85RkhlUzdfa0FKYnhydG1hRnZlRWlvb1c3LUxSalhBbnU1QjJKT1VTYzJiTUtrYjJ6MXpWX2lxdlF0bWRQR21QVnEyTGpHa2dhcGFhZERQbDVtdXFkY3c4ZF91RDlYanN1RUZ5YVVtZERjRERPdVhOWTZuQThCV2J0VlJGUXdDZ3VDUF9yclRuX1VWNVMxZE9tYUFsaksxYWNjR0tzYUM2WF9pTkZTNW9NZlpocUNIVDFqcGQtUEpBb0o"
   },
   {
+    "id": "ext-7ec525c8dc04",
+    "type": "external",
+    "title": "Mirae Asset NYSE FANG+ETF FoF leads overseas fund-of-funds mutual funds in three-year CAGR returns;...",
+    "date": "2026-07-07",
+    "year": 2026,
+    "summary": "Mirae Asset NYSE FANG+ETF FoF delivered 43.8% CAGR returns over three years and 28.3% CAGR over the last one year, according to ACE MF data on July 6.",
+    "url": "https://www.moneycontrol.com/news/business/mutual-funds/mirae-asset-nyse-fang-etf-fof-leads-overseas-fund-of-funds-mutual-funds-in-three-year-cagr-returns-delivers-43-8-gain-13967936.html",
+    "source": "Moneycontrol",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMilgJBVV95cUxQblcwZnQ0NzZQTHBzYXIwTGZab183NFZRcG9PSzhHS2t3RHk5djRHbVlGRmpIREY0bHB1MXFobzNadTFmMTJ3TFZJTmRXYk55RWFwWGtNdzJZQlhudEEyTm5NMEl0VkhSZ2dBZWowdkVJcThSZ19zU05MaFF5ODBta256MXRDSHo3STlzbU9ZZXRXSkdqSFp1RjN6VkdQSE1HdzZJdXctc1ZMbFE1MnBpcWtIZ1hTaXNpRlhHT2tTMlh1WGU1bHVFRGRBZTJKNHdoS05wR3BEbkF1azhzcUk0WjFKbHowQlRyZzBxQlN6RmZaMDBHem9fQW1wQTZ3dkJNVWw2QUhGcmxLa20zVlJnV2lrdGlvZ9IBmwJBVV95cUxNYTFmNHBxS2lTWTNsNXB5ZmtWc0FOLXNDaUZqM2R4OGdhVWJoaUE1TjZwcFA0Tzd4RzU0MzdOV1Q2SVNKRG0xclZmZDhuSUFrZE1qUE1feFpGS2hJZWtwNmRISXRic01mVGc5eEE0azRKam05UnZfWG5PUFU3SjJ6X3JsUUFvV2Nia1RPNFRlNjF0TEFsUjlBYzdXVkhHeVFnQ2M0eDdnb2c5RWladXRZQnZhcFQxUUtQZG5SWGtwRVU2dGNwV0gtVXRNRXljMHAzcENMekktUVRMRm5NcGN2YW55bDQzYTBPai03aXZpaEtQWEVRNS1rWTR0WUc0cEdmMkFCNXhvd2tLbk0tV3E3MUZlYzFpVEFsTmVZ"
+  },
+  {
     "id": "ext-958a4c0b99b8",
     "type": "external",
     "title": "Funding and acquisitions in Indian startups this week [June 29 - July 04]",
@@ -450,19 +495,19 @@
     "gnId": "CBMikwFBVV95cUxPdkhQOGhLMVR6Zm5pNmMxdDQ0YjM3Qmo2ZWFXcDlIVXliTG5GWFB4N1hITHIwZVhkelgweHNBalVjaDBWWkJ3M1Y3ZEFCelQ0Mk1fd3B2Vk4xSGN4WHBEdjBWUmRuMUNkQ2lwX0M5ZGhNMUVUY2ZnY3lhUE1GX3VVNzdBaktvUE9mc25CLWJ0NW9MUnc"
   },
   {
-    "id": "ext-4b9ed93d9638",
+    "id": "ext-3aaa85effab2",
     "type": "external",
-    "title": "India startup funding tops $1 billion as CRED mega-round powers sharp weekly rebound",
+    "title": "ICICI Pru Dynamic Asset Allocation Active FOF leads hybrid fund-of-funds mutual funds in one-month...",
     "date": "2026-06-26",
     "year": 2026,
-    "summary": "India's startup ecosystem staged a strong funding comeback during the week ended June 25, with venture funding crossing the $1 billion mark, driven largely by CRED's blockbuster fundraising round.",
-    "url": "https://www.cnbctv18.com/business/startup/india-startup-funding-tops-1-billion-dollars-as-cred-mega-round-powers-sharp-weekly-rebound-19933195.htm",
-    "source": "CNBC-TV18",
+    "summary": "ICICI Pru Dynamic Asset Allocation Active FOF delivered 1.9% returns over the last one month and 11.6% CAGR over three years, according to ACE MF data on June 25.",
+    "url": "https://www.moneycontrol.com/news/business/mutual-funds/icici-pru-dynamic-asset-allocation-active-fof-leads-hybrid-fund-of-funds-mutual-funds-in-one-month-returns-delivers-1-9-gain-13959373.html",
+    "source": "Moneycontrol",
     "sourceTier": "Business",
     "tags": [
       "Business"
     ],
-    "gnId": "CBMi3wFBVV95cUxQQU5XVENWRFZSSzVKQ2h3c3RCd2dZWUhNRmJyVnFGNWxubF82RHQ0YjZoX1lXbU82TDhZRUlNWmRDZEIyTG0yUldKcTdvZXJ6Tjl6eHEyTTVXbXl4VTVuUUpMTVpFXzBsNVBKblp0ZjIxRi1taVhjY2JGR08yRGZ6LVVDd29mVUtUcHoxNk0zSERodl84ZmI4M0ZpbW94RDR1NktPaVRmbGtSaVBBVWRuWVBabmFKMmo5WndaSU1uRW5PNjlhMmY3LU96ejVZS3V0MFh3bXIxcXJfbF92Wm5n0gHkAUFVX3lxTFBjXzdFMnVUalZNeG8xa3A1ZTI5WWRmMDdYOGljeFdBcUJjVXBOWG9aMjZsM3VzcVd3YTg0NU1KZTFKT1dMMVY3dkpSeGZDUjFiNTFjSzNKR2p1UVJROGJnYUFVOFhaeVpTZ21pY2JWRGlWellHYXVMeTJJMHJGQ081SG95eGlWbDZTQUlyalpzb3pjaXlxeGEzek5oRGY0cXZRX2V2X2loeHE3XzNnRmc1b1pyLVBKVUhhLXFLOTlwQUt5MkdGY25nUC1RVmliRXFiRkNVWDBWSkFjdTNWM3ZsczFkdg"
+    "gnId": "CBMinwJBVV95cUxPdDY3Z1h0ak05a0tBaFQ4UF84RHJqbl9hUEFPTDh5cmxwTnJNb1piZGRsTmFISUlwZFBPRS04ZjZabThMZWZLUGhYRUtHdTQzWTdkdFFEZjluUkdNUUxRV3VHam90OWVSdzNhRVJYeDZoal9GQjJxZFlUemtGSmFhTHdyR1ZRYUFEMTdPMWUyWTk1dmY1Q0NyUGxjMU8tV1hZMG1USTY1MzF4ZEtDUnMwdUhvSjBoXzVvYkNPeTNsM25FU1JuMUxlRUhKSWl2RW5KZVNTX2JBSVhtd0M1Snh5VmpIVWpZaXVrMGtUTjFnQ05MS1V3NFVFRGlObGhTVkl1S21jZi11U0pFMHVFeURjR1pIRnlaZTBwYkZ0d29NTdIBpAJBVV95cUxOMzhmcnMtTVNxN3ZEV3Z6M2o2aF9OeTFUR1RqNS1TVFJZdHhnNWd1dUQwQ2dhSEFfVk45WEpkUDZneWFydmdaUURPY1NzaUtUS3dtM2w4RkM0aS1OWWdnQk5OX083WkFfVTRRQzRkN2ZBdUR1cnB3RVEzZFU1ZDVSRG5ualRrVzh4WFkyMGxlWDhHbElnQjRkMmg5Z3RFdDRmNkE4UmpvS29uTkpfZ0Q4MTJLVTZCZnd1M2dfMDJPUGxScm9yaTZ6NWtTa2ZFb0ZQWnFIMUJpR0ptbVhwSzhfMmxob01CR0k0Nk5kbDZiTU1xdFhMQ09Wb3oxVm1sNzdqRlRybTk4a21qTmkzdERmNlkyeVNHQXM1XzZmaFNXbi0tZDYx"
   },
   {
     "id": "ext-0982464cb932",
@@ -553,50 +598,5 @@
       "Business"
     ],
     "gnId": "CBMi1wFBVV95cUxQM3VhZ1k3Q1owa2xDdm5VWlQyMklJcXpUNG5YUHowS05yakszb05CWG5jMnVtSDJUMzVrV3hJZVRiQmxJbmVYNGp4aUt6cm1DMEVyYWJ4Z1NwZHE3cnhYaVdMcjI1Z3RxR3QwRkxpeHhjSmVKSFBhekRHNTlyWUQ5NFdJSFFfZ0xBU2Z2akVQVmRabWpxblZ4VlYzbGx1RjN3eDVlWjMzNFk4eEZCY01oTEpfTjBIbndld0d1dDlaa0I5YzBBOUFMTDdWWVAtZWo2S0l5VDFLa9IB3AFBVV95cUxPdFBwdnptU21HLTFKNDJndFFMX0J4ZlM4YTBQOGU0T1dZZktRMWdrSGU3b1RVWVkwSXo0dzNseGZwTlZlRkJRMVNwN2NwaVh4NGZ6a2dfd1VCcGRxWVc1SFFHZGptOElocjFPZUlDM2JFUFBJQVBKdjlFNEpLX1ZVSWJwZ2VqSjU5bXpYdi1yTGdvNU5QTk12ZkI2RlBlRkt3MVlsc0I1RzhBYUhQOHR5RXcySXJ6Q0xzaXB4WFBhRnpNZ2lsbGpoeEdyaVp6OUEyeEtUaUhQdGdqN3Bz"
-  },
-  {
-    "id": "ext-e3c1f0b50f54",
-    "type": "external",
-    "title": "Startup news and updates: Daily roundup (June 24, 2026)",
-    "date": "2026-06-24",
-    "year": 2026,
-    "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Wednesday, June 24, 2026.",
-    "url": "https://yourstory.com/2026/06/startup-news-and-updates-daily-roundup-june-24-2026",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiiAFBVV95cUxQQVY5NzJkcEt2OWF3N0JQLWtJWnc1eF9DT0hhOFRfRHJrMjVMME9LRGUweUh5cGFyWDI0MlQ5OVRYSW5xN2gzZGNacTdRV0FpbDVDazd2WUFmcW9EWUdGeVJZakVzSndEeEl4TVNmR2tRMU91NmxLOFV4NVYyZUtxNmlxdXBRNEhh"
-  },
-  {
-    "id": "ext-50cbf2aebf69",
-    "type": "external",
-    "title": "A Beach Town Bootcamp Where India\u2019s Next Founders Are Made",
-    "date": "2026-06-24",
-    "year": 2026,
-    "summary": "",
-    "url": "https://www.bloomberg.com/news/newsletters/2026-06-25/biyani-screwvala-kamath-s-foundery-tackles-india-s-startup-founder-problem",
-    "source": "Bloomberg",
-    "sourceTier": "Wire",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMixwFBVV95cUxNTFlWWW4zZXdRcG1NTnkxQktsdkhGNnBHYVRjdHNpbi1rc29USHhydDVQUE5PazhKRl8xdnJMcW5ySGNPMnBMaktTN1dwbk5PMW9sYThvdF94SlZEM2xGWjhOZFRsWGI1eTh6dF9jcFRaZzlxWE1CRXl4ZDNUdkhRaW9jNVFPVnNOaDNabHNzcTlrcWlmNkhRRl9QY1ZSQ28yM3oydmpEZDdLNEpJOHczdWgyLW9ieUJfLVIycTU2VFd2TUdnX2lj"
-  },
-  {
-    "id": "ext-577e614ae5cd",
-    "type": "external",
-    "title": "Cyber resilience startup Mitigata raises $15 Mn in Series B round led by Bessemer",
-    "date": "2026-06-23",
-    "year": 2026,
-    "summary": "Bengaluru-based cyber resilience startup Mitigata has secured $15 million in a Series B funding round led by Bessemer Venture Partners.",
-    "url": "https://entrackr.com/news/cyber-resilience-startup-mitigata-raises-15-mn-in-series-b-round-led-by-bessemer-12064009",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMitgFBVV95cUxQd1IwNzRTc0R1VnFBX0tVRU5nenN2ZGp4SG52bFdIWWhKYmJ0YkpXb2dzNXVIZEdwU096NUZZZzFzbjVXZlpqaE1FRXVmZHNSZVZfSVRBLXFtd21fZWpZQkdOWjd3bUN3RlFZZ0UtU2xmUVVqWFB4UmhXOFNPNUIycFdtcnlsRWVhc2pjWlFmUDFBVHRzcV9fNDBHQnlvc19SVzdiMk9RYkRIR2lVOF8ybGI2M1hhZ9IBtgFBVV95cUxQd1IwNzRTc0R1VnFBX0tVRU5nenN2ZGp4SG52bFdIWWhKYmJ0YkpXb2dzNXVIZEdwU096NUZZZzFzbjVXZlpqaE1FRXVmZHNSZVZfSVRBLXFtd21fZWpZQkdOWjd3bUN3RlFZZ0UtU2xmUVVqWFB4UmhXOFNPNUIycFdtcnlsRWVhc2pjWlFmUDFBVHRzcV9fNDBHQnlvc19SVzdiMk9RYkRIR2lVOF8ybGI2M1hhZw"
   }
 ]
