@@ -1,5 +1,35 @@
 # TODOs
 
+## Future feature: touch-and-drag movement
+
+**Status:** Backlog — mobile interaction enhancement.
+
+Let phone and tablet visitors touch the avatar and drag in the direction they
+want to walk. Movement should remain continuous rather than teleporting the
+avatar directly to the finger.
+
+### Interaction
+
+- Start steering only when a single-finger gesture begins on the avatar.
+- Move the avatar continuously toward the finger while the gesture is active.
+- Keep the avatar constrained to state/UT land geometry so dragging cannot skip
+  across open water or other impassable boundaries.
+- Keep the camera following the avatar and stop movement immediately on
+  release, cancellation, or loss of focus.
+- Reserve two-finger gestures for pinch zoom.
+- Retain the touch D-pad as an accessible and precise fallback.
+
+### Acceptance criteria
+
+- Dragging the avatar works smoothly on common phone and tablet viewport sizes.
+- The avatar cannot be dragged across water or outside valid map geometry.
+- Releasing the finger always stops movement without drift.
+- Pinch zoom still works before, during, and after a drag interaction.
+- Page scrolling and browser gestures are not accidentally triggered while
+  dragging the avatar.
+- Keyboard movement, the D-pad, Recenter, and reduced-motion behavior continue
+  to work unchanged.
+
 ## Future feature: live explorers
 
 **Status:** Backlog — not part of the current walkable-map release.
