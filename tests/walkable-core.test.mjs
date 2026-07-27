@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
+  DEFAULT_ZOOM,
   WALK_SPEED,
   WORLD_SCALE,
   clampCamera,
@@ -47,6 +48,7 @@ test("camera centers and clamps at the world edges", () => {
 });
 
 test("zoom stays inside the supported range", () => {
+  assert.equal(DEFAULT_ZOOM, 0.65);
   assert.equal(clampZoom(0.2), 0.65);
   assert.equal(clampZoom(1), 1);
   assert.equal(clampZoom(2), 1.65);

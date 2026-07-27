@@ -876,9 +876,9 @@ ${sorted.map((st) => st.url ? `
 
   <div class="walkable-zoom" aria-label="Map zoom controls">
     <button id="walkable-zoom-in" type="button" aria-label="Zoom in">+</button>
-    <output id="walkable-zoom-level" aria-live="polite">100%</output>
+    <output id="walkable-zoom-level" aria-live="polite">65%</output>
     <button id="walkable-zoom-out" type="button" aria-label="Zoom out">−</button>
-    <button id="walkable-zoom-reset" type="button" aria-label="Reset zoom">Reset</button>
+    <button id="walkable-zoom-reset" type="button" aria-label="Reset zoom to 65 percent">Reset</button>
   </div>
 
   <div class="walkable-dpad" aria-label="Movement controls">

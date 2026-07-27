@@ -1,4 +1,5 @@
 import {
+  DEFAULT_ZOOM,
   MAX_ZOOM,
   MAP_HEIGHT,
   MAP_WIDTH,
@@ -215,7 +216,7 @@ if (root) {
   });
 
   let position = toWorld(stateAnchors["Madhya Pradesh"]);
-  let zoom = 1;
+  let zoom = DEFAULT_ZOOM;
   const cameraViewport = () => ({ width: viewport.clientWidth / zoom, height: viewport.clientHeight / zoom });
   let camera = clampCamera(position, cameraViewport(), worldSize);
   let lastFrame = 0;
@@ -338,12 +339,12 @@ if (root) {
     zoomLevel.textContent = zoomLevel.value;
     zoomIn.disabled = zoom >= MAX_ZOOM;
     zoomOut.disabled = zoom <= MIN_ZOOM;
-    zoomReset.disabled = zoom === 1;
+    zoomReset.disabled = zoom === DEFAULT_ZOOM;
     requestTick();
   }
   zoomIn.addEventListener("click", () => setZoom(zoom + ZOOM_STEP));
   zoomOut.addEventListener("click", () => setZoom(zoom - ZOOM_STEP));
-  zoomReset.addEventListener("click", () => setZoom(1));
+  zoomReset.addEventListener("click", () => setZoom(DEFAULT_ZOOM));
   recenter.addEventListener("click", recenterAvatar);
 
   const touchPoints = new Map();
@@ -510,6 +511,6 @@ if (root) {
   root.querySelector("#walkable-intro-close").addEventListener("click", () => root.querySelector(".walkable-intro").classList.remove("is-open"));
   renderCamera();
   updateNearby();
-  setZoom(1);
+  setZoom(DEFAULT_ZOOM);
   requestTick();
 }
