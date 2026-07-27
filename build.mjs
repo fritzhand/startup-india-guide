@@ -155,6 +155,8 @@ const ICONS = {
   mail: I('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>'),
   globe: I('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/>'),
   news: I('<path d="M4 22h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z"/>'),
+  close: I('<path d="M18 6 6 18M6 6l12 12"/>'),
+  list: I('<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>'),
 };
 
 /* ---------------- normalize & index schemes ---------------- */
@@ -263,6 +265,7 @@ const NAV_PAGES = [
     { href: "compare.html", title: "Compare schemes", icon: "scale" },
   ]},
   { group: "Beyond central schemes", items: [
+    { href: "ecosystem-map.html", title: "Explore India map", icon: "compass" },
     { href: "state-schemes.html", title: "State & UT schemes", icon: "layers" },
     { href: "incubators.html", title: "Incubators directory", icon: "pin" },
     { href: "psu.html", title: "PSU & regulator programs", icon: "building" },
@@ -323,7 +326,7 @@ const brandParts = SITE_NAME.split(" ");
 const brandMain = brandParts.length > 1 ? brandParts.slice(0, -1).join(" ") : SITE_NAME;
 const brandThin = brandParts.length > 1 ? brandParts[brandParts.length - 1] : "";
 
-function shell({ root, active, title, description, body, extraHead = "", pageClass = "", toc = "" }) {
+function shell({ root, active, title, description, body, extraHead = "", pageClass = "", toc = "", immersive = false }) {
   const fullTitle = title ? `${title} · ${SITE_NAME}` : `${SITE_NAME} — Government Schemes for Indian Startups`;
   return `<!doctype html>
 <html lang="en" data-root="${root}">
@@ -350,7 +353,7 @@ ${themeBoot}
 <link rel="stylesheet" href="${root}assets/site.css">
 ${extraHead}
 </head>
-<body>
+<body${immersive ? ' class="immersive-body"' : ""}>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar">
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span class="hb" aria-hidden="true"><span class="hb-t"></span><span class="hb-m"></span><span class="hb-b"></span></span></button>
@@ -367,12 +370,17 @@ ${extraHead}
   </button>
 </header>
 <div class="scrim" id="scrim"></div>
+${immersive ? `
+<main id="main" class="content ${pageClass}">
+${body}
+</main>` : `
 <div class="layout">
 ${sidebar(root, active)}
 <main id="main" class="content ${pageClass}">
 ${toc ? `<div class="content-with-toc"><div class="content-main">${body}</div>${toc}</div>` : body}
 </main>
-</div>
+</div>`}
+${immersive ? "" : `
 <footer class="footer"><div class="footer-inner">
   <div class="footer-author">
     <img class="author-avatar" src="${root}assets/jeremy.png" alt="Jeremy Fritzhand" width="32" height="32" loading="lazy">
@@ -392,7 +400,7 @@ ${toc ? `<div class="content-with-toc"><div class="content-main">${body}</div>${
     <a href="https://www.startupindia.gov.in/" target="_blank" rel="noopener">startupindia.gov.in ↗</a>
     <a href="${attr(REPO_URL)}" target="_blank" rel="noopener">GitHub ↗</a>
   </div>
-</div></footer>
+</div></footer>`}
 <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Search">
   <div class="backdrop"></div>
   <div class="search-panel">
@@ -402,7 +410,7 @@ ${toc ? `<div class="content-with-toc"><div class="content-main">${body}</div>${
     <div class="search-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div>
   </div>
 </div>
-<button class="to-top" id="to-top" aria-label="Back to top">${ICONS.up}</button>
+${immersive ? "" : `<button class="to-top" id="to-top" aria-label="Back to top">${ICONS.up}</button>`}
 <script src="${root}assets/search-index.js" defer></script>
 <script src="${root}assets/site.js" defer></script>
 </body>
@@ -464,7 +472,7 @@ const write = (rel, html) => { mkdirSync(dirname(join(OUT, rel)), { recursive: t
       const [x, y] = P(o.lng, o.lat);
       return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6"/>`;
     }).join("");
-    heroMap = `<a class="hero-map" href="incubators.html" aria-label="Explore the incubators map — ${incubators.incubators.length} incubators mapped across India">
+    heroMap = `<a class="hero-map" href="ecosystem-map.html" aria-label="Choose how to explore India — ${incubators.incubators.length} incubators mapped nationwide">
       <svg viewBox="0 0 ${W} ${H}" role="img" aria-hidden="true">${paths}${dots}</svg>
     </a>`;
   }
@@ -510,7 +518,7 @@ ${tickerHTML}
 <div class="stats">
   <div class="stat"><div class="n">${schemes.length}</div><div class="l">Schemes documented in full</div></div>
   <div class="stat"><div class="n">${esc(about.stats?.ministries || "35+")}</div><div class="l">Ministries, departments &amp; PSUs</div></div>
-  <a class="stat" href="incubators.html"><div class="n">${incubators.incubators.length}</div><div class="l">Incubators mapped nationwide</div></a>
+  <a class="stat" href="ecosystem-map.html"><div class="n">${incubators.incubators.length}</div><div class="l">Incubators on the India maps</div></a>
   <div class="stat"><div class="n">6</div><div class="l">Types of support</div></div>
   <div class="stat"><div class="n">5</div><div class="l">Lifecycle stages covered</div></div>
 </div>
@@ -810,6 +818,166 @@ ${sorted.map((st) => st.url ? `
     description: "Find your state or union territory's startup portal — local seed grants, subsidies and incubation that stack with central schemes.",
     body,
   }));
+}
+
+/* ================= ECOSYSTEM MAP ================= */
+{
+  const leanIncubators = incubators.incubators.map((incubator, index) => ({
+    slug: `${slugify(incubator.name)}-${index + 1}`,
+    name: incubator.name,
+    shortName: incubator.name.length > 34 ? incubator.name.split(/\s+/).slice(0, 5).join(" ") : incubator.name,
+    host: incubator.host || "",
+    city: incubator.city || "",
+    region: incubator.state,
+    type: incubator.type,
+    website: incubator.website || "",
+  }));
+  const minimapStates = stateSchemes.states.map((state) =>
+    `<button type="button" data-state="${attr(state.state)}" aria-label="Open ${attr(state.state)}"><span class="sr-only">${esc(state.state)}</span></button>`).join("");
+  const walkableBody = `
+<div class="walkable-map" id="walkable-map">
+  <div class="walkable-viewport" role="application" aria-label="Walkable map of India's startup incubator ecosystem. Use arrow keys or WASD to move.">
+    <div class="walkable-world">
+      <svg class="walkable-ground" viewBox="0 0 1000 1113" width="18000" height="20034" aria-hidden="true"></svg>
+      <div class="walkable-wayfinders" aria-label="State and regional wayfinders"></div>
+      <div class="walkable-landmarks" aria-label="State and union territory landmarks"></div>
+      <div class="walkable-orgs" aria-label="Incubators"></div>
+      <div class="walkable-avatar" aria-hidden="true">
+        <span class="walkable-avatar-shadow"></span>
+        <span class="walkable-avatar-body"><span></span></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="walkable-intro is-open" aria-label="Map instructions">
+    <button class="walkable-intro-close" id="walkable-intro-close" type="button" aria-label="Dismiss instructions">${ICONS.close}</button>
+    <div class="walkable-kicker">Walk India</div>
+    <h1>Explore the incubator ecosystem on foot</h1>
+    <p>Walk India’s real shape, follow state wayfinders, and open a state when you arrive. Incubator icons show state membership—not street addresses. If your avatar leaves the view, choose Recenter to bring it back.</p>
+    <div class="walkable-keyhint"><span><kbd>WASD</kbd> or arrows to walk</span><span><kbd>Enter</kbd> to open your current state</span></div>
+  </section>
+
+  <div class="walkable-actions">
+    <a class="walkable-list-link" href="incubators.html">${ICONS.list}<span>Browse incubators</span></a>
+    <a class="walkable-map-home" href="ecosystem-map.html" aria-label="Map choices">${ICONS.map}</a>
+    <button class="walkable-recenter" id="walkable-recenter" type="button" aria-label="Recenter map on avatar" title="Recenter on avatar">${ICONS.target}</button>
+    <button class="walkable-help" id="walkable-help" type="button" aria-label="Show map instructions">?</button>
+  </div>
+  <button class="walkable-nearby" id="walkable-nearby" type="button" hidden></button>
+
+  <aside class="walkable-minimap" aria-label="India inset map">
+    <div class="walkable-minimap-head"><strong>India</strong><span>You are here</span></div>
+    <div class="walkable-minimap-stage">
+      <svg class="walkable-minimap-map" viewBox="0 0 1000 1113" aria-hidden="true"></svg>
+      <div class="walkable-minimap-states">${minimapStates}</div>
+      <span class="walkable-minimap-dot" aria-hidden="true"></span>
+    </div>
+  </aside>
+
+  <div class="walkable-zoom" aria-label="Map zoom controls">
+    <button id="walkable-zoom-in" type="button" aria-label="Zoom in">+</button>
+    <output id="walkable-zoom-level" aria-live="polite">100%</output>
+    <button id="walkable-zoom-out" type="button" aria-label="Zoom out">−</button>
+    <button id="walkable-zoom-reset" type="button" aria-label="Reset zoom">Reset</button>
+  </div>
+
+  <div class="walkable-dpad" aria-label="Movement controls">
+    <button type="button" data-direction="up" aria-label="Walk north">↑</button>
+    <button type="button" data-direction="left" aria-label="Walk west">←</button>
+    <button type="button" data-direction="down" aria-label="Walk south">↓</button>
+    <button type="button" data-direction="right" aria-label="Walk east">→</button>
+  </div>
+
+  <div class="walkable-drawer" id="state-drawer" hidden>
+    <button class="walkable-drawer-backdrop" type="button" aria-label="Close state"></button>
+    <section class="walkable-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="state-drawer-title">
+      <header class="walkable-drawer-head">
+        <div><span>State / union territory</span><h2 id="state-drawer-title"></h2></div>
+        <button class="icon-btn" id="state-drawer-close" type="button" aria-label="Close state">${ICONS.close}</button>
+      </header>
+      <div class="walkable-drawer-body"></div>
+    </section>
+  </div>
+</div>
+<script type="application/json" id="walkable-incubators">${JSON.stringify(leanIncubators)}</script>
+<script type="application/json" id="walkable-states">${JSON.stringify(stateSchemes.states)}</script>
+<script type="application/json" id="india-map-data">${JSON.stringify(indiaMap)}</script>
+<script type="module" src="assets/walkable-map.js"></script>`;
+  write("walkable-map.html", shell({
+    root: "",
+    active: "walkable-map.html",
+    title: "Walkable India ecosystem map",
+    description: "Walk across India’s startup incubator ecosystem, following state wayfinders and discovering incubators and state support.",
+    body: walkableBody,
+    pageClass: "walkable-page",
+    immersive: true,
+  }));
+
+  const previewPaths = Object.entries(indiaMap.states).map(([name, shape]) =>
+    `<path data-state="${attr(name)}" d="${shape.d}"></path>`).join("");
+  const landingBody = `
+${crumbs("", [["Home", "index.html"], ["Explore India map", null]])}
+<section class="map-entry-hero">
+  <div class="map-entry-copy">
+    <div class="kicker">India ecosystem maps</div>
+    <h1>Choose how you want to explore</h1>
+    <p class="lede">All three views use the guide’s source-linked records across India’s states and union territories. The walkable map places incubators generally within their state—it does not claim an exact street location.</p>
+  </div>
+  <div class="map-entry-preview" aria-hidden="true"><svg viewBox="0 0 ${indiaMap.viewBox[0]} ${indiaMap.viewBox[1]}">${previewPaths}</svg></div>
+</section>
+
+<div class="map-entry-grid map-entry-grid-three">
+  <article class="map-entry-card map-entry-walk">
+    <div class="map-entry-icon">${ICONS.compass}</div>
+    <div class="map-entry-label">Immersive experience</div>
+    <h2>Walk the India ecosystem</h2>
+    <p>Move an avatar across India, follow state wayfinders, discover incubator-type icons, and open policy-rich state drawers as you arrive.</p>
+    <ul>
+      <li>Keyboard, touch D-pad, trackpad, and pinch controls</li>
+      <li>36 state/UT landmarks and directional signposts</li>
+      <li>Designed for exploratory, full-screen browsing</li>
+    </ul>
+    <a class="btn btn-primary" href="walkable-map.html">Enter the walkable map ${ICONS.arrow}</a>
+  </article>
+
+  <article class="map-entry-card">
+    <div class="map-entry-icon">${ICONS.pin}</div>
+    <div class="map-entry-label">Incubator directory</div>
+    <h2>Scan incubators by state</h2>
+    <p>Use the conventional India map to compare incubator coverage, filter all ${incubators.incubators.length} records, and switch between map, cards, table, and state views.</p>
+    <ul>
+      <li>Search by incubator, host institution, city, or sector</li>
+      <li>Filter by state, type, and supporting programme</li>
+      <li>Best for targeted research and fast comparison</li>
+    </ul>
+    <a class="btn btn-secondary" href="incubators.html?view=map">Open incubator map ${ICONS.arrow}</a>
+  </article>
+
+  <article class="map-entry-card">
+    <div class="map-entry-icon">${ICONS.layers}</div>
+    <div class="map-entry-label">State support map</div>
+    <h2>Compare state &amp; UT schemes</h2>
+    <p>Explore local startup policies and incentives through the existing state choropleth, with filters for grants, subsidies, seed funding, incubation, and more.</p>
+    <ul>
+      <li>Compare scheme volume across states and UTs</li>
+      <li>Open policy summaries and official portals</li>
+      <li>Best for funding and incentive research</li>
+    </ul>
+    <a class="btn btn-secondary" href="state-schemes.html?view=map">Open state schemes map ${ICONS.arrow}</a>
+  </article>
+</div>
+
+<div class="map-entry-note">
+  ${ICONS.info}
+  <p><strong>Know what you need?</strong> Use the <a href="incubators.html">incubator directory</a> or <a href="state-schemes.html">state schemes directory</a>. Every record remains reachable without entering the walkable experience.</p>
+</div>`;
+  write("ecosystem-map.html", shell({
+    root: "",
+    active: "ecosystem-map.html",
+    title: "Explore India map",
+    description: "Choose an immersive walkable map, the filterable incubator map, or India’s state and union territory schemes map.",
+    body: landingBody,
+  }).replace(/[ \t]+\n/g, "\n"));
 }
 
 /* ================= INCUBATORS ================= */
@@ -1200,6 +1368,8 @@ write("404.html", shell({
 cpSync(join(SITE, "tokens.css"), join(OUT, "assets", "tokens.css"));
 cpSync(join(SITE, "site.css"), join(OUT, "assets", "site.css"));
 cpSync(join(SITE, "site.js"), join(OUT, "assets", "site.js"));
+cpSync(join(SITE, "walkable-core.js"), join(OUT, "assets", "walkable-core.js"));
+cpSync(join(SITE, "walkable-map.js"), join(OUT, "assets", "walkable-map.js"));
 if (existsSync(join(SITE, "og.png"))) cpSync(join(SITE, "og.png"), join(OUT, "assets", "og.png"));
 if (existsSync(join(SITE, "jeremy.png"))) cpSync(join(SITE, "jeremy.png"), join(OUT, "assets", "jeremy.png"));
 if (existsSync(join(ROOT, PDF_NAME))) cpSync(join(ROOT, PDF_NAME), join(OUT, "assets", PDF_NAME));

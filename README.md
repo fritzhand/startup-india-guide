@@ -6,7 +6,7 @@
 
 The Government of India's 107-page *Playbook of Government Schemes and Initiatives for Startups* (June 2026), rebuilt as a docs site: 69 schemes with verbatim eligibility, benefits and official links, organised the way a founder actually looks for money — by need, by stage, by sector.
 
-[**Live site**](https://fritzhand.github.io/startup-india-guide/) · [**Scheme Finder**](https://fritzhand.github.io/startup-india-guide/finder.html) · [**All 69 schemes**](https://fritzhand.github.io/startup-india-guide/directory.html) · [**Compare**](https://fritzhand.github.io/startup-india-guide/compare.html)
+[**Live site**](https://fritzhand.github.io/startup-india-guide/) · [**Explore India map**](https://fritzhand.github.io/startup-india-guide/ecosystem-map.html) · [**Scheme Finder**](https://fritzhand.github.io/startup-india-guide/finder.html) · [**All 69 schemes**](https://fritzhand.github.io/startup-india-guide/directory.html) · [**Compare**](https://fritzhand.github.io/startup-india-guide/compare.html)
 
 [![Use this template](https://img.shields.io/badge/Use%20this%20template-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/fritzhand/startup-india-guide/generate)
 
@@ -44,6 +44,7 @@ Four views from the [live site](https://fritzhand.github.io/startup-india-guide/
 | [Compare](https://fritzhand.github.io/startup-india-guide/compare.html) | Up to three schemes side by side |
 | [Lifecycle Map](https://fritzhand.github.io/startup-india-guide/lifecycle.html) | Ideation → prototype → seed → growth → market access |
 | [What do you need?](https://fritzhand.github.io/startup-india-guide/needs.html) | From a need (grant / loan / lab / buyers / IP) to the schemes that provide it |
+| [Explore India map](https://fritzhand.github.io/startup-india-guide/ecosystem-map.html) | Choose a full-screen walkable India experience, the conventional incubator map, or the state-schemes map. The walkable view includes keyboard/touch movement, pinch zoom, state wayfinders, type-specific incubator icons, and policy-rich state drawers |
 | [State & UT schemes](https://fritzhand.github.io/startup-india-guide/state-schemes.html) | 320+ state-level startup schemes & incentives (seed grants, subsidies, reimbursements, procurement) across every state and UT — straight from each official state startup policy, by-state / all-schemes / map views. Kept separate from the central schemes |
 | [Incubators directory](https://fritzhand.github.io/startup-india-guide/incubators.html) | 220+ technology business incubators, Atal Incubation Centres & startup hubs on an interactive India map (choropleth + city markers) — searchable, filterable, cards / table / state-wise views, with locations, websites and contacts |
 | [PSU & regulators](https://fritzhand.github.io/startup-india-guide/psu.html) · [States & UTs](https://fritzhand.github.io/startup-india-guide/states.html) | 17 PSU/regulator programs; every state startup portal |
@@ -63,7 +64,7 @@ site/tokens.css + site.css + site.js            the skin (PDF-sampled palette) +
       │
       │  node build.mjs                         zero dependencies, fails loudly
       ▼
-docs/  →  GitHub Pages                          82 static pages, ⌘K search, no runtime deps
+docs/  →  GitHub Pages                          85 static pages, ⌘K search, no runtime deps
 ```
 
 1. **Extract** — every PDF page rendered to text *and* image; scheme one-pagers parsed to structured JSON; hyperlinks taken from the PDF's link annotations, never retyped.
@@ -101,8 +102,12 @@ startup-india-guide/
 ├── site/                    # the engine — consumed by build.mjs
 │   ├── tokens.css           # the skin: PDF-sampled palette, light + dark
 │   ├── site.css             # layout & component vocabulary; reads only tokens
-│   └── site.js              # search, filters, wizard, compare, incubator map, theme toggle
+│   ├── site.js              # search, filters, wizard, compare, incubator map, theme toggle
+│   ├── walkable-core.js     # pure movement, camera, zoom, timing and placement helpers
+│   └── walkable-map.js      # full-screen India world, controls, wayfinders and state drawers
 ├── build.mjs                # data + site → docs/   (zero dependencies, Node ≥ 18)
+├── WALKABLE_MAP.md          # walkable-map product and implementation contract
+├── TODOS.md                 # future product work and acceptance criteria
 ├── scripts/build-india-map.mjs   # one-off: district GeoJSON → data/india-map.json (state paths + projection)
 ├── docs/                    # GENERATED — never hand-edit; what GitHub Pages serves
 └── .github/workflows/deploy-pages.yml   # publishes docs/ → gh-pages on push to main
@@ -111,13 +116,23 @@ startup-india-guide/
 ## Working on the site
 
 ```bash
-node build.mjs                        # regenerate docs/ from data/ + site/
-python3 -m http.server -d docs 8000   # preview locally (or: npx serve docs)
+npm run build                         # regenerate docs/ from data/ + site/
+npm test                              # walkable-map layout, movement, zoom and timing checks
+npm run dev                           # build and preview at http://localhost:8000
 ```
 
 - **Content change** (an amount, a new link, a new scheme)? Edit `data/*.json`, rebuild.
 - **Design change**? Edit `site/tokens.css` (palette/fonts) or `site/site.css` (components), rebuild.
 - **Never edit `docs/`** — every build overwrites it.
+
+## Roadmap
+
+The walkable map is single-player today. A future
+[live-explorers feature](TODOS.md#future-feature-live-explorers) would give each
+visitor an anonymous local avatar, show an approximate live explorer count, and
+render nearby visitors through an external realtime presence service. The MVP
+is intentionally ephemeral and privacy-minimal: no accounts, chat, GPS,
+permanent profiles, or location history.
 
 ## How the data was made
 
