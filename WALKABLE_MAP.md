@@ -24,6 +24,8 @@ Movement supports arrow keys, WASD, and a touch D-pad. The avatar is constrained
 to India’s state/UT land geometry. Enter always opens the state or union
 territory polygon currently under the avatar. Zoom supports buttons, reset,
 trackpad control-wheel, and two-finger pinch, clamped from `0.65×` to `1.65×`.
+A persistent Recenter control snaps the camera back to the avatar if it leaves
+the viewport.
 
 ## States, incubators, and wayfinding
 

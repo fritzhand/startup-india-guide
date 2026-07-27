@@ -72,13 +72,14 @@ try{if(localStorage.getItem("rail-collapsed")==="1")document.documentElement.cla
     <button class="walkable-intro-close" id="walkable-intro-close" type="button" aria-label="Dismiss instructions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     <div class="walkable-kicker">Walk India</div>
     <h1>Explore the incubator ecosystem on foot</h1>
-    <p>Walk India’s real shape, follow state wayfinders, and open a state when you arrive. Incubator icons show state membership—not street addresses.</p>
+    <p>Walk India’s real shape, follow state wayfinders, and open a state when you arrive. Incubator icons show state membership—not street addresses. If your avatar leaves the view, choose Recenter to bring it back.</p>
     <div class="walkable-keyhint"><span><kbd>WASD</kbd> or arrows to walk</span><span><kbd>Enter</kbd> to open your current state</span></div>
   </section>
 
   <div class="walkable-actions">
     <a class="walkable-list-link" href="incubators.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>Browse incubators</span></a>
     <a class="walkable-map-home" href="ecosystem-map.html" aria-label="Map choices"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Zm0 0v14m6-12v14"/></svg></a>
+    <button class="walkable-recenter" id="walkable-recenter" type="button" aria-label="Recenter map on avatar" title="Recenter on avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></button>
     <button class="walkable-help" id="walkable-help" type="button" aria-label="Show map instructions">?</button>
   </div>
   <button class="walkable-nearby" id="walkable-nearby" type="button" hidden></button>

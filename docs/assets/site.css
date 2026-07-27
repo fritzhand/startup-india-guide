@@ -1331,6 +1331,7 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 .walkable-actions { left: 16px; bottom: 16px; display: flex; gap: 8px; }
 .walkable-list-link,
 .walkable-map-home,
+.walkable-recenter,
 .walkable-help {
   height: 42px;
   display: flex;
@@ -1344,10 +1345,13 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 }
 .walkable-list-link { gap: 7px; padding: 0 14px; font-size: .78rem; font-weight: 700; }
 .walkable-list-link:hover,
-.walkable-map-home:hover { color: var(--link); text-decoration: none; }
+.walkable-map-home:hover,
+.walkable-recenter:hover { color: var(--link); text-decoration: none; }
 .walkable-list-link svg,
-.walkable-map-home svg { width: 17px; }
+.walkable-map-home svg,
+.walkable-recenter svg { width: 17px; }
 .walkable-map-home,
+.walkable-recenter,
 .walkable-help { width: 42px; font-weight: 800; }
 .walkable-nearby {
   left: 50%;

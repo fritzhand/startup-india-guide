@@ -853,13 +853,14 @@ ${sorted.map((st) => st.url ? `
     <button class="walkable-intro-close" id="walkable-intro-close" type="button" aria-label="Dismiss instructions">${ICONS.close}</button>
     <div class="walkable-kicker">Walk India</div>
     <h1>Explore the incubator ecosystem on foot</h1>
-    <p>Walk India’s real shape, follow state wayfinders, and open a state when you arrive. Incubator icons show state membership—not street addresses.</p>
+    <p>Walk India’s real shape, follow state wayfinders, and open a state when you arrive. Incubator icons show state membership—not street addresses. If your avatar leaves the view, choose Recenter to bring it back.</p>
     <div class="walkable-keyhint"><span><kbd>WASD</kbd> or arrows to walk</span><span><kbd>Enter</kbd> to open your current state</span></div>
   </section>
 
   <div class="walkable-actions">
     <a class="walkable-list-link" href="incubators.html">${ICONS.list}<span>Browse incubators</span></a>
     <a class="walkable-map-home" href="ecosystem-map.html" aria-label="Map choices">${ICONS.map}</a>
+    <button class="walkable-recenter" id="walkable-recenter" type="button" aria-label="Recenter map on avatar" title="Recenter on avatar">${ICONS.target}</button>
     <button class="walkable-help" id="walkable-help" type="button" aria-label="Show map instructions">?</button>
   </div>
   <button class="walkable-nearby" id="walkable-nearby" type="button" hidden></button>

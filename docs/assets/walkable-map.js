@@ -49,6 +49,7 @@ if (root) {
   const zoomOut = root.querySelector("#walkable-zoom-out");
   const zoomReset = root.querySelector("#walkable-zoom-reset");
   const zoomLevel = root.querySelector("#walkable-zoom-level");
+  const recenter = root.querySelector("#walkable-recenter");
   const help = root.querySelector("#walkable-help");
   const drawer = root.querySelector("#state-drawer");
   const drawerBackdrop = root.querySelector(".walkable-drawer-backdrop");
@@ -325,6 +326,12 @@ if (root) {
     on ? pressed.add(direction) : pressed.delete(direction);
     requestTick();
   }
+  function recenterAvatar() {
+    pressed.clear();
+    camera = clampCamera(position, cameraViewport(), worldSize);
+    renderCamera();
+    requestTick();
+  }
   function setZoom(nextZoom) {
     zoom = clampZoom(nextZoom);
     zoomLevel.value = `${Math.round(zoom * 100)}%`;
@@ -337,6 +344,7 @@ if (root) {
   zoomIn.addEventListener("click", () => setZoom(zoom + ZOOM_STEP));
   zoomOut.addEventListener("click", () => setZoom(zoom - ZOOM_STEP));
   zoomReset.addEventListener("click", () => setZoom(1));
+  recenter.addEventListener("click", recenterAvatar);
 
   const touchPoints = new Map();
   let pinchDistance = 0;
