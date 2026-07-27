@@ -49,7 +49,8 @@ test("camera centers and clamps at the world edges", () => {
 
 test("zoom stays inside the supported range", () => {
   assert.equal(DEFAULT_ZOOM, 0.65);
-  assert.equal(clampZoom(0.2), 0.65);
+  assert.equal(clampZoom(0.2), 0.5);
+  assert.equal(clampZoom(0.5), 0.5);
   assert.equal(clampZoom(1), 1);
   assert.equal(clampZoom(2), 1.65);
 });

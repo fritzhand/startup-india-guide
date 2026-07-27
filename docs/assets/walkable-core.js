@@ -3,7 +3,7 @@ export const MAP_HEIGHT = 1113;
 export const WORLD_SCALE = 18;
 export const WALK_SPEED = 360;
 export const DEFAULT_ZOOM = 0.65;
-export const MIN_ZOOM = 0.65;
+export const MIN_ZOOM = 0.5;
 export const MAX_ZOOM = 1.65;
 export const ZOOM_STEP = 0.2;
 
