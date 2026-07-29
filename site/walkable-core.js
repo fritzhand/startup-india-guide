@@ -57,6 +57,63 @@ export function estimateTraverseSeconds(points, scale = WORLD_SCALE, speed = WAL
   return length * scale / speed;
 }
 
+/* Which watercolour sprites belong on which terrain. Ranges get rock, the
+   Thar gets scrub, wetlands and the Ghats get trees. `other` covers land no
+   Natural Earth region claims. */
+export const DECOR_KITS = {
+  mtn: ["rock-1", "rock-2", "rock-3", "tree-simple-c"],
+  desert: ["shrub-2", "rock-3"],
+  wet: ["tree-simple-a", "shrub-1"],
+  plateau: ["tree-simple-b", "rock-1", "shrub-1"],
+  plain: ["tree-simple-a", "shrub-1"],
+  other: ["tree-simple-a", "tree-simple-b", "shrub-1", "rock-1"],
+};
+
+/**
+ * Scatters decorative sprites across the land, deterministically.
+ *
+ * Rejection sampling over the map's bounding box: a candidate survives only
+ * if it is on land, far enough from the sprites already placed, and clear of
+ * every interactive target (`avoid` — incubator icons and state landmarks),
+ * because decor must never sit under something the player needs to click.
+ * `kindAt` maps a point to a terrain kind, which chooses the sprite kit.
+ *
+ * Returns the sprites sorted by y, so nearer ones paint over farther ones.
+ */
+export function placeDecor({
+  count,
+  width = MAP_WIDTH,
+  height = MAP_HEIGHT,
+  contains,
+  kindAt = () => "other",
+  avoid = [],
+  kits = DECOR_KITS,
+  spacing = 7,
+  clearance = 14,
+  seed = "walkable-decor",
+}) {
+  const random = seededRandom(seed);
+  const placed = [];
+  // Bounded work: rejection sampling over a mostly-water box can never be
+  // allowed to spin, so the attempt budget is fixed rather than a while-true.
+  const attempts = count * 40;
+
+  for (let attempt = 0; attempt < attempts && placed.length < count; attempt += 1) {
+    const point = { x: random() * width, y: random() * height };
+    // Draw the kit roll every iteration so a rejected candidate cannot shift
+    // the sequence for the ones that follow — that is what keeps this stable.
+    const roll = random();
+    const scale = 0.78 + random() * 0.5;
+    if (!contains(point)) continue;
+    if (avoid.some((other) => distance(point, other) < clearance)) continue;
+    if (placed.some((other) => distance(point, other) < spacing)) continue;
+    const kit = kits[kindAt(point)] || kits.other;
+    placed.push({ ...point, sprite: kit[Math.floor(roll * kit.length)], scale });
+  }
+
+  return placed.sort((a, b) => a.y - b.y);
+}
+
 export function placeOrganizations({
   organizations,
   regionBounds,

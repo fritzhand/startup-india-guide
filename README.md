@@ -96,7 +96,8 @@ startup-india-guide/
 │   ├── needs-index.json     # need → schemes map
 │   ├── state-schemes.json   # 320+ state/UT startup schemes & incentives, by state
 │   ├── incubators.json      # 220+ incubators: location, type, sectors, website, contacts, lat/lng
-│   ├── india-map.json       # projected + simplified India state polygons (see scripts/) for the maps
+│   ├── india-map.json       # projected + simplified India state/UT outlines (see scripts/) for the maps
+│   ├── india-terrain.json   # relief, rivers, lakes and named peaks for the walkable map
 │   ├── psu.json · states.json · glossary.json · about.json
 │   └── aliases.json         # printed-name → slug overrides for cross-references
 ├── site/                    # the engine — consumed by build.mjs
@@ -104,11 +105,14 @@ startup-india-guide/
 │   ├── site.css             # layout & component vocabulary; reads only tokens
 │   ├── site.js              # search, filters, wizard, compare, incubator map, theme toggle
 │   ├── walkable-core.js     # pure movement, camera, zoom, timing and placement helpers
-│   └── walkable-map.js      # full-screen India world, controls, wayfinders and state drawers
+│   ├── walkable-map.js      # full-screen India world, controls, wayfinders and state drawers
+│   └── forest/              # watercolour decor sprites for the walkable map's terrain
 ├── build.mjs                # data + site → docs/   (zero dependencies, Node ≥ 18)
 ├── WALKABLE_MAP.md          # walkable-map product and implementation contract
 ├── TODOS.md                 # future product work and acceptance criteria
-├── scripts/build-india-map.mjs   # one-off: district GeoJSON → data/india-map.json (state paths + projection)
+├── scripts/geo.mjs               # projection/simplification helpers shared by the two data-prep tools
+├── scripts/build-india-map.mjs   # one-off: India GeoJSON → data/india-map.json (state outlines + projection)
+├── scripts/build-india-terrain.mjs # one-off: Natural Earth → data/india-terrain.json (same projection)
 ├── docs/                    # GENERATED — never hand-edit; what GitHub Pages serves
 └── .github/workflows/deploy-pages.yml   # publishes docs/ → gh-pages on push to main
 ```
@@ -143,6 +147,26 @@ Each of the playbook's 107 pages was extracted to text and rendered to an image;
 - **Scheme details drift.** Deadlines, corpus sizes and application windows change after any snapshot; every page carries a "verify on the official portal" notice for exactly that reason.
 - **This is an independent reference,** not a government website, and not legal or financial advice.
 - **Extraction is machine-verified, not lawyer-reviewed.** The verification pass catches transcription errors; it cannot catch changes the government made after June 2026.
+
+## Map data
+
+The maps are built from two committed, regenerable datasets. Both are produced
+by the one-off tools in `scripts/`, share a single projection descriptor, and
+are never fetched at run time.
+
+| Dataset | Source | Terms |
+|---|---|---|
+| `data/india-map.json` — state/UT outlines | [udit-001/india-maps-data](https://github.com/udit-001/india-maps-data) | MIT |
+| `data/india-terrain.json` — relief, rivers, lakes, peaks | [Natural Earth](https://www.naturalearthdata.com/) 10m physical, via [martynafford/natural-earth-geojson](https://github.com/martynafford/natural-earth-geojson) | Public domain |
+
+Natural Earth asks for no attribution; it is credited here anyway. Terrain names
+are transliterated to their conventional Indian spellings — the renames are
+listed explicitly in `scripts/build-india-terrain.mjs`. A relief region is only
+*named* on the map when a meaningful share of it lies inside India, so features
+that merely graze the border are drawn but left anonymous.
+
+The walkable map's decor sprites in `site/forest/` come from the Startup Forest
+project's shared watercolour kit.
 
 ## License
 
