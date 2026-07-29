@@ -53,6 +53,10 @@ const states = readJSON("states.json");
 const glossary = readJSON("glossary.json");
 const incubators = readJSON("incubators.json");
 const indiaMap = readJSON("india-map.json");
+/* Relief, rivers, lakes and peaks for the walkable map only. The incubator and
+   state-scheme maps are choropleths — they encode counts as fill colour, and a
+   terrain tint underneath would corrupt that reading. */
+const indiaTerrain = readJSON("india-terrain.json");
 const stateSchemes = readJSON("state-schemes.json");
 
 /* ---- external news (optional): a vetted feed powering the overview ticker.
@@ -902,6 +906,7 @@ ${sorted.map((st) => st.url ? `
 <script type="application/json" id="walkable-incubators">${JSON.stringify(leanIncubators)}</script>
 <script type="application/json" id="walkable-states">${JSON.stringify(stateSchemes.states)}</script>
 <script type="application/json" id="india-map-data">${JSON.stringify(indiaMap)}</script>
+<script type="application/json" id="india-terrain-data">${JSON.stringify(indiaTerrain)}</script>
 <script type="module" src="assets/walkable-map.js"></script>`;
   write("walkable-map.html", shell({
     root: "",
@@ -1370,6 +1375,7 @@ cpSync(join(SITE, "site.css"), join(OUT, "assets", "site.css"));
 cpSync(join(SITE, "site.js"), join(OUT, "assets", "site.js"));
 cpSync(join(SITE, "walkable-core.js"), join(OUT, "assets", "walkable-core.js"));
 cpSync(join(SITE, "walkable-map.js"), join(OUT, "assets", "walkable-map.js"));
+cpSync(join(SITE, "forest"), join(OUT, "assets", "forest"), { recursive: true }); // walkable-map decor sprites
 if (existsSync(join(SITE, "og.png"))) cpSync(join(SITE, "og.png"), join(OUT, "assets", "og.png"));
 if (existsSync(join(SITE, "jeremy.png"))) cpSync(join(SITE, "jeremy.png"), join(OUT, "assets", "jeremy.png"));
 if (existsSync(join(ROOT, PDF_NAME))) cpSync(join(ROOT, PDF_NAME), join(OUT, "assets", PDF_NAME));

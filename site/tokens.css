@@ -89,6 +89,16 @@
   --walk-avatar-detail: #ffffff;
   --walk-sign: #fff4d3;
   --walk-sign-border: #9b6717;
+  /* walkable terrain — hypsometric tints laid over --walk-land, so each is a
+     small step away from it rather than a colour in its own right. */
+  --walk-relief-mtn: #c3cfa4;
+  --walk-relief-plateau: #dfe3bd;
+  --walk-relief-desert: #f0e6c4;
+  --walk-relief-wet: #c2d9c4;
+  --walk-relief-plain: #e8f0d2;
+  --walk-river: #8fbccf;
+  --walk-lake: #9fcbdc;
+  --walk-terrain-label: #6b7f57;
   --org-academic: #6d4fc4;
   --org-tbi: #0e7490;
   --org-aic: #c44318;
@@ -166,6 +176,17 @@
   --walk-avatar-detail: #ffffff;
   --walk-sign: #35280d;
   --walk-sign-border: #d9a13f;
+  /* Dark relief is tuned against --walk-land #183a31 directly — the light
+     tints inverted would read as fog, not terrain. Desert warms, wetland
+     cools, mountain lifts. */
+  --walk-relief-mtn: #2c4a3a;
+  --walk-relief-plateau: #1f4335;
+  --walk-relief-desert: #3a4331;
+  --walk-relief-wet: #1b453c;
+  --walk-relief-plain: #1c3f34;
+  --walk-river: #3f7f9c;
+  --walk-lake: #35708c;
+  --walk-terrain-label: #8fb08a;
   --org-academic: #a68cf0;
   --org-tbi: #4cc0dd;
   --org-aic: #ff8750;

@@ -1066,13 +1066,72 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
     linear-gradient(90deg, var(--walk-water-grid) 1px, transparent 1px);
   background-size: 360px 360px;
 }
-.walkable-ground path {
-  fill: var(--walk-land);
+/* The ground paints in layers: land fill → terrain → decor → borders →
+   labels. Only .wg-border is stroked, which is what guarantees state outlines
+   and nothing else — a state made of several sub-paths (islands, or a
+   regression to district geometry) can only ever fill. */
+.wg-fill path { fill: var(--walk-land); }
+.wg-fill path:nth-child(3n) { fill: var(--walk-land-alt); }
+.wg-border path {
+  fill: none;
   stroke: var(--walk-land-border);
   stroke-width: 2.2;
+  stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }
-.walkable-ground path:nth-child(3n) { fill: var(--walk-land-alt); }
+.wg-relief path { stroke: none; opacity: 0.62; }
+.wg-relief path[data-kind="mtn"] { fill: var(--walk-relief-mtn); }
+.wg-relief path[data-kind="plateau"] { fill: var(--walk-relief-plateau); }
+.wg-relief path[data-kind="desert"] { fill: var(--walk-relief-desert); }
+.wg-relief path[data-kind="wet"] { fill: var(--walk-relief-wet); }
+.wg-relief path[data-kind="plain"] { fill: var(--walk-relief-plain); }
+.wg-rivers path {
+  fill: none;
+  stroke: var(--walk-river);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.wg-lakes path { fill: var(--walk-lake); stroke: none; }
+/* The watercolour sprites carry a pale halo that glows against dark land, so
+   they sit back a little further there than in daylight. */
+.wg-decor image { opacity: 0.92; }
+:root[data-theme="dark"] .wg-decor image { opacity: 0.72; }
+/* Terrain names and peaks are gated on zoom by [data-detail] — see setZoom. */
+.wg-labels {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--speed) var(--ease);
+}
+.walkable-map[data-detail="on"] .wg-labels { opacity: 1; visibility: visible; }
+/* Sizes are in SVG user units, and the ground is drawn at 18 CSS px per unit
+   (1000×1113 viewBox → an 18000×20034 world). So 0.9 here is a ~16px label at
+   100% zoom, growing to ~27px at the 165% ceiling. */
+.wg-labels text {
+  fill: var(--walk-terrain-label);
+  paint-order: stroke;
+  stroke: var(--walk-land);
+  stroke-width: 0.14;
+  text-anchor: middle;
+  font-family: inherit;
+}
+.wg-terrain-names text {
+  font-size: 0.9px;
+  font-weight: 600;
+  letter-spacing: 0.09px;
+  text-transform: uppercase;
+}
+.wg-peaks text { font-size: 0.6px; font-weight: 600; }
+.wg-peaks .wg-peak-elevation { font-weight: 400; opacity: 0.75; }
+.wg-peak-mark { fill: var(--walk-terrain-label); stroke: none; }
+/* World-unit type does not adapt to the viewport, and a phone shows barely a
+   screen-width of map — at the desktop size a range name would span half of
+   it. Shrink the names, not the map. */
+@media (max-width: 700px) {
+  .wg-terrain-names text { font-size: 0.62px; letter-spacing: 0.05px; }
+  .wg-peaks text { font-size: 0.48px; }
+}
 .walkable-orgs,
 .walkable-landmarks,
 .walkable-wayfinders { position: absolute; inset: 0; pointer-events: none; }

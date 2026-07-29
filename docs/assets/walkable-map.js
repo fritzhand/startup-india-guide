@@ -11,8 +11,18 @@ import {
   clampZoom,
   distance,
   normalizeMovement,
+  placeDecor,
   placeOrganizations,
 } from "./walkable-core.js";
+
+/** Zoom at or above which terrain names and peak markers are worth showing.
+ *  Below it the labels would pile onto each other and onto incubator pins. */
+const DETAIL_ZOOM = 1;
+/** How many decor sprites to scatter across India's land, and how big each is
+ *  in SVG user units. 3.3 units is ~59 world px against the 48px incubator
+ *  icons — scenery reads as scenery, and never outsizes a target you can click. */
+const DECOR_COUNT = 760;
+const DECOR_SIZE = 3.3;
 
 const root = document.querySelector("#walkable-map");
 
@@ -20,6 +30,7 @@ if (root) {
   const readJSON = (id) => JSON.parse(document.getElementById(id)?.textContent || "null");
   const incubators = readJSON("walkable-incubators") || [];
   const map = readJSON("india-map-data");
+  const terrain = readJSON("india-terrain-data") || { relief: [], rivers: [], lakes: [], peaks: [] };
   const stateRecords = readJSON("walkable-states") || [];
   const stateMeta = Object.fromEntries(stateRecords.map((state) => [state.state, state]));
   const mapStates = map?.states || {};
@@ -93,8 +104,56 @@ if (root) {
   }[char]));
   const toWorld = (point) => ({ x: point.x * WORLD_SCALE, y: point.y * WORLD_SCALE });
 
-  ground.innerHTML = Object.entries(mapStates).map(([name, shape]) =>
-    `<path data-state="${escapeHTML(name)}" d="${shape.d}"></path>`).join("");
+  /* The ground is layered rather than one fill-and-stroke path per state,
+     because only the border layer is stroked. That is what keeps district
+     lines off the map: even if the data ever regained sub-paths, they would
+     be filled, never outlined. Terrain and decor are clipped to the same
+     land shape, so nothing bleeds into the sea. */
+  const statePaths = Object.entries(mapStates);
+  const reliefOrder = { mtn: 0, desert: 1, wet: 2, plateau: 3, plain: 4 };
+  const relief = [...(terrain.relief || [])].sort(
+    (a, b) => (reliefOrder[a.kind] ?? 9) - (reliefOrder[b.kind] ?? 9));
+  const labelledRelief = relief.filter((region) => region.lx && region.name);
+  const peaks = terrain.peaks || [];
+
+  ground.innerHTML = `
+    <defs><clipPath id="walkable-land">${
+      statePaths.map(([, shape]) => `<path d="${shape.d}"/>`).join("")
+    }</clipPath></defs>
+    <g class="wg-fill">${
+      statePaths.map(([name, shape]) => `<path data-state="${escapeHTML(name)}" d="${shape.d}"></path>`).join("")
+    }</g>
+    <g class="wg-terrain" clip-path="url(#walkable-land)">
+      <g class="wg-relief">${
+        // Painted broadest-first so a range reads on top of the plateau it sits in.
+        [...relief].reverse().map((region) =>
+          `<path data-kind="${escapeHTML(region.kind)}" d="${region.d}"></path>`).join("")
+      }</g>
+      <g class="wg-rivers">${
+        (terrain.rivers || []).map((river) => `<path d="${river.d}"></path>`).join("")
+      }</g>
+      <g class="wg-lakes">${
+        (terrain.lakes || []).map((lake) => `<path d="${lake.d}"></path>`).join("")
+      }</g>
+    </g>
+    <g class="wg-decor" clip-path="url(#walkable-land)"></g>
+    <g class="wg-border">${
+      statePaths.map(([, shape]) => `<path d="${shape.d}"></path>`).join("")
+    }</g>
+    <g class="wg-labels" aria-hidden="true">
+      <g class="wg-terrain-names">${
+        labelledRelief.map((region) =>
+          `<text x="${region.lx}" y="${region.ly}" data-kind="${escapeHTML(region.kind)}">${escapeHTML(region.name)}</text>`).join("")
+      }</g>
+      <g class="wg-peaks">${
+        // Geometry in SVG user units: the marker is ~14 CSS px tall at 100% zoom.
+        peaks.map((peak) => `<g transform="translate(${peak.x} ${peak.y})">
+          <path class="wg-peak-mark" d="M-0.42 0.3L0 -0.48L0.42 0.3Z"></path>
+          <text y="1.15">${escapeHTML(peak.name)}</text>
+          <text y="1.95" class="wg-peak-elevation">${peak.elevation.toLocaleString("en-IN")} m</text>
+        </g>`).join("")
+      }</g>
+    </g>`;
 
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
@@ -204,6 +263,32 @@ if (root) {
     button.addEventListener("click", () => travelTo(transfer.destination));
     wayfinderLayer.append(button);
   }
+
+  /* Decor goes last, because it has to route around everything already placed.
+     The terrain kind under a point picks the sprite, so the scatter reads as
+     geography rather than confetti: rock along the Ghats, scrub in the Thar,
+     trees through the Gangetic plain and the northeast. */
+  const reliefHitPaths = relief.map((region) => [region.kind, new Path2D(region.d)]);
+  const kindAt = (point) => {
+    for (const [kind, path] of reliefHitPaths)
+      if (context.isPointInPath(path, point.x, point.y)) return kind;
+    return "other";
+  };
+  const decor = placeDecor({
+    count: DECOR_COUNT,
+    contains: containsLand,
+    kindAt,
+    avoid: [
+      ...placedIncubators,
+      ...Object.values(stateAnchors),
+      ...signs.map(({ x, y }) => ({ x, y })),
+      ...transfers.map(({ x, y }) => ({ x, y })),
+    ],
+  });
+  ground.querySelector(".wg-decor").innerHTML = decor.map((item) => {
+    const size = DECOR_SIZE * item.scale;
+    return `<image href="assets/forest/${item.sprite}.webp" x="${(item.x - size / 2).toFixed(1)}" y="${(item.y - size).toFixed(1)}" width="${size.toFixed(1)}" height="${size.toFixed(1)}" preserveAspectRatio="xMidYMax meet"></image>`;
+  }).join("");
 
   root.querySelector(".walkable-minimap-map").innerHTML = Object.entries(mapStates).map(([name, shape]) =>
     `<path data-state="${escapeHTML(name)}" d="${shape.d}"></path>`).join("");
@@ -335,6 +420,9 @@ if (root) {
   }
   function setZoom(nextZoom) {
     zoom = clampZoom(nextZoom);
+    // Terrain names and peaks only earn their space once you are zoomed in far
+    // enough for them not to collide with each other or with incubator pins.
+    root.dataset.detail = zoom >= DETAIL_ZOOM ? "on" : "off";
     zoomLevel.value = `${Math.round(zoom * 100)}%`;
     zoomLevel.textContent = zoomLevel.value;
     zoomIn.disabled = zoom >= MAX_ZOOM;
