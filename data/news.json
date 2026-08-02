@@ -1,5 +1,20 @@
 [
   {
+    "id": "ext-2bb806ed47a1",
+    "type": "external",
+    "title": "Indian startup funding drops to $662 Mn in July after June spike",
+    "date": "2026-08-01",
+    "year": 2026,
+    "summary": "Indian startups raised $662 million in July, a sharp decline from the blockbuster $2 billion recorded in June, when Meta",
+    "url": "https://entrackr.com/report/indian-startup-funding-drops-to-662-mn-in-july-after-june-spike-12218904",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiogFBVV95cUxQS0plSlk3RkpBX1VOU1YtbGI4RDVWS1lnT015VFVSU0hZbnIyQ0x4VEdpNEdIcllybmVrT25mcEJkaFV2RmR2Y3Z0N0ZQVy1lelJFeURfbjNpd2thN1RudlF4X3RfQnl6TTVuVVV5NEJKYkdvRGpUS2lPam02U2thdEphUWxOdUEtUFRia1FXUnpKS2ZVTWVFWDU0aG1SVmdXVFHSAaIBQVVfeXFMUEtKZUpZN0ZKQV9VTlNWLWxiOEQ1VktZZ09NeVRVUlNIWW5yMkNMeFRHaTRHSHJZcm5la09uZnBCZGhVdkZkdmN2dDdGUFctZXpSRXlEX24zaXdrYTdUbnZReF90X0J5ek01blVVeTRCSmJHb0RqVEtpT2ptNlNrYXRKYVFsTnVBLVBUYmtRV1J6SktmVU1lRVg1NGhtUlZnV1RR"
+  },
+  {
     "id": "ext-819576bdc394",
     "type": "external",
     "title": "Funding and acquisitions in Indian startups this week [July 27 - Aug 01]",
@@ -28,21 +43,6 @@
       "Startups"
     ],
     "gnId": "CBMilgFBVV95cUxNV3lJTm8ydVltdmtxMXVLcWkxLWlzTVNIY3c2TkNNVmNPblFhVDFoTHBoMm5MSFlKMGM3OXZiOTh0alhKOFVEdS12bVB3WURPNHFjbW53UG91MFZ2eWdwRkpvbEIzbEJxeFJpSDFabWhJb21DTTd5aXlWUklHSElRZV9ZNUxZcFY4NWJOb0hmenJndElfSHc"
-  },
-  {
-    "id": "ext-005be558d564",
-    "type": "external",
-    "title": "(Weekly funding roundup July 25-31) VC funding drops to another low",
-    "date": "2026-07-31",
-    "year": 2026,
-    "summary": "Venture capital funding has plunged to the second lowest level on a weekly basis for the year till now.",
-    "url": "https://yourstory.com/2026/07/weekly-funding-roundup-july-25-31-vc-funding-drops-to-another-low",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMimwFBVV95cUxQb1BSUzlFTzJrV3JKUmFCMjNKRWVfQi03QVpoLXhSZkZrb2g5TFVRM0I1QUNtTmVtR3N0anZZR2d2bmhpTzN1VTBDSXJwY2VBVUtabE5QTWhrRzJxOG9tYUN5V2U2a0Zrbjc2LWZvR1ZQcE83ZGphdU1LUGZUSUVNa2tsXzl2SmR2QzdFVVpHYUVaYXdmRjNZQUxXaw"
   },
   {
     "id": "ext-7cc787f1661b",
@@ -165,21 +165,6 @@
     "gnId": "CBMi5AFBVV95cUxQVzhFWDhVcmE5aTFULWUwVW5ISHM5bjBYVnBZSE1NYmpZNEdoWkhzYXlxbFdYVFNNSmdaQ1dqNzN0djVsU1A0R1lTaENPUlNyQ1FLNjcwMmhyQWVjUnBqR2ZiWmZJVGVEeFZsMnNnSmJGY1VhejJSQm5GRnJoZHN5cE1UVkdzOG5wZlhqZVZ3RjAwT0NYdndxaURsSlpKNU1rV1FXMUJjM0c0cnNmUXc3UlNaUlRNVjBid0R5VEluMHhqYnh1Vk9TTlZFLVFhM3cwaURoT0xVSENBTlc1YVVBNHA5Tm_SAeQBQVVfeXFMUFc4RVg4VXJhOWkxVC1lMFVuSEhzOW4wWFZwWUhNTWJqWTRHaFpIc2F5cWxXWFRTTUpnWkNXajczdHY1bFNQNEdZU2hDT1JTckNRSzY3MDJockFlY1JwakdmYlpmSVRlRHhWbDJzZ0piRmNVYXoyUkJuRkZyaGRzeXBNVFZHczhucGZYamVWd0YwME9DWHZ3cWlEbEpaSjVNa1dRVzFCYzNHNHJzZlF3N1JTWlJUTVYwYndEeVRJbjB4amJ4dVZPU05WRS1RYTN3MGlEaE9MVUhDQU5XNWFVQTRwOU5v"
   },
   {
-    "id": "ext-5bad62257512",
-    "type": "external",
-    "title": "FY26 Financial Tracker: Tracking The Financial Performance Of Indian Startups",
-    "date": "2026-07-25",
-    "year": 2026,
-    "summary": "Inc42\u2019s Indian Startup Financials Tracker FY26 aims to be your eyes and ears, updating you on these numbers as they unfold",
-    "url": "https://inc42.com/features/fy26-financial-tracker-tracking-the-financial-performance-of-indian-startups/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMipwFBVV95cUxPa3VHZWxBNmxfd2pGckxtcVQyOTJHa3o1aG1QTFBBdkxIQldZeE1uempBQTV1Y3lrUDMwSXk3VTVzQ2ZhWWFjemI4Q1R2WlMwdkpyX0VOelJsbzdTc0R4NzVYN0VXTXZXNEV3N3Bfb1pvakNfMkVqdmdPSFhpNnlZaHRVQkNIbnU3LXBQcHBEdHd3c0w5V29aODZWai05S3RzQlFIYnREcw"
-  },
-  {
     "id": "ext-b7a17a1c639d",
     "type": "external",
     "title": "India Startup Funding: Manufacturing, DeepTech Overtake AI in $209M VC Week",
@@ -240,21 +225,6 @@
     "gnId": "CBMi8gFBVV95cUxPeDNSZUlVdjFFZ2tuMXJraDBqOEhWSVZNRGEyaFZ3ZTRmUi1vZk82VG1yV2N5VlhhSGNFQnlxRjg1VjN5Y1U3T1BIMm5LcVlZcS1EOGpqRzdzQWJmV3NiMFYwY3JYQkJuTm95VkdLTEZxUm4zUER2WUl6alhTZG1qa3B6VF80OU9tV2s5UWw3Vkx4NEthdE5zUlh3Uy05ckZENWpNRXFFZHBFaFVyMHgtNlBVbk56QVhNX0o4ckxrQ2pXTnRuY2x5V2h3TmpBMHlpNmlzMmw1OXg2NmZfc0NtZjFnWHVRdXFwcTBzU2pQRUM0UdIB9wFBVV95cUxOTExqOVhZUDd6MTFMYm1tMTR2Wmw3OTQ4SDd6WWZrMDNxNUNSVWl4X0szdEtJdE1UV09LSEhCOTZzeG4xbE9CbzJYcUtLRU1oYkZ4NGFJYXZ1UDRva3p4YmZaaDJIWFZCZWJGWFl3XzlJNnNvQ2cyb0J2MDl5UjE0b041QlRQQlVxQ2tOMi1fZnp6MkE1cC1WZEVyZkkwU002RHc0VDFCMGNwWVV4VHVOcnJUTWk2WTdqLVpzT0t3UEdocFdRbXU3YjJyNmdaMEJ3ejlHaDV2Vk03b1p3cDJHXzFhOEpTX1JXVER3OC0wd1liZHlIYXB3"
   },
   {
-    "id": "ext-9a55735dcd79",
-    "type": "external",
-    "title": "Medtech startup Bioscan Research raises $1 Mn in seed round led by Unicorn India Ventures",
-    "date": "2026-07-22",
-    "year": 2026,
-    "summary": "Mumbai-based medtech startup Bioscan Research has raised $1 million in a seed funding round led by Unicorn India Ventures. Snippets.",
-    "url": "https://entrackr.com/snippets/medtech-startup-bioscan-research-raises-1-mn-in-seed-round-led-by-unicorn-india-ventures-12186756",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMixgFBVV95cUxQTkNaOGdXLVJaNVFEOV90TG9jRjhEQkozVDFYWjhzSGZVNEFVcmhuY1VNYm9lMzB6T3lIdGpaeVh0WlExQXRKMzBRN3oyQlNVb09TQWFIQnN6Y19KZzBvZFJNUnpKQ2FzOUx6OFhiMGRBM252M1lPcFpROGZaMmJIOFdzeXpJSDFNVTFxYXFMS3dyZEl3eGVQNThMTGUzZlFsS2NPTHB3a3lsR2g0RE9RS1ZfSzhpeFJnSURSNjVRd1RHOHhHWGfSAcYBQVVfeXFMUE5DWjhnVy1SWjVRRDlfdExvY0Y4REJKM1QxWFo4c0hmVTRBVXJobmNVTWJvZTMwek95SHRqWnlYdFpRMUF0SjMwUTd6MkJTVW9PU0FhSEJzemNfSmcwb2RSTVJ6SkNhczlMejhYYjBkQTNudjNZT3BaUThmWjJiSDhXc3l6SUgxTVUxcWFxTEt3cmRJd3hlUDU4TExlM2ZRbEtjT0xwd2t5bEdoNERPUUtWX0s4aXhSZ0lEUjY1UXdURzh4R1hn"
-  },
-  {
     "id": "ext-a5081a815914",
     "type": "external",
     "title": "Making India \u2018food wise\u2019; AI lifts VC inflow in startup ecosystem",
@@ -300,6 +270,21 @@
     "gnId": "CBMie0FVX3lxTFAxRDFQcGF3bHBDRXA5NUZublVIRmpqblFMXy1NUS1CaTNvUnZJaXBabDBlVlVXLWhheTItSk9xREFzdm5ndWJ6dmpTS1ZhbjFEVnpQNTdQSXBta1dhbWJfMDRWbVNRNEVELTVtMHdJbTF4U2xuUjBaSkh6Yw"
   },
   {
+    "id": "ext-fabf6268e3c1",
+    "type": "external",
+    "title": "Emergent turns unicorn with $130-million funding",
+    "date": "2026-07-17",
+    "year": 2026,
+    "summary": "The vibe-coding platform startup has seen its valuation grow rapidly, as co-founder Mukund Jha plans to make it the go-to operating system for small businesses globally",
+    "url": "https://www.forbesindia.com/article/news/emergent-turns-unicorn-with-130-million-funding/2996003/1",
+    "source": "Forbes India",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMinwFBVV95cUxPVE4yWnEyVmtfaGF5d0oxdGMwUHo3eGpzc1NUVXhpRGNkSnBESi1mOERXZXA2bmdjSnV1UXA3NHhqRFBIV1RZQl9xVEhjR3NILUd0RWlNNTAxSmJMZkczZnc2eGRwZUNDcENjUVRBTF95QWtZeTVBNHNuZ1FuTk00MlJjRTlxQ2NHSWxZb1JOQkxEclJlZTdwMDlTaVRKcXPSAaQBQVVfeXFMT3BsSlBBRUo1dzFvcFpiUGllU25FaVBNTTJIcVRlWlB2ZGtISWlVLTV3Si1DbTRiRkp1dlE2UGVMRFFXUzFMRy1Ra0RIVk9sQTJENXdUaEtxajVLVDhFVlYwRXg4dU5tQWhseHhMSDBadDFmbzZQTHhSLVZjekJZaUJPNDNkR19UNkE4VjFZRUZXOS1jcEJfS0JWcjhsc0lURHhNTzE"
+  },
+  {
     "id": "ext-b01662d39ba4",
     "type": "external",
     "title": "Funding for India's fintech startups jumps, but fewer companies get the money",
@@ -328,6 +313,21 @@
       "Business"
     ],
     "gnId": "CBMi1AFBVV95cUxOQlNFQUdtVHJWU01TRm9TTmJYSXE0bWt1cXlUX3VzdDZjb3dGNVphTXBWMi1oQzVpTXB5SDBQRXlfc3NfTFQzWGFZX0JQMlNDekVPSnRmb25CT2t0NzFNNlJVdVhiOGV4QzZwOHhrWnhxVGc2TDNVTk5DT1ZxeXpNYW1KVU5LU1lWSmFnMHd2VUV1cWxvbGpkX0VjdXRvYmo3aTlNc3hWMFBhTUoyNHJvaUlfcXhDdU9hb2tqd3NBTVlxS2g5SmNKemVtaU1yNHVRRlMwZ9IB2gFBVV95cUxPQnlPcE1aTUQ4Ty1IT3Z3S0hXelBoLTh4bnJ5cDdsODBvcnhZMXNQcmI5cjlmbDU0dm51anpKN0I5aHZTM3BySklSWjVTcjh5T2tfNFJJWEhWZFl5UlRLVFlqR3JBNkdzSGp5bFBhN0xZa3ByTEFKeWNPRFpLbER2dk5MSnYxS0xBQ2hfWkhGd3FJUm9KcU8wRUNXZGo4U3dNZWFfVl83N3hFZmJXejI2aHpmMXRHZEpTZy10Q29FYzM2N3E2RzZBS3l5MktkaHcwQjRCS2JyODljZw"
+  },
+  {
+    "id": "ext-0acbee1a55a3",
+    "type": "external",
+    "title": "KickSky Space Lab to launch third accelerator cohort in next 2-3 months",
+    "date": "2026-07-16",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.business-standard.com/companies/start-ups/kicksky-space-lab-to-launch-third-accelerator-cohort-in-next-2-3-months-126071601014_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi3gFBVV95cUxQVllXUWNJZEtLV3JCSG1SZW15eVJsQ2pWdWVsc3ZiQngyQVE3V2lPNG11YXA1T20yYmJfUnlZcTJPeFhhOWJrWGVOejBTWjB5Skw5MlM0UHVPRDh3cTVPYVpHQ2Rnb2VmMm5USTVOOFQtRDdrNmc2Y0F3TkFvYXhNVUYxTTJwRTZXbFZ0RTRWQklCMngzbVl5YVhzSlYxQXBWMUg3R3BSM0JuUVVRZkpjYWh4T3pNT3RVQlhYTFkteURCSTJRZDl3U1BkWGpUd3JQdlRlY0F3VUtMeXMxSEHSAeMBQVVfeXFMT1JjSHZWM0VneVUzUVQxLTBkWDBoMkUwMDNJZFREM2hZMmZJWDhEbjF4MjZMLS1QOGRVdTFpQWR5YjlobUpuR1ZGaVZjWnNjWV9JWFJVcGlCdlMwaUtRd1lmelhBX0JvTjZldTZoeTRfRDNGUmM4cktHZmM1a1lITlpMU3ZWWnZOaXdvcjhvWmwxTzhHZWVpdG1BbXRic2ZxcjliR3JMSDhKemsxV2Z5dkVYa2FmSFFhVXJkTkxZUllxOGNrUmpTYU1LeW5NbjFic2dyZG5qcTVhaTBEMHN3dGF2bDQ"
   },
   {
     "id": "ext-577818bbc2d2",
