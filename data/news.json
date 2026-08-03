@@ -1,5 +1,20 @@
 [
   {
+    "id": "ext-d33bea50fcf2",
+    "type": "external",
+    "title": "Indian Startup IPO Tracker 2026",
+    "date": "2026-08-03",
+    "year": 2026,
+    "summary": "As per Inc42 data, 26 startups have already filed their DRHPs, while another 24 are in various stages of finalising their IPO plans.",
+    "url": "https://inc42.com/features/indian-startup-ipo-tracker-2026/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMia0FVX3lxTFBnS183TEQzMHI1QjlKSDhLSmhWSWhMLTBYanJITEFPYU9wSEJDYTZTMXhMUDAtV1hQYnZETzBCLWJGYTV4aVhUcDUyQ2xDbU5BMnBfWVNSN0YxNVhmakQ1U0tNLXgzOUxhbkJN"
+  },
+  {
     "id": "ext-2bb806ed47a1",
     "type": "external",
     "title": "Indian startup funding drops to $662 Mn in July after June spike",
@@ -43,6 +58,21 @@
       "Startups"
     ],
     "gnId": "CBMilgFBVV95cUxNV3lJTm8ydVltdmtxMXVLcWkxLWlzTVNIY3c2TkNNVmNPblFhVDFoTHBoMm5MSFlKMGM3OXZiOTh0alhKOFVEdS12bVB3WURPNHFjbW53UG91MFZ2eWdwRkpvbEIzbEJxeFJpSDFabWhJb21DTTd5aXlWUklHSElRZV9ZNUxZcFY4NWJOb0hmenJndElfSHc"
+  },
+  {
+    "id": "ext-635ee22e6047",
+    "type": "external",
+    "title": "We have increased our cheque size from $2 million to $5 million: Rajan Anandan",
+    "date": "2026-07-30",
+    "year": 2026,
+    "summary": "The managing director at PeakXV who runs the VC firm\u2019s seed investing platform Surge on setting up companies for success and Series As, and why the best entrepreneurs don\u2019t think they know it all",
+    "url": "https://www.forbesindia.com/article/leadership/we-have-increased-our-cheque-size-from-500000-to-5-million-rajan-anandan/2996506/1",
+    "source": "Forbes India",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMiyAFBVV95cUxQeEw1ejJ2QlBLTy01Ml9TeDA4bmtvZ0pkTFRDUC1PNnFxSHZxRE5fNVNCVzcxRFBUM0IwdUs4a05uRmdoeV9waFJ4aUg2Q0NsRl93dG0yUWhfdU0wY1VsS2luSDhsajU4R09yVHN6YXpzUUdBUGs1SGVxSXNKMEN6aFQ2M0J2T3pwVEw1c1BCNHNQTTRlT2ExcjV5QmdkMEV6dHdqNng3RV9FcFpqcVhtS242dS1DdGZMYWxLYmJ1a2hMaVF1WVZVbdIBzgFBVV95cUxOdGNKUUFqZWI1MF9RcVZJeHVpWl84WE9MVTBWYUp1M2Vzb2xQRFJIVnhfQXBMcVRnaTAtMGlNTTZBS0pyeVZBRl9SV3IyUHNmZHFHYVIwR05vNHpQYm1YRDVRRXVDOHJRMHhkczh2Vld4cEI5MDJONVQ5aGZIMmhhZWpLWDZmQ2FNZUVJd0VNa0lOY05lUTkwTUZtMko4NE9nb29rcjE5VTNhNF9BTUVPbm00ZzNiV2gzdGZKOTQxZjJobGNIOUs5VGFsQ1ZLUQ"
   },
   {
     "id": "ext-7cc787f1661b",
@@ -135,21 +165,6 @@
     "gnId": "CBMikgFBVV95cUxOcmlveUJCWlplTWNJZzM3dlpzeGtwU3NMS05abTE5Zm9kaDktaEJNdFR4S3JIWFotNXpybllaV2gyVFMxeDR2dmFBWkc3cFF1Z3Jib1kwTnlKREY4V0c0dnp1WFpteTBUZE9pdHUyQWRpUjczWTR0VHNUVXdRbFB0N3Jyb1JWOUxnclpWN0VsTHdVd9IBkgFBVV95cUxOcmlveUJCWlplTWNJZzM3dlpzeGtwU3NMS05abTE5Zm9kaDktaEJNdFR4S3JIWFotNXpybllaV2gyVFMxeDR2dmFBWkc3cFF1Z3Jib1kwTnlKREY4V0c0dnp1WFpteTBUZE9pdHUyQWRpUjczWTR0VHNUVXdRbFB0N3Jyb1JWOUxnclpWN0VsTHdVdw"
   },
   {
-    "id": "ext-d33bea50fcf2",
-    "type": "external",
-    "title": "Indian Startup IPO Tracker 2026",
-    "date": "2026-07-26",
-    "year": 2026,
-    "summary": "As per Inc42 data, 26 startups have already filed their DRHPs, while another 24 are in various stages of finalising their IPO plans.",
-    "url": "https://inc42.com/features/indian-startup-ipo-tracker-2026/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMia0FVX3lxTFBnS183TEQzMHI1QjlKSDhLSmhWSWhMLTBYanJITEFPYU9wSEJDYTZTMXhMUDAtV1hQYnZETzBCLWJGYTV4aVhUcDUyQ2xDbU5BMnBfWVNSN0YxNVhmakQ1U0tNLXgzOUxhbkJN"
-  },
-  {
     "id": "ext-ec05bab5f9ae",
     "type": "external",
     "title": "Funding and acquisitions in Indian startups this week [July 20 - July 25]",
@@ -223,6 +238,21 @@
       "Business"
     ],
     "gnId": "CBMi8gFBVV95cUxPeDNSZUlVdjFFZ2tuMXJraDBqOEhWSVZNRGEyaFZ3ZTRmUi1vZk82VG1yV2N5VlhhSGNFQnlxRjg1VjN5Y1U3T1BIMm5LcVlZcS1EOGpqRzdzQWJmV3NiMFYwY3JYQkJuTm95VkdLTEZxUm4zUER2WUl6alhTZG1qa3B6VF80OU9tV2s5UWw3Vkx4NEthdE5zUlh3Uy05ckZENWpNRXFFZHBFaFVyMHgtNlBVbk56QVhNX0o4ckxrQ2pXTnRuY2x5V2h3TmpBMHlpNmlzMmw1OXg2NmZfc0NtZjFnWHVRdXFwcTBzU2pQRUM0UdIB9wFBVV95cUxOTExqOVhZUDd6MTFMYm1tMTR2Wmw3OTQ4SDd6WWZrMDNxNUNSVWl4X0szdEtJdE1UV09LSEhCOTZzeG4xbE9CbzJYcUtLRU1oYkZ4NGFJYXZ1UDRva3p4YmZaaDJIWFZCZWJGWFl3XzlJNnNvQ2cyb0J2MDl5UjE0b041QlRQQlVxQ2tOMi1fZnp6MkE1cC1WZEVyZkkwU002RHc0VDFCMGNwWVV4VHVOcnJUTWk2WTdqLVpzT0t3UEdocFdRbXU3YjJyNmdaMEJ3ejlHaDV2Vk03b1p3cDJHXzFhOEpTX1JXVER3OC0wd1liZHlIYXB3"
+  },
+  {
+    "id": "ext-ad5ed487cd4e",
+    "type": "external",
+    "title": "Traveltech Startup 30 Sundays Raises \u20b961 Cr To Expand AI-Powered Holiday Planning",
+    "date": "2026-07-21",
+    "year": 2026,
+    "summary": "30 Sundays is an AI-native, full-stack holiday planning and booking platform for outbound Indian travellers",
+    "url": "https://inc42.com/buzz/traveltech-startup-30-sundays-raises-%E2%82%B961-cr-to-expand-ai-powered-holiday-planning/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiswFBVV95cUxQam9fZ2Z4RFY2Z3JyZ1g2QmdkN3UxdjNCWEhQaThXWTJCWVJpUXZ1NGlwc1dvTzhtWnBRNzM4NExnMmpXYk9QdXY0X0c5eHVCcVo4ZzdwcXpGemtTNGNyMUJaSGJmMWktV3d2bWJSa2k1ZU5BaVVHMnFwZFAyay01cWgwVE9hSFY4QjZ6LWd6Q3lsaGc1bGJHX2RZdl83V0pqMmpMSHRVWTZjZVR2RnEzdGg3WQ"
   },
   {
     "id": "ext-a5081a815914",
@@ -300,21 +330,6 @@
     "gnId": "CBMiygFBVV95cUxOeEIyZi14X1I3Nzh1UFpqbFpmZkh5MmtPaVhmYm5Hbjl4V3BjV2I0eU84RVhFalUyNy1RU1NoWk8tX1BCbklaeU8tWHEwNGk0RV9ySGVrOHVvd3pBNHFEN3ExTnRndlY1MEZvUDZiUlJEMkRKcXY4S2hzN0Y1b3ZCcGtxRExIY1RhemNPSm1rdE44ZzZwM1pDWFVldktqUFBwSGdVS1RDTm1SMVhQemlhWS1oSV9fWEdXUEQzTW1aOU9pUExRVWg4V1RB0gHPAUFVX3lxTE1BX1NpamtoOUdwQkU2MlBLNWxhQXphU2xDM2p4Y3hpeVZBem8wcTBBMFdCYW13U1E0ajdkeXlsMFU4dUg3YWhsNkp4cDdNajJjdjd0b29pVk12QVZtbjNCcXd3X0NlbG1DQmxaN0s3Zi1YX2stc2RJRGtaRzE2ZW8ydHdIeGFsVE9UUE9QbXV1NWM3X2hmeklUZnBNVklyUGlXOUJxTUJWc2VPN0x2Mjh0LXNZQmx5SWhPWXBWMjVFd1RPOUlUeTZNTTlXd2RHZw"
   },
   {
-    "id": "ext-520e1300729f",
-    "type": "external",
-    "title": "India's fintech sector raises $2 bn in H1 2026, led by late-stage funding",
-    "date": "2026-07-16",
-    "year": 2026,
-    "summary": "",
-    "url": "https://www.business-standard.com/finance/news/india-s-fintech-sector-raises-2-bn-in-h1-2026-led-by-late-stage-funding-126071601258_1.html",
-    "source": "Business Standard",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi1AFBVV95cUxOQlNFQUdtVHJWU01TRm9TTmJYSXE0bWt1cXlUX3VzdDZjb3dGNVphTXBWMi1oQzVpTXB5SDBQRXlfc3NfTFQzWGFZX0JQMlNDekVPSnRmb25CT2t0NzFNNlJVdVhiOGV4QzZwOHhrWnhxVGc2TDNVTk5DT1ZxeXpNYW1KVU5LU1lWSmFnMHd2VUV1cWxvbGpkX0VjdXRvYmo3aTlNc3hWMFBhTUoyNHJvaUlfcXhDdU9hb2tqd3NBTVlxS2g5SmNKemVtaU1yNHVRRlMwZ9IB2gFBVV95cUxPQnlPcE1aTUQ4Ty1IT3Z3S0hXelBoLTh4bnJ5cDdsODBvcnhZMXNQcmI5cjlmbDU0dm51anpKN0I5aHZTM3BySklSWjVTcjh5T2tfNFJJWEhWZFl5UlRLVFlqR3JBNkdzSGp5bFBhN0xZa3ByTEFKeWNPRFpLbER2dk5MSnYxS0xBQ2hfWkhGd3FJUm9KcU8wRUNXZGo4U3dNZWFfVl83N3hFZmJXejI2aHpmMXRHZEpTZy10Q29FYzM2N3E2RzZBS3l5MktkaHcwQjRCS2JyODljZw"
-  },
-  {
     "id": "ext-0acbee1a55a3",
     "type": "external",
     "title": "KickSky Space Lab to launch third accelerator cohort in next 2-3 months",
@@ -328,6 +343,21 @@
       "Business"
     ],
     "gnId": "CBMi3gFBVV95cUxQVllXUWNJZEtLV3JCSG1SZW15eVJsQ2pWdWVsc3ZiQngyQVE3V2lPNG11YXA1T20yYmJfUnlZcTJPeFhhOWJrWGVOejBTWjB5Skw5MlM0UHVPRDh3cTVPYVpHQ2Rnb2VmMm5USTVOOFQtRDdrNmc2Y0F3TkFvYXhNVUYxTTJwRTZXbFZ0RTRWQklCMngzbVl5YVhzSlYxQXBWMUg3R3BSM0JuUVVRZkpjYWh4T3pNT3RVQlhYTFkteURCSTJRZDl3U1BkWGpUd3JQdlRlY0F3VUtMeXMxSEHSAeMBQVVfeXFMT1JjSHZWM0VneVUzUVQxLTBkWDBoMkUwMDNJZFREM2hZMmZJWDhEbjF4MjZMLS1QOGRVdTFpQWR5YjlobUpuR1ZGaVZjWnNjWV9JWFJVcGlCdlMwaUtRd1lmelhBX0JvTjZldTZoeTRfRDNGUmM4cktHZmM1a1lITlpMU3ZWWnZOaXdvcjhvWmwxTzhHZWVpdG1BbXRic2ZxcjliR3JMSDhKemsxV2Z5dkVYa2FmSFFhVXJkTkxZUllxOGNrUmpTYU1LeW5NbjFic2dyZG5qcTVhaTBEMHN3dGF2bDQ"
+  },
+  {
+    "id": "ext-0e87c9628fc7",
+    "type": "external",
+    "title": "Indian Unicorn Tracker: Funding, Investors, Revenue And More",
+    "date": "2026-07-15",
+    "year": 2026,
+    "summary": "Introducing Indian Unicorn Tracker, a comprehensive and updated guide on the key data points about India's unicorn startups",
+    "url": "https://inc42.com/features/indian-unicorn-tracker-funding-investors-revenue-and-more/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMijgFBVV95cUxPUGlucWtaMDZGQkxrME5jMVZuY0E2UDYtc2F5Y3pYc2RKcjVXdm4zSVYwN1VaRFhGS2dVUjJiakNscEtOOGZqTmJEbWlRM3dTTnhYM09HY2Jub2pRZnA0OHgwNmw0MFlJQnphSEJLNTZHV05vMkVJbFMzWTJkSFlvR1dJM2xLT0lIc3JFQm9n"
   },
   {
     "id": "ext-577818bbc2d2",
@@ -495,6 +525,36 @@
     "gnId": "CBMi2wFBVV95cUxQRXZJMkY5NTIzcmlHNnp5WDUwa092NkRBeklNVDZoNDB5aTBZdUh1OEJOOXpQeU45TUdfUGlKdXNSYmlEOVlCeVg4S2o4TE55aWhIekplNFpYYXBGdVkyYnVvT0h2VkN0RmVvN1p3a0pYZ0xuWWFTcEJDNzkzZjR6MG5WUmpiWVo0YTBKUkxvQnlEM0d6Q3FGeGFOcm9oclBhWE1IV0NHZldmLTBpUWZCOGdLQnI0WXdNMXlmeTlsMUJEWS1KNWN6eVZEdHVNUEFTbjdOZldaNzA4RGfSAeABQVVfeXFMT2RibmwtaEJ0V3V2X2xYd0h4TTlMZE56UGs5Vm5OQlRJQTlycnBXU2VFdGtWLUxLNkRCTmU0OFFDV29aeVNOdC0xM0JkMll3MGZzc0c5RlFYSzhHa1dzWjV2Tm9kTzJiR0htS3V5YU42dWdXTG55NW1tekR4QXU0NEkyeExFd1MxdFlmOU5jQTdNSWhDN2ZMZ3A4a1dfYjYxRE1MOGtzY0VQTGR3V0lfemNzWGNmZS0wVUxBVFBvRkx4MlE0U2ZkeWtkTkl4Nnl2ck1Pc2l1T0ZwUFVXM3AzeF8"
   },
   {
+    "id": "ext-b2d2a4e2c92a",
+    "type": "external",
+    "title": "Top Startup News Today: AI, DeepTech, Policy & Young Founders Shape India\u2019s Innovation Economy",
+    "date": "2026-07-06",
+    "year": 2026,
+    "summary": "From digital regulations and startup funding to DeepTech innovation, AI products and young entrepreneurs, explore the biggest developments shaping India\u2019s startup ecosystem today.",
+    "url": "https://www.tice.news/tice-trending/top-startup-news-today-ai-deeptech-policy-young-founders-drive-indias-innovation-story-12137880",
+    "source": "TICE News",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiywFBVV95cUxORzBCUzY0eFVxN2pmXy1TaHlua1kzSUZUQzJCQzlPbVRGekRPV1pBT0V3RlllZjBYSlpMbFVHRUg1QVM4TVd3ZDNmRFdzT1RVcC1yeHh3NnJ3aVNjVGRjWXY0Qkx5Szc1elh6VkhHRVpVMkdMYXU2UUo5MHZtSFYxeHNCTWJpYS0zNzVtMGY4eG1pT1hpZEVUNnhJOEh6cmpGcmsyekFBMS1MbFRFdHF2c2xEVGN3YmROT014ek5PMHVydEJ1SVg5R3hIRdIBywFBVV95cUxORzBCUzY0eFVxN2pmXy1TaHlua1kzSUZUQzJCQzlPbVRGekRPV1pBT0V3RlllZjBYSlpMbFVHRUg1QVM4TVd3ZDNmRFdzT1RVcC1yeHh3NnJ3aVNjVGRjWXY0Qkx5Szc1elh6VkhHRVpVMkdMYXU2UUo5MHZtSFYxeHNCTWJpYS0zNzVtMGY4eG1pT1hpZEVUNnhJOEh6cmpGcmsyekFBMS1MbFRFdHF2c2xEVGN3YmROT014ek5PMHVydEJ1SVg5R3hIRQ"
+  },
+  {
+    "id": "ext-8c3fcc613184",
+    "type": "external",
+    "title": "VC inflow sees sharp decline; Bengaluru leads Avendus Wealth-Hurun U30 rankings",
+    "date": "2026-07-05",
+    "year": 2026,
+    "summary": "The sharp fall in venture capital funding in the first week of July was on expected lines, as the previous week saw the CRED transaction, which was a one-off large deal.",
+    "url": "https://yourstory.com/2026/07/vc-inflow-sees-sharp-decline-bengaluru-avendus-hurun-u30-rankings",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMimwFBVV95cUxOWlFtbFhqZEhjQ05pM3ZxWGdoQk1PRWk3UlBvRHo2ZG02cUh5T0lzNFN3Z3l4VC1VOHV5ZTc5NWlPRFAxZlp4NXhHTVRSS2VJZ0F5R2E5bV9EMjR5T2JsRzJWOXR2OC05dE1oNXRGenF3WWs5bVV6TENhOS11THU1b1phTG1Xdk9pRGhoWVVzNThCeG9peXJmekgwUQ"
+  },
+  {
     "id": "ext-958a4c0b99b8",
     "type": "external",
     "title": "Funding and acquisitions in Indian startups this week [June 29 - July 04]",
@@ -510,19 +570,19 @@
     "gnId": "CBMi5AFBVV95cUxQNVJWZGRQWkdvTGRwODVSeWFOWGhyMzJZQjBQRGRyTUZRRXFQX05oNGM3Z1d2ZUdsdnNueHdhUlFRdFBKdENlbHA1R25qX0JxSS1MajhvNU1MT0M3Ump6UVlEbW0wVFFMOWh6MVB1UjJSVFJ3X2hIUXVITFZFRk4wOUpYbjNzZDdlOE5zMjY0YlFqWE5HajFlRGVkYkJYVTlja3FfNEVwa3FUU1g5UnNHaEVZMTlCZHBkSmdWODF5WERVcFBuaTJ5NVM1aHFiazQ1OHY1WXdadzVieGU5Z2F6OFF6cEvSAeQBQVVfeXFMUDVSVmRkUFpHb0xkcDg1UnlhTlhocjMyWUIwUERkck1GUUVxUF9OaDRjN2dXdmVHbHZzbnh3YVJRUXRQSnRDZWxwNUdual9CcUktTGo4bzVNTE9DN1JqelFZRG1tMFRRTDloejFQdVIyUlRSd19oSFF1SExWRUZOMDlKWG4zc2Q3ZThOczI2NGJRalhOR2oxZURlZGJCWFU5Y2txXzRFcGtxVFNYOVJzR2hFWTE5QmRwZEpnVjgxeVhEVXBQbmkyeTVTNWhxYms0NTh2NVl3Wnc1YnhlOWdhejhRenBL"
   },
   {
-    "id": "ext-2f8911ec4d9c",
+    "id": "ext-2c950ce3e061",
     "type": "external",
-    "title": "Indian AI Startup Funding Soars Over 4X YoY In H1 2026, But Is It Enough To Compete Globally?",
-    "date": "2026-07-03",
+    "title": "Meet The Top 10 Indian Startup Investors Of H1 2026",
+    "date": "2026-07-04",
     "year": 2026,
-    "summary": "Indian AI startups raised $676 Mn in funding during the first six months of 2026 and the number of deals touched a fresh six-month high of 57",
-    "url": "https://inc42.com/features/indian-ai-startup-funding-soars-over-4x-yoy-in-h1-2026-but-is-it-enough-to-compete-globally/",
+    "summary": "Unique investor participation remained stable in H1 2026, with 1,108 investors participating in the ecosystem during this time",
+    "url": "https://inc42.com/buzz/meet-the-top-10-indian-startup-investors-of-h1-2026/",
     "source": "Inc42",
     "sourceTier": "Startup trade",
     "tags": [
       "Startups"
     ],
-    "gnId": "CBMiuwFBVV95cUxQOHZ6Wi1wUHJwd3BoZnA2dDlOakp1Q2kzYS1taEctenF4MjVKQXFyZ1UzcHkwcE5CMVBSN0JUMU0wVnMwM2RpQzFsS1ZIMF9SRHRHVXRlREVwSUd6clYtcUhzTjR0Nkd6c1hOVHU0S003dnhsTHViSGFwaTh4aDd6eFlnQ2pxLXNiZHRhY2FSbmVVczZ1N3NtSnRZLVFJMUxZVzZMb3NyNVc2Uk4xenF5N09Rdm1Vb3hEVDBB"
+    "gnId": "CBMigAFBVV95cUxQR092UHVlM3Rnc1ZjSXVvYzg5NkdHX1RESm9rSF8ybVZOeW01NVVyTmY1RDdDNnVQWUhDRnBQVG9pZF96V1FuSnp3ZUQyQmN1ZVlwYVVvM1ZaN01PdXQxMUtWUjRiZUVIY3dMUmlkaEozc2VuZG15bW5vMXdxcHdTSA"
   },
   {
     "id": "ext-2577da65d698",
@@ -538,65 +598,5 @@
       "Business"
     ],
     "gnId": "CBMirAFBVV95cUxOaTFOREhmSU1tQ2lhdVNFWmdIVVNsSXFOSm9TNmlneUdUZjU5VFNkakdwSW5VSDBMN3ViYVViMk5xWTA3Mi1pZjdId25VYnd0cXFQNk5LUzZYY1loTlhOcTl1SGdjMmJkQVlfM1RQd2g5Nm5uYXZUcHV3eER4aDB6TE9FT29tS01zZjNNdnc5VWFITE1rRUxLX2hHZGVXa2xzUG0zdmVyMFFKcV910gGyAUFVX3lxTFB6ZTFaYnNtOWpQZmZOM2xZUU5SZUt1LWh0N2N3bFZ5M0prd0NuR1Q4a1FLNXZQVnpXcThYc3BMZFVkNnBHWFRuZUc1X3gyRWJXbWQ1RWRFWkxaT2p5SGtkNXBfajl5WmxUYWJOYkJjOHY3Uy1JUi1UeU9mM0h5dHdYM1pCcklRdVBKN1VfaUk0LThFNHhEQVBsSnh1eEJwQ2J0QUFIVko5cGVhMzRqdUFZNmc"
-  },
-  {
-    "id": "ext-b13885f5a6a9",
-    "type": "external",
-    "title": "IHH Healthcare, Fortis announce winners of inaugural healthcare startup accelerator",
-    "date": "2026-07-03",
-    "year": 2026,
-    "summary": "IHH Healthcare (\u201cIHH\u201d), a multinational healthcare provider, along with its subsidiary Fortis Healthcare, has announced the winners of the inaugural IHH Catalyst | Fortis India Edition, an initiative aimed at supporting healthcare innovation and entrepreneurship in India.",
-    "url": "https://entrackr.com/snippets/ihh-healthcare-fortis-announce-winners-of-inaugural-healthcare-startup-accelerator-12129800",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMivgFBVV95cUxPbVZwWjNCWTEta1BGRm5saURiMGZlSFJCQmFnZ3hLanI4QTBPRmg5bDZoNEx5UjhBZENiVHh6a1Q5Mzl5NWZ1LTFCX0lZRVQ2UUsybm1vLUZlem44SEtGclBlUDNLcDlDdjVkUzZ4aW9oRzY5TWE3YXp5WExmdjhXa0xEZ0doVG5DeHUxSEd0VGtLMWtORTU2RTh5Uy15U3NPWC1tV3NmSkM4WlA0N05QOGVHT0I5djNHSUw1TEdB0gG-AUFVX3lxTE9tVnBaM0JZMS1rUEZGbmxpRGIwZmVIUkJCYWdneEtqcjhBME9GaDlsNmg0THlSOEFkQ2JUeHprVDkzOXk1ZnUtMUJfSVlFVDZRSzJubW8tRmV6bjhIS0ZyUGVQM0twOUN2NWRTNnhpb2hHNjlNYTdhenlYTGZ2OFdrTERnR2hUbkN4dTFIR3RUa0sxa05FNTZFOHlTLXlTc09YLW1Xc2ZKQzhaUDQ3TlA4ZUdPQjl2M0dJTDVMR0E"
-  },
-  {
-    "id": "ext-9f2f1418dcb1",
-    "type": "external",
-    "title": "India Could Lose $9.7 Billion in Startup Funding if Digital Rules Tighten: Oxford Economics",
-    "date": "2026-07-02",
-    "year": 2026,
-    "summary": "Oxford Economics says tougher digital regulations could reduce India",
-    "url": "https://www.tice.news/tice-trending/oxford-economics-india-startup-digital-regulations-vc-funding-report-12128372",
-    "source": "TICE News",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiswFBVV95cUxNUmg3VExrZmZMS0g3cTJnTUtQa2Jwd2NnWTFZNGNRUVQ4WXRIaGJXOWtYbTZiRlEwVFdVaXVRUzd0Rndna3pqVTdSaVgyNEVjNmRtMlczNEJnc2hqTU04VE8yejlOTHc3d2Z1N0lhSmZRQ1kzM1htUGpFRGlPNEZfa0JVWHY5TkV2Wk1hYkJkS1YwVU5WX092Q2lZcnZMSmVoVHpCaE1Ja0VESTRHWlVWWGpIRdIBswFBVV95cUxNUmg3VExrZmZMS0g3cTJnTUtQa2Jwd2NnWTFZNGNRUVQ4WXRIaGJXOWtYbTZiRlEwVFdVaXVRUzd0Rndna3pqVTdSaVgyNEVjNmRtMlczNEJnc2hqTU04VE8yejlOTHc3d2Z1N0lhSmZRQ1kzM1htUGpFRGlPNEZfa0JVWHY5TkV2Wk1hYkJkS1YwVU5WX092Q2lZcnZMSmVoVHpCaE1Ja0VESTRHWlVWWGpIRQ"
-  },
-  {
-    "id": "ext-9a493c8bd330",
-    "type": "external",
-    "title": "Indian startups raise $7.4 Bn in H1 2026 as CRED-Meta deal lifts funding",
-    "date": "2026-07-01",
-    "year": 2026,
-    "summary": "Indian startups raised around $7.4 billion in H1 2026 across 551 disclosed deals, including $5.61 billion in 106 growth and late-stage rounds and $1.77 billion in 445 early-stage deals. Another 71 deals remained undisclosed.",
-    "url": "https://entrackr.com/report/indian-startups-raise-74-bn-in-h1-2026-as-cred-meta-deal-lifts-funding-12123065",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiqwFBVV95cUxNYVM3SUlfblhFVDZHcjdzUHE3ZTY4TWdLSnNnS0d4bUNvdXBNaHFsMlo4ZFV0aE9md3lDc2J0NlVNTUNyd1A1Z0VHN01fWF9MVl9ETG9jLTEteWF2VjhSOHlxRHk5SDJrYUJjX0pGdTN6eURoSGJYR1R2cWRZYzJrWHdHLUw4V095SzBwNkZ3YXhpUzZvV0trQ0ZNaDFaMTZkQ1psLVBWaGhTVUHSAasBQVVfeXFMTWFTN0lJX25YRVQ2R3I3c1BxN2U2OE1nS0pzZ0tHeG1Db3VwTWhxbDJaOGRVdGhPZnd5Q3NidDZVTU1DcndQNWdFRzdNX1hfTFZfRExvYy0xLXlhdlY4Ujh5cUR5OUgya2FCY19KRnUzenlEaEhiWEdUdnFkWWMya1h3Ry1MOFdPeUswcDZGd2F4aVM2b1dLa0NGTWgxWjE2ZENabC1QVmhoU1VB"
-  },
-  {
-    "id": "ext-fbbb415064db",
-    "type": "external",
-    "title": "DPIIT's Startup India digital project moves closer to launch as PruTech qualifies",
-    "date": "2026-07-01",
-    "year": 2026,
-    "summary": "The proposed BHASKAR platform aims to unify startup records, government schemes and ecosystem stakeholders through a common digital infrastructure",
-    "url": "https://www.moneycontrol.com/technology/dpiit-s-startup-india-digital-project-moves-closer-to-launch-as-prutech-qualifies-article-13963149.html",
-    "source": "Moneycontrol",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi2wFBVV95cUxOZFhlQ2QxMUFsUE5RR3pXcGxnQnFQVDAySnZ3blN0aG9SMndINngwWWdZUDMxZkJaaWs1ZjJnU3RSdmpGcTRybnNYS0Nsc0k5WEJFMW15YXpPbEpqVVB6TXd1MnkzNXFXd3UyTzIwN3A5NVdSakNuZDF2aGkzc2M2UGdRTGdadzktOWFla3lHQmtzM2hhR2pXaVRVMGNENFpiSWNiM2ZYUWFQdmRFSEYzY2psZkdGYTRxMUp1ZDN1a2l3dzJEX1pOQ09TZ0dfMG0yZkdOQmc0bzlrZWfSAeABQVVfeXFMTkhOR3dvY2lSSmN0R1RuM3JuejQtUGswY1ZhSU5Eenh6QmtZRlJVY2NNUWlVTHh6U3JPbEdjdlhka1E2NTYxeHdfZ21tdElMVGlxRjAwOVBKd3RjbVIwT1U5U29Hem9VWDdxbG5YbG42Y1FXOXJWNHJNTUhmUjZGUlN5S21pSjdUWXdDaXpVeUtGUUg5blN4QjVzVjczWjJpdkFOMUFDQ00wX195R1MxVHlwcjZtZXB2VUt5bURkZkYtckRWcV9NOHU5bkVTR1VtTHgwMGd5YnVnNnY3S3plcy0"
   }
 ]
