@@ -1,5 +1,20 @@
 [
   {
+    "id": "ext-50f3ac1767bd",
+    "type": "external",
+    "title": "India proposes BRICS incubator network, startup innovation fund",
+    "date": "2026-08-06",
+    "year": 2026,
+    "summary": "",
+    "url": "https://m.economictimes.com/news/india/india-proposes-brics-incubator-network-startup-innovation-fund/articleshow/133014651.cms",
+    "source": "The Economic Times",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMixgFBVV95cUxPeUFENThjSTJ0M2hMVEdYUDFGaVNKd3VTMXU2SzMwMjBwQ09zaXlPNFNJSzl4MkhQOE9sRVRqajdPNnluV3NhbkltelJBOWI4YjhIOFpPdGRzYXZ1bUIyb0tnMG5BaVZwc20xZl9DMS1YS3UyanFIWl9UWVlfc25zbkt0RmVSWGFuVDZGb1hHS0F3SW9wb2JyMDR2dGFZcXZSbU5IT3pSeWdjUWdqZ01DekE3MjRRVi1PcGNIU25YTmtRWGhseWfSAcsBQVVfeXFMTm1uXzlSRlFXSUgyQjl0ZlI4clozdEdSTndOc0xDY2x3bEpQeXFxbGFLRUJkTEdzMTlIeGVfYk9GUkhrU09PazBCXzVRT1hSTnd4b0QzMjR3S3R0MEpRRmlhNjVWMkpDcFdMQUg2OFMyQ3d2LTZqTGFyTkVDQU1kbHRiTmM0YVd1cGFrMWlnU01ZM1ludERUU25lRDRXdURMMkg1bERESFczaFJEMGFoVUpsSVhQdEFuQ3JFZmZ5dXgwMWRjcDNXc0V0dlE"
+  },
+  {
     "id": "ext-45d07ec1d824",
     "type": "external",
     "title": "Yamaha-backed Indian EV startup River Mobility raises $120 mln",
@@ -195,21 +210,6 @@
     "gnId": "CBMi3gFBVV95cUxPQ3VYZ1BEWktRbHIwa1Y1aFFsMnRNNU1ma21NNGF3N0RUdGgxRHBTNm52MnJXUF9qZmo4MGEtYzduclp2TUJXOUNJRzVnLVRHX3B1dkJLeXNsYnRNTFY1MTljelFIZElpQ0Q3bUhReENGblRPaEM0eDRzak52Y0VzeE1DaGN1OWQ3UFluWm9MT25QOWlud2NiRGlvbW9CaDhodk10QUJjV1RBdG5aNWJEc0hsZlJDSUpZbTI4TDQtVDB6Y1lkcjdIVkxuNE1fS1U2MDVMY0E0NThrVmMtSnfSAeMBQVVfeXFMT2VXT0ZxVk8zdWNlWDdQanhNak1FRnBTUTlFMGQxM1ZnbzFLQXBnNDFCdnpnbzNCZGJaUzlPMlA0dUdya09xbjRLUlJXaUp0ZkNRcWVOQnBpQlVndGNFVklYd3BnMEEtWlBIbUloME4wZ3lUSFRteEs3T0ZsTGREZUVmVExrSDFTaXBTb0xtcm5QQXE3NE5ZcEZwRkItOURuZlZiYldiaFI4dzFkMDNMdlFmWlY5SzFHcksxNV9ueUIzRkVsRzdtM1FaS090NVMzSF9Cd1ZCZkF4VWhFRmxndlZ2RlU"
   },
   {
-    "id": "ext-a0f19b375a73",
-    "type": "external",
-    "title": "Building materials quick commerce startup Fixxly raises $5.5 Mn in seed round",
-    "date": "2026-07-29",
-    "year": 2026,
-    "summary": "Bengaluru-based building materials quick commerce startup Fixxly has raised $5.5 million in a seed funding round from Accel, Fireside Ventures. Snippets",
-    "url": "https://entrackr.com/snippets/building-materials-quick-commerce-startup-fixxly-raises-55-mn-in-seed-round-12207612",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMitAFBVV95cUxNeTJKbWItQXEzQWVpZzdGQ1hqdUJDWE5fZUFVUWdwSEpNVnpubEpOWmgySjhjZVk5MjdHZ2FLZl9jXzhpeFc4dHFCVmlEQkp2bTBabUxrdHQ1X28xYWdVMFhBTGxPTTdpNm9BWEtuelN4ancwT0tvUll4ZUM0bVlVOHNOeHNCV0EyM0hyZFBBTEg0bTF6WjEtV1pReVdmNzBLd3lLRE02MmtlMnNKeXdKQTRTMzHSAbQBQVVfeXFMTXkySm1iLUFxM0FlaWc3RkNYanVCQ1hOX2VBVVFncEhKTVZ6bmxKTlpoMko4Y2VZOTI3R2dhS2ZfY184aXhXOHRxQlZpREJKdm0wWm1Ma3R0NV9vMWFnVTBYQUxsT003aTZvQVhLbnpTeGp3ME9Lb1JZeGVDNG1ZVThzTnhzQldBMjNIcmRQQUxING0xeloxLVdaUXlXZjcwS3d5S0RNNjJrZTJzSnl3SkE0UzMx"
-  },
-  {
     "id": "ext-44a33fe7adee",
     "type": "external",
     "title": "Access to growth capital and market expansion are top priorities for Hyderabad's startup ecosystem",
@@ -223,6 +223,21 @@
       "Startups"
     ],
     "gnId": "CBMipwFBVV95cUxPWlNGQ2JobFRZbHdYbE0yYTh2RUN5Y3BlT3M1Y0l3SU9Yc0t3WV90Nk4tRFFPeWprb2lCU2JRVnQ2U2h3Nm9KeWMxM05ERDI5UnRnZW1GYVBRa2lVWWh5d3l0LVAyZHBJWTlKaVFpMVBHODhieHhiaVEycjBOV0ZUSVJRRjRieVBXcGloSTFpYlFTa1ZMUU9FNDR6dVVkcFV2QkFGSEJOWQ"
+  },
+  {
+    "id": "ext-8bbf294adf0c",
+    "type": "external",
+    "title": "India's spacetech startups raise $871 million as private sector takes off",
+    "date": "2026-07-28",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.business-standard.com/companies/start-ups/india-s-spacetech-startups-raise-871-million-as-private-sector-takes-off-126072801130_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi3wFBVV95cUxOS3pKNV9yUy1sdFdzbkRDWUxGUWk1SnNBTFVHd05oSzhJQzJfMzgwQndhOXFBMWtqdWJram9pM1NiY244VDRVQUhqcE5uX0FtNERqTlEtaUhZS1hwYjRtSXRxY3lzTURtZ1BVU1dhSFAwMWNEdDM3c1J4UUpJZHRRWUJCaVlYRjVjZ2JCV3J1MklUcG9IQ2lXX29lblBUUnlEdTl0WEFXV2dpWTBOUlBTeVN1RENkaVV0STU5Zk5uUmJXUlVxMnZveEVfWWZtTWVkaE81X29BZUNVaU52bmhV0gHkAUFVX3lxTFAtRzVyZ3h4LWJnSnJwcU5jV0tNeGQ2elVsSVZWNGxBMEZxdjE0QnJWSW5rbU5QaURaMlh1Z0JKb3k4N2NKX1dIbGxodFF3UjkxYkJ5blBQWm9aQ1drWVRQMDJLcjVLaWY2YzZfaFh5WGFiMk1OT0lPSkhZUHpVSnFaOHF4UGlCc2tlLXphRGlQQzVicDBuaDBycHIwYlBXLWxIaHNFQmgzOUlmM09qVFJkWGpzVXlhX1NHd0phZUdScERmd2t0UV81QVROSTBSbGItb0JhUUJJNEJKbXI4MU1yUHF5bg"
   },
   {
     "id": "ext-e88683d229ec",
@@ -283,21 +298,6 @@
       "Startups"
     ],
     "gnId": "CBMipAFBVV95cUxQMUdoN0NkV2FtaDNLWTF4QXVfcWlWZl9hQ1J2R0ZSdjJ6OHJmQ0JDSzI1dzl0MWhjbVNXVExNSGNzZHlPQ09rUmhoWjhDSEtvRl9WVjBhTFhUaHNrWkJENVN4RVdXRGVfMHFvZ0pPTm1iWXhKTHZEMmpiMVFsOG9PNFFKOE5VU0RYV2hTbXZUZXdRcW1mUm1YQnFrYldZU0NxcTFvaNIBpAFBVV95cUxQMUdoN0NkV2FtaDNLWTF4QXVfcWlWZl9hQ1J2R0ZSdjJ6OHJmQ0JDSzI1dzl0MWhjbVNXVExNSGNzZHlPQ09rUmhoWjhDSEtvRl9WVjBhTFhUaHNrWkJENVN4RVdXRGVfMHFvZ0pPTm1iWXhKTHZEMmpiMVFsOG9PNFFKOE5VU0RYV2hTbXZUZXdRcW1mUm1YQnFrYldZU0NxcTFvaA"
-  },
-  {
-    "id": "ext-69ffdf34a3c1",
-    "type": "external",
-    "title": "India startup funding falls 44% WoW to $186 million amid slowdown in big-ticket deals",
-    "date": "2026-07-24",
-    "year": 2026,
-    "summary": "Indian startups raised $186.1 million across 13 funding rounds during the week of July 17-23, down 44% from the previous week, as a sharp slowdown in late-stage investments outweighed a strong rebound in early-stage funding.",
-    "url": "https://www.cnbctv18.com/business/startup/india-startup-funding-falls-44-wow-to-186-million-amid-slowdown-in-big-ticket-deals-19953624.htm",
-    "source": "CNBC-TV18",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi1AFBVV95cUxQMlRxSVFwRXBEMS02Y3h3S1pTZlNCd0NKUjYxdk5iaTNzN2ZMcFdJd2tybDdESVBDTGQzZmRlMkxEdDJqS0dVeWZHN01yUklPTXd1OEgxSWZGTzJOQkpnWE1hdXREcWRJeW1ReWhtYVJ2YlFOMDgycGQ0MGt0bVhORENUcHJUWDJFVEt3cUIxc3hpdDR3aDJFSmNiZF9BLTdBeUthY3UydzgwekxZci1QSzl0bTJlUlg0aktxUzZqTU50Y2oyNHczU3YxY3pLRXZqRENCZ9IB2gFBVV95cUxNMUJwWXhQbGowUFgwRk1TbjdKV3VTLXlPTG5SZ2RscmdoWUQ5NFJ0cUNsbmJpUXR6RzAtV1BDa1R1d2pCNUVoc0VEY2NPRmR5WkpHVm5BSjRBb19PUk9FS0tRUzktUTA3VzdvQ1FFUnp1UERISGVEVXhaSDM0UnNQUHJjU2JNcXdzUnJEMnRDMVRQcDJNU0ZtdUNKUkZqMTJHVFZiajYzWHVQUVhsSlNleDhpY1hsa0pHMGlpbEVvaXlCTlpZTUNhQmFrcVd4QmhCSUJEdGU0RnVSQQ"
   },
   {
     "id": "ext-843c26541b34",
@@ -405,21 +405,6 @@
     "gnId": "CBMiygFBVV95cUxOeEIyZi14X1I3Nzh1UFpqbFpmZkh5MmtPaVhmYm5Hbjl4V3BjV2I0eU84RVhFalUyNy1RU1NoWk8tX1BCbklaeU8tWHEwNGk0RV9ySGVrOHVvd3pBNHFEN3ExTnRndlY1MEZvUDZiUlJEMkRKcXY4S2hzN0Y1b3ZCcGtxRExIY1RhemNPSm1rdE44ZzZwM1pDWFVldktqUFBwSGdVS1RDTm1SMVhQemlhWS1oSV9fWEdXUEQzTW1aOU9pUExRVWg4V1RB0gHPAUFVX3lxTE1BX1NpamtoOUdwQkU2MlBLNWxhQXphU2xDM2p4Y3hpeVZBem8wcTBBMFdCYW13U1E0ajdkeXlsMFU4dUg3YWhsNkp4cDdNajJjdjd0b29pVk12QVZtbjNCcXd3X0NlbG1DQmxaN0s3Zi1YX2stc2RJRGtaRzE2ZW8ydHdIeGFsVE9UUE9QbXV1NWM3X2hmeklUZnBNVklyUGlXOUJxTUJWc2VPN0x2Mjh0LXNZQmx5SWhPWXBWMjVFd1RPOUlUeTZNTTlXd2RHZw"
   },
   {
-    "id": "ext-0d3cb7efebb6",
-    "type": "external",
-    "title": "Startup news and updates: daily roundup (July 15, 2026)",
-    "date": "2026-07-15",
-    "year": 2026,
-    "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Wednesday, July 15, 2026.",
-    "url": "https://yourstory.com/2026/07/startup-news-and-updates-daily-roundup-july-15-2026",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiiAFBVV95cUxNSzFneFdESThsOXA0eUtUWFZ1WnpzdFM5U1VoeDVvQXprdTVuZHZsS1B6WUYzWExFUmNjVUp1RDZuTHlvTHhZOWM3ZlVsMWNNWmFZVXoyZzZIaTFSODQ1RlFrUjlteWhYaGhPU09TTEY0MzlNVXFPSFQxc2RtM1BHOTNOSFI1NC1Q"
-  },
-  {
     "id": "ext-0e87c9628fc7",
     "type": "external",
     "title": "Indian Unicorn Tracker: Funding, Investors, Revenue And More",
@@ -450,19 +435,34 @@
     "gnId": "CBMikAFBVV95cUxOUkFnTVRHRVVrQ2g3Y0QxZ1ZxYzFjUzlxcjcxdnZnZXFRUG9rNEt0czBKZDR6ZDk3ejFSV05CYUF5eEZVVndNTEphSHNoRWgxTGxTQ080cHYzdVN5d3ZuVTVxb1I5WVNwdnBlWlBGdC00LWJTTDU5Z2t3b181QnUyZ0RLNG1YNmh0anpXWi1CX2fSAZABQVVfeXFMTlJBZ01UR0VVa0NoN2NEMWdWcWMxY1M5cXI3MXZ2Z2VxUVBvazRLdHMwSmQ0emQ5N3oxUldOQmFBeXhGVVZ3TUxKYUhzaEVoMUxsU0NPNHB2M3VTeXd2blU1cW9SOVlTcHZwZVpQRnQtNC1iU0w1OWdrd29fNUJ1MmdESzRtWDZodGp6V1otQl9n"
   },
   {
-    "id": "ext-f29fd6db931a",
+    "id": "ext-b081df812d79",
     "type": "external",
-    "title": "Family offices emerge as India's new startup funding powerhouses as patient capital gains prominence",
-    "date": "2026-07-12",
+    "title": "First set of biotech startups picked for funding under \u20b91 trillion R&D push",
+    "date": "2026-07-14",
     "year": 2026,
-    "summary": "Family offices are rapidly emerging as a key source of startup funding in India, offering patient capital and strategic mentorship to founders beyond just financial backing. Experts say their long-term investment approach and growing appetite for innovation could make them one of",
-    "url": "https://www.businesstoday.in/entrepreneurship/start-up/story/family-offices-emerge-as-indias-new-startup-funding-powerhouses-as-patient-capital-gains-prominence-542392-2026-07-12",
-    "source": "Business Today",
-    "sourceTier": "Business",
+    "summary": "",
+    "url": "https://www.business-standard.com/companies/start-ups/first-set-of-biotech-startups-picked-for-funding-under-1-trillion-r-d-push-126071401539_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
     "tags": [
       "Business"
     ],
-    "gnId": "CBMiigJBVV95cUxQbDNsREpEbG81UlRjb2NwVTYwSHpyaDRWczJONDg5bTBwLUt3UlNKSENpb19EYUczOEVLUjJlUUJ3RXFFOGdoQnQzMmt2VDI2QVl5VF9jNFJKaDlYc1BaWVpjSEROd3Fsc0NWSmMxVVpveklIYTZ4TWFpWHJ0NG5UMzNHV3FaazhKOEdhUWVkV0IybGxmSjlGQXg3T2FnbUdVZTQ5cnZybnJYejlMNnJmeWhIcmNxYnRfNHF2VnUxTzdBUEpPNTllellaQ2FqZHhRRThHU0pQUHFmT3ZINWZmb3JiYkwtTDVKaGZHMkozMlBpbFRtXzNlVUNPaTladmhmTmtzb0JMclhVUdIBjwJBVV95cUxPTGpfNXpOeW5FQWNENUthYi1BMFdLZW8wRThpMENlZTI5LUJ3OEVDUVAwc2ZFaFdIUjRPQ2ZjbEEtdjRVajlvOGlwM1pDN3pLQjBHR2xwb2Y3UDg5Rm51LVlONS1ZOUVOVkk2elFaMzFvVjNPXzFfVE9uSU9zNUsxT0Z0bVh6WWw1T3ZaV0lJODZEeDVSUm5vbVZSNTBMUllxX0pLaG5lU0VmeGpXTC1wTEhkQndSelo1c1JkMUpkOFREQXVEWG44ZmFQZXZiajBRdjY4d2Q3MWV4YnRnWVRQaFZBMDdoMGV0aUxsS3lTb1hiNjJZZXhxTXRfR0tRd29WRjJBbkcxTHYxQjQtUFhJ"
+    "gnId": "CBMi4gFBVV95cUxPVDgySkZoZng0bnkwMjliSU1jQUZrVW1NYVBVVF9iX09VRGl2bU1JQjd6MDVmMHFKblRXdnN6d295UXlwOE1pdFM5Z2h6VlRnYWE0bXFEZDl2ODFmZ2VTemNZd0dqS000ZlJySHBZN20zM0RWOTdwUkltZlRUcXJ1NWVydzFYN1ZmUE1DeWduUlNjci1OQWpnSnZmRE8zY1YxZ0NCX1EyTHAyV3BNLW5xQW91UkdReVZpYjdsOVBJMDBqeHcxRk1sbXR3ajhwX1dfWTFIUXNEVFZicFdVT1VoaHVn0gHnAUFVX3lxTE1HcTJ1VFpQZ05nejlhSElURmFNVkJndEd5TG9ZLThTUFl6VTRpRmE4YlhDZDNyZjVTNDRQSG13Q0NhZzBpS0oxRHc0bHpTbFp6YVh2LVpFMTU5aURybWV1WFZFQUFBckRmbjViNUNUV3A5ZWNmOFFWdjFyQkFVUnJFX2puMTFFRVJtSENYN3E2MzF6bEVXSzRWdm51blBaVjAyT19XSnFxUWk1cjBhVm1qc29Kd1UtSmhIQmJrRXQyY2EtbFYtNjFDa2JpTWRraTlvZEoxdkNWRG4zLUxmbnNHR25lWVBVNA"
+  },
+  {
+    "id": "ext-81c50e532dbb",
+    "type": "external",
+    "title": "Ficci launches Family Office Forum to unlock $30 billion for startups",
+    "date": "2026-07-14",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.business-standard.com/economy/news/ficci-launches-family-office-forum-to-unlock-30-billion-for-startups-126071401491_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi0AFBVV95cUxNRFB3MURqOWJKYWx5Sm12QktINFdaM0tWbzJ0cmNuZGZqamtBTU13MFJSOGVqbThtNmhoQnExdFlUbVFBdzlwZkQ3RVhBWWJzTU9LdmhGTjROS0J3cXllTkdSczdCcVF2UW1mQkNZV0pjSXpfWWs2NDU4Nm96Z3NkUkg2WUR6LW5RSy1HVG5RVjljNVcwNnk1c2t1UmhDVVRwZ1FUTzI3OTFfdlJvY3hUV1RqejNyNHRwTFpWcGw3M3JKejlfdjJueHVpYnJHbXNN0gHWAUFVX3lxTFB4dHlEY0tZdjFwRTFjeTU0N09pVXptdUVObURGelpCYXJCcmpfWG5qTzNrd1pfUktSVkRiY1JYZzBGekVEcy12YXFwcEtoWW5Fc0h3eHl0ZkVUUWtsMUlmVTdtZUZneEZDU0YyaVVzY0ZIb2dDTGF6WGYxUUgwVFVLQ0ZVTHZFX0pVMW5LTl9CQVc3a0Myc29ETGhDS1BGc1YxaVp0b0hScjV5OWpfX2pwelU4NU1EUVB5X25iUnV3VTRiaE9MdEwxTjNwQ2Nfc0JQUXQ1V0E"
   },
   {
     "id": "ext-c6ceb8a03bc1",
@@ -478,6 +478,21 @@
       "Startups"
     ],
     "gnId": "CBMi5AFBVV95cUxNQkVzM3RsVXlCVEtBX25TMGRudDdDcU5EbjB3aF9kd3VqQlJCVmlvZkFJcGpoNXVhYmVOVDhHV0xkNnhhQWJybEEzVVFmcFlVc1k1N1Vzc0Q0cGlKUGwxbkZDbTVpZjllQ2xFejlnd1NjVnV4Nkt1SkFSaGo1ZW5yLWptRGlyMmhZbXdxZUhUenc1V0pSODEtV0poOUVteFN6bHJBMjQ2Mkp5U3Bua2szc0gtNUpac19FVzdHajl3czkzSkp2QUxVeVhMeHZWUGFDbkliOXgxcWhnbVdoc0FNa25VWHjSAeQBQVVfeXFMTUJFczN0bFV5QlRLQV9uUzBkbnQ3Q3FORG4wd2hfZHd1akJSQlZpb2ZBSXBqaDV1YWJlTlQ4R1dMZDZ4YUFicmxBM1VRZnBZVXNZNTdVc3NENHBpSlBsMW5GQ201aWY5ZUNsRXo5Z3dTY1Z1eDZLdUpBUmhqNWVuci1qbURpcjJoWW13cWVIVHp3NVdKUjgxLVdKaDlFbXhTemxyQTI0NjJKeVNwbmtrM3NILTVKWnNfRVc3R2o5d3M5M0pKdkFMVXlYTHh2VlBhQ25JYjl4MXFoZ21XaHNBTWtuVVh4"
+  },
+  {
+    "id": "ext-c5b2a3920de7",
+    "type": "external",
+    "title": "[Weekly funding roundup July 4-10] VC inflow remains flat",
+    "date": "2026-07-10",
+    "year": 2026,
+    "summary": "Indian startups raised just $107 million in the second week of July, marking the second straight week of muted funding activity. While investors continue to back sectors such as deeptech and AI, the absence of large-ticket deals has kept overall venture inflows subdued.",
+    "url": "https://yourstory.com/2026/07/weekly-funding-roundup-july-4-10-vc-inflow-remains-flat",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMijgFBVV95cUxPcEJ4eGJ6SnVMdS1LQXF4aWlIdkh5ellqd3ZMNlFqWnI2T1dLYkRFeFhPUkw0TmcxdlM1QmdJNFJXWGYwNERlNjZpN1hncnBRSUo0UTdad3pqYzdSZVN1SDNDVEFjYnFUaXNxdHpQTUpRejNwcTU0Z3ZLb3AtZ1Q1N2JyeWxoT2EtWE9VRHZ3"
   },
   {
     "id": "ext-6a87927ab56f",
@@ -540,6 +555,21 @@
     "gnId": "CBMilgFBVV95cUxNaFduY3ZFZWdGd0JGV3pWZTJZdVp0UGtWSXA1a19fXzZESXZwa3lLSDBTY1dSOEdWQlhDenhqWEItSzRFQzF2SnNpTl8zbGRLb3o4OWxWT0ZIT2xYMW1wb0NsRnNoLUFxeDlOYXQxWVRJaGwxR3dzc19vUlpCVHhmeDVxenNRVzhxOTdFSUNqaW14anZnZ1E"
   },
   {
+    "id": "ext-e3434e1e66bb",
+    "type": "external",
+    "title": "Google picks 20 Indian AI startups for 2026 accelerator programme",
+    "date": "2026-07-08",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.business-standard.com/companies/news/google-picks-20-indian-ai-startups-for-2026-accelerator-programme-126070800962_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMizwFBVV95cUxPdmFycGx2TGJIcmFkMC1oYm5EMkhYMUdxOWVvU0RPVzUxcTAySFlCbDlqdVRrN3ZPTlNFRUtyVGhqUkM1UnlYOEVHemJDanU4UVpkWHg1aHdVMjdyNDNtUFB4bUJjYUh4VWRVWUNvWWZqRkZwT1JWamU0QTludXd3aW1faW1SNkRVbi1NSU9oNmlacmhCVVJwR0NLVnpxd0NHM25UU0cwR3psR0g0Q2xZQ2MzTFZwNnljaFN5cjJvTmktdVRvU0VQaXpyZ3lQS2_SAdQBQVVfeXFMUGhIdmxrd09yS0JfN1ktWk9YQV85RkhlUzdfa0FKYnhydG1hRnZlRWlvb1c3LUxSalhBbnU1QjJKT1VTYzJiTUtrYjJ6MXpWX2lxdlF0bWRQR21QVnEyTGpHa2dhcGFhZERQbDVtdXFkY3c4ZF91RDlYanN1RUZ5YVVtZERjRERPdVhOWTZuQThCV2J0VlJGUXdDZ3VDUF9yclRuX1VWNVMxZE9tYUFsaksxYWNjR0tzYUM2WF9pTkZTNW9NZlpocUNIVDFqcGQtUEpBb0o"
+  },
+  {
     "id": "ext-2d6534196636",
     "type": "external",
     "title": "Google picks 20 AI startups for India Accelerator 2026 cohort",
@@ -568,35 +598,5 @@
       "Business"
     ],
     "gnId": "CBMilgJBVV95cUxQblcwZnQ0NzZQTHBzYXIwTGZab183NFZRcG9PSzhHS2t3RHk5djRHbVlGRmpIREY0bHB1MXFobzNadTFmMTJ3TFZJTmRXYk55RWFwWGtNdzJZQlhudEEyTm5NMEl0VkhSZ2dBZWowdkVJcThSZ19zU05MaFF5ODBta256MXRDSHo3STlzbU9ZZXRXSkdqSFp1RjN6VkdQSE1HdzZJdXctc1ZMbFE1MnBpcWtIZ1hTaXNpRlhHT2tTMlh1WGU1bHVFRGRBZTJKNHdoS05wR3BEbkF1azhzcUk0WjFKbHowQlRyZzBxQlN6RmZaMDBHem9fQW1wQTZ3dkJNVWw2QUhGcmxLa20zVlJnV2lrdGlvZ9IBmwJBVV95cUxNYTFmNHBxS2lTWTNsNXB5ZmtWc0FOLXNDaUZqM2R4OGdhVWJoaUE1TjZwcFA0Tzd4RzU0MzdOV1Q2SVNKRG0xclZmZDhuSUFrZE1qUE1feFpGS2hJZWtwNmRISXRic01mVGc5eEE0azRKam05UnZfWG5PUFU3SjJ6X3JsUUFvV2Nia1RPNFRlNjF0TEFsUjlBYzdXVkhHeVFnQ2M0eDdnb2c5RWladXRZQnZhcFQxUUtQZG5SWGtwRVU2dGNwV0gtVXRNRXljMHAzcENMekktUVRMRm5NcGN2YW55bDQzYTBPai03aXZpaEtQWEVRNS1rWTR0WUc0cEdmMkFCNXhvd2tLbk0tV3E3MUZlYzFpVEFsTmVZ"
-  },
-  {
-    "id": "ext-b2d2a4e2c92a",
-    "type": "external",
-    "title": "Top Startup News Today: AI, DeepTech, Policy & Young Founders Shape India\u2019s Innovation Economy",
-    "date": "2026-07-06",
-    "year": 2026,
-    "summary": "From digital regulations and startup funding to DeepTech innovation, AI products and young entrepreneurs, explore the biggest developments shaping India\u2019s startup ecosystem today.",
-    "url": "https://www.tice.news/tice-trending/top-startup-news-today-ai-deeptech-policy-young-founders-drive-indias-innovation-story-12137880",
-    "source": "TICE News",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiywFBVV95cUxORzBCUzY0eFVxN2pmXy1TaHlua1kzSUZUQzJCQzlPbVRGekRPV1pBT0V3RlllZjBYSlpMbFVHRUg1QVM4TVd3ZDNmRFdzT1RVcC1yeHh3NnJ3aVNjVGRjWXY0Qkx5Szc1elh6VkhHRVpVMkdMYXU2UUo5MHZtSFYxeHNCTWJpYS0zNzVtMGY4eG1pT1hpZEVUNnhJOEh6cmpGcmsyekFBMS1MbFRFdHF2c2xEVGN3YmROT014ek5PMHVydEJ1SVg5R3hIRdIBywFBVV95cUxORzBCUzY0eFVxN2pmXy1TaHlua1kzSUZUQzJCQzlPbVRGekRPV1pBT0V3RlllZjBYSlpMbFVHRUg1QVM4TVd3ZDNmRFdzT1RVcC1yeHh3NnJ3aVNjVGRjWXY0Qkx5Szc1elh6VkhHRVpVMkdMYXU2UUo5MHZtSFYxeHNCTWJpYS0zNzVtMGY4eG1pT1hpZEVUNnhJOEh6cmpGcmsyekFBMS1MbFRFdHF2c2xEVGN3YmROT014ek5PMHVydEJ1SVg5R3hIRQ"
-  },
-  {
-    "id": "ext-8c3fcc613184",
-    "type": "external",
-    "title": "VC inflow sees sharp decline; Bengaluru leads Avendus Wealth-Hurun U30 rankings",
-    "date": "2026-07-05",
-    "year": 2026,
-    "summary": "The sharp fall in venture capital funding in the first week of July was on expected lines, as the previous week saw the CRED transaction, which was a one-off large deal.",
-    "url": "https://yourstory.com/2026/07/vc-inflow-sees-sharp-decline-bengaluru-avendus-hurun-u30-rankings",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMimwFBVV95cUxOWlFtbFhqZEhjQ05pM3ZxWGdoQk1PRWk3UlBvRHo2ZG02cUh5T0lzNFN3Z3l4VC1VOHV5ZTc5NWlPRFAxZlp4NXhHTVRSS2VJZ0F5R2E5bV9EMjR5T2JsRzJWOXR2OC05dE1oNXRGenF3WWs5bVV6TENhOS11THU1b1phTG1Xdk9pRGhoWVVzNThCeG9peXJmekgwUQ"
   }
 ]
