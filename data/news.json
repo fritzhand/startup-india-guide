@@ -1,18 +1,33 @@
 [
   {
-    "id": "ext-50f3ac1767bd",
+    "id": "ext-f9e5c4a763e9",
+    "type": "external",
+    "title": "From River Mobility To BlissClub \u2014 Indian Startups Raised $274 Mn This Week",
+    "date": "2026-08-08",
+    "year": 2026,
+    "summary": "Indian Startup Funding: This week, Indian startup funding stood at $274.4 Mn across 22 deals, up 74% from the preceding week",
+    "url": "https://inc42.com/buzz/from-river-mobility-to-blissclub-indian-startups-raised-274-mn-this-week/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMinAFBVV95cUxOYjVxaU1lRHVZTVBXYzBOMzF3WGVJcEVpSUgxUXFGczFWM1VDbzZDOG1kQzhGSlJZSVJlMnRPZ3FuZE1BNFl3VksxRVVSX3FfWTNLLWloOGdmb1N4U2NTaEF3M1ByUHlVWjBMQ0dZQUJsSDFSc0ROdVhHYXhfRDRTNEJTdlZMQU1yVmdqcVVmSENIZ0E5cUp5d3pEOVI"
+  },
+  {
+    "id": "ext-ffab979a5c6b",
     "type": "external",
     "title": "India proposes BRICS incubator network, startup innovation fund",
     "date": "2026-08-06",
     "year": 2026,
     "summary": "",
-    "url": "https://m.economictimes.com/news/india/india-proposes-brics-incubator-network-startup-innovation-fund/articleshow/133014651.cms",
+    "url": "https://economictimes.indiatimes.com/news/india/india-proposes-brics-incubator-network-startup-innovation-fund/articleshow/133014651.cms?UTM_Source",
     "source": "The Economic Times",
     "sourceTier": "Business daily",
     "tags": [
       "Business"
     ],
-    "gnId": "CBMixgFBVV95cUxPeUFENThjSTJ0M2hMVEdYUDFGaVNKd3VTMXU2SzMwMjBwQ09zaXlPNFNJSzl4MkhQOE9sRVRqajdPNnluV3NhbkltelJBOWI4YjhIOFpPdGRzYXZ1bUIyb0tnMG5BaVZwc20xZl9DMS1YS3UyanFIWl9UWVlfc25zbkt0RmVSWGFuVDZGb1hHS0F3SW9wb2JyMDR2dGFZcXZSbU5IT3pSeWdjUWdqZ01DekE3MjRRVi1PcGNIU25YTmtRWGhseWfSAcsBQVVfeXFMTm1uXzlSRlFXSUgyQjl0ZlI4clozdEdSTndOc0xDY2x3bEpQeXFxbGFLRUJkTEdzMTlIeGVfYk9GUkhrU09PazBCXzVRT1hSTnd4b0QzMjR3S3R0MEpRRmlhNjVWMkpDcFdMQUg2OFMyQ3d2LTZqTGFyTkVDQU1kbHRiTmM0YVd1cGFrMWlnU01ZM1ludERUU25lRDRXdURMMkg1bERESFczaFJEMGFoVUpsSVhQdEFuQ3JFZmZ5dXgwMWRjcDNXc0V0dlE"
+    "gnId": "CBMirwJBVV95cUxQa2g4TlRndG1JdmhJUmRwaHo5T3B4VUhQUmpiV2tsWThId1F5d3p4d042RFpSYXNjWTkyVFQ2bGItanQxWEd0d2Jpd3ZNNlNNQ0xkLWUxU1M3b3NPRmVPT2FFaG9wLVV0djV5UVpCZzllQklURG1wSWFXZkZ6Xy1QQ1VudjMzSUlmcUtKOHF4bEdFb1pNXy1jeEFUbm94QnBVdXktOS11VWxYdDdPblBYLU9rV01tRk9ENllqbW4walVTZ2VBa0VyVVVlcl9GekJVUjRFYlg1SnRGT1J1TlVwT3FGWVJLWW5oREJLUlg1RmhGUm5iVk5uSzNQMm5ZSU1YQmVTajhQR3Uyb0ZvRzFhVTVtRG13NjlvVzVCdFltSU03NEY2N2xuNHcwcVo1ZEXSAcsBQVVfeXFMTm1uXzlSRlFXSUgyQjl0ZlI4clozdEdSTndOc0xDY2x3bEpQeXFxbGFLRUJkTEdzMTlIeGVfYk9GUkhrU09PazBCXzVRT1hSTnd4b0QzMjR3S3R0MEpRRmlhNjVWMkpDcFdMQUg2OFMyQ3d2LTZqTGFyTkVDQU1kbHRiTmM0YVd1cGFrMWlnU01ZM1ludERUU25lRDRXdURMMkg1bERESFczaFJEMGFoVUpsSVhQdEFuQ3JFZmZ5dXgwMWRjcDNXc0V0dlE"
   },
   {
     "id": "ext-45d07ec1d824",
@@ -28,21 +43,6 @@
       "Business"
     ],
     "gnId": "CBMirgFBVV95cUxQSXgzLWFLd2RqeFUxNUNVVzVqamc5Q3BpdDVxSnBjV1NLeUtOUG5VdDg2VGRQTjF2blR1U3ByVVlSOE1ZYklHTXVrUzBtdUJvRjNTaUVOekNyWlN2ZDRzTVpQSTVaeUxnLVJHR3VfOFk2Y3ZLNUVzNkJrbjdtMkRQeHVXbzdZcXlUMTZIOTdzLWtfaDZJb3JIYUlOUDJKR3AyV0VKTTI2TzBWcmV0c2c"
-  },
-  {
-    "id": "ext-d549cb48e89a",
-    "type": "external",
-    "title": "Personal assistance startup Hulp secures $2.6 Mn seed funding",
-    "date": "2026-08-05",
-    "year": 2026,
-    "summary": "Personal assistance and concierge platform Hulp has raised $2.6 million (around Rs 22.7 crore) in a seed funding round co-led by Sparrow Capital and BITKRAFT Ventures.",
-    "url": "https://entrackr.com/snippets/personal-assistance-startup-hulp-secures-26-mn-seed-funding-12230169",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMinwFBVV95cUxOX1lLTjM0djBnUFgwMVRZaUNDdG4zWG9rakJvanM2Ni1OZ2wzQU5RQThMM21wSFZCbF9ZQUJpQWtQX2xWQlh5Z0tGbFF6ckYyZnh2cXpYX0hueXJqNENTMjNhN2s0b3U1WHdQdGRVWmgwNExfZVNRdU5iSzlGWXdzRHoxb19DSGxic2pVTzZIMWNfVm1wZElNMWRraVFvQlnSAZ8BQVVfeXFMTl9ZS04zNHYwZ1BYMDFUWWlDQ3RuM1hva2pCb2pzNjYtTmdsM0FOUUE4TDNtcEhWQmxfWUFCaUFrUF9sVkJYeWdLRmxRenJGMmZ4dnF6WF9IbnlyajRDUzIzYTdrNG91NVh3UHRkVVpoMDRMX2VTUXVOYks5Rll3c0R6MW9fQ0hsYnNqVU82SDFjX1ZtcGRJTTFka2lRb0JZ"
   },
   {
     "id": "ext-4f23e4a19309",
@@ -210,19 +210,19 @@
     "gnId": "CBMi3gFBVV95cUxPQ3VYZ1BEWktRbHIwa1Y1aFFsMnRNNU1ma21NNGF3N0RUdGgxRHBTNm52MnJXUF9qZmo4MGEtYzduclp2TUJXOUNJRzVnLVRHX3B1dkJLeXNsYnRNTFY1MTljelFIZElpQ0Q3bUhReENGblRPaEM0eDRzak52Y0VzeE1DaGN1OWQ3UFluWm9MT25QOWlud2NiRGlvbW9CaDhodk10QUJjV1RBdG5aNWJEc0hsZlJDSUpZbTI4TDQtVDB6Y1lkcjdIVkxuNE1fS1U2MDVMY0E0NThrVmMtSnfSAeMBQVVfeXFMT2VXT0ZxVk8zdWNlWDdQanhNak1FRnBTUTlFMGQxM1ZnbzFLQXBnNDFCdnpnbzNCZGJaUzlPMlA0dUdya09xbjRLUlJXaUp0ZkNRcWVOQnBpQlVndGNFVklYd3BnMEEtWlBIbUloME4wZ3lUSFRteEs3T0ZsTGREZUVmVExrSDFTaXBTb0xtcm5QQXE3NE5ZcEZwRkItOURuZlZiYldiaFI4dzFkMDNMdlFmWlY5SzFHcksxNV9ueUIzRkVsRzdtM1FaS090NVMzSF9Cd1ZCZkF4VWhFRmxndlZ2RlU"
   },
   {
-    "id": "ext-44a33fe7adee",
+    "id": "ext-7bec4d0d782d",
     "type": "external",
-    "title": "Access to growth capital and market expansion are top priorities for Hyderabad's startup ecosystem",
+    "title": "Hyderabad startup ecosystem needs more growth capital, market access to scale - entrepreneur.economictimes.indiatimes.com",
     "date": "2026-07-28",
     "year": 2026,
-    "summary": "According to a report by Endiya Partners, Hyderabad scored high on infrastructure & connectivity, talent availability, and cost efficiency. Startups need access to capital and markets for the next phase of growth.",
-    "url": "https://yourstory.com/2026/07/growth-capital-market-expansion-top-priorities-hyderabad-startup-ecosystem",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
+    "summary": "Hyderabad",
+    "url": "https://entrepreneur.economictimes.indiatimes.com/news/hyderabad-startup-ecosystem-unlocking-growth-capital-and-market-access/132676832",
+    "source": "The Economic Times",
+    "sourceTier": "Business daily",
     "tags": [
-      "Startups"
+      "Business"
     ],
-    "gnId": "CBMipwFBVV95cUxPWlNGQ2JobFRZbHdYbE0yYTh2RUN5Y3BlT3M1Y0l3SU9Yc0t3WV90Nk4tRFFPeWprb2lCU2JRVnQ2U2h3Nm9KeWMxM05ERDI5UnRnZW1GYVBRa2lVWWh5d3l0LVAyZHBJWTlKaVFpMVBHODhieHhiaVEycjBOV0ZUSVJRRjRieVBXcGloSTFpYlFTa1ZMUU9FNDR6dVVkcFV2QkFGSEJOWQ"
+    "gnId": "CBMi0AFBVV95cUxOSHpFVEx3MGhHTE9VYlpLQkVmZWhQbkx2MHo0V21FVV9vaUx4U0s1YW9mbmNpaXZNOXhuYk5xOU1aakZST2l1QXc3MVJiM2dHYTJtUWc3c3BwYzdvdlNKNHFITzJDTkRVaW9sQXVtLXBvSXk3SXp1VXBsSzZSX0NqNWcwcGo4amRkWm53REZQSzZUaS04aFp6VEhweWtSRzlwSExUS3FvRUJmS3hublo2ZU1veUZTelV5bVpPUTAwMWNWaldlUUxKa0IxQVcyNzF30gHWAUFVX3lxTE9hb3QwLUoyaWliNjB3Vlp3RldqdWZ0QXBMbXk5V1BlY2F4TkVnSlJ4RG9lcjc2T2JXM2ZuRmRRbWJJZjgtc0lud3BnRE5aQjFlQlhhSnZDcnVNVGgxekpsc0tXb3NCMHNVWGNxRFdkTXJRaEFza2hUSkVRRm45SkVYV0FmR3RwXzJ1UG80QjdJb3VWbTBDZHIzeWlNSVpPc0d5NFBiZlNPN1BZTGFFOFN4ekRValdiQVlpMUR0aVpxMHVibW1aYUgxeER5bDlTNmd5d3QwWVE"
   },
   {
     "id": "ext-8bbf294adf0c",
@@ -315,36 +315,6 @@
     "gnId": "CBMiogFBVV95cUxNeV84T2REeHBzM040SmhJQTk3V3hic2x6emtILVgzVWVKUllTekFDTzV3dXZDWEFQYXBpMEZaT1BTbGdwWDEzWURLdTJzQkFXRDk4VEdqbXZXZFVLTEFSM0JMak1QT2ZQbVBuZ0V2UHMyUUQ3OGdDNXlYM0tOX2RDNU5fTmtmLWFPckJHa1FpT3BKaGs4cENsTlFxX3I0RFVldGc"
   },
   {
-    "id": "ext-df38bb5e0326",
-    "type": "external",
-    "title": "Startup news and updates: daily roundup (July 23, 2026)",
-    "date": "2026-07-23",
-    "year": 2026,
-    "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Thursday, July 23, 2026.",
-    "url": "https://yourstory.com/2026/07/startup-news-and-updates-daily-roundup-july-23-2026",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiiAFBVV95cUxQU05ETlpDaE9zbVNacGRvMlg2UGdBVUhHbnpNNy1vMGZSZi13d3VlMW1NWnJtYVQ4NHRxekQwcG5FS2hTQmRseXk5N1hmU0EwS2lid2w1dVJtcl94NTNlUFdpSVdScFo0UFVrV01wVmtQSGxCRHJUcHBoeVpLMjlxMVlYX2tEWWJ4"
-  },
-  {
-    "id": "ext-ad5ed487cd4e",
-    "type": "external",
-    "title": "Traveltech Startup 30 Sundays Raises \u20b961 Cr To Expand AI-Powered Holiday Planning",
-    "date": "2026-07-21",
-    "year": 2026,
-    "summary": "30 Sundays is an AI-native, full-stack holiday planning and booking platform for outbound Indian travellers",
-    "url": "https://inc42.com/buzz/traveltech-startup-30-sundays-raises-%E2%82%B961-cr-to-expand-ai-powered-holiday-planning/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiswFBVV95cUxQam9fZ2Z4RFY2Z3JyZ1g2QmdkN3UxdjNCWEhQaThXWTJCWVJpUXZ1NGlwc1dvTzhtWnBRNzM4NExnMmpXYk9QdXY0X0c5eHVCcVo4ZzdwcXpGemtTNGNyMUJaSGJmMWktV3d2bWJSa2k1ZU5BaVVHMnFwZFAyay01cWgwVE9hSFY4QjZ6LWd6Q3lsaGc1bGJHX2RZdl83V0pqMmpMSHRVWTZjZVR2RnEzdGg3WQ"
-  },
-  {
     "id": "ext-6412528bd271",
     "type": "external",
     "title": "Selective funding slows startup creation in India",
@@ -373,21 +343,6 @@
       "Policy"
     ],
     "gnId": "CBMie0FVX3lxTFAxRDFQcGF3bHBDRXA5NUZublVIRmpqblFMXy1NUS1CaTNvUnZJaXBabDBlVlVXLWhheTItSk9xREFzdm5ndWJ6dmpTS1ZhbjFEVnpQNTdQSXBta1dhbWJfMDRWbVNRNEVELTVtMHdJbTF4U2xuUjBaSkh6Yw"
-  },
-  {
-    "id": "ext-fabf6268e3c1",
-    "type": "external",
-    "title": "Emergent turns unicorn with $130-million funding",
-    "date": "2026-07-17",
-    "year": 2026,
-    "summary": "The vibe-coding platform startup has seen its valuation grow rapidly, as co-founder Mukund Jha plans to make it the go-to operating system for small businesses globally",
-    "url": "https://www.forbesindia.com/article/news/emergent-turns-unicorn-with-130-million-funding/2996003/1",
-    "source": "Forbes India",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMinwFBVV95cUxPVE4yWnEyVmtfaGF5d0oxdGMwUHo3eGpzc1NUVXhpRGNkSnBESi1mOERXZXA2bmdjSnV1UXA3NHhqRFBIV1RZQl9xVEhjR3NILUd0RWlNNTAxSmJMZkczZnc2eGRwZUNDcENjUVRBTF95QWtZeTVBNHNuZ1FuTk00MlJjRTlxQ2NHSWxZb1JOQkxEclJlZTdwMDlTaVRKcXPSAaQBQVVfeXFMT3BsSlBBRUo1dzFvcFpiUGllU25FaVBNTTJIcVRlWlB2ZGtISWlVLTV3Si1DbTRiRkp1dlE2UGVMRFFXUzFMRy1Ra0RIVk9sQTJENXdUaEtxajVLVDhFVlYwRXg4dU5tQWhseHhMSDBadDFmbzZQTHhSLVZjekJZaUJPNDNkR19UNkE4VjFZRUZXOS1jcEJfS0JWcjhsc0lURHhNTzE"
   },
   {
     "id": "ext-b01662d39ba4",
@@ -465,6 +420,21 @@
     "gnId": "CBMi0AFBVV95cUxNRFB3MURqOWJKYWx5Sm12QktINFdaM0tWbzJ0cmNuZGZqamtBTU13MFJSOGVqbThtNmhoQnExdFlUbVFBdzlwZkQ3RVhBWWJzTU9LdmhGTjROS0J3cXllTkdSczdCcVF2UW1mQkNZV0pjSXpfWWs2NDU4Nm96Z3NkUkg2WUR6LW5RSy1HVG5RVjljNVcwNnk1c2t1UmhDVVRwZ1FUTzI3OTFfdlJvY3hUV1RqejNyNHRwTFpWcGw3M3JKejlfdjJueHVpYnJHbXNN0gHWAUFVX3lxTFB4dHlEY0tZdjFwRTFjeTU0N09pVXptdUVObURGelpCYXJCcmpfWG5qTzNrd1pfUktSVkRiY1JYZzBGekVEcy12YXFwcEtoWW5Fc0h3eHl0ZkVUUWtsMUlmVTdtZUZneEZDU0YyaVVzY0ZIb2dDTGF6WGYxUUgwVFVLQ0ZVTHZFX0pVMW5LTl9CQVc3a0Myc29ETGhDS1BGc1YxaVp0b0hScjV5OWpfX2pwelU4NU1EUVB5X25iUnV3VTRiaE9MdEwxTjNwQ2Nfc0JQUXQ1V0E"
   },
   {
+    "id": "ext-2c1aa01d69cc",
+    "type": "external",
+    "title": "The growth-stage gap: India's most underserved investment opportunity - entrepreneur.economictimes.indiatimes.com",
+    "date": "2026-07-13",
+    "year": 2026,
+    "summary": "India Startup Growth-stage Investment: The data tells a compelling story. Over the last few years, capital allocation has followed an increasingly barbelled distribution, with growth-stage funding consistently lagging both early and late-stage investments.",
+    "url": "https://entrepreneur.economictimes.indiatimes.com/news/opinion/the-growth-stage-gap-indias-most-underserved-investment-opportunity/132367198?utm_source",
+    "source": "The Economic Times",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMijgJBVV95cUxOMGpvWUZKaXNQLUJVV3UxX2dENzcteVVwTDhicUZqUkxicjRUZVVXZThWYnlrUmRHOGxENWllOGY5TE1vWWdPRlJKeVBqZ012WG9ZSHlWRmtzTWhMZ3pWZTRGVXFtcDk5LTVGR0htQTBQcEJWSk1KN3J3Rl9kRkF2Q0RHVEdfTWJuREplYmJ3LXhJRk51V0wwSXlieG11cjBlSjYzV21oYTJPOGhyUm9qT3FiWnhzNndQVGtsb29sbU85aXRtZl9uZDVzemhkTVdaZlFqUXBRLTJJcFh5VXlkLXZDa3huMVZtcnJDZkdDb2lvOUdCaGJQbDRGbktYWmFqeDJ2aU54bl9YLTZuUEHSAdwBQVVfeXFMT3lLYWZTbWhNVWZUYnUyNkVWU2JaTm53UnpPQ1VmUHlPaFNFSk5hemtXbjdTemxPNVhKRE9IcEhreFZSNlF3WUhhVGRIRVZmUlNxX1Bua1JhN1FlelBzRUNUX0RNa3pkbE4xQ25ZMzRSd1ZPVUI2N29nYWdoVnJ5WHA2WnFmTVRaOTB6OFhRTkhFeU1EZ3Z5LXJTcURpaGZxcDAtUjRwTk5mTFZnMlRaWmlzZXd4OWRaN2cyLWVZd0pYbXJvdVJKVTNqVDVNTUk0d2tsZ3c3UjdQMkNtcg"
+  },
+  {
     "id": "ext-c6ceb8a03bc1",
     "type": "external",
     "title": "Funding and acquisitions in Indian startups this week [July 06 - July 11]",
@@ -478,21 +448,6 @@
       "Startups"
     ],
     "gnId": "CBMi5AFBVV95cUxNQkVzM3RsVXlCVEtBX25TMGRudDdDcU5EbjB3aF9kd3VqQlJCVmlvZkFJcGpoNXVhYmVOVDhHV0xkNnhhQWJybEEzVVFmcFlVc1k1N1Vzc0Q0cGlKUGwxbkZDbTVpZjllQ2xFejlnd1NjVnV4Nkt1SkFSaGo1ZW5yLWptRGlyMmhZbXdxZUhUenc1V0pSODEtV0poOUVteFN6bHJBMjQ2Mkp5U3Bua2szc0gtNUpac19FVzdHajl3czkzSkp2QUxVeVhMeHZWUGFDbkliOXgxcWhnbVdoc0FNa25VWHjSAeQBQVVfeXFMTUJFczN0bFV5QlRLQV9uUzBkbnQ3Q3FORG4wd2hfZHd1akJSQlZpb2ZBSXBqaDV1YWJlTlQ4R1dMZDZ4YUFicmxBM1VRZnBZVXNZNTdVc3NENHBpSlBsMW5GQ201aWY5ZUNsRXo5Z3dTY1Z1eDZLdUpBUmhqNWVuci1qbURpcjJoWW13cWVIVHp3NVdKUjgxLVdKaDlFbXhTemxyQTI0NjJKeVNwbmtrM3NILTVKWnNfRVc3R2o5d3M5M0pKdkFMVXlYTHh2VlBhQ25JYjl4MXFoZ21XaHNBTWtuVVh4"
-  },
-  {
-    "id": "ext-c5b2a3920de7",
-    "type": "external",
-    "title": "[Weekly funding roundup July 4-10] VC inflow remains flat",
-    "date": "2026-07-10",
-    "year": 2026,
-    "summary": "Indian startups raised just $107 million in the second week of July, marking the second straight week of muted funding activity. While investors continue to back sectors such as deeptech and AI, the absence of large-ticket deals has kept overall venture inflows subdued.",
-    "url": "https://yourstory.com/2026/07/weekly-funding-roundup-july-4-10-vc-inflow-remains-flat",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMijgFBVV95cUxPcEJ4eGJ6SnVMdS1LQXF4aWlIdkh5ellqd3ZMNlFqWnI2T1dLYkRFeFhPUkw0TmcxdlM1QmdJNFJXWGYwNERlNjZpN1hncnBRSUo0UTdad3pqYzdSZVN1SDNDVEFjYnFUaXNxdHpQTUpRejNwcTU0Z3ZLb3AtZ1Q1N2JyeWxoT2EtWE9VRHZ3"
   },
   {
     "id": "ext-6a87927ab56f",
@@ -598,5 +553,50 @@
       "Business"
     ],
     "gnId": "CBMilgJBVV95cUxQblcwZnQ0NzZQTHBzYXIwTGZab183NFZRcG9PSzhHS2t3RHk5djRHbVlGRmpIREY0bHB1MXFobzNadTFmMTJ3TFZJTmRXYk55RWFwWGtNdzJZQlhudEEyTm5NMEl0VkhSZ2dBZWowdkVJcThSZ19zU05MaFF5ODBta256MXRDSHo3STlzbU9ZZXRXSkdqSFp1RjN6VkdQSE1HdzZJdXctc1ZMbFE1MnBpcWtIZ1hTaXNpRlhHT2tTMlh1WGU1bHVFRGRBZTJKNHdoS05wR3BEbkF1azhzcUk0WjFKbHowQlRyZzBxQlN6RmZaMDBHem9fQW1wQTZ3dkJNVWw2QUhGcmxLa20zVlJnV2lrdGlvZ9IBmwJBVV95cUxNYTFmNHBxS2lTWTNsNXB5ZmtWc0FOLXNDaUZqM2R4OGdhVWJoaUE1TjZwcFA0Tzd4RzU0MzdOV1Q2SVNKRG0xclZmZDhuSUFrZE1qUE1feFpGS2hJZWtwNmRISXRic01mVGc5eEE0azRKam05UnZfWG5PUFU3SjJ6X3JsUUFvV2Nia1RPNFRlNjF0TEFsUjlBYzdXVkhHeVFnQ2M0eDdnb2c5RWladXRZQnZhcFQxUUtQZG5SWGtwRVU2dGNwV0gtVXRNRXljMHAzcENMekktUVRMRm5NcGN2YW55bDQzYTBPai03aXZpaEtQWEVRNS1rWTR0WUc0cEdmMkFCNXhvd2tLbk0tV3E3MUZlYzFpVEFsTmVZ"
+  },
+  {
+    "id": "ext-861ffe95e463",
+    "type": "external",
+    "title": "Blurgs AI, an IIT-Madras alumni deep tech startup, raises $2.2 mn",
+    "date": "2026-07-07",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.business-standard.com/technology/tech-news/blurgs-ai-raises-2-2-million-to-expand-maritime-defence-ai-platforms-126070700358_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi2wFBVV95cUxQRXZJMkY5NTIzcmlHNnp5WDUwa092NkRBeklNVDZoNDB5aTBZdUh1OEJOOXpQeU45TUdfUGlKdXNSYmlEOVlCeVg4S2o4TE55aWhIekplNFpYYXBGdVkyYnVvT0h2VkN0RmVvN1p3a0pYZ0xuWWFTcEJDNzkzZjR6MG5WUmpiWVo0YTBKUkxvQnlEM0d6Q3FGeGFOcm9oclBhWE1IV0NHZldmLTBpUWZCOGdLQnI0WXdNMXlmeTlsMUJEWS1KNWN6eVZEdHVNUEFTbjdOZldaNzA4RGfSAeABQVVfeXFMT2RibmwtaEJ0V3V2X2xYd0h4TTlMZE56UGs5Vm5OQlRJQTlycnBXU2VFdGtWLUxLNkRCTmU0OFFDV29aeVNOdC0xM0JkMll3MGZzc0c5RlFYSzhHa1dzWjV2Tm9kTzJiR0htS3V5YU42dWdXTG55NW1tekR4QXU0NEkyeExFd1MxdFlmOU5jQTdNSWhDN2ZMZ3A4a1dfYjYxRE1MOGtzY0VQTGR3V0lfemNzWGNmZS0wVUxBVFBvRkx4MlE0U2ZkeWtkTkl4Nnl2ck1Pc2l1T0ZwUFVXM3AzeF8"
+  },
+  {
+    "id": "ext-b2d2a4e2c92a",
+    "type": "external",
+    "title": "Top Startup News Today: AI, DeepTech, Policy & Young Founders Shape India\u2019s Innovation Economy",
+    "date": "2026-07-06",
+    "year": 2026,
+    "summary": "From digital regulations and startup funding to DeepTech innovation, AI products and young entrepreneurs, explore the biggest developments shaping India\u2019s startup ecosystem today.",
+    "url": "https://www.tice.news/tice-trending/top-startup-news-today-ai-deeptech-policy-young-founders-drive-indias-innovation-story-12137880",
+    "source": "TICE News",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiywFBVV95cUxORzBCUzY0eFVxN2pmXy1TaHlua1kzSUZUQzJCQzlPbVRGekRPV1pBT0V3RlllZjBYSlpMbFVHRUg1QVM4TVd3ZDNmRFdzT1RVcC1yeHh3NnJ3aVNjVGRjWXY0Qkx5Szc1elh6VkhHRVpVMkdMYXU2UUo5MHZtSFYxeHNCTWJpYS0zNzVtMGY4eG1pT1hpZEVUNnhJOEh6cmpGcmsyekFBMS1MbFRFdHF2c2xEVGN3YmROT014ek5PMHVydEJ1SVg5R3hIRdIBywFBVV95cUxORzBCUzY0eFVxN2pmXy1TaHlua1kzSUZUQzJCQzlPbVRGekRPV1pBT0V3RlllZjBYSlpMbFVHRUg1QVM4TVd3ZDNmRFdzT1RVcC1yeHh3NnJ3aVNjVGRjWXY0Qkx5Szc1elh6VkhHRVpVMkdMYXU2UUo5MHZtSFYxeHNCTWJpYS0zNzVtMGY4eG1pT1hpZEVUNnhJOEh6cmpGcmsyekFBMS1MbFRFdHF2c2xEVGN3YmROT014ek5PMHVydEJ1SVg5R3hIRQ"
+  },
+  {
+    "id": "ext-8c3fcc613184",
+    "type": "external",
+    "title": "VC inflow sees sharp decline; Bengaluru leads Avendus Wealth-Hurun U30 rankings",
+    "date": "2026-07-05",
+    "year": 2026,
+    "summary": "The sharp fall in venture capital funding in the first week of July was on expected lines, as the previous week saw the CRED transaction, which was a one-off large deal.",
+    "url": "https://yourstory.com/2026/07/vc-inflow-sees-sharp-decline-bengaluru-avendus-hurun-u30-rankings",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMimwFBVV95cUxOWlFtbFhqZEhjQ05pM3ZxWGdoQk1PRWk3UlBvRHo2ZG02cUh5T0lzNFN3Z3l4VC1VOHV5ZTc5NWlPRFAxZlp4NXhHTVRSS2VJZ0F5R2E5bV9EMjR5T2JsRzJWOXR2OC05dE1oNXRGenF3WWs5bVV6TENhOS11THU1b1phTG1Xdk9pRGhoWVVzNThCeG9peXJmekgwUQ"
   }
 ]
