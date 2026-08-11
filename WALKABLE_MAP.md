@@ -1,120 +1,135 @@
-# Walkable India map
+# Walkable 3D India map
 
 ## Product contract
 
 `ecosystem-map.html` explains the available map experiences. It links to the
-immersive `walkable-map.html`, the incubator directory map, and the state-scheme
-map. The conventional maps remain the fast, accessible route to every record.
+immersive 3D `walkable-map.html`, the incubator directory map, and the
+state-scheme map. The conventional maps remain the fast, accessible route to
+every record.
 
-The walkable experience uses the existing state/UT SVG in
-`data/india-map.json`, the topographic layer in `data/india-terrain.json`, all
-224 records in `data/incubators.json`, and policy context from
-`data/state-schemes.json`. Incubator icons communicate state membership only.
-They deliberately do not claim to show an exact address.
+The walkable experience renders the existing state/UT geometry in
+`data/india-map.json` as a three.js world: a small explorer walking a
+painterly, displaced terrain in the spirit of *Summer Afternoon*. It uses the
+topographic layer in `data/india-terrain.json`, all 224 records in
+`data/incubators.json`, and policy context from `data/state-schemes.json`.
+Incubator pins communicate state membership only. They deliberately do not
+claim to show an exact address.
 
-## Ground layers
+three.js is vendored in `site/vendor/` (MIT); the build stays
+zero-npm-dependency and GitHub Pages keeps serving plain static files. If
+WebGL is unavailable, the page swaps to a fallback panel linking to the
+conventional maps — every record remains reachable without the 3D scene.
 
-The ground is painted in ordered layers inside one SVG, not as one path per
-state:
+## Ground
 
-1. `clipPath#walkable-land` — every state/UT shape, used to clip the two
-   layers below so nothing bleeds into the sea
-2. `.wg-fill` — land, alternating between the two land tones. Carries
-   `data-state`; the map reads its bounding box for incubator placement
-3. `.wg-terrain` — relief tints, then rivers, then lakes
-4. `.wg-decor` — watercolour sprites
-5. `.wg-border` — state and UT outlines. **The only stroked land layer**
-6. `.wg-labels` — terrain names and peak markers, gated on zoom
+The ground is one displaced plane with a canvas-painted texture, both derived
+at load time from the same data the 2D map used:
 
-Only the border layer is stroked, and that is deliberate: a state made of
-several sub-paths — islands, or a regression to district geometry — can then
-only ever fill. District ("county") lines used to cover the map for exactly
-that reason, because `data/india-map.json` was built by concatenating district
-rings into one stroked path per state. Uttar Pradesh alone carried 76.
+1. **Texture** — painted in layers into a 2048-px canvas with `Path2D`:
+   sea, a shallow-water shelf hugging the coastline, state fills (every third
+   state takes the alternate tone, as the 2D stylesheet did), relief tints
+   clipped to land, rivers, lakes, then state borders. All colours come from
+   the `--walk-*` design tokens, so the aerial view still reads as the guide's
+   map in both themes.
+2. **Height field** — the land mask and relief kinds are rasterized to a
+   300×334 grid and shaped by `buildHeightField` (`site/walkable-3d-core.js`):
+   mountains rise ~30 world units, plateaus ~7, plains stay low, and a blurred
+   coast falloff tapers every shoreline into the sea. Seeded value noise makes
+   ranges undulate deterministically — same world, every load.
+3. **Guaranteed ground** — every state anchor gets a stamped bump so each
+   landmark stands on dry land. Lakshadweep's atolls sit far below the raster
+   resolution; its islets are stamped explicitly. This is the 3D analogue of
+   the build-time Lakshadweep warning in `build-india-map.mjs`.
 
 ## Terrain
 
 `data/india-terrain.json` carries 20 relief regions, 43 rivers, 14 lakes and
-14 named peaks, projected with the same descriptor as the state outlines and
-clipped to Indian land at build time. Relief kinds — `mtn`, `plateau`,
-`desert`, `wet`, `plain` — map to hypsometric tints a step away from the base
-land colour, tuned separately for light and dark.
+14 named peaks. Relief kinds — `mtn`, `plateau`, `desert`, `wet`, `plain` —
+drive both the hypsometric tint in the texture and the height of the land
+itself, so the Himalaya reads as a wall on the horizon while the Gangetic
+plain stays walkable flat.
 
-Terrain names and peak markers appear only at 100% zoom and above; below that
-they would collide with each other and with incubator pins. A region is named
-only when a meaningful share of it lies inside India, so the Plateau of Tibet
-and the Hindu Kush are tinted but never labelled.
+Terrain names and peak markers are DOM labels projected over the canvas,
+gated on zoom exactly as before: they appear at 100% and above, where they
+no longer collide with incubator pins.
 
-Terrain is exclusive to the walkable map. The incubator and state-scheme maps
-are choropleths that encode counts as fill colour, and a relief tint underneath
-would corrupt that reading.
+Terrain remains exclusive to the walkable map. The incubator and state-scheme
+maps are choropleths that encode counts as fill colour, and a relief tint
+underneath would corrupt that reading.
 
-## Decor glyphs
+## Decor
 
-`site/forest/` holds eight watercolour sprites ported from the Startup Forest
-kit. 760 of them are scattered by `placeDecor` in `walkable-core.js`: a
-deterministic rejection sample that keeps every sprite on land, spaced from its
-neighbours, and clear of incubator icons, landmarks, signposts and ferries —
-decor must never sit under something the player needs to click.
+`placeDecor` in `walkable-core.js` still scatters 760 props with the same
+deterministic rejection sample — on land, spaced, and clear of everything
+clickable. The eight 2D sprite names now map onto instanced low-poly
+archetypes (`decorArchetype`): round trees, pines (`tree-simple-c`), shrubs
+and rocks, coloured per terrain kind with seeded jitter. The scatter still
+reads as geography: rock along the Ghats, scrub in the Thar, trees through
+the Gangetic plain and the northeast. Four instanced meshes render all 760
+props in four draw calls.
 
-The terrain under a point picks the sprite, so the scatter reads as geography:
-rock along the Ghats, scrub in the Thar, trees through the Gangetic plain and
-the northeast. Sprites render as SVG `<image>` inside the ground layer rather
-than HTML elements, which keeps them in the same composited layer as the map —
-measured at no frame cost, even under 6× CPU throttling on a 390px viewport.
+## Scale, movement, and camera
 
-## Scale and movement
-
-- SVG source space: `1000 × 1113`
-- World scale: `18` CSS pixels per SVG unit
-- World size: `18,000 × 20,034` CSS pixels
-- Walk speed: `360` CSS pixels per second
-- Representative Jammu and Kashmir–Tamil Nadu land route: about 45 seconds
+- Map space: `1000 × 1113` world units (1 unit = 1 SVG map unit)
+- Walk speed: `20` units per second — the 2D contract (`WALK_SPEED / WORLD_SCALE`),
+  so `estimateTraverseSeconds` still holds: Jammu and Kashmir–Tamil Nadu is
+  about 45 seconds on foot
 - Spawn: Madhya Pradesh, giving a central starting point
+- Avatar: ~7 units tall, straw hat and all, with a walk cycle and idle breath
 
-Movement supports arrow keys, WASD, and a touch D-pad. The avatar is constrained
-to India’s state/UT land geometry. Enter always opens the state or union
-territory polygon currently under the avatar. Zoom supports buttons, reset,
-trackpad control-wheel, and two-finger pinch. It defaults to `0.65×` and is
-clamped from `0.5×` to `1.65×`.
-A persistent Recenter control snaps the camera back to the avatar if it leaves
-the viewport.
+Movement supports arrow keys, WASD, and a touch D-pad, always in compass
+space — up walks north no matter where the camera points — and the avatar is
+constrained to India's state/UT land geometry, with coast-sliding so shorelines
+don't snag. Enter opens the state or union territory under the avatar.
+
+The zoom control keeps its 2D contract (50%–165%, default 65%) and maps onto
+the follow camera's distance (150 down to 26 units). Pulled out, the camera
+pitches down and reads like a map; zoomed in, it hugs the horizon like a
+third-person game. Dragging the canvas (or Q/E) orbits the camera; pinch and
+wheel zoom; Recenter swings the camera back behind the avatar and resets the
+orbit. The camera never clips into a mountainside.
 
 ## States, incubators, and wayfinding
 
-Every state/UT has a landmark and inset-map control. All incubators have
-focusable icons based on their type. Placement is deterministic, constrained to
-the incubator’s state, and collision-spaced where the available polygon allows.
-When the avatar approaches an incubator, its icon and label highlight and the
-proximity prompt opens that incubator’s focused record with Enter or a click.
+Everything interactive is real DOM projected over the canvas each frame, so
+buttons and links keep their accessible names exactly as in 2D:
 
-Lakshadweep uses a small fallback island-chain path: its islands are far below
-the build's minimum-area floor, so `build-india-map.mjs` emits an empty path and
-warns. Its landmark is anchored on the islands rather than at a zero-coordinate
-centroid. It is the one state or UT whose geometry is hand-authored — the
-build-time warning exists so that cannot rot silently.
-
-Wayfinders cover northern, western, central, eastern, northeastern, Deccan, and
-southern junctions. State arms open information without teleporting. Explicitly
-labelled ferry controls connect Kerala with Lakshadweep and Tamil Nadu with the
-Andaman and Nicobar Islands; return controls make both island groups traversable
-without allowing the avatar to walk over open water.
+- Every state/UT has a landmark card and an inset-map control.
+- All incubators have colour-coded 3D pins (instanced, two draw calls,
+  clickable by raycast) plus focusable icon buttons that appear as you
+  approach. Placement is deterministic via `placeOrganizations` — unchanged.
+- Clicking open terrain opens the state under the cursor.
+- Wayfinder signposts cover the same nine junctions; ferry controls still
+  connect Kerala with Lakshadweep and Tamil Nadu with the Andaman and Nicobar
+  Islands, and remain the only way across open water.
+- When the avatar approaches an incubator, its pin's button highlights and
+  the proximity prompt opens that incubator's focused record with Enter.
 
 ## State drawer
 
-The desktop drawer becomes a mobile bottom sheet. It includes the state policy
-summary, scheme count, incubator-type counts, local search and filtering,
-official incubator links, and deep links into both conventional map views.
+Unchanged from the 2D map: the desktop drawer becomes a mobile bottom sheet,
+with the state policy summary, scheme count, incubator-type counts, local
+search and filtering, official incubator links, and deep links into both
+conventional map views.
+
+## Atmosphere
+
+Gradient sky dome, drifting billboard clouds, a translucent sea with a
+scrolling generated normal map (sun glints, shallow shelves at every coast),
+distance fog, and a shadow-casting sun that follows the avatar. Light and
+dark themes are read from the `--walk3d-*` tokens: a warm afternoon by day, a
+moonlit dusk in dark mode, repainted live when the theme toggles.
 
 ## Accessibility and performance
 
-- One self-suspending animation loop updates movement, camera, position, and
-  proximity state.
-- Interactive landmarks, incubators, inset markers, and signposts are native
-  buttons or links with accessible names.
-- Terrain, decor and the inset map are `aria-hidden` decoration. Every peak and
-  range they show is atmosphere; nothing in the guide is reachable only there.
-- Reduced-motion mode removes decorative movement and camera easing.
+- Interactive landmarks, incubators, inset markers, signposts and ferries are
+  native buttons or links with accessible names, projected over the canvas.
+- Terrain, decor, sea, sky and the inset map are decoration (`aria-hidden`
+  canvas); nothing in the guide is reachable only in 3D.
+- Reduced-motion mode removes the walk cycle, idle bob, cloud drift, sea
+  animation and camera easing; movement itself still works.
+- Overlay elements are distance- and frustum-culled, so only a handful of the
+  224 incubator buttons lay out on any given frame.
 - Persistent links lead back to the incubator directory and choice page.
 - Every incubator and state scheme remains reachable without walking.
 

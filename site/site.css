@@ -1045,96 +1045,98 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 }
 .walkable-map { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--walk-water); }
 .walkable-viewport { position: absolute; inset: 0; overflow: hidden; touch-action: none; overscroll-behavior: none; }
-.walkable-world {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 18000px;
-  height: 20034px;
-  transform-origin: 0 0;
-  will-change: transform;
-}
-.walkable-ground {
+/* The world is a three.js canvas; everything interactive floats above it as
+   real DOM, projected from world space every frame, so buttons and links keep
+   their accessible names. The overlay container never intercepts input —
+   only the buttons inside it do — and it isolates its stacking context so
+   projected depth ordering can never climb over the map chrome. */
+.walkable-canvas {
   position: absolute;
   inset: 0;
-  width: 18000px;
-  height: 20034px;
-  max-width: none;
-  background-color: var(--walk-water);
-  background-image:
-    linear-gradient(var(--walk-water-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--walk-water-grid) 1px, transparent 1px);
-  background-size: 360px 360px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  cursor: grab;
 }
-/* The ground paints in layers: land fill → terrain → decor → borders →
-   labels. Only .wg-border is stroked, which is what guarantees state outlines
-   and nothing else — a state made of several sub-paths (islands, or a
-   regression to district geometry) can only ever fill. */
-.wg-fill path { fill: var(--walk-land); }
-.wg-fill path:nth-child(3n) { fill: var(--walk-land-alt); }
-.wg-border path {
-  fill: none;
-  stroke: var(--walk-land-border);
-  stroke-width: 2.2;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
+.walkable-canvas:active { cursor: grabbing; }
+.walkable-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
 }
-.wg-relief path { stroke: none; opacity: 0.62; }
-.wg-relief path[data-kind="mtn"] { fill: var(--walk-relief-mtn); }
-.wg-relief path[data-kind="plateau"] { fill: var(--walk-relief-plateau); }
-.wg-relief path[data-kind="desert"] { fill: var(--walk-relief-desert); }
-.wg-relief path[data-kind="wet"] { fill: var(--walk-relief-wet); }
-.wg-relief path[data-kind="plain"] { fill: var(--walk-relief-plain); }
-.wg-rivers path {
-  fill: none;
-  stroke: var(--walk-river);
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
+.walkable-overlay .is-offstage { display: none; }
+.walkable-3d-fallback[hidden] { display: none; }
+.walkable-3d-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--walk-water);
 }
-.wg-lakes path { fill: var(--walk-lake); stroke: none; }
-/* The watercolour sprites carry a pale halo that glows against dark land, so
-   they sit back a little further there than in daylight. */
-.wg-decor image { opacity: 0.92; }
-:root[data-theme="dark"] .wg-decor image { opacity: 0.72; }
+.walkable-3d-fallback > div {
+  max-width: 480px;
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--walk-overlay-strong);
+  box-shadow: var(--shadow-3);
+}
+.walkable-3d-fallback h2 { font-size: 1.2rem; }
+.walkable-3d-fallback p { margin: 8px 0 14px; color: var(--text-muted); font-size: .88rem; line-height: 1.5; }
+.walkable-3d-fallback .btn { margin: 0 8px 8px 0; }
 /* Terrain names and peaks are gated on zoom by [data-detail] — see setZoom. */
-.wg-labels {
+.walkable-terrain-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--speed) var(--ease);
 }
-.walkable-map[data-detail="on"] .wg-labels { opacity: 1; visibility: visible; }
-/* Sizes are in SVG user units, and the ground is drawn at 18 CSS px per unit
-   (1000×1113 viewBox → an 18000×20034 world). So 0.9 here is a ~16px label at
-   100% zoom, growing to ~27px at the 165% ceiling. */
-.wg-labels text {
-  fill: var(--walk-terrain-label);
-  paint-order: stroke;
-  stroke: var(--walk-land);
-  stroke-width: 0.14;
-  text-anchor: middle;
-  font-family: inherit;
+.walkable-map[data-detail="on"] .walkable-terrain-labels { opacity: 1; visibility: visible; }
+.walkable-terrain-name,
+.walkable-peak {
+  position: absolute;
+  width: max-content;
+  max-width: 260px;
+  color: var(--walk-terrain-label);
+  text-align: center;
+  text-shadow: 0 1px 3px var(--walk-land);
 }
-.wg-terrain-names text {
-  font-size: 0.9px;
+.walkable-terrain-name {
+  font-size: .74rem;
   font-weight: 600;
-  letter-spacing: 0.09px;
+  letter-spacing: .09em;
   text-transform: uppercase;
 }
-.wg-peaks text { font-size: 0.6px; font-weight: 600; }
-.wg-peaks .wg-peak-elevation { font-weight: 400; opacity: 0.75; }
-.wg-peak-mark { fill: var(--walk-terrain-label); stroke: none; }
-/* World-unit type does not adapt to the viewport, and a phone shows barely a
-   screen-width of map — at the desktop size a range name would span half of
-   it. Shrink the names, not the map. */
-@media (max-width: 700px) {
-  .wg-terrain-names text { font-size: 0.62px; letter-spacing: 0.05px; }
-  .wg-peaks text { font-size: 0.48px; }
+.walkable-peak strong { display: block; font-size: .66rem; font-weight: 600; }
+.walkable-peak small { display: block; font-size: .58rem; opacity: .75; }
+.walkable-peak-mark {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 auto 2px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid var(--walk-terrain-label);
 }
 .walkable-orgs,
 .walkable-landmarks,
 .walkable-wayfinders { position: absolute; inset: 0; pointer-events: none; }
+/* Projected overlays get their transform (position + depth scale) inline from
+   the projector each frame — transitions must not chase it. */
+.walkable-org,
+.walkable-landmark,
+.walkable-wayfinder,
+.walkable-transfer,
+.walkable-terrain-name,
+.walkable-peak { will-change: transform; }
 .walkable-org,
 .walkable-landmark,
 .walkable-wayfinder button,
@@ -1152,8 +1154,7 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
   color: var(--org-color);
   background: color-mix(in srgb, var(--org-color) 14%, var(--walk-overlay-strong));
   box-shadow: 0 5px 16px var(--walk-shadow);
-  transform: translate(-50%, -50%);
-  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+  transition: box-shadow var(--speed) var(--ease);
 }
 .walkable-org[data-type="academic"],
 .walkable-drawer-org[data-type="academic"],
@@ -1196,8 +1197,7 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 .walkable-org:hover,
 .walkable-org:focus-visible,
 .walkable-org.is-nearby {
-  z-index: 9;
-  transform: translate(-50%, -50%) scale(1.18);
+  z-index: 2600 !important;
   box-shadow: 0 0 0 8px color-mix(in srgb, var(--org-color) 24%, transparent), var(--shadow-3);
 }
 .walkable-org:hover > span,
@@ -1214,7 +1214,6 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
   background: var(--walk-overlay);
   box-shadow: var(--shadow-2);
   text-align: left;
-  transform: translate(-50%, -50%);
 }
 .walkable-landmark:hover { text-decoration: none; box-shadow: var(--shadow-3); }
 .walkable-landmark strong { display: block; font-family: var(--font-display); font-size: .84rem; line-height: 1.15; }
@@ -1235,7 +1234,6 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
   z-index: 5;
   width: 230px;
   padding-bottom: 80px;
-  transform: translate(-50%, -50%);
 }
 .walkable-wayfinder::after {
   content: "";
@@ -1280,7 +1278,6 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
   background: var(--walk-overlay);
   box-shadow: var(--shadow-2);
   font-size: .7rem;
-  transform: translate(-50%, -50%);
 }
 .walkable-transfer:hover,
 .walkable-transfer:focus-visible {
@@ -1289,64 +1286,6 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
   box-shadow: 0 0 0 7px color-mix(in srgb, var(--link) 18%, transparent), var(--shadow-3);
 }
 .walkable-transfer > span { font-size: 1rem; }
-.walkable-avatar {
-  position: absolute;
-  z-index: 12;
-  width: 34px;
-  height: 46px;
-  transform: translate(-50%, -72%);
-  pointer-events: none;
-}
-.walkable-avatar-shadow {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 31px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--walk-shadow);
-  transform: translateX(-50%);
-}
-.walkable-avatar-body {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 27px;
-  height: 36px;
-  border: 3px solid var(--walk-overlay-strong);
-  border-radius: 48% 48% 42% 42%;
-  background: var(--walk-avatar);
-  box-shadow: var(--shadow-2);
-  transform: translateX(-50%);
-}
-.walkable-avatar-body::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 7px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--walk-avatar-detail);
-  transform: translateX(-50%);
-}
-.walkable-avatar-body span::before,
-.walkable-avatar-body span::after {
-  content: "";
-  position: absolute;
-  bottom: -7px;
-  width: 7px;
-  height: 12px;
-  border-radius: 5px;
-  background: var(--walk-avatar);
-}
-.walkable-avatar-body span::before { left: 3px; }
-.walkable-avatar-body span::after { right: 3px; }
-.walkable-avatar[data-walking="true"] .walkable-avatar-body { animation: walkable-step 320ms ease-in-out infinite alternate; }
-@keyframes walkable-step {
-  from { transform: translateX(-50%) rotate(-2deg); }
-  to { transform: translateX(-50%) rotate(2deg) translateY(-2px); }
-}
 .walkable-intro,
 .walkable-minimap,
 .walkable-zoom,

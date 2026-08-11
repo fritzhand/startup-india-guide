@@ -99,6 +99,21 @@
   --walk-river: #8fbccf;
   --walk-lake: #9fcbdc;
   --walk-terrain-label: #6b7f57;
+  /* 3D walkable scene — a warm Summer-Afternoon daylight. The map texture
+     reuses the --walk-* tones above; these colour the world around it. */
+  --walk3d-sky-top: #6fb2e4;
+  --walk3d-sky-horizon: #f3ecd7;
+  --walk3d-sea: #8ec7db;
+  --walk3d-sea-deep: #5da3c2;
+  --walk3d-fog: #e9eedd;
+  --walk3d-sun: #fff3da;
+  --walk3d-cloud: #fffaf0;
+  --walk3d-trunk: #8a6642;
+  --walk3d-canopy-a: #7fae62;
+  --walk3d-canopy-b: #96a45c;
+  --walk3d-pine: #5d8b58;
+  --walk3d-shrub: #a4b36a;
+  --walk3d-rock: #b0a894;
   --org-academic: #6d4fc4;
   --org-tbi: #0e7490;
   --org-aic: #c44318;
@@ -187,6 +202,20 @@
   --walk-river: #3f7f9c;
   --walk-lake: #35708c;
   --walk-terrain-label: #8fb08a;
+  /* 3D walkable scene at dusk — moonlit blues instead of inverted daylight. */
+  --walk3d-sky-top: #101e33;
+  --walk3d-sky-horizon: #3c4a68;
+  --walk3d-sea: #234057;
+  --walk3d-sea-deep: #17293c;
+  --walk3d-fog: #2b3a52;
+  --walk3d-sun: #bcd0ef;
+  --walk3d-cloud: #4a5c7e;
+  --walk3d-trunk: #4b3b2c;
+  --walk3d-canopy-a: #3d6647;
+  --walk3d-canopy-b: #4a6340;
+  --walk3d-pine: #35573f;
+  --walk3d-shrub: #566844;
+  --walk3d-rock: #5d6068;
   --org-academic: #a68cf0;
   --org-tbi: #4cc0dd;
   --org-aic: #ff8750;

@@ -44,7 +44,7 @@ Four views from the [live site](https://fritzhand.github.io/startup-india-guide/
 | [Compare](https://fritzhand.github.io/startup-india-guide/compare.html) | Up to three schemes side by side |
 | [Lifecycle Map](https://fritzhand.github.io/startup-india-guide/lifecycle.html) | Ideation → prototype → seed → growth → market access |
 | [What do you need?](https://fritzhand.github.io/startup-india-guide/needs.html) | From a need (grant / loan / lab / buyers / IP) to the schemes that provide it |
-| [Explore India map](https://fritzhand.github.io/startup-india-guide/ecosystem-map.html) | Choose a full-screen walkable India experience, the conventional incubator map, or the state-schemes map. The walkable view includes keyboard/touch movement, pinch zoom, state wayfinders, type-specific incubator icons, and policy-rich state drawers |
+| [Explore India map](https://fritzhand.github.io/startup-india-guide/ecosystem-map.html) | Choose a full-screen 3D walkable India experience, the conventional incubator map, or the state-schemes map. The walkable view includes keyboard/touch movement, drag-to-look, pinch zoom, state wayfinders, type-coloured incubator pins, and policy-rich state drawers |
 | [State & UT schemes](https://fritzhand.github.io/startup-india-guide/state-schemes.html) | 320+ state-level startup schemes & incentives (seed grants, subsidies, reimbursements, procurement) across every state and UT — straight from each official state startup policy, by-state / all-schemes / map views. Kept separate from the central schemes |
 | [Incubators directory](https://fritzhand.github.io/startup-india-guide/incubators.html) | 220+ technology business incubators, Atal Incubation Centres & startup hubs on an interactive India map (choropleth + city markers) — searchable, filterable, cards / table / state-wise views, with locations, websites and contacts |
 | [PSU & regulators](https://fritzhand.github.io/startup-india-guide/psu.html) · [States & UTs](https://fritzhand.github.io/startup-india-guide/states.html) | 17 PSU/regulator programs; every state startup portal |
@@ -104,9 +104,10 @@ startup-india-guide/
 │   ├── tokens.css           # the skin: PDF-sampled palette, light + dark
 │   ├── site.css             # layout & component vocabulary; reads only tokens
 │   ├── site.js              # search, filters, wizard, compare, incubator map, theme toggle
-│   ├── walkable-core.js     # pure movement, camera, zoom, timing and placement helpers
-│   ├── walkable-map.js      # full-screen India world, controls, wayfinders and state drawers
-│   └── forest/              # watercolour decor sprites for the walkable map's terrain
+│   ├── walkable-core.js     # pure movement, zoom, timing and placement helpers
+│   ├── walkable-3d-core.js  # pure terrain/height-field, noise and camera-rig math
+│   ├── walkable-3d.js       # full-screen 3D India world, controls, wayfinders and state drawers
+│   └── vendor/              # three.js module build (MIT), the map's only runtime dependency
 ├── build.mjs                # data + site → docs/   (zero dependencies, Node ≥ 18)
 ├── WALKABLE_MAP.md          # walkable-map product and implementation contract
 ├── TODOS.md                 # future product work and acceptance criteria
@@ -165,8 +166,8 @@ listed explicitly in `scripts/build-india-terrain.mjs`. A relief region is only
 *named* on the map when a meaningful share of it lies inside India, so features
 that merely graze the border are drawn but left anonymous.
 
-The walkable map's decor sprites in `site/forest/` come from the Startup Forest
-project's shared watercolour kit.
+The walkable map renders with [three.js](https://threejs.org/) (MIT), vendored
+in `site/vendor/` so the site keeps building with zero npm dependencies.
 
 ## License
 
