@@ -840,15 +840,22 @@ ${sorted.map((st) => st.url ? `
     `<button type="button" data-state="${attr(state.state)}" aria-label="Open ${attr(state.state)}"><span class="sr-only">${esc(state.state)}</span></button>`).join("");
   const walkableBody = `
 <div class="walkable-map" id="walkable-map">
-  <div class="walkable-viewport" role="application" aria-label="Walkable map of India's startup incubator ecosystem. Use arrow keys or WASD to move.">
-    <div class="walkable-world">
-      <svg class="walkable-ground" viewBox="0 0 1000 1113" width="18000" height="20034" aria-hidden="true"></svg>
+  <div class="walkable-viewport" role="application" aria-label="3D walkable map of India's startup incubator ecosystem. Use arrow keys or WASD to walk.">
+    <canvas class="walkable-canvas" aria-hidden="true"></canvas>
+    <div class="walkable-overlay">
+      <div class="walkable-terrain-labels" aria-hidden="true"></div>
       <div class="walkable-wayfinders" aria-label="State and regional wayfinders"></div>
       <div class="walkable-landmarks" aria-label="State and union territory landmarks"></div>
       <div class="walkable-orgs" aria-label="Incubators"></div>
-      <div class="walkable-avatar" aria-hidden="true">
-        <span class="walkable-avatar-shadow"></span>
-        <span class="walkable-avatar-body"><span></span></span>
+    </div>
+    <div class="walkable-stick" aria-hidden="true"><span class="walkable-stick-knob"></span></div>
+    <div class="walkable-3d-fallback" hidden>
+      <div>
+        <h2>This map needs WebGL</h2>
+        <p>Your browser could not start the 3D scene. Every incubator and state scheme remains reachable through the conventional maps and directories.</p>
+        <a class="btn btn-primary" href="incubators.html?view=map">Open incubator map</a>
+        <a class="btn btn-secondary" href="state-schemes.html?view=map">State schemes map</a>
+        <a class="btn btn-ghost" href="ecosystem-map.html">Map choices</a>
       </div>
     </div>
   </div>
@@ -857,8 +864,8 @@ ${sorted.map((st) => st.url ? `
     <button class="walkable-intro-close" id="walkable-intro-close" type="button" aria-label="Dismiss instructions">${ICONS.close}</button>
     <div class="walkable-kicker">Walk India</div>
     <h1>Explore the incubator ecosystem on foot</h1>
-    <p>Walk India’s real shape, follow state wayfinders, and open a state when you arrive. Incubator icons show state membership—not street addresses. If your avatar leaves the view, choose Recenter to bring it back.</p>
-    <div class="walkable-keyhint"><span><kbd>WASD</kbd> or arrows to walk</span><span><kbd>Enter</kbd> to open your current state</span></div>
+    <p>Walk India’s real shape in 3D—over the Himalaya, across the Deccan, down to both island chains. Follow state wayfinders and open a state when you arrive. Incubator pins show state membership—not street addresses. If you get lost, choose Recenter to swing the camera back behind you.</p>
+    <div class="walkable-keyhint"><span><kbd>WASD</kbd>, arrows, or touch-drag to walk</span><span><kbd>Enter</kbd> to open your current state</span><span>Mouse-drag, <kbd>Q</kbd>/<kbd>E</kbd> to look · pinch to zoom</span></div>
   </section>
 
   <div class="walkable-actions">
@@ -907,12 +914,12 @@ ${sorted.map((st) => st.url ? `
 <script type="application/json" id="walkable-states">${JSON.stringify(stateSchemes.states)}</script>
 <script type="application/json" id="india-map-data">${JSON.stringify(indiaMap)}</script>
 <script type="application/json" id="india-terrain-data">${JSON.stringify(indiaTerrain)}</script>
-<script type="module" src="assets/walkable-map.js"></script>`;
+<script type="module" src="assets/walkable-3d.js"></script>`;
   write("walkable-map.html", shell({
     root: "",
     active: "walkable-map.html",
-    title: "Walkable India ecosystem map",
-    description: "Walk across India’s startup incubator ecosystem, following state wayfinders and discovering incubators and state support.",
+    title: "Walkable 3D India ecosystem map",
+    description: "Walk across a 3D India — mountains, rivers and both island chains — following state wayfinders and discovering incubators and state support.",
     body: walkableBody,
     pageClass: "walkable-page",
     immersive: true,
@@ -934,15 +941,15 @@ ${crumbs("", [["Home", "index.html"], ["Explore India map", null]])}
 <div class="map-entry-grid map-entry-grid-three">
   <article class="map-entry-card map-entry-walk">
     <div class="map-entry-icon">${ICONS.compass}</div>
-    <div class="map-entry-label">Immersive experience</div>
-    <h2>Walk the India ecosystem</h2>
-    <p>Move an avatar across India, follow state wayfinders, discover incubator-type icons, and open policy-rich state drawers as you arrive.</p>
+    <div class="map-entry-label">Immersive 3D experience</div>
+    <h2>Walk the India ecosystem in 3D</h2>
+    <p>Walk a small explorer across a 3D India — Himalayan ranges, the Deccan, rivers and both island chains — follow state wayfinders, and open policy-rich state drawers as you arrive.</p>
     <ul>
-      <li>Keyboard, touch D-pad, trackpad, and pinch controls</li>
+      <li>Keyboard, touch D-pad, drag-to-look, and pinch controls</li>
       <li>36 state/UT landmarks and directional signposts</li>
       <li>Designed for exploratory, full-screen browsing</li>
     </ul>
-    <a class="btn btn-primary" href="walkable-map.html">Enter the walkable map ${ICONS.arrow}</a>
+    <a class="btn btn-primary" href="walkable-map.html">Enter the 3D map ${ICONS.arrow}</a>
   </article>
 
   <article class="map-entry-card">
@@ -1374,8 +1381,9 @@ cpSync(join(SITE, "tokens.css"), join(OUT, "assets", "tokens.css"));
 cpSync(join(SITE, "site.css"), join(OUT, "assets", "site.css"));
 cpSync(join(SITE, "site.js"), join(OUT, "assets", "site.js"));
 cpSync(join(SITE, "walkable-core.js"), join(OUT, "assets", "walkable-core.js"));
-cpSync(join(SITE, "walkable-map.js"), join(OUT, "assets", "walkable-map.js"));
-cpSync(join(SITE, "forest"), join(OUT, "assets", "forest"), { recursive: true }); // walkable-map decor sprites
+cpSync(join(SITE, "walkable-3d-core.js"), join(OUT, "assets", "walkable-3d-core.js"));
+cpSync(join(SITE, "walkable-3d.js"), join(OUT, "assets", "walkable-3d.js"));
+cpSync(join(SITE, "vendor"), join(OUT, "assets", "vendor"), { recursive: true }); // three.js (MIT)
 if (existsSync(join(SITE, "og.png"))) cpSync(join(SITE, "og.png"), join(OUT, "assets", "og.png"));
 if (existsSync(join(SITE, "jeremy.png"))) cpSync(join(SITE, "jeremy.png"), join(OUT, "assets", "jeremy.png"));
 if (existsSync(join(ROOT, PDF_NAME))) cpSync(join(ROOT, PDF_NAME), join(OUT, "assets", PDF_NAME));
