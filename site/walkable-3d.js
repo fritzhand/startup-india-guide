@@ -974,9 +974,23 @@ function main(root) {
     const elapsed = Math.min(0.05, clock.getDelta());
     const time = clock.elapsedTime;
 
-    const horizontal = (pressed.has("right") ? 1 : 0) - (pressed.has("left") ? 1 : 0);
-    const vertical = (pressed.has("down") ? 1 : 0) - (pressed.has("up") ? 1 : 0);
-    const movement = normalizeMovement(horizontal, vertical);
+    let movement;
+    if (stickDelta.x || stickDelta.y) {
+      /* Thumbstick input is camera-relative — pushing up walks away from the
+         camera, matching what the thumb sees — while keys and the D-pad stay
+         compass-locked. Deflection under full throw walks proportionally
+         slower, which is what makes a stick feel analog. */
+      const forwardX = -Math.sin(azimuth);
+      const forwardZ = -Math.cos(azimuth);
+      movement = normalizeMovement(
+        -forwardZ * stickDelta.x - forwardX * stickDelta.y,
+        forwardX * stickDelta.x - forwardZ * stickDelta.y,
+      );
+    } else {
+      const horizontal = (pressed.has("right") ? 1 : 0) - (pressed.has("left") ? 1 : 0);
+      const vertical = (pressed.has("down") ? 1 : 0) - (pressed.has("up") ? 1 : 0);
+      movement = normalizeMovement(horizontal, vertical);
+    }
     const moving = (movement.x || movement.y) && drawer.hidden;
     if (moving) {
       const next = {
@@ -992,7 +1006,7 @@ function main(root) {
       }
       heading = lerpAngle(heading, Math.atan2(movement.x, movement.y),
         motionOK ? damp(12, elapsed) : 1);
-      walkPhase += elapsed * 9;
+      walkPhase += elapsed * 9 * Math.min(1, Math.hypot(movement.x, movement.y) + 0.25);
     }
 
     const ground = groundAt(position.x, position.y);
@@ -1073,15 +1087,63 @@ function main(root) {
     pitchOffset = 0;
   });
 
-  // Drag to look around; a short press-and-release is a click (pin raycast).
+  /* Pointer input, by device:
+     - touch: a floating thumbstick — the base circle spawns under the finger,
+       the drag deflection (÷75px, length-clamped to 1) walks the avatar at
+       analog speed relative to the camera. A second finger pinch-zooms and
+       lets the stick go; a tap without a drag is a click.
+     - mouse: drag orbits the camera; a short press-and-release is a click
+       (pin raycast / open the state under the cursor). */
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2();
+  const stickElement = viewport.querySelector(".walkable-stick");
+  const stickKnob = viewport.querySelector(".walkable-stick-knob");
+  const STICK_RADIUS = 75;
+  const STICK_KNOB_TRAVEL = 36;
+  const stickDelta = { x: 0, y: 0 };
+  let stickPointer = null;
+  let stickOrigin = { x: 0, y: 0 };
+  let stickMoved = false;
   let dragPointer = null;
   let dragMoved = false;
   let dragLast = { x: 0, y: 0 };
   const touchPoints = new Map();
   let pinchDistance = 0;
   let pinchZoom = 1;
+
+  function placeStickKnob() {
+    stickKnob.style.transform =
+      `translate(${(stickDelta.x * STICK_KNOB_TRAVEL).toFixed(1)}px, ${(stickDelta.y * STICK_KNOB_TRAVEL).toFixed(1)}px)`;
+  }
+  function startStick(event) {
+    stickPointer = event.pointerId;
+    stickMoved = false;
+    stickOrigin = { x: event.clientX, y: event.clientY };
+    const rect = viewport.getBoundingClientRect();
+    stickElement.style.left = `${event.clientX - rect.left}px`;
+    stickElement.style.top = `${event.clientY - rect.top}px`;
+    stickElement.dataset.active = "true";
+    placeStickKnob();
+  }
+  function moveStick(event) {
+    const dx = event.clientX - stickOrigin.x;
+    const dy = event.clientY - stickOrigin.y;
+    const pixels = Math.hypot(dx, dy);
+    if (pixels > 7) stickMoved = true;
+    const scale = pixels > STICK_RADIUS ? 1 / pixels : 1 / STICK_RADIUS;
+    stickDelta.x = dx * scale;
+    stickDelta.y = dy * scale;
+    placeStickKnob();
+  }
+  function endStick() {
+    if (stickPointer === null) return;
+    stickPointer = null;
+    stickDelta.x = 0;
+    stickDelta.y = 0;
+    delete stickElement.dataset.active;
+    placeStickKnob();
+  }
+
   canvas.addEventListener("pointerdown", (event) => {
     if (event.pointerType === "touch") {
       touchPoints.set(event.pointerId, { x: event.clientX, y: event.clientY });
@@ -1089,17 +1151,23 @@ function main(root) {
         const [first, second] = [...touchPoints.values()];
         pinchDistance = Math.hypot(second.x - first.x, second.y - first.y);
         pinchZoom = zoom;
-        dragPointer = null;
+        endStick();
         return;
       }
+      if (touchPoints.size === 1) {
+        startStick(event);
+        try { canvas.setPointerCapture(event.pointerId); } catch { /* synthetic events */ }
+      }
+      return;
     }
     dragPointer = event.pointerId;
     dragMoved = false;
     dragLast = { x: event.clientX, y: event.clientY };
-    canvas.setPointerCapture(event.pointerId);
+    try { canvas.setPointerCapture(event.pointerId); } catch { /* synthetic events */ }
   });
   canvas.addEventListener("pointermove", (event) => {
-    if (event.pointerType === "touch" && touchPoints.has(event.pointerId)) {
+    if (event.pointerType === "touch") {
+      if (!touchPoints.has(event.pointerId)) return;
       touchPoints.set(event.pointerId, { x: event.clientX, y: event.clientY });
       if (touchPoints.size === 2 && pinchDistance) {
         event.preventDefault();
@@ -1107,12 +1175,16 @@ function main(root) {
         setZoom(pinchZoom * Math.hypot(second.x - first.x, second.y - first.y) / pinchDistance);
         return;
       }
+      if (event.pointerId === stickPointer) {
+        event.preventDefault();
+        moveStick(event);
+      }
+      return;
     }
     if (event.pointerId !== dragPointer) return;
     const dx = event.clientX - dragLast.x;
     const dy = event.clientY - dragLast.y;
-    if (Math.abs(event.clientX - dragLast.x) + Math.abs(event.clientY - dragLast.y) > 0 &&
-        (dragMoved || Math.hypot(dx, dy) > 4)) {
+    if (dragMoved || Math.hypot(dx, dy) > 4) {
       dragMoved = true;
       azimuth -= dx * 0.0055;
       pitchOffset = Math.min(0.5, Math.max(-0.45, pitchOffset + dy * 0.0035));
@@ -1122,12 +1194,22 @@ function main(root) {
   const endPointer = (event) => {
     touchPoints.delete(event.pointerId);
     if (touchPoints.size < 2) pinchDistance = 0;
+    if (event.pointerId === stickPointer) {
+      if (!stickMoved) clickScene(event);
+      endStick();
+      return;
+    }
     if (event.pointerId !== dragPointer) return;
     dragPointer = null;
     if (!dragMoved) clickScene(event);
   };
   canvas.addEventListener("pointerup", endPointer);
   canvas.addEventListener("pointercancel", endPointer);
+  /* All canvas interaction is pointer-driven, so the compatibility mouse
+     events a touch tap synthesizes are pure hazard: by the time they fire,
+     a drawer opened by that same tap sits under the finger, and the
+     synthetic click would land on its backdrop and close it again. */
+  canvas.addEventListener("touchend", (event) => event.preventDefault(), { passive: false });
   function clickScene(event) {
     const rect = canvas.getBoundingClientRect();
     pointer.set(

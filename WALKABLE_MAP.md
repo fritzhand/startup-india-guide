@@ -77,10 +77,16 @@ props in four draw calls.
 - Spawn: Madhya Pradesh, giving a central starting point
 - Avatar: ~7 units tall, straw hat and all, with a walk cycle and idle breath
 
-Movement supports arrow keys, WASD, and a touch D-pad, always in compass
-space — up walks north no matter where the camera points — and the avatar is
-constrained to India's state/UT land geometry, with coast-sliding so shorelines
-don't snag. Enter opens the state or union territory under the avatar.
+Movement supports arrow keys, WASD, a touch D-pad, and a floating thumbstick:
+touching the canvas spawns the stick under the finger, and its deflection
+(75 px for full throw, length-clamped) walks the avatar at analog speed.
+Stick movement is camera-relative — pushing up walks away from the camera —
+while keys and the D-pad stay compass-locked, so "up walks north" holds for
+discrete controls no matter where the camera points. The avatar is constrained
+to India's state/UT land geometry, with coast-sliding so shorelines don't
+snag. Enter opens the state or union territory under the avatar. The stick is
+decorative feedback only (`aria-hidden`); the D-pad remains the accessible
+touch control.
 
 The zoom control keeps its 2D contract (50%–165%, default 65%) and maps onto
 the follow camera's distance (150 down to 26 units). Pulled out, the camera

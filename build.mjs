@@ -848,6 +848,7 @@ ${sorted.map((st) => st.url ? `
       <div class="walkable-landmarks" aria-label="State and union territory landmarks"></div>
       <div class="walkable-orgs" aria-label="Incubators"></div>
     </div>
+    <div class="walkable-stick" aria-hidden="true"><span class="walkable-stick-knob"></span></div>
     <div class="walkable-3d-fallback" hidden>
       <div>
         <h2>This map needs WebGL</h2>
@@ -864,7 +865,7 @@ ${sorted.map((st) => st.url ? `
     <div class="walkable-kicker">Walk India</div>
     <h1>Explore the incubator ecosystem on foot</h1>
     <p>Walk India’s real shape in 3D—over the Himalaya, across the Deccan, down to both island chains. Follow state wayfinders and open a state when you arrive. Incubator pins show state membership—not street addresses. If you get lost, choose Recenter to swing the camera back behind you.</p>
-    <div class="walkable-keyhint"><span><kbd>WASD</kbd> or arrows to walk</span><span><kbd>Enter</kbd> to open your current state</span><span>Drag, <kbd>Q</kbd>/<kbd>E</kbd> to look around</span></div>
+    <div class="walkable-keyhint"><span><kbd>WASD</kbd>, arrows, or touch-drag to walk</span><span><kbd>Enter</kbd> to open your current state</span><span>Mouse-drag, <kbd>Q</kbd>/<kbd>E</kbd> to look · pinch to zoom</span></div>
   </section>
 
   <div class="walkable-actions">
