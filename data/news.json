@@ -1,5 +1,80 @@
 [
   {
+    "id": "ext-b1e380c7cbb9",
+    "type": "external",
+    "title": "Space-tech startup InspeCity raises Rs 100 Cr in pre-Series A round",
+    "date": "2026-08-27",
+    "year": 2026,
+    "summary": "The company is developing Vehicle for Life-Extension and Deorbiting Activities (VEDA), an autonomous in-space servicing architecture designed to extend satellite lifeti",
+    "url": "https://entrackr.com/news/spacetech-startup-inspecity-raises-rs-100-cr-in-pre-series-a-round-12442264",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiowFBVV95cUxQWjduSmM0cWE0cUVEMXluOEZHdTg3blgzOV94cnBSWHZyaWpSTDhINEZid19TcWh5dVNKTzMza08yLUh4RWRmbjlmcVgtOV9Nd29uVkxsRTRnQUpHMjd4cHFkWFhKUDQ5OHBScllHT2FoUnNNME9zYklZZXU4YTZnZ0JKZERvTW9zbmNFQ2t2OFFCQWRYalVNaWRZSnZFTEZaZV9n0gGjAUFVX3lxTFBaN25KYzRxYTRxRUQxeW44Rkd1ODduWDM5X3hycFJYdnJpalJMOEg0RmJ3X1NxaHl1U0pPMzNrTzItSHhFZGZuOWZxWC05X013b25WTGxFNGdBSkcyN3hwcWRYWEpQNDk4cFJyWUdPYWhSc00wT3NiSVlldThhNmdnQkpkRG9Nb3NuY0VDa3Y4UUJBZFhqVU1pZFlKdkVMRlplX2c"
+  },
+  {
+    "id": "ext-c2b6cb342133",
+    "type": "external",
+    "title": "Top 20 Funded Fintech Startups In Hyderabad 2026",
+    "date": "2026-08-26",
+    "year": 2026,
+    "summary": "Explore the top 20 funded fintech startups in Hyderabad, ranked by total funding raised. 2026 data from Inc42 Datalabs.",
+    "url": "https://inc42.com/lists/top-20-funded-fintech-startups-in-hyderabad-2026/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMifkFVX3lxTE0taUtJMTZXc2dXS0ZON3dlRnNvdno1MmoycVNKUGRuRi16MmRxNHNuMzB0LWhLSENDQmw2cGI2N19LaXNYX2taU1JhLWFaOVd3czlGY3NJZDVjTzNTVzM4WVpheHJLeENUZHp2M3NOdXlyR09uR2UyUmhjbUlRZw"
+  },
+  {
+    "id": "ext-67b471cedeea",
+    "type": "external",
+    "title": "Top 10 Funded AI Startups In Gurugram (2026)",
+    "date": "2026-08-26",
+    "year": 2026,
+    "summary": "Explore the top 10 funded AI startups in Gurugram, ranked by total funding raised. 2026 data from Inc42 Datalabs.",
+    "url": "https://inc42.com/lists/top-10-funded-ai-startups-in-gurugram-2026/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMidkFVX3lxTFBXVFM1YVVFSnZpOU9FUlZQMi1fQlBhMkl4b0R1TjNDZlRLTFFmVW9MMkJneUk3cTJUWVE3WFVhVUg3VTRyVzAxOHNtY0tXSE56MVZ2aHZqNXNCZm5FRnBLVGhyYkFORW9NUEQ5dXo0R2o5MGhDbGc"
+  },
+  {
+    "id": "ext-5c5d12087492",
+    "type": "external",
+    "title": "Top 20 Funded Healthtech Startups In Pune 2026",
+    "date": "2026-08-26",
+    "year": 2026,
+    "summary": "Explore the top 20 funded healthtech startups in Pune, ranked by total funding raised. 2026 data from Inc42 Datalabs.",
+    "url": "https://inc42.com/lists/top-20-funded-healthtech-startups-in-pune-2026/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMie0FVX3lxTFBjeDcxVEhraGt2NFpyclQ5WWtHakx5RTBNNFZLTFhLYjRDUS1nZnlrNEl6VjNwR3ZWa1l0bGhZTncwZkhRbGNITEZIajBnTDNKc3h4TXduZG5CRmFUMzdXbUhwellKMXFYcnlvTjBSTjRyb1BvZXNnZ2F0bw"
+  },
+  {
+    "id": "ext-4e094414d177",
+    "type": "external",
+    "title": "Top 30 Funded Fintech Startups In Noida 2026",
+    "date": "2026-08-26",
+    "year": 2026,
+    "summary": "Explore the top 30 funded fintech startups in Noida, ranked by total funding raised. 2026 data from Inc42 Datalabs.",
+    "url": "https://inc42.com/lists/top-30-funded-fintech-startups-in-noida-2026/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMieEFVX3lxTE8yaW5nalp2MjIzeUJPaVdaWU5FaWZob18tWVhRNG5yTjNmUjU2ak9PRlZXbkJsOE5kem5XaHg5d3hzZDh6cFhiQTQ1R1RaUGFwenNHd0NoVTNfb1BjcGtUbjBHS1hyV19oZUhuX1FBUEZmV01QYWR0Xw"
+  },
+  {
     "id": "ext-69bcb37039d6",
     "type": "external",
     "title": "Bengaluru drone startup Airbound raises $37 million in Series A led by Greenoaks",
@@ -58,21 +133,6 @@
       "Startups"
     ],
     "gnId": "CBMi4gFBVV95cUxPYzhqYTVfdjJiWlF6MWFYaDRoaGU0VDVkYlUzOFh2enlYQ2F4aDlISmVwRDAyUkFkYWRmS2Z3cXVabWpXdlBvTkd5a3B2dXh0Vnd1bGppdGNydjRocWQtQmJaQ1Q5TlFhWkROV3JQMUw5VVRKVXV0bWxBVXdpT2RjYWVoMnRRY3FxakRvRUV1TkIyb0RoT2g3RlpuNC1zN3ZYUEd4WThRR1cxa3lROVNfLVR6RDh3UmprSkU1U3lzLWZ2ckpIc2NaMmM0UUFubWdlTnhCeHJyRDhHTDNxOVo0ZUFn0gHiAUFVX3lxTE9jOGphNV92MmJaUXoxYVhoNGhoZTRUNWRiVTM4WHZ6eVhDYXhoOUhKZXBEMDJSQWRhZGZLZndxdVptald2UG9OR3lrcHZ1eHRWd3Vsaml0Y3J2NGhxZC1CYlpDVDlOUWFaRE5XclAxTDlVVEpVdXRtbEFVd2lPZGNhZWgydFFjcXFqRG9FRXVOQjJvRGhPaDdGWm40LXM3dlhQR3hZOFFHVzFreVE5U18tVHpEOHdSamtKRTVTeXMtZnZySkhzY1oyYzRRQW5tZ2VOeEJ4cnJEOEdMM3E5WjRlQWc"
-  },
-  {
-    "id": "ext-a5133a106a70",
-    "type": "external",
-    "title": "AI Gets the Billions. India's Startup Money Is Moving Elsewhere",
-    "date": "2026-08-22",
-    "year": 2026,
-    "summary": "Global startups raised massive rounds for AI chips, defence and infrastructure, while Indian startups raised $233.2 million, led by fintech and IPO-bound companies.",
-    "url": "https://www.tice.news/tice-trending/global-ai-funding-india-startup-funding-august-22-2026-12412252",
-    "source": "TICE News",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMioAFBVV95cUxPVU5ROV9xbm9EbFZMVVlQZHZMaGNVYjREbHJBSmp3OUlQcFNhVDRyMnZEa3owdDM3RGFMeGlOOFVVcWExS0xDQl9uRllEWWlxbGIzdDlmMkRmZDNqdXZCNVlzVm94UXhjb2UyQ3RCSjJnRTBOc2lZaDVqeTF6OFpaaEd3QjNrcFRJYTFWbkVxbkNsQTRicTJzTWJVRzJsTzZj0gGgAUFVX3lxTE9VTlE5X3Fub0RsVkxVWVBkdkxoY1ViNERsckFKanc5SVBwU2FUNHIydkRrejB0MzdEYUx4aU44VVVxYTFLTENCX25GWURZaXFsYjN0OWYyRGZkM2p1dkI1WXNWb3hReGNvZTJDdEJKMmdFME5zaVloNWp5MXo4WlpoR3dCM2twVElhMVZuRXFuQ2xBNGJxMnNNYlVHMmxPNmM"
   },
   {
     "id": "ext-5398c1443639",
@@ -180,21 +240,6 @@
     "gnId": "CBMiaEFVX3lxTFByNGFwWGtIUUp6REpOU1cza182VkhPZTctQy1XNHpISDRhb3FtZEFBZ0FuRzdXaDhxOHMtN1g1NjY1YjZjN0dwZUl4LXZ3QnNMb3FxRExSR2NNRF81dHNhSW5lWVJlRXp3"
   },
   {
-    "id": "ext-29c20c0dc2d4",
-    "type": "external",
-    "title": "IIM-B incubator tops $7 billion in startup value as it turns to AI",
-    "date": "2026-08-16",
-    "year": 2026,
-    "summary": "NSRCEL plans specialised sector centers and AI tools to expand its entrepreneur network toward one million",
-    "url": "https://www.business-standard.com/companies/start-ups/iim-bangalore-incubator-tops-7-billion-in-startup-value-as-it-turns-to-ai-126081600587_1.html",
-    "source": "Business Standard",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi4AFBVV95cUxNR215TldFYTFFNTU0SG1pWGZJUktZeGd5dnJZc04zdi1PNkpEd2hUX3RkMDA1MjM4RHFfbE1GR29QUm0tU3dpZFRBb2JNRVVlcWlyUkxza3JSWDh3emYzeGtJN18yZGZWMVlKdjVFT0lCR1l4U1lJTldsNVJOTmZnQ1hCWkpOaDdqQnlabXFlVGE5d1RRdE5OY2lFckpyY2xEMlByaTFUSEM2OHIxZ04wbXU2aDcxTVp6X2hhNG9CZFpGcm5YdEhRdWt2UG13OExneF9BYmlXNUdrNTBYbEVIcdIB5gFBVV95cUxNRWppd3JSNkN6VXpzNl8tazFyUC12WXllbTZPQlJtaTgyWTRjWFprSWhVR29EcllfbVJnQ3hZSUhLSXdXcUFjeGdtRWhYWXBGRmNab3J0dGF0bUR5VnVQZ2F6T0VoTFdxcUR4SFN1YzVKdHQwcVh2WDZ4VGhLLTJYOU80QnhLV3QyeHZvTVJWU0hfaFZpQXJob1R2YmpDNVB5SDBlalVPbXMzel80c2R0aXd0UXhreEJ6YTN1aXNTMTd1X09YNEw5Z19Sd2pTV1VJeGNkT1k2azZkR0kycFQwU2J5aFp5dw"
-  },
-  {
     "id": "ext-d33bea50fcf2",
     "type": "external",
     "title": "Indian Startup IPO Tracker 2026",
@@ -208,6 +253,21 @@
       "Startups"
     ],
     "gnId": "CBMia0FVX3lxTFBnS183TEQzMHI1QjlKSDhLSmhWSWhMLTBYanJITEFPYU9wSEJDYTZTMXhMUDAtV1hQYnZETzBCLWJGYTV4aVhUcDUyQ2xDbU5BMnBfWVNSN0YxNVhmakQ1U0tNLXgzOUxhbkJN"
+  },
+  {
+    "id": "ext-29c20c0dc2d4",
+    "type": "external",
+    "title": "IIM-B incubator tops $7 billion in startup value as it turns to AI",
+    "date": "2026-08-16",
+    "year": 2026,
+    "summary": "NSRCEL plans specialised sector centers and AI tools to expand its entrepreneur network toward one million",
+    "url": "https://www.business-standard.com/companies/start-ups/iim-bangalore-incubator-tops-7-billion-in-startup-value-as-it-turns-to-ai-126081600587_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi4AFBVV95cUxNR215TldFYTFFNTU0SG1pWGZJUktZeGd5dnJZc04zdi1PNkpEd2hUX3RkMDA1MjM4RHFfbE1GR29QUm0tU3dpZFRBb2JNRVVlcWlyUkxza3JSWDh3emYzeGtJN18yZGZWMVlKdjVFT0lCR1l4U1lJTldsNVJOTmZnQ1hCWkpOaDdqQnlabXFlVGE5d1RRdE5OY2lFckpyY2xEMlByaTFUSEM2OHIxZ04wbXU2aDcxTVp6X2hhNG9CZFpGcm5YdEhRdWt2UG13OExneF9BYmlXNUdrNTBYbEVIcdIB5gFBVV95cUxNRWppd3JSNkN6VXpzNl8tazFyUC12WXllbTZPQlJtaTgyWTRjWFprSWhVR29EcllfbVJnQ3hZSUhLSXdXcUFjeGdtRWhYWXBGRmNab3J0dGF0bUR5VnVQZ2F6T0VoTFdxcUR4SFN1YzVKdHQwcVh2WDZ4VGhLLTJYOU80QnhLV3QyeHZvTVJWU0hfaFZpQXJob1R2YmpDNVB5SDBlalVPbXMzel80c2R0aXd0UXhreEJ6YTN1aXNTMTd1X09YNEw5Z19Sd2pTV1VJeGNkT1k2azZkR0kycFQwU2J5aFp5dw"
   },
   {
     "id": "ext-1277be581497",
@@ -225,21 +285,6 @@
     "gnId": "CBMidkFVX3lxTE51NE9nNkdJZFJtQ19KU0pibm9WbFVzSzFnYzVqMmFIZnlBU215TjRJa0JERzQ4SUlqZFhGTklHWG1qRThHV3JhdDFhdllfT0N1VmdqN1RUUjdfckRuOWl1Zm5LbVNkSWM2SllwUUFWSnZIcVRueVE"
   },
   {
-    "id": "ext-3a479b7a7041",
-    "type": "external",
-    "title": "From Yulu To Discovered Materials \u2014 Indian Startups Raised $140 Mn This Week",
-    "date": "2026-08-15",
-    "year": 2026,
-    "summary": "Indian Startup Funding: This week, Indian startup funding stood at $139.5 Mn across 12 deals, down 44% from the preceding week",
-    "url": "https://inc42.com/buzz/from-yulu-to-discovered-materials-indian-startups-raised-140-mn-this-week/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMingFBVV95cUxPdHRCS0FOWWx6Y1MzcDNESEdrcllKdkd2a2hVYmdYdkdqUG1mNFlzWEgyTExFSEpDR2dncVZMVU1kMFF6ZmkycjhwdGVVQk45TW1YaTFmdnpyMUxUSXdweHJCeUdFdFJuVlJnN0VkY0xMaWhpbW9HLWdqa3VsYXo0LTMwckRBZHM1TzlGU2tyMXVrMmw4SEpHbmFyM2hEZw"
-  },
-  {
     "id": "ext-f1330853edff",
     "type": "external",
     "title": "Funding and acquisitions in Indian startups this week [Aug 10 - Aug 15]",
@@ -255,19 +300,34 @@
     "gnId": "CBMi4gFBVV95cUxQMDlVeDJLclR2RmRScEhqYlNhdjYzZk5scGFhUG83a0x4R2xnMTlNT0szQ3RIcUhCMXo1TzY1TXlfcC1EUDQzMWFiem1mZ2xrOFUydUtqSC13NjctdlJ3RWMwcjBHeTdtTXpfeTJvR0VVaENiOXJDYzRpdnNwQXJCVzFtR0ViZDEwRHMtcmV3cUV6cFBFX25icVQzRjdKYkt1NFlKM0E2aGUydURjWlNacVB1a0NoTEp5cDZ6QVFSV3U0Y0I1MzFjZ3V6czJONDJqcjdRdVVzcnBLcjZoVk8zZ3l30gHiAUFVX3lxTFAwOVV4MktyVHZGZFJwSGpiU2F2NjNmTmxwYWFQbzdrTHhHbGcxOU1PSzNDdEhxSEIxejVPNjVNeV9wLURQNDMxYWJ6bWZnbGs4VTJ1S2pILXc2Ny12UndFYzByMEd5N21Nel95Mm9HRVVoQ2I5ckNjNGl2c3BBckJXMW1HRWJkMTBEcy1yZXdxRXpwUEVfbmJxVDNGN0piS3U0WUozQTZoZTJ1RGNaU1pxUHVrQ2hMSnlwNnpBUVJXdTRjQjUzMWNndXpzMk40MmpyN1F1VXNycEtyNmhWTzNneXc"
   },
   {
-    "id": "ext-0e87c9628fc7",
+    "id": "ext-3a479b7a7041",
     "type": "external",
-    "title": "Indian Unicorn Tracker: Funding, Investors, Revenue And More",
+    "title": "From Yulu To Discovered Materials \u2014 Indian Startups Raised $140 Mn This Week",
     "date": "2026-08-15",
     "year": 2026,
-    "summary": "India\u2019s startup ecosystem has seen 133 startups enter the unicorn club, collectively raising over $119 Bn and amassing a combined valuation of more than $397 Bn",
-    "url": "https://inc42.com/features/indian-unicorn-tracker-funding-investors-revenue-and-more/",
+    "summary": "Indian Startup Funding: This week, Indian startup funding stood at $139.5 Mn across 12 deals, down 44% from the preceding week",
+    "url": "https://inc42.com/buzz/from-yulu-to-discovered-materials-indian-startups-raised-140-mn-this-week/",
     "source": "Inc42",
     "sourceTier": "Startup trade",
     "tags": [
       "Startups"
     ],
-    "gnId": "CBMijgFBVV95cUxPUGlucWtaMDZGQkxrME5jMVZuY0E2UDYtc2F5Y3pYc2RKcjVXdm4zSVYwN1VaRFhGS2dVUjJiakNscEtOOGZqTmJEbWlRM3dTTnhYM09HY2Jub2pRZnA0OHgwNmw0MFlJQnphSEJLNTZHV05vMkVJbFMzWTJkSFlvR1dJM2xLT0lIc3JFQm9n"
+    "gnId": "CBMingFBVV95cUxPdHRCS0FOWWx6Y1MzcDNESEdrcllKdkd2a2hVYmdYdkdqUG1mNFlzWEgyTExFSEpDR2dncVZMVU1kMFF6ZmkycjhwdGVVQk45TW1YaTFmdnpyMUxUSXdweHJCeUdFdFJuVlJnN0VkY0xMaWhpbW9HLWdqa3VsYXo0LTMwckRBZHM1TzlGU2tyMXVrMmw4SEpHbmFyM2hEZw"
+  },
+  {
+    "id": "ext-d5610109d02c",
+    "type": "external",
+    "title": "(Weekly funding roundup Aug 8-14) Tepid VC inflow but Yulu provides relief",
+    "date": "2026-08-14",
+    "year": 2026,
+    "summary": "Venture capital funding into Indian startups saw a sharp decline in the second week of August largely due to absence of large deals.",
+    "url": "https://yourstory.com/2026/08/weekly-funding-roundup-aug-8-14-fund-inflow-turns-tepid-but-yulu-deal-provides-relief",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMitgFBVV95cUxNeTlmRUgxTWZUSi03VUQ0TTZ4a0Z6aEhnNjJIb3pOcmNJU0lUNnVVUlJINERRRHE5bWtiUXJjSDFVNFVrbU1COWItSnFQVTQ4ZlFweVpSN1pxRm00WnBWUzl3M0d6MzhoYU13YmIzcHI0eXNLRENmTG1tSnZ3NzZnLTM3OEZndi1Qa1UtRUk4eHE2eDVzdDl5cVFzYXlVNm5TYjVEQTdwbFF6d2xqVHJ3VmdoNS1Jdw"
   },
   {
     "id": "ext-8f94e848fc92",
@@ -285,19 +345,19 @@
     "gnId": "CBMi3AFBVV95cUxOQUZGSk1vZWJtSzIwZ2NwQlBrLThVN21YUzFUOW5LYUZuLUktWV9qUWFFdW1UOV83elZvSkNrWkhncGMzbTdZOVN0WlVBY0tjcF9JM2tlWUZkcklPTEp3ckJPUEVkT2JsTDVobkcyc0hRaFRCUGJwTkhuZ0tJd1dMcFh3UDdENENqcDNEVjZnTFZlQ1Jkam5kNDN4Yk9DUnd2elFpUkY2ZWFhbWVhaTFRT2NsbGozTnlEOHJRbG9HbEdEVTAxZDV5ZTBZQ0t3ZFpiLVRLTW1lODZ0YWdz0gHiAUFVX3lxTE9xYzI1N1NQM2VOMWxrdHBxaHFKRkhMZ0JXeVRlZzU2Z0pfVkV5c1Zza0dqbmVrYlctY2FHRDB0NHhYQ0ZDdU1xUlZ5bFlxN0xBNndIOTVFYjJtM0d0T0JuX0loTUN4NkdVSnJ5NlBwTFFNUktRc0FpYjZYVDZfd0FoRF9BWGVOMzRKc3RNSVpoTEdmX2RJQXczNGJROHRzNnlkbEhNa3dzM3lMRXZlUWJEOGdzaWtOaldaamI2M3FJcFQzYmlGZXB2SDlqenRfV0poZTNidXE2ZVZNOW9DNEJTNGc"
   },
   {
-    "id": "ext-aa87dc88da73",
+    "id": "ext-03d708c024fe",
     "type": "external",
-    "title": "Kotak Gold Fund leads gold fund-of-funds mutual funds in six-month returns; posts -1.7% return",
+    "title": "Semiconductor and spacetech boom: Is India entering a new deep-tech investment cycle?",
     "date": "2026-08-13",
     "year": 2026,
-    "summary": "Kotak Gold Fund delivered -1.7% returns over the last six months and 35.6% CAGR over three years, according to ACE MF data on August 12.",
-    "url": "https://www.moneycontrol.com/news/business/personal-finance/kotak-gold-fund-leads-gold-fund-of-funds-mutual-funds-in-six-month-returns-posts-1-7-return-14004499.html",
-    "source": "Moneycontrol",
-    "sourceTier": "Business",
+    "summary": "As India catalyzes a deep-tech investment cycle, sectors like semiconductors and space-tech emerge as vital growth engines. With strategic government support and a thriving startup ecosystem, investors are bullish.",
+    "url": "https://www.livemint.com/market/stock-market-news/semiconductor-and-spacetech-boom-is-india-entering-a-new-deep-tech-investment-cycle-11786619836223.html",
+    "source": "Mint",
+    "sourceTier": "Business daily",
     "tags": [
       "Business"
     ],
-    "gnId": "CBMi-AFBVV95cUxPbFpDRTZabzZ5LUQzcmE3U3JtY1dQWnVfQ0dWWjRzU1ROZkt3cWpXSUM3T1dvdGkyalExLU9ZT2pOLVVDQTF6QzBwdmhLWVBReHRSWkxGQ0dvdDhzSXI1cXpodEhuWHE3QTQ3VHVwODVERFRUMDBVRVNicDBWQ2tzZFNLb0NsUnFEOU5oTmp3WDlYbXZjVWJJNjhjMnJyeHlYdW4yakI2VFhNOHFLQ3V6S25ON0J2RzBDNlEwc1ptZFJMTmZDV3JKNEVPa2JZaEFBb3UxajVBQlFBYVhMSmVDUVNlODNYakFzaENxZkJTNWROQ0ZmRmI0Y9IB_gFBVV95cUxOeTlpLTBmYTNHYTZaVVdfaEU1MEl0elUzSTRJQkQ0djNrRDRicjluZnJna1dlLTdSYUE3V3g1R2VXOXJ4SFdGdnBJN1B3ZVZvNHg4RVJrMGZHXzlVS01iRjlGeFc3U3hKakRmNzlkaWhLbjAyVWYtRWUxc3RxVjF4UW0xQWxPeGs2M1d5ZnN3X2xxYmRPbjV4dUw3RXNkOGhVa0UyZXJac2lEOUl6OWl6VHBfT014VnM0RHozNkxjMWJIOFZraWNJTGt0SklFVkVVRHoya2NJbjRVQlVwRjhRWjhGYzhxR1BiMGQ2cjNjR3YyTXcwTThadUU0bVh6UQ"
+    "gnId": "CBMi6AFBVV95cUxQWXkzNDRwUUpydkZIWk9xbEZ0Sm9EUVBwaDA1VjQtSmtBazJfbkRySzJtLTF0NTlrcERHQlZmYVhLQ3p3MjdnQlVSUVhmSHU2X0FYV1R2aDJ1Tk0wV2YzU2VlNkUyQkhYbFltMmxnc08xRVdzYmNudWZHLU9UMGNncDd6S1FDTkNmMTZLT1dNak1IdVFnYzlicEttcVU1QTdNTDM3N1ZtNWN6QlFBUGNTR19sZXlRcGtCWnBlUnZiZTBFMEZ6SHBBQXh3UzNUYWRoUk03VnpReGV6Z3M5LVQwUkt6X3ZERkRw0gHuAUFVX3lxTE82RmRDMENLYzlxVm1lUFNkTE9GT191ZFgxRTRsT0xCRFJhSE5EQ0tyWVdudElkcUdOS3BrSkFFRHptZkp3RGt6VFg1cWtfSF9fTXBWX2Rpc25iQnV6YVZ5MFhnTTBNWXdyc0U4dEs1d1Z1Q1BfM0xWdWo4WGNDQWRPSnBNMGxPOVJfaGprNGhVZ1gwSDRDcWMweVQyOUZBYU5BMVpJdG9oekxKaHNWXzNhTmI2YmJIbjE4N0d5dExpd0x3Si1PalR0LUx4blRQZ0tiNEw2VlRqZzc1Y21FS1VMVThRamRKNjVoRlRCWFE"
   },
   {
     "id": "ext-e273108bf143",
@@ -313,6 +373,21 @@
       "Startups"
     ],
     "gnId": "CBMilwFBVV95cUxOTnlrclk5a1dBLWE0NHpyMnczajdIV2JhXzBxcXVjNTBVRG5JWFB2am9IVXVpTG1GZ0ZweUpORVdVVG5kd1IzaENSckxlTDBLOExOZXhhcEhwUjJSMmh0QnZ5SGRpNmdhTk1FR2dMbDkzVndsdDRKMVZJMWhZZV9vVHNSVnIxM0c2R3lpYV9JLUhqZ2FCVkp30gGXAUFVX3lxTE5OeWtyWTlrV0EtYTQ0enIydzNqN0hXYmFfMHFxdWM1MFVEbklYUHZqb0hVdWlMbUZnRnB5Sk5FV1VUbmR3UjNoQ1JyTGVMMEs4TE5leGFwSHBSMlIyaHRCdnlIZGk2Z2FOTUVHZ0xsOTNWd2x0NEoxVkkxaFllX29Uc1JWcjEzRzZHeWlhX0ktSGpnYUJWSnc"
+  },
+  {
+    "id": "ext-27f0e802560e",
+    "type": "external",
+    "title": "Accel raises $550 Mn India fund, takes India corpus to $1.2 Bn in 18 months",
+    "date": "2026-08-12",
+    "year": 2026,
+    "summary": "US-based venture capital firm Accel has raised a $550 million early-stage fund for India as part of a $3.5 billion fundraise across four new funds globally.",
+    "url": "https://entrackr.com/news/accel-raises-550-mn-india-fund-takes-india-corpus-to-12-bn-in-18-months-12252002",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiqgFBVV95cUxOdW53SWZJb2I2V0FVYk9DUTZySWgzWVRENXhzV3lCT2F6TEJmamtZN1JPQlVaYlBHQWJiTVdJVGt5VFhKY3JxYXdmWHhfRnpTSHlVMXUxRUZYVHljV2pySWllVEwyclNOdlN0WV9IVF9McXFhQTZsZUgxYmdkY3ZQZkR5ZEp0N1JkZDIzeVJramVCRnFzQkdUa0owLWZLOU5oZU1HbnA3UEoxUdIBqgFBVV95cUxOdW53SWZJb2I2V0FVYk9DUTZySWgzWVRENXhzV3lCT2F6TEJmamtZN1JPQlVaYlBHQWJiTVdJVGt5VFhKY3JxYXdmWHhfRnpTSHlVMXUxRUZYVHljV2pySWllVEwyclNOdlN0WV9IVF9McXFhQTZsZUgxYmdkY3ZQZkR5ZEp0N1JkZDIzeVJramVCRnFzQkdUa0owLWZLOU5oZU1HbnA3UEoxUQ"
   },
   {
     "id": "ext-fd65e0a3645b",
@@ -403,6 +478,21 @@
       "Business"
     ],
     "gnId": "CBMixgFBVV95cUxPeUFENThjSTJ0M2hMVEdYUDFGaVNKd3VTMXU2SzMwMjBwQ09zaXlPNFNJSzl4MkhQOE9sRVRqajdPNnluV3NhbkltelJBOWI4YjhIOFpPdGRzYXZ1bUIyb0tnMG5BaVZwc20xZl9DMS1YS3UyanFIWl9UWVlfc25zbkt0RmVSWGFuVDZGb1hHS0F3SW9wb2JyMDR2dGFZcXZSbU5IT3pSeWdjUWdqZ01DekE3MjRRVi1PcGNIU25YTmtRWGhseWfSAcsBQVVfeXFMTm1uXzlSRlFXSUgyQjl0ZlI4clozdEdSTndOc0xDY2x3bEpQeXFxbGFLRUJkTEdzMTlIeGVfYk9GUkhrU09PazBCXzVRT1hSTnd4b0QzMjR3S3R0MEpRRmlhNjVWMkpDcFdMQUg2OFMyQ3d2LTZqTGFyTkVDQU1kbHRiTmM0YVd1cGFrMWlnU01ZM1ludERUU25lRDRXdURMMkg1bERESFczaFJEMGFoVUpsSVhQdEFuQ3JFZmZ5dXgwMWRjcDNXc0V0dlE"
+  },
+  {
+    "id": "ext-45d07ec1d824",
+    "type": "external",
+    "title": "Yamaha-backed Indian EV startup River Mobility raises $120 mln",
+    "date": "2026-08-05",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.reuters.com/world/india/yamaha-backed-indian-ev-startup-river-mobility-raises-120-mln-2026-08-05/",
+    "source": "Reuters",
+    "sourceTier": "Wire",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMirgFBVV95cUxQSXgzLWFLd2RqeFUxNUNVVzVqamc5Q3BpdDVxSnBjV1NLeUtOUG5VdDg2VGRQTjF2blR1U3ByVVlSOE1ZYklHTXVrUzBtdUJvRjNTaUVOekNyWlN2ZDRzTVpQSTVaeUxnLVJHR3VfOFk2Y3ZLNUVzNkJrbjdtMkRQeHVXbzdZcXlUMTZIOTdzLWtfaDZJb3JIYUlOUDJKR3AyV0VKTTI2TzBWcmV0c2c"
   },
   {
     "id": "ext-454cefb49ed4",
@@ -508,95 +598,5 @@
       "Business"
     ],
     "gnId": "CBMiwAFBVV95cUxNWnBrdFQ5M185eERSQk5ZQk1Bb2EydTdXUkR5YWRXNEZqc0VXc3pMZzNnUkFaZnhjZ1YyQ1RWYURNMFQ2NmVJb2s3elhPSTdORUNwOV9jT2lnVWlLV21VSlh3dmFOMFBUdDdsQVhENk5hSmVZMnhoNE11dG54QmdycFJaeFR5LXRWbndkaGtWUVRBbmRUY1I5UzBkbDNUc3kwc2ZiUEZrUU93ZW9ORDhJbDNhQXNqSVd4YXJ2UW1WUWjSAcYBQVVfeXFMTnVnekFWVW9ZOHM1c3JJMUczREE1aFF2UWRLTzdWUE9MWHpfa0lVTHA3SEI3eUxKQ1RvakxqQkRtazk2NkRyc1NoRzY0c0Rnc05yajdQYTg5d2pEUEhlSVZoTm44QXNVVTJDTE1ubEpGX0dKYWh3M2xuaHZ5QTRPNGJmSTc5dm9EdENwVV9Ib3Z5VnR2Z1M1SkVwVEZBeDRhQ3JqY0Z4WXNhZUlLWjFUVjdMeXdOLVI4UWpaa0ZPU3dhNndGdkpB"
-  },
-  {
-    "id": "ext-80fc35bbe0c3",
-    "type": "external",
-    "title": "Indian Physical AI attracts $155 Mn in 2026 as robotics, real-world data gain traction",
-    "date": "2026-07-30",
-    "year": 2026,
-    "summary": "According to data compiled by Entrackr, startups in the Indian Physical AI ecosystem have raised around $155 million across 31 deals in 2026 so far.",
-    "url": "https://entrackr.com/report/indian-physical-ai-attracts-155-mn-in-2026-as-robotics-real-world-data-gain-traction-12210766",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMivgFBVV95cUxNRS1WMDR4RmQyWFhvOUFsR1Axc3JQVVF3ekloZTJMQlNPUWhvbTJncVBfcEE1U3llX2U1cDBvZENqbkl2Q3JlaFZsLUdLMjVVamVicFFFc1B6clVqRFBNbHlubWZXTUlyZURRbHRBdnBROXNFOU4wb005ZURNdUV5MVZIZ0YyREhPVVdxMGFhZWdqeXY3T21VTnJQWGlVdzlrbEUxVFpRNEhUM2lTSy00NF8zZ0MyTmtocTRVQUFR0gG-AUFVX3lxTE1FLVYwNHhGZDJYWG85QWxHUDFzclBVUXd6SWhlMkxCU09RaG9tMmdxUF9wQTVTeWVfZTVwMG9kQ2puSXZDcmVoVmwtR0syNVVqZWJwUUVzUHpyVWpEUE1seW5tZldNSXJlRFFsdEF2cFE5c0U5TjBvTTllRE11RXkxVkhnRjJESE9VV3EwYWFlZ2p5djdPbVVOclBYaVV3OWtsRTFUWlE0SFQzaVNLLTQ0XzNnQzJOa2hxNFVBQVE"
-  },
-  {
-    "id": "ext-a434e819535c",
-    "type": "external",
-    "title": "Startup news and updates: Daily roundup (July 30, 2026)",
-    "date": "2026-07-30",
-    "year": 2026,
-    "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Thursday, July 30, 2026.",
-    "url": "https://yourstory.com/2026/07/startup-news-updates-daily-roundup-july-30-2026",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMigwFBVV95cUxNaTRkZzRxSlBmZ2NJQlJwYmFNSDBuOUxId0QzRXdERlZUUmQ1dVNiRTdpakd3RUw4RjBNakIwbXRZc1NybEhUOEk4NktGSzF5NHBySkFPNVlFWHVNVDFMSF85OUN1YnVJQ0FiY1lHYkRyX2NhX0ZDa1hPei1RbHM1QVNoaw"
-  },
-  {
-    "id": "ext-8f04b394ab3e",
-    "type": "external",
-    "title": "Motilal Oswal Nasdaq 100 FOF leads overseas fund-of-funds mutual funds in one-year CAGR returns; delivers...",
-    "date": "2026-07-30",
-    "year": 2026,
-    "summary": "Motilal Oswal Nasdaq 100 FOF delivered 53.6% CAGR returns over the last one year and 34.8% CAGR over three years, according to ACE MF data on July 29.",
-    "url": "https://www.moneycontrol.com/news/business/personal-finance/motilal-oswal-nasdaq-100-fof-leads-overseas-fund-of-funds-mutual-funds-in-one-year-cagr-returns-delivers-53-6-gain-13988093.html",
-    "source": "Moneycontrol",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMilwJBVV95cUxNNEdPV1drdnRXSGhUcUx0M1hoVnVfdHItRUVtLXc1cFlwem9tWUpOT2lVSGc4dWZMYUNhQkJYeklJV3h1MkFnNF9lT3NnLW85ZjU3U2Fmc2l0VVlVb3hJaTlpSGJwWUdyU1hzZmpjRlc3aWw1MHdDeTYxRmJJY2hJMTA2QkFJVE9ZbnpjT0hmU1lDSHFvMVZyenNKczdXM01wc3VockpEbUlhV0p2LXF6U0JkRmlJMC1GdWlNbkItTUdqZlNRSFFuelNYZG4yNmd2T3lDektXVDJGejE1aV82VlJCZG5SUTZ4cHNqaFh4OXZpYmhnREZyeGVQbng4MlF4ay0wUXgtNU83eWllOUFaVkRCcDBJZDjSAZwCQVVfeXFMUGltTHByS2s2ODl1OXFNOEJ5d0FrWi1VektXTXpySk5oLUp5OWl2aWZHRm8tRWk3ZThuSnB4WE5nUnVzcEZMcE82VE1jNGx0SEVGclVrTDRtSEdhWUhVbVlMRUxSTWN6ejRaT2hmbF9lTV85MUhaYmc1WGgyeHk2cDEyWHhXdEd4UEJXSnpOWXZlWngzUmp4LXhhSFB1M05rWkxSMmd2T045TnVEa0p5VU1YWXQ0UGFFTnI2UGx1NHN1LTU2RnVSOTdIOThrRVdKS2VFZ3lYVzBtVElGZDlEUnJ5M0pVQ2tLZDdxT2RtRjRHNEpDOWItakxVcm1hOG52dXI4R3VrMWZ5TnVYTFp3SVV2LUhkcG9uRGNlbjg"
-  },
-  {
-    "id": "ext-7e224d0aea44",
-    "type": "external",
-    "title": "Mirae Asset NYSE FANG+ETF FoF leads overseas fund-of-funds mutual funds in one-month returns; delivers...",
-    "date": "2026-07-29",
-    "year": 2026,
-    "summary": "Mirae Asset NYSE FANG+ETF FoF delivered 3.2% returns over the last one month and 42.9% CAGR over three years, according to ACE MF data on July 28.",
-    "url": "https://www.moneycontrol.com/news/business/personal-finance/mirae-asset-nyse-fang-etf-fof-leads-overseas-fund-of-funds-mutual-funds-in-one-month-returns-delivers-3-2-gain-13987208.html",
-    "source": "Moneycontrol",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMikgJBVV95cUxPX2x4UXl4Q0xTNTRlUmpITzd3TUhCMzZOYnlFSkx2TjcxQ2dFZjdJSTBtcjVCRW41OFdmZ3RHMEJFTVBXRUFCLVRvNXgteGZlUUpXZ0dLX1BQNC11QVc0YXVYU0ZYcDA2bXEzTTJhRTExNUk4TGdETUJnY0lEdzVvbEQ4SzZVd1RfYk1JRXFTX242Nl9vVlZJV3hURlI2TVJneFVYNFNiMC12OUdlNlJ1Q1NuY2ZfUFg2WDZPV2lMT01Hd2hWZ0k0YnlIOThBWFdUWU03OE4wMklZbHpManpqSnhUdUNWaFZmV0JESl94QVo2bDEzVWZCbmRHMmxFekNyTlNTQnRVTGREc25aNjg5WFZ30gGXAkFVX3lxTE9Zd1MyalZaMW1Db0Q0NjJwTWFGbWVMYldYYzN3RHREU3ZLZEdDUi1ELW9RenNhZnBkaVUtTnRwYy1IcTR6azZ5MExIak04ekNqeHpKeFNNYXh6dGgyUVhLYkF4TG9DaTFMRzZfYzlJRF9zNDh4Wmx5Mi1TNnhWeHlfLUEzVTBkOWdsZUw2eFFndzd5eHhQWnBVWVp1di1wUGhuZzhVVTVEdW4tZnNuZS00d1JmQXNodVJDcldqSkRLYU9SQWhPcVZ0N1g0RzhoSU0xTEJvY2NEaF9pQjgyRm16dnRBVm05RXpySnRjNlozN0N6UmJXbGxYaWFzcWtvMUNDZ184V05sQVlmMmRPeTZQSDQ4VzFuVQ"
-  },
-  {
-    "id": "ext-ef4d14c577bf",
-    "type": "external",
-    "title": "Kotak Gold Fund leads gold fund-of-funds mutual funds in three-month returns; posts -4.7% return",
-    "date": "2026-07-29",
-    "year": 2026,
-    "summary": "Kotak Gold Fund delivered -4.7% returns over the last three months and 31.7% CAGR over three years, according to ACE MF data on July 28.",
-    "url": "https://www.moneycontrol.com/news/business/personal-finance/kotak-gold-fund-leads-gold-fund-of-funds-mutual-funds-in-three-month-returns-posts-4-7-return-13987193.html",
-    "source": "Moneycontrol",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi-wFBVV95cUxPeHJaQVhoZk9PemlsTTZnRUoxT3QtMV9LazBDV3pXbkEtZzJGeUliNVRVRXJMLTFXeGY2U3U4cGZNTnRDNWdvZ2tPbHB2M09aT3hrSUdVN0dtWmZGUlYzNDg5RURUbEJBZ3VoUmhHQ3ZGZjZBSWo1Yk5Ma1gtMkZJWDVFN1ZhLUc5TUpMX1RjM3ZUNDBRM0d3UXRMeU9sU2xlQWFzSnkzUnFfVUFsaENzSUR1NTl3V3NscDZ3R09ZOERJS0pELUNpa0NaLWtFZ0NRU2dOXzhRclZsS3R3TmxRZFBFdkVoMnRxUUhfOHJFeDFwaWY5a1E1OGNVY9IBgAJBVV95cUxPZGEyREJ5M0piRFFDNkpUNHVsWkp1d2NiMUNfQ0dOM09HTUpPWU82MzB4ZVdjemxkNXQtdno1X1RBZVBoczAyd2FiUG1leE5CeTNnSHZVbHFHS0VkaXZLazllYllJcHdBRUJLWkdCOEFiR09LQXhueGlDSFVRdFlnVFBFS2JBSjQzbmVoOXpnM2wxZFoyQ1F1eDZxb0wxbTVWUkxWR1gtUEQxUFo3NXFFQmFtb0xLajUyRG9Ra2NVbHU5WEFKZ2VDU3BlaVQ0T1BVQl9PTDFYZHBxdUVjZ2E1TncxUnpUYTd5V0JEeTZ6VERwV3FORl9fdnlueThFMGs4"
-  },
-  {
-    "id": "ext-a0f19b375a73",
-    "type": "external",
-    "title": "Building materials quick commerce startup Fixxly raises $5.5 Mn in seed round",
-    "date": "2026-07-29",
-    "year": 2026,
-    "summary": "Bengaluru-based building materials quick commerce startup Fixxly has raised $5.5 million in a seed funding round from Accel, Fireside Ventures. Snippets",
-    "url": "https://entrackr.com/snippets/building-materials-quick-commerce-startup-fixxly-raises-55-mn-in-seed-round-12207612",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMitAFBVV95cUxNeTJKbWItQXEzQWVpZzdGQ1hqdUJDWE5fZUFVUWdwSEpNVnpubEpOWmgySjhjZVk5MjdHZ2FLZl9jXzhpeFc4dHFCVmlEQkp2bTBabUxrdHQ1X28xYWdVMFhBTGxPTTdpNm9BWEtuelN4ancwT0tvUll4ZUM0bVlVOHNOeHNCV0EyM0hyZFBBTEg0bTF6WjEtV1pReVdmNzBLd3lLRE02MmtlMnNKeXdKQTRTMzHSAbQBQVVfeXFMTXkySm1iLUFxM0FlaWc3RkNYanVCQ1hOX2VBVVFncEhKTVZ6bmxKTlpoMko4Y2VZOTI3R2dhS2ZfY184aXhXOHRxQlZpREJKdm0wWm1Ma3R0NV9vMWFnVTBYQUxsT003aTZvQVhLbnpTeGp3ME9Lb1JZeGVDNG1ZVThzTnhzQldBMjNIcmRQQUxING0xeloxLVdaUXlXZjcwS3d5S0RNNjJrZTJzSnl3SkE0UzMx"
   }
 ]
