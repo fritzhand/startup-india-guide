@@ -1,5 +1,20 @@
 [
   {
+    "id": "ext-531304072744",
+    "type": "external",
+    "title": "Six Indian healthtech startups selected for UK-India accelerator programme",
+    "date": "2026-08-27",
+    "year": 2026,
+    "summary": "Launched in 2023, the programme seeks to strengthen collaboration between India and the UK in health innovation and help Indian companies pursue market entry, investment, research and commercialisation opportunities in Britain. The first three editions of the programme are projec",
+    "url": "https://m.economictimes.com/tech/startups/six-indian-healthtech-startups-selected-for-uk-india-accelerator-programme/articleshow/133572711.cms",
+    "source": "The Economic Times",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi2gFBVV95cUxQUzJobkdZVTBSQnpmR2t3SF9iQTI5S29rLVZfWDRkNDh6bFRJZ2l5TVJVQlM1UEk0UFNMSUxOOXFncVM0SlBDQlNIdkJKTUxaNG41MmJ0SHA4N1pmUkhrQVlna0ZYMWxnNEY1djFtbUJFM2tINHRWb3ZOM1FKOUduaGVadjVwZDFNbG5fckg2MnBZMDFET3kzbG1GSFhFVjJxUlYxSTItSzhvX1RfOHo0VE1HWGw3bEJleE91SEdDcm9VZlRlRGZEVGp1bjV6eXFyalM3aDJ3c2tDd9IB3wFBVV95cUxPRVhkeWMzU21FQV9SZnRHMVVSR09zNUhWT3kwU21aaGVhMXh0R05QaGEwaXJPUTFkcGlXVmRPMElPMjVLSDA2ZDdxclZPU0FHREJCcUpSV1lzaEU4VXpXVnliRFdlLXNOc2VvSjJSTVFEeldaSXBYQnllRWR3Y0hidW9xV2dPU28teEFPb2VxM05lOXJTS21tcDJidDNtQ0JLV1pXR0RzcGJQLXE0alhXQmgxcHFKbUs5LU83YVVKUkFTUjRSSU1QZ0xKMXAxTFZyUklDWXV0TFU2YWNLdTlV"
+  },
+  {
     "id": "ext-b1e380c7cbb9",
     "type": "external",
     "title": "Space-tech startup InspeCity raises Rs 100 Cr in pre-Series A round",
@@ -15,19 +30,19 @@
     "gnId": "CBMiowFBVV95cUxQWjduSmM0cWE0cUVEMXluOEZHdTg3blgzOV94cnBSWHZyaWpSTDhINEZid19TcWh5dVNKTzMza08yLUh4RWRmbjlmcVgtOV9Nd29uVkxsRTRnQUpHMjd4cHFkWFhKUDQ5OHBScllHT2FoUnNNME9zYklZZXU4YTZnZ0JKZERvTW9zbmNFQ2t2OFFCQWRYalVNaWRZSnZFTEZaZV9n0gGjAUFVX3lxTFBaN25KYzRxYTRxRUQxeW44Rkd1ODduWDM5X3hycFJYdnJpalJMOEg0RmJ3X1NxaHl1U0pPMzNrTzItSHhFZGZuOWZxWC05X013b25WTGxFNGdBSkcyN3hwcWRYWEpQNDk4cFJyWUdPYWhSc00wT3NiSVlldThhNmdnQkpkRG9Nb3NuY0VDa3Y4UUJBZFhqVU1pZFlKdkVMRlplX2c"
   },
   {
-    "id": "ext-c2b6cb342133",
+    "id": "ext-b5e90aa35eb7",
     "type": "external",
-    "title": "Top 20 Funded Fintech Startups In Hyderabad 2026",
+    "title": "Top 30 Funded Startups In Kochi 2026",
     "date": "2026-08-26",
     "year": 2026,
-    "summary": "Explore the top 20 funded fintech startups in Hyderabad, ranked by total funding raised. 2026 data from Inc42 Datalabs.",
-    "url": "https://inc42.com/lists/top-20-funded-fintech-startups-in-hyderabad-2026/",
+    "summary": "Explore the top 30 funded startups in Kochi, ranked by total funding raised. 2026 data from Inc42 Datalabs.",
+    "url": "https://inc42.com/lists/top-30-funded-startups-in-kochi-2026/",
     "source": "Inc42",
     "sourceTier": "Startup trade",
     "tags": [
       "Startups"
     ],
-    "gnId": "CBMifkFVX3lxTE0taUtJMTZXc2dXS0ZON3dlRnNvdno1MmoycVNKUGRuRi16MmRxNHNuMzB0LWhLSENDQmw2cGI2N19LaXNYX2taU1JhLWFaOVd3czlGY3NJZDVjTzNTVzM4WVpheHJLeENUZHp2M3NOdXlyR09uR2UyUmhjbUlRZw"
+    "gnId": "CBMibkFVX3lxTFBsR2R0TUk2dC16emxaRUFyNDBfcnFjaHlQY2JHM0J2aHJZTXFEM1BTYzlXSDg0TWJ0OXZ4ZS04WU9oZVA4SXpvaldEMkRHVTJ0dmtGdjBGYzJ3T2tFVmVjT2Vubi1lUXRydUpuRExR"
   },
   {
     "id": "ext-67b471cedeea",
@@ -60,19 +75,19 @@
     "gnId": "CBMie0FVX3lxTFBjeDcxVEhraGt2NFpyclQ5WWtHakx5RTBNNFZLTFhLYjRDUS1nZnlrNEl6VjNwR3ZWa1l0bGhZTncwZkhRbGNITEZIajBnTDNKc3h4TXduZG5CRmFUMzdXbUhwellKMXFYcnlvTjBSTjRyb1BvZXNnZ2F0bw"
   },
   {
-    "id": "ext-4e094414d177",
+    "id": "ext-71d3929d44dc",
     "type": "external",
-    "title": "Top 30 Funded Fintech Startups In Noida 2026",
+    "title": "Piyush Goyal lays out 4-point plan in Tokyo, pitches India-Japan \u2018Shark Tank\u2019-style startup series",
     "date": "2026-08-26",
     "year": 2026,
-    "summary": "Explore the top 30 funded fintech startups in Noida, ranked by total funding raised. 2026 data from Inc42 Datalabs.",
-    "url": "https://inc42.com/lists/top-30-funded-fintech-startups-in-noida-2026/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
+    "summary": "",
+    "url": "https://m.economictimes.com/news/india/piyush-goyal-lays-out-4-point-plan-in-tokyo-pitches-india-japan-shark-tank-style-startup-series/videoshow/133534623.cms",
+    "source": "The Economic Times",
+    "sourceTier": "Business daily",
     "tags": [
-      "Startups"
+      "Business"
     ],
-    "gnId": "CBMieEFVX3lxTE8yaW5nalp2MjIzeUJPaVdaWU5FaWZob18tWVhRNG5yTjNmUjU2ak9PRlZXbkJsOE5kem5XaHg5d3hzZDh6cFhiQTQ1R1RaUGFwenNHd0NoVTNfb1BjcGtUbjBHS1hyV19oZUhuX1FBUEZmV01QYWR0Xw"
+    "gnId": "CBMi7wFBVV95cUxPUlMxRE5KNW5QaURXdUI5RHdwa2FRT0FHR1p6TUx6RW0yQ0hXb09jbUtjM1BENzE2WDdkNDhiLVNEYXBaVUwxdEJ5S1Eyd0JMYnBvY1cwN2NpSXZ3aFc4X01zeHVLT25MeTcwTTl6ZnBPN3lxUVVfSGtud1FPdlRCdU9PRGRJbU9LSUNEWjZKZ1dLM2VOSzZ3N3loM3VsRnpVbjZpclc2ZWdsZFNoSTdvWUpnVGlUeUhRcl9hbnphUlZvZllmWU16MWN1LVoyWm1DdzVGbndCSk5BY21mRHFuWlNyQ0E4YUM2d0lsX2VxMA"
   },
   {
     "id": "ext-69bcb37039d6",
@@ -103,21 +118,6 @@
       "Business"
     ],
     "gnId": "CBMi2gFBVV95cUxOTzRMYVpIMV9DTlZDYVoxV3Q1OVU0dGpDX0c3SUdDQ0RpRDhzN1dmQ0E1TUNOZ2s1cThWUnJZMEpVM0xIWHVaM1NoeEsxbkVObnF6MFdEVnBGb2JqeFlpYU44MkIzY015OVBQaFhNLXRMUzI1ZjYxNW1tQVpJdTV5aGV3dzdLcm9qdmxVNTdEX1BzT3J1RzFzZ1dhTVJwMVNhN3ZaanFYTGJmNUx1SFBSMVdyRmhxczl3aFBITy1kRzROM2lTcnM5dnJXWnRiUXJhSUl0VzVaNFJDd9IB3wFBVV95cUxPWElDYnN5cjZYZnI4RHEzU3BMSkl2Y19qd2doTTUzQWxNWHRVOUVBaUI2VzR3azFNM0NOdVd0RVk5bzN4NEE1anBfZERkcDZMSkRMOW9kNTduY2NwN3IxOHZnVTJmNHpjSGc5S0NtOFBKNlBxaVB4N0tSNzNjblRwMkRUU1dIZU5aTWtKQllaVjNIc3FfaHBFQW5aRm84TU9CYy1SNHJqU3gxTTBjQ3IyTzZrb3p4SThyY0F6ZlN3OWs0d0xiRkdRZElNOExFZ2MwTGhaMHF6SFptbEZHdl93"
-  },
-  {
-    "id": "ext-5bad62257512",
-    "type": "external",
-    "title": "FY26 Financial Tracker: Tracking The Financial Performance Of Indian Startups",
-    "date": "2026-08-22",
-    "year": 2026,
-    "summary": "Inc42\u2019s Indian Startup Financials Tracker FY26 aims to be your eyes and ears, updating you on these numbers as they unfold",
-    "url": "https://inc42.com/features/fy26-financial-tracker-tracking-the-financial-performance-of-indian-startups/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMipwFBVV95cUxPa3VHZWxBNmxfd2pGckxtcVQyOTJHa3o1aG1QTFBBdkxIQldZeE1uempBQTV1Y3lrUDMwSXk3VTVzQ2ZhWWFjemI4Q1R2WlMwdkpyX0VOelJsbzdTc0R4NzVYN0VXTXZXNEV3N3Bfb1pvakNfMkVqdmdPSFhpNnlZaHRVQkNIbnU3LXBQcHBEdHd3c0w5V29aODZWai05S3RzQlFIYnREcw"
   },
   {
     "id": "ext-e185fd0dfb57",
@@ -225,21 +225,6 @@
     "gnId": "CBMixwFBVV95cUxOdGFtZVRCT1RKb0VfNHBMeEJuOEJrc0hsZ1lHRzJWV3k2Yzl2a016OE1aaW9LSGZreVhaelBOYzhlc0htNGNaa3h3Y1dsTmxCVEFRN1RpSFVVU3F2X1JseFZHVWxCTXlHVlQ1N1dVdEdNQUcyMDZJQnU3RWJGb0pNOEVFLVdISzQ5Z2M1VHRoLXk4bDllX2hpZDJhV1NmMXViNG9qaEZDNExVVUJWeFJxMDVYM08wSHRXNnl0UWNBd3hLbktVTUNR0gHMAUFVX3lxTE9DaXhSUF9peXp0ODNOMmJBZHB1enBGTXd5QXZpcHhpempQYWZ6T1locXYwLUdNYWtmNUhGWHdiWjdWVGFBeFdYeWU1VFNWckJjaFFOY29qQld3UVNfSHhmeG9NeldLSlZRS1pzZ1R5M2tFSFZXUmJoQXRMQXgyTGZGa3FJS185NmZXcFkwS2Y5Z1czNmQ5Umt4d01GOHlRbkxScVBzUTVzUzZCY0lOQWZ4LTlXRDhubjdYek5RVDFSSTFHU1ZFa3N3b3VnMA"
   },
   {
-    "id": "ext-1b635cd17640",
-    "type": "external",
-    "title": "ECMS Accelerates Electronics Manufacturing: 38 Plants Operational, 16 in Advanced Construction Stages",
-    "date": "2026-08-17",
-    "year": 2026,
-    "summary": "",
-    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID",
-    "source": "Press Information Bureau",
-    "sourceTier": "Government",
-    "tags": [
-      "Policy"
-    ],
-    "gnId": "CBMiaEFVX3lxTFByNGFwWGtIUUp6REpOU1cza182VkhPZTctQy1XNHpISDRhb3FtZEFBZ0FuRzdXaDhxOHMtN1g1NjY1YjZjN0dwZUl4LXZ3QnNMb3FxRExSR2NNRF81dHNhSW5lWVJlRXp3"
-  },
-  {
     "id": "ext-d33bea50fcf2",
     "type": "external",
     "title": "Indian Startup IPO Tracker 2026",
@@ -268,21 +253,6 @@
       "Business"
     ],
     "gnId": "CBMi4AFBVV95cUxNR215TldFYTFFNTU0SG1pWGZJUktZeGd5dnJZc04zdi1PNkpEd2hUX3RkMDA1MjM4RHFfbE1GR29QUm0tU3dpZFRBb2JNRVVlcWlyUkxza3JSWDh3emYzeGtJN18yZGZWMVlKdjVFT0lCR1l4U1lJTldsNVJOTmZnQ1hCWkpOaDdqQnlabXFlVGE5d1RRdE5OY2lFckpyY2xEMlByaTFUSEM2OHIxZ04wbXU2aDcxTVp6X2hhNG9CZFpGcm5YdEhRdWt2UG13OExneF9BYmlXNUdrNTBYbEVIcdIB5gFBVV95cUxNRWppd3JSNkN6VXpzNl8tazFyUC12WXllbTZPQlJtaTgyWTRjWFprSWhVR29EcllfbVJnQ3hZSUhLSXdXcUFjeGdtRWhYWXBGRmNab3J0dGF0bUR5VnVQZ2F6T0VoTFdxcUR4SFN1YzVKdHQwcVh2WDZ4VGhLLTJYOU80QnhLV3QyeHZvTVJWU0hfaFZpQXJob1R2YmpDNVB5SDBlalVPbXMzel80c2R0aXd0UXhreEJ6YTN1aXNTMTd1X09YNEw5Z19Sd2pTV1VJeGNkT1k2azZkR0kycFQwU2J5aFp5dw"
-  },
-  {
-    "id": "ext-1277be581497",
-    "type": "external",
-    "title": "Top 30 Funded SaaS Startups In Mumbai (2026)",
-    "date": "2026-08-16",
-    "year": 2026,
-    "summary": "Explore the top 30 funded SaaS startups in Mumbai, ranked by total funding raised. 2026 data from Inc42 Datalabs.",
-    "url": "https://inc42.com/lists/top-30-funded-saas-startups-in-mumbai-2026/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMidkFVX3lxTE51NE9nNkdJZFJtQ19KU0pibm9WbFVzSzFnYzVqMmFIZnlBU215TjRJa0JERzQ4SUlqZFhGTklHWG1qRThHV3JhdDFhdllfT0N1VmdqN1RUUjdfckRuOWl1Zm5LbVNkSWM2SllwUUFWSnZIcVRueVE"
   },
   {
     "id": "ext-f1330853edff",
@@ -315,19 +285,19 @@
     "gnId": "CBMingFBVV95cUxPdHRCS0FOWWx6Y1MzcDNESEdrcllKdkd2a2hVYmdYdkdqUG1mNFlzWEgyTExFSEpDR2dncVZMVU1kMFF6ZmkycjhwdGVVQk45TW1YaTFmdnpyMUxUSXdweHJCeUdFdFJuVlJnN0VkY0xMaWhpbW9HLWdqa3VsYXo0LTMwckRBZHM1TzlGU2tyMXVrMmw4SEpHbmFyM2hEZw"
   },
   {
-    "id": "ext-d5610109d02c",
+    "id": "ext-8dccb6ba1934",
     "type": "external",
-    "title": "(Weekly funding roundup Aug 8-14) Tepid VC inflow but Yulu provides relief",
-    "date": "2026-08-14",
+    "title": "PM Modi urges youth to dream big, highlights Rs 1 lakh crore Innovation Fund, 2.5 lakh startups",
+    "date": "2026-08-15",
     "year": 2026,
-    "summary": "Venture capital funding into Indian startups saw a sharp decline in the second week of August largely due to absence of large deals.",
-    "url": "https://yourstory.com/2026/08/weekly-funding-roundup-aug-8-14-fund-inflow-turns-tepid-but-yulu-deal-provides-relief",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
+    "summary": "PM Modi highlighted key enablers that he said had expanded opportunities for young Indians, including Digital India, affordable data and Skill India.",
+    "url": "https://www.moneycontrol.com/news/india/pm-modi-urges-youth-to-dream-big-highlights-rs-1-lakh-crore-innovation-fund-2-5-lakh-startups-14006458.html",
+    "source": "Moneycontrol",
+    "sourceTier": "Business",
     "tags": [
-      "Startups"
+      "Business"
     ],
-    "gnId": "CBMitgFBVV95cUxNeTlmRUgxTWZUSi03VUQ0TTZ4a0Z6aEhnNjJIb3pOcmNJU0lUNnVVUlJINERRRHE5bWtiUXJjSDFVNFVrbU1COWItSnFQVTQ4ZlFweVpSN1pxRm00WnBWUzl3M0d6MzhoYU13YmIzcHI0eXNLRENmTG1tSnZ3NzZnLTM3OEZndi1Qa1UtRUk4eHE2eDVzdDl5cVFzYXlVNm5TYjVEQTdwbFF6d2xqVHJ3VmdoNS1Jdw"
+    "gnId": "CBMi4AFBVV95cUxQRUhuZXRWcDB4d3JpaTVJOTA1ZWJHZEYzWDQxYUhYbWEySnNncWcyczJ5WVdBWUNkZklDU2UtZndBeUlMblpub3ZWQklTOGpTTmI5VmczdnN4OGdtMFhMSUZXRDZUeU9iSmtjMTdKZ2l0YmdCNEdzU0l0WGtRYVBiZTJDc0FUYWIwcFlPcElqbnQ3b0N4Nkxyc25KendJNTFRMkE4SlNzVFZwOUVQVVhSa254bmthUFFabWxnQ2pEWnJnb0YybUR2QkpBZ1AwdDA3aGpRQ3YzOXIzWGJGTWlxWNIB5gFBVV95cUxPS2JaUk1OMlpBUVlfNWRDNDdsVGFXMDNZQTJsVUxVQVk3OTlETkEtWFRUWTR3YUNZTDNUTEJIdU9ucVNCOXNjV2czZ1A4RVFSbkEzY0syWXBRaEIwc1ZyRThPY2prVGp0MjR1NTg1Vk9CZlB5eUVJSTU2Vzlvc0xON1djaGtQS19uZHNUY242UUlsVlBrYjczdGl5Um9ZWVpMNjlaaHRiNGJHX1F6dGlUNFFaeV9DdjZCb25SNHA5anlST1laLVgzZTlKQVZEWTI5YS1JZGc5YVJwc0RWaEJBTHVna0dJQQ"
   },
   {
     "id": "ext-8f94e848fc92",
@@ -343,6 +313,21 @@
       "Business"
     ],
     "gnId": "CBMi3AFBVV95cUxOQUZGSk1vZWJtSzIwZ2NwQlBrLThVN21YUzFUOW5LYUZuLUktWV9qUWFFdW1UOV83elZvSkNrWkhncGMzbTdZOVN0WlVBY0tjcF9JM2tlWUZkcklPTEp3ckJPUEVkT2JsTDVobkcyc0hRaFRCUGJwTkhuZ0tJd1dMcFh3UDdENENqcDNEVjZnTFZlQ1Jkam5kNDN4Yk9DUnd2elFpUkY2ZWFhbWVhaTFRT2NsbGozTnlEOHJRbG9HbEdEVTAxZDV5ZTBZQ0t3ZFpiLVRLTW1lODZ0YWdz0gHiAUFVX3lxTE9xYzI1N1NQM2VOMWxrdHBxaHFKRkhMZ0JXeVRlZzU2Z0pfVkV5c1Zza0dqbmVrYlctY2FHRDB0NHhYQ0ZDdU1xUlZ5bFlxN0xBNndIOTVFYjJtM0d0T0JuX0loTUN4NkdVSnJ5NlBwTFFNUktRc0FpYjZYVDZfd0FoRF9BWGVOMzRKc3RNSVpoTEdmX2RJQXczNGJROHRzNnlkbEhNa3dzM3lMRXZlUWJEOGdzaWtOaldaamI2M3FJcFQzYmlGZXB2SDlqenRfV0poZTNidXE2ZVZNOW9DNEJTNGc"
+  },
+  {
+    "id": "ext-b0ea033380bd",
+    "type": "external",
+    "title": "India\u2019s Biggest Startup Backer Is Hiding in Plain Sight",
+    "date": "2026-08-14",
+    "year": 2026,
+    "summary": "For a decade India backed venture funds without picking startups. RDI and Semicon 2.0 now move public money onto cap tables. What that shift changes, and risks.",
+    "url": "https://yourstory.com/2026/08/government-backs-indian-vc-funds-stepping-forward",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMihgFBVV95cUxPQ1l0bjFFdWRob0t2NEk4TnZxYkhtd0JXVGJEMnBJbU9VRFM0NEp3SVNYRDlVUXpsUjVuZklicUQxRHljYURFZjROYzdwSUktMEdhbGVGSGVuTjU3cnE0YXBkVWxuTVg3RllrcjVwNHBnMVdhVDZRZGx1OV9KZ2lzMmJQMjhuUQ"
   },
   {
     "id": "ext-03d708c024fe",
@@ -403,6 +388,36 @@
       "Business"
     ],
     "gnId": "CBMiwgFBVV95cUxQdzNnVzhISWh5VkJDQk41LW1RaExzQ0VKYk5LdVFqbXNBS3UxX2xEMWt5WUJIVFJ1LV8wekFGeDZGb0JHcTBKUkR0SjBQTlRJRi1lb184a3hpaU1vdGxrWWNmRC16QmJ4OWhxMnVRazlVd2Y1YzUyUWhBUGUzZWRaY3NhOHhXeTJPRTQ2UXBseGh4Q0lDZGY1THYxNnNIWlB6SUZwWEUyVkJjZ3dlZGhDSUN6dEJMSllpU003TGUwTU55UdIBxwFBVV95cUxORmFnYWdIVDM1Q0dhYUoySkJOR25TWFhmNElXQlBWTnI2dXc2dktEa1JnQ0FpZ2dVcmVfMUdxVzlNNUVMQ2JEWWsxV1B6QnlDRTYzbzhpV3JhWHJRYzZvMGV1eHZkMk4xbWh3TVViR3g1ZjdQQnNtcGIxTFhBY3BmRWk0dm1nMUdUV3dIVkZsZjRqeERVeXhvaUVvbXJTLVpwNnVzVUdLOWdmMVV3TXN3UHgxbFk3RS1QanI2ekwzbTVMbUw5ZWo4"
+  },
+  {
+    "id": "ext-2fa287f4ef54",
+    "type": "external",
+    "title": "Axis Gold Fund leads gold fund-of-funds mutual funds in one-month returns; delivers 5.7% gain",
+    "date": "2026-08-11",
+    "year": 2026,
+    "summary": "Axis Gold Fund delivered 5.7% returns over the last one month and 34.8% CAGR over three years, according to ACE MF data on August 10.",
+    "url": "https://www.moneycontrol.com/news/business/personal-finance/axis-gold-fund-leads-gold-fund-of-funds-mutual-funds-in-one-month-returns-delivers-5-7-gain-14001649.html",
+    "source": "Moneycontrol",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi-AFBVV95cUxNZ3ZOTEpabzlzOTFscHB1VDZOb0hIdl9nUV9iMU56OHNyLVpJRlZrSllQdDRZRWd4VkVEQVphZEFJclo2WkhaaUl0YnFsQzBRdk10cXBEUS0wbVJIcHplbHVYaEZMaXRPU29ITTY2bXh3bGotWDJKOFJlbGRoNGVUaUJPYVhNUlBJcEhhWEZ1Q0F3TzUyb0RPSE5SUmdtLVhkanNOVDE0VUE5Z250ZkJwdUVzald3aWduY0g1ZTZOTWpQSVhySUYtUlpUdThtVlhldjd2N0J4bkJIbmNFMWE0N185UXBQc3J1ekRGa0Y5dC11TWJuWXl4X9IB_gFBVV95cUxPaWc4ZFJLTjB5U0pXUkdEbnZteHNRMmZHY0h5UklqUkRpU01wYU5CRTlSejhTSXFRWDAteVZNQmtLdE5wZV84WVdSOUxZVWd1RlFLcFpudDBBMlhGbWhkcEloWU1mcmttVFRtTFZxRjBMVjdncW5XSm51T3NLRVJkdlI1Y0hPdzFOeGxYZjAwcVZva0VZSnVfcUZONjFKNnZKR0FHdUY5aTNGclVqRHRJU2lHZHVoOHh2YkgtUzNkcGdQcjJmQ3ozeVZaRmN1MjRfNXFxdnNDMHk2cGg0RmNXSHVsV2pEQkd0X3hkekxvMnItd1NrMExuQUdxbDM5QQ"
+  },
+  {
+    "id": "ext-fb7a7f818875",
+    "type": "external",
+    "title": "AI startup funding heats up: MStack AI in talks with Alpha Wave, Lightspeed, Prosperity7; Simplismart with...",
+    "date": "2026-08-10",
+    "year": 2026,
+    "summary": "MStack AI is in talks to raise $30 million, while Simplismart is stitching together a $50 million round, according to sources, adding to a string of AI funding deals Moneycontrol has exclusively reported -- from Sarvam AI\u2019s $300 million round and Emergent\u2019s $130 million fundraise",
+    "url": "https://www.moneycontrol.com/news/business/startup/ai-startup-funding-heats-up-mstack-ai-in-talks-with-alpha-wave-lightspeed-prosperity7-simplismart-with-peak-xv-others-13999397.html",
+    "source": "Moneycontrol",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMijwJBVV95cUxQcVFNSmhLTkN6eWFrQnVpM1VxS2ZBLUhOSFBSUWc4d0JqbUdoZDhfVjFjcWJMSkdyRTQ0Q3BSSkVxdWZZb3hsUV9WVjRnRF8zYVdOZ2cxbEtUTm5KV0luTkNwdHg3Um54S3ktajJsNGRvdVdjdFIySFBEZDM4LWJvWWtnUkNENjBrMURDMDMzSHlpd1JaZmFwTzZUWldZanh1UV9iT1lRVkxzZFlESFF1QUxaVkxNR0ZveHF0NEdYU0dDcHpJTFU3bEdvc2N6RS1zTmRyVTc3WDk3WU5OOUJmYWRpZmpJT200YjNOTkR1MTJxX2Z0ZDJYXzNkWnk2THh1ZDRZNUc4T2RqMUVDRGpz0gGUAkFVX3lxTE53RHl0aER3ckpPZ0RMajZ4Sm5JVDB2cWJFQWc5a20xRmpBei0zVm1nS0VuNEFLeGlHeHRIbFJYX3kyQ0lnTlFhaWlmWm1yN0hreXE0M2xieVpnQjEzNnhnQjF0T1E2cFBYaFVKY0ctRlBDd2VacjlNNS1RcEJmUmQ4dnN2TVVXZmQ2c1UzRFFBQjNtSng3QXg1ZnhjM19USW01Z0xFQmFMUHdGdm10T0c4cEZYQThGdzdqeVgtUllQQlR1ci1lT05QcTQ1N1pXcUVWazJVWjFzUV9PZ3VhNUI1aVFLRVhfelRxbDFHTnhGV0xhWnJvVXRvUUtuTFNwQ05RTVdwNUxoMzRSbXlkak9DckpBOA"
   },
   {
     "id": "ext-6539bd99fb9f",
@@ -478,6 +493,21 @@
       "Business"
     ],
     "gnId": "CBMixgFBVV95cUxPeUFENThjSTJ0M2hMVEdYUDFGaVNKd3VTMXU2SzMwMjBwQ09zaXlPNFNJSzl4MkhQOE9sRVRqajdPNnluV3NhbkltelJBOWI4YjhIOFpPdGRzYXZ1bUIyb0tnMG5BaVZwc20xZl9DMS1YS3UyanFIWl9UWVlfc25zbkt0RmVSWGFuVDZGb1hHS0F3SW9wb2JyMDR2dGFZcXZSbU5IT3pSeWdjUWdqZ01DekE3MjRRVi1PcGNIU25YTmtRWGhseWfSAcsBQVVfeXFMTm1uXzlSRlFXSUgyQjl0ZlI4clozdEdSTndOc0xDY2x3bEpQeXFxbGFLRUJkTEdzMTlIeGVfYk9GUkhrU09PazBCXzVRT1hSTnd4b0QzMjR3S3R0MEpRRmlhNjVWMkpDcFdMQUg2OFMyQ3d2LTZqTGFyTkVDQU1kbHRiTmM0YVd1cGFrMWlnU01ZM1ludERUU25lRDRXdURMMkg1bERESFczaFJEMGFoVUpsSVhQdEFuQ3JFZmZ5dXgwMWRjcDNXc0V0dlE"
+  },
+  {
+    "id": "ext-2d5dd8b6dadd",
+    "type": "external",
+    "title": "Investors on a new mission: Funding spacetech startups",
+    "date": "2026-08-06",
+    "year": 2026,
+    "summary": "India's growing space sector is making strides in essential mission technologies and components. With investor interest surging in startups focused on propulsion, communications, and in-orbit servicing, this trend opens avenues for local manufacturing. The government's commitment",
+    "url": "https://m.economictimes.com/tech/startups/investors-on-a-new-mission-funding-spacetech-startups/articleshow/132980202.cms",
+    "source": "The Economic Times",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMivgFBVV95cUxOWjllYTFvcGJvRmxPV1RVT004Rzg5RV8yU0VINE56cGNzMTlYS05VWmo0VHdUOFNLVjNTcUtqZF93QldkYW9rbHpDd3JKakFzMURkNFgwdXlDTTd6YWtBcWJlWmtvOUliWDFYbU1qOHY1eVhsN0h3LUpIYjh6bU5yNWlnZ1I1YlJUNXAzZ2h0Q0NWNHU0eG9RRE9obVBicjZGbVdGcFAtaUJNZUgtdXhxWTFqMDZQX2RvZzJudkJ30gHDAUFVX3lxTE11bE96aW1taDFBX2lKaFZxYTY2LTJ2a3B0VVpkcTJSZzc5c1BqWU5FNFJieE85bnh0RkFnbHZpYjZ2dkh5ZG5wLVVtN2pFTEsxUkhUanBDR1J2ZDB1bFUxaVNKYTd1QVdNMUFkeUdXV1ZGZ3M1RWsxejFQV3hjMUdSNkVLeTM5WmpoT0dIMHJYZldYektpNFBZRGx6cTEyZTNDTVJyTTl1dkZ5dWNoRXVEUDZldXE5alRxYk9uRTFxNkJXOA"
   },
   {
     "id": "ext-45d07ec1d824",
@@ -568,35 +598,5 @@
       "Startups"
     ],
     "gnId": "CBMiogFBVV95cUxQS0plSlk3RkpBX1VOU1YtbGI4RDVWS1lnT015VFVSU0hZbnIyQ0x4VEdpNEdIcllybmVrT25mcEJkaFV2RmR2Y3Z0N0ZQVy1lelJFeURfbjNpd2thN1RudlF4X3RfQnl6TTVuVVV5NEJKYkdvRGpUS2lPam02U2thdEphUWxOdUEtUFRia1FXUnpKS2ZVTWVFWDU0aG1SVmdXVFHSAaIBQVVfeXFMUEtKZUpZN0ZKQV9VTlNWLWxiOEQ1VktZZ09NeVRVUlNIWW5yMkNMeFRHaTRHSHJZcm5la09uZnBCZGhVdkZkdmN2dDdGUFctZXpSRXlEX24zaXdrYTdUbnZReF90X0J5ek01blVVeTRCSmJHb0RqVEtpT2ptNlNrYXRKYVFsTnVBLVBUYmtRV1J6SktmVU1lRVg1NGhtUlZnV1RR"
-  },
-  {
-    "id": "ext-819576bdc394",
-    "type": "external",
-    "title": "Funding and acquisitions in Indian startups this week [July 27 - Aug 01]",
-    "date": "2026-08-01",
-    "year": 2026,
-    "summary": "This week, 17 Indian startups raised nearly $82.2 million across 2 growth stage deals, 13 early stage deals, and 2 undisclosed deals. Weekly Funding Report",
-    "url": "https://entrackr.com/report/weekly-funding-report-weekly-funding-report/funding-and-acquisitions-in-indian-startups-this-week-july-27-aug-01-12217797",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMi4wFBVV95cUxQejRlVXdRbkF4cDVxbnRLdFRRT19RRmVWQ2RTLXJ0VGctc3dPN1lhZHJwM3lmU251WlpISkRKU25HVFVYRFRmZWJNUk9LOW1rODFCMFE2azVaX1dPZ2dxQkxrcGw3c3E5UzlZUWJRNnhaVlBfV0lJbzI5bzRLNURucEJtT29OVnF3NG9PVnA3d2lwWjdkeWYwTnNHQzNCYXpPenJja3FvVG5CTnhHdTNVa1ZxSnhISXZ4NEpsY2ZZMWVLNFkwaXBnQlNoWXlaTjRCaHgwRjVMV0ZKYk1kVnRZcFE4a9IB4wFBVV95cUxQejRlVXdRbkF4cDVxbnRLdFRRT19RRmVWQ2RTLXJ0VGctc3dPN1lhZHJwM3lmU251WlpISkRKU25HVFVYRFRmZWJNUk9LOW1rODFCMFE2azVaX1dPZ2dxQkxrcGw3c3E5UzlZUWJRNnhaVlBfV0lJbzI5bzRLNURucEJtT29OVnF3NG9PVnA3d2lwWjdkeWYwTnNHQzNCYXpPenJja3FvVG5CTnhHdTNVa1ZxSnhISXZ4NEpsY2ZZMWVLNFkwaXBnQlNoWXlaTjRCaHgwRjVMV0ZKYk1kVnRZcFE4aw"
-  },
-  {
-    "id": "ext-2c86eef8958c",
-    "type": "external",
-    "title": "India startup funding slumps 57% in a week as big-ticket deals dry up",
-    "date": "2026-07-31",
-    "year": 2026,
-    "summary": "Indian startups raised just $80 million across nine funding rounds during July 24\u201330, with total investments plunging 57% from the previous week as early- and late-stage funding slowed sharply despite stronger seed-stage activity.",
-    "url": "https://www.cnbctv18.com/business/startup/india-startup-funding-slumps-57-in-a-week-as-big-ticket-deals-dry-up-19959001.htm",
-    "source": "CNBC-TV18",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMiwAFBVV95cUxNWnBrdFQ5M185eERSQk5ZQk1Bb2EydTdXUkR5YWRXNEZqc0VXc3pMZzNnUkFaZnhjZ1YyQ1RWYURNMFQ2NmVJb2s3elhPSTdORUNwOV9jT2lnVWlLV21VSlh3dmFOMFBUdDdsQVhENk5hSmVZMnhoNE11dG54QmdycFJaeFR5LXRWbndkaGtWUVRBbmRUY1I5UzBkbDNUc3kwc2ZiUEZrUU93ZW9ORDhJbDNhQXNqSVd4YXJ2UW1WUWjSAcYBQVVfeXFMTnVnekFWVW9ZOHM1c3JJMUczREE1aFF2UWRLTzdWUE9MWHpfa0lVTHA3SEI3eUxKQ1RvakxqQkRtazk2NkRyc1NoRzY0c0Rnc05yajdQYTg5d2pEUEhlSVZoTm44QXNVVTJDTE1ubEpGX0dKYWh3M2xuaHZ5QTRPNGJmSTc5dm9EdENwVV9Ib3Z5VnR2Z1M1SkVwVEZBeDRhQ3JqY0Z4WXNhZUlLWjFUVjdMeXdOLVI4UWpaa0ZPU3dhNndGdkpB"
   }
 ]
