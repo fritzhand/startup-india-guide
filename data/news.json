@@ -120,21 +120,6 @@
     "gnId": "CBMimwFBVV95cUxOeWMyVkxmRm12RHhELVlHclBoUTFScldrdF9CbnhKV0ctTzdvelM0NFBZbjNzZ08wOFJobWtwYThhaVl5SWxzbW1DUjBRcmRxRzBnV19ZREtEMmphbVFVQVNXZi0tRk8zNUpteHZ5c2t5Y3ZFWmQwekd5ZmdyNEVYdkhWcE9uSGpJYlcybjZKTXYwbkdLdmJubE41WQ"
   },
   {
-    "id": "ext-d33bea50fcf2",
-    "type": "external",
-    "title": "Indian Startup IPO Tracker 2026",
-    "date": "2026-09-20",
-    "year": 2026,
-    "summary": "As per Inc42 data, 29 startups have already filed their DRHPs, while another 25 are in various stages of finalising their IPO plans.",
-    "url": "https://inc42.com/features/indian-startup-ipo-tracker-2026/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMia0FVX3lxTFBnS183TEQzMHI1QjlKSDhLSmhWSWhMLTBYanJITEFPYU9wSEJDYTZTMXhMUDAtV1hQYnZETzBCLWJGYTV4aVhUcDUyQ2xDbU5BMnBfWVNSN0YxNVhmakQ1U0tNLXgzOUxhbkJN"
-  },
-  {
     "id": "ext-6faf2e04e71f",
     "type": "external",
     "title": "SEMICON India 2026 concludes with 15 announcements, headlined by Indian startups and student teams",
@@ -150,21 +135,6 @@
     "gnId": "CBMimgFBVV95cUxOZ0dqY09YNzlMOU5DQmxrSFdxRERqZ1lCWXhtcjMyaHNCLW41TXE0OVFVbEFtWlBLVmRjSFBPdHhZaVhpSWFydjVPVkZBeTcxVWdCcklXc054aEtyNXI3SXI0QVJGMkJ3eTdEdnRWUFhwU2ZUQjMyY0hPWkpsYnd0VmR1NkpPejVSbWZpX2dZN3lYeHoxdExEUFJB"
   },
   {
-    "id": "ext-14c4b278e49e",
-    "type": "external",
-    "title": "Funding and acquisitions in Indian startups this week [Sep 14 - Sep 19]",
-    "date": "2026-09-19",
-    "year": 2026,
-    "summary": "This week, 17 Indian startups raised $61.8 million across one growth-stage deal, 14 early-stage deals, and two undisclosed rounds. Weekly Funding Report",
-    "url": "https://entrackr.com/report/weekly-funding-report-weekly-funding-report/funding-and-acquisitions-in-indian-startups-this-week-sep-14-sep-19-12551215",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMi4gFBVV95cUxOVGJwWUJsNHJUTFcyVXdqTkVidnFuR1IyU3NJM2JFeTFyZXVETmp1Ym83SHJUZVVjdTBndEk2cUNLX0IxNHh0WmVKejY4clRQc0M4cmVFcFBUeFM5Sk1lamFVOVRRaFN4Ymozdk56NHdmNm9RdXkwY3hUZkVKNnhaQXpHdzQtQllGZHpnb0Zmd1BJOVZIZjR2ejNIUC1NQXI1NmQtclJrUnBiZnVqTWQwQTBTODlkdWRsQ0FIVGtaRjhrcEkySTZKMHl5dzdlRWotMVU5ZEpQZ2R0ZWk2OUJrSW5B0gHiAUFVX3lxTE5UYnBZQmw0clRMVzJVd2pORWJ2cW5HUjJTc0kzYkV5MXJldUROanVibzdIclRlVWN1MGd0STZxQ0tfQjE0eHRaZUp6NjhyVFBzQzhyZUVwUFR4UzlKTWVqYVU5VFFoU3hiajN2Tno0d2Y2b1F1eTBjeFRmRUo2eFpBekd3NC1CWUZkemdvRmZ3UEk5VkhmNHZ6M0hQLU1BcjU2ZC1yUmtScGJmdWpNZDBBMFM4OWR1ZGxDQUhUa1pGOGtwSTJJNkoweXl3N2VFai0xVTlkSlBnZHRlaTY5QmtJbkE"
-  },
-  {
     "id": "ext-8abeed5216ce",
     "type": "external",
     "title": "From Flam To VerifAIX \u2014 Indian Startups Raised About $59 Mn This Week",
@@ -178,6 +148,21 @@
       "Startups"
     ],
     "gnId": "CBMilAFBVV95cUxNR21ZTzN5d1JadURySGY2SkJWYWxxYUFlQkEyS3Y2WnVON2VsY3RSWVExc0FLQ0lPeTdHcml5SVZwdnFINjNTY3d1ME9JSXFYMXVmb1J5eFpOYllVMUl3b0hOZ21Kc1Z4aTJRMElMdHNEYXVtYUpISDU3RVFtMXRJNDBXY1NjbHRkZDFXZjQ4a2gyZHdy"
+  },
+  {
+    "id": "ext-14c4b278e49e",
+    "type": "external",
+    "title": "Funding and acquisitions in Indian startups this week [Sep 14 - Sep 19]",
+    "date": "2026-09-19",
+    "year": 2026,
+    "summary": "This week, 17 Indian startups raised $61.8 million across one growth-stage deal, 14 early-stage deals, and two undisclosed rounds. Weekly Funding Report",
+    "url": "https://entrackr.com/report/weekly-funding-report-weekly-funding-report/funding-and-acquisitions-in-indian-startups-this-week-sep-14-sep-19-12551215",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMi4gFBVV95cUxOVGJwWUJsNHJUTFcyVXdqTkVidnFuR1IyU3NJM2JFeTFyZXVETmp1Ym83SHJUZVVjdTBndEk2cUNLX0IxNHh0WmVKejY4clRQc0M4cmVFcFBUeFM5Sk1lamFVOVRRaFN4Ymozdk56NHdmNm9RdXkwY3hUZkVKNnhaQXpHdzQtQllGZHpnb0Zmd1BJOVZIZjR2ejNIUC1NQXI1NmQtclJrUnBiZnVqTWQwQTBTODlkdWRsQ0FIVGtaRjhrcEkySTZKMHl5dzdlRWotMVU5ZEpQZ2R0ZWk2OUJrSW5B0gHiAUFVX3lxTE5UYnBZQmw0clRMVzJVd2pORWJ2cW5HUjJTc0kzYkV5MXJldUROanVibzdIclRlVWN1MGd0STZxQ0tfQjE0eHRaZUp6NjhyVFBzQzhyZUVwUFR4UzlKTWVqYVU5VFFoU3hiajN2Tno0d2Y2b1F1eTBjeFRmRUo2eFpBekd3NC1CWUZkemdvRmZ3UEk5VkhmNHZ6M0hQLU1BcjU2ZC1yUmtScGJmdWpNZDBBMFM4OWR1ZGxDQUhUa1pGOGtwSTJJNkoweXl3N2VFai0xVTlkSlBnZHRlaTY5QmtJbkE"
   },
   {
     "id": "ext-68f34e8d95bd",
@@ -210,21 +195,6 @@
     "gnId": "CBMiqAFBVV95cUxPanBEYXlMbDhaYUYwVVZFbE5RNHdHbDFzand1aXcxZjlfRDBucGdiQ1pGbVVFbkEtWHRnLTVHZEl3b1c4S2dfQ1pUekhpV3NIWWJqdGk4N243NGY3Z3ItUmxDTGVELVRIRHBVSnREcjBiRktCazNjbVpMd3NIODEzNGNaaHp6eGF5TXN2YVlINmhvOF9ZdVpUV05UVGFwWmRCZElyZkxFclfSAagBQVVfeXFMT2pwRGF5TGw4WmFGMFVWRWxOUTR3R2wxc2p3dWl3MWY5X0QwbnBnYkNaRm1VRW5BLVh0Zy01R2RJd29XOEtnX0NaVHpIaVdzSFlianRpODduNzRmN2dyLVJsQ0xlRC1USERwVUp0RHIwYkZLQmszY21aTHdzSDgxMzRjWmh6enhheU1zdmFZSDZobzhfWXVaVFdOVFRhcFpkQmRJcmZMRXJX"
   },
   {
-    "id": "ext-90c5e0b33893",
-    "type": "external",
-    "title": "Beauty quick commerce startup Firi raises $3 Mn led by 360 ONE Asset",
-    "date": "2026-09-16",
-    "year": 2026,
-    "summary": "Gurugram-based beauty and personal care quick commerce startup Firi has raised $3 million in a funding round led by 360 ONE Asset. Snippets.",
-    "url": "https://entrackr.com/snippets/beauty-quick-commerce-startup-firi-raises-3-mn-led-by-360-one-asset-12538816",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiqgFBVV95cUxNZXVFWHNweVc3eEtOOENrNHVVRzRJYlhDQ2hfNjhBWnNRUVpmM2ppVGxrdGY5NUVRSWJVdXNiSDIwMzR2TjlBdGt5djUtMjd4X0xRc3oyWWhRN0RzZEtBTE5kNXd6ckNQQ1VCTWZVRlg4YjBfVm5CS2YzVk9zVkFwMXFkcVItUGV3bnIteHFWMDF4SXZneUl6Q2kyVFBOX0NjbDEyaUkyV3F5UdIBqgFBVV95cUxNZXVFWHNweVc3eEtOOENrNHVVRzRJYlhDQ2hfNjhBWnNRUVpmM2ppVGxrdGY5NUVRSWJVdXNiSDIwMzR2TjlBdGt5djUtMjd4X0xRc3oyWWhRN0RzZEtBTE5kNXd6ckNQQ1VCTWZVRlg4YjBfVm5CS2YzVk9zVkFwMXFkcVItUGV3bnIteHFWMDF4SXZneUl6Q2kyVFBOX0NjbDEyaUkyV3F5UQ"
-  },
-  {
     "id": "ext-6b76529e87dc",
     "type": "external",
     "title": "India's spacetech startups seek fresh capital as investors test appetite",
@@ -240,21 +210,6 @@
     "gnId": "CBMi1AFBVV95cUxPSUJ6X191UEdnQ0ZPckpTWWVwMU5uVzFRa2lETXFqaElraXJ4eFhtRl9IMzU5ZXBnU1dERHkxMHJkVHN4MmJlTVg3TEFYaDFCZWRpYmx5RUI1ZS1yNXd2N2xzZGZHOFpLd2hoclNYdWJsMUN0cVZqY093TU4tY3c1WVltQ3FzT0EyZ0FDVm50MUtYRnhId3NKNEp2b0E0TmNPOTEtR05kNVZCUkRZSkZjX2d3eFVEdUJkTEFJVXRkakJJc0ZEQXJfeUUzV19odlR6VmhNatIB2gFBVV95cUxOUlhhVERmdmZkMnBnZTNJeHdYV254NGZUU2N2cDltSlJMY3JpdU01ckFJNHZ4VzZFd0J5Y2ExbWJCd3VQaDRHa2hKZkZZTVJ4Vi1zV3pKWm5va0E0cTJpOTh6bjVrRkFvUWNOTFNic2tJREg5Z3gtdW9qcHRLcGNydnJybUpfSXpoekpGZnNRWDByLUFUWVpxcGlhbk5lR2ptX3FLeloyUHFYOEZKanVEYmhoX25xOVFiZl9XTHBmbHNfWlFrYXZjTmxqN3ZVR1VtMWlGTUJ5c1RHdw"
   },
   {
-    "id": "ext-5969b74b0098",
-    "type": "external",
-    "title": "AI interactive content startup Flam raises $40 Mn led by QED Investors",
-    "date": "2026-09-15",
-    "year": 2026,
-    "summary": "Founded in 2021 by Shourya Agarwal, Flam develops AI-powered interactive content for enterprises across use cases such as marketing, product visualisation, learning and",
-    "url": "https://entrackr.com/news/ai-interactive-content-startup-flam-raises-40-mn-led-by-qed-investors-12534934",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMipwFBVV95cUxPN3kwdmpiVGVIRXExQ2t6WlJOZ3VlSlFzMGxKOHlQaU5ybEw2VmZQSHlGTjlUVjF4VnREc3ZUcDM5NDZrUEFQdHpQZGZhTjBvaDhVSDF5d1pKQ1dPVWdLUEJBZDhERGMxSGlsTWRMTDJka3NqRjJUb25ZZFRURG1kVlpGTXZmTkxfdmVxZFRpYkx1RWFRUlFBR0tMY1RJWm5NVVdGV2hUQdIBpwFBVV95cUxPN3kwdmpiVGVIRXExQ2t6WlJOZ3VlSlFzMGxKOHlQaU5ybEw2VmZQSHlGTjlUVjF4VnREc3ZUcDM5NDZrUEFQdHpQZGZhTjBvaDhVSDF5d1pKQ1dPVWdLUEJBZDhERGMxSGlsTWRMTDJka3NqRjJUb25ZZFRURG1kVlpGTXZmTkxfdmVxZFRpYkx1RWFRUlFBR0tMY1RJWm5NVVdGV2hUQQ"
-  },
-  {
     "id": "ext-59ddc6a5f16a",
     "type": "external",
     "title": "Amazon adds 176 facilities ahead of India\u2019s festive rush",
@@ -268,21 +223,6 @@
       "Startups"
     ],
     "gnId": "CBMijgFBVV95cUxOMVg1ck1HUnRJZkEzT3RFT2VhRGxPQ01XNEhoM2IwaFZkWW15MXN6bG1hNC1fYzhIam13WUVjWjlVazRGQlpJTHY4LXRSUmJYY0lZQWdsTUZfOTVwWk9pMk1fUVhabVJBRUR3cXJOYzBRbU9uUXpGV25CWm5KT1FUd3hoZ19rLTJ5VDVkRVln"
-  },
-  {
-    "id": "ext-0ae1e3da779f",
-    "type": "external",
-    "title": "Exclusive: Fashion startup UniqYou raises seed round at Rs 64 Cr valuation",
-    "date": "2026-09-14",
-    "year": 2026,
-    "summary": "D2C fashion startup UniqYou has raised Rs 15.8 crore in a seed funding round led by Arkam Ventures and Antler. The round also saw participation",
-    "url": "https://entrackr.com/exclusive/exclusive-fashion-startup-uniqyou-raises-seed-round-at-rs-64-cr-valuation-12530416",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiswFBVV95cUxObWE0ejdYX2xENkZDbDFpRktQd2RVZS1Cak1mNlRmX3ZLOUc3OFlTUFVKa09ERzVlVmxaQm55eGo4c2Z3NUJlMWZYMDBqcmU3MVZyY0RRMndRNWJhWVlWVlFlS3ctcXZVemhqOFJGMmFkWWlYS2VXOG1FVmNUMVJFZEtuTlpha0o3LTBFcEFBRk1LQVVveHdKbnhNbDB2R2M4MG12T242OVpKZURJU0p4Mk4xc9IBswFBVV95cUxObWE0ejdYX2xENkZDbDFpRktQd2RVZS1Cak1mNlRmX3ZLOUc3OFlTUFVKa09ERzVlVmxaQm55eGo4c2Z3NUJlMWZYMDBqcmU3MVZyY0RRMndRNWJhWVlWVlFlS3ctcXZVemhqOFJGMmFkWWlYS2VXOG1FVmNUMVJFZEtuTlpha0o3LTBFcEFBRk1LQVVveHdKbnhNbDB2R2M4MG12T242OVpKZURJU0p4Mk4xcw"
   },
   {
     "id": "ext-6e6683f0679c",
@@ -598,5 +538,65 @@
       "Startups"
     ],
     "gnId": "CBMikwFBVV95cUxPREFobWF2TUtYaDdVeXFHdmlFOWhENkNub2gyUDFqSEl1RjRvU2JjWk56d0lrV2pnT255NDNIU3pNY3ZuS09oMWM5TWY3Y3RndTNQNkxpY0swa1dMQm1zZ2RfQWc1N0x4b0pCMm9RZXZyekpnZjRRTVRWVU10NjR4WkxMNGw3cU5nVWRJTjh6VFFzc2M"
+  },
+  {
+    "id": "ext-871ca655d548",
+    "type": "external",
+    "title": "Funding and acquisitions in Indian startups this week [Aug 24 - Aug 29]",
+    "date": "2026-08-29",
+    "year": 2026,
+    "summary": "This week, 24 Indian startups raised $218.69 million across 2 growth-stage deals, 22 early-stage deals and 2 undisclosed rounds.",
+    "url": "https://entrackr.com/report/weekly-funding-report/funding-and-acquisitions-in-indian-startups-this-week-aug-24-aug-29-12451075",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMixAFBVV95cUxPXzBXTGRrYzNjeTY4RmhwdVVqa0RpdWJlVEp5TlhETUFaaFp3b2p3bXVlZ3FhYlhqeW1FSTc5QTl4WUdFTW80Y0VraTJjRDBjVi16U1VqVmpibXJfS0hRNGJUN1R4TDVHSzdHMlJoZ0h3VDdBb3pGVUEyM3owajNoQ1ZodWI1bUhhTG9hNExISkdULVJGT3hIaEl2TGRYRkZFXzFWLUhoZzVKLTFuaXBDOUtRTFMySGVBWHY5ZUpzcGdRSUJx0gHEAUFVX3lxTE9fMFdMZGtjM2N5NjhGaHB1VWprRGl1YmVUSnlOWERNQVpoWndvandtdWVncWFiWGp5bUVJNzlBOXhZR0VNbzRjRWtpMmNEMGNWLXpTVWpWamJtcl9LSFE0YlQ3VHhMNUdLN0cyUmhnSHdUN0FvekZVQTIzejBqM2hDVmh1YjVtSGFMb2E0TEhKR1QtUkZPeEhoSXZMZFhGRkVfMVYtSGhnNUotMW5pcEM5S1FMUzJIZUFYdjllSnNwZ1FJQnE"
+  },
+  {
+    "id": "ext-49a3ab07d969",
+    "type": "external",
+    "title": "India AI funding hits second gear",
+    "date": "2026-08-29",
+    "year": 2026,
+    "summary": "The AI hype cycle is entering its &ldquo;show me the money&rdquo; phase, with Indian startups increasingly bringing revenue and global demand to the table&mdash;and investors bringing bigger cheques.\r\nThe money moves: AI is no longer just getting attention from investors; it is t",
+    "url": "https://www.moneycontrol.com/news/technology-startup/ai-edge-newsletter/india-ai-funding-hits-second-gear/",
+    "source": "Moneycontrol",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMiqgFBVV95cUxPUHpwSExJQUt1cGdmZ3BsalEybHJHb2wwUXQ0MFBnQlpucEd5Y0d1UzJTV1NENGpBUkRFQmNuV2xrM1M1NzZUeVR3WnItTDlLOTZyYjRseU5iWjhJNjEzWWpDd3p5cExfRld5UThJNEJPMm5td283aUVIWlBIUFNXbjdJdkRCSER6Q1dMcExYTm54SUlLRzgyd24yMUVpa0ZpczNJeFRSUjRpZw"
+  },
+  {
+    "id": "ext-35e52013efa5",
+    "type": "external",
+    "title": "India\u2019s AI funding momentum gathers pace as startups draw bigger growth cheques",
+    "date": "2026-08-29",
+    "year": 2026,
+    "summary": "Investors say stronger revenue traction, global demand and growing investor conviction are pushing AI funding beyond early-stage bets, with a growing number of Indian startups attracting larger growth-stage rounds.",
+    "url": "https://www.moneycontrol.com/artificial-intelligence/india-s-ai-funding-momentum-gathers-pace-as-startups-draw-bigger-growth-cheques-article-14017918.html",
+    "source": "Moneycontrol",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi6gFBVV95cUxPZGx3YlFhcjlxYU04Nmp3VjFnTmEyelV5WHkzRzk1QXg1S3AzNWpmYTNzWTNTQzUtSTFJcEk1aWtSdG5GU3JOZ3J6NDBsNWx2QjRYV1NIbUZRSzJRdkJMc1B0Ti1XTU9Sa3RyRjZTRzduUUM2Z3hmNmVUVEIxWkJQUjdsUWxCSGszOG9kQXo1TFAtblNPczRybi1xRGV3MkdhU1Nod2ptZTlHdjdlTXdsTmlMNHQtbnlWREp6NjJpSm9wd3ZsWGhLZ1ZCeWxsSTgxN1VpZjNFc1JJM0JaUmdDRFB2cFRqQk9NN3fSAe8BQVVfeXFMUDZBallTSllTWjZpcEtqYVFPOTNrR2t0TGhzUXRxNGE5ZjNha2IyZEJocXdReWlISkRJb05zMGpwaWExZkJTcnQzN2lzMVNFS01HVC1uQXFvSmNLMDFscWZJSzBGUTFpQ2hwWEhYYlFRWHIwdVA4QTQ0UDc0RGhmRUtadF92eTVUX2RSUkdhamV0bjQ0NDdTN2d2WmU5aGVNeGJKYVNzVE1FLXA1dEJ1RlhyeTQ5MFVNUDVETE1zbGIxU3d4bWpKMVV1Qm81WDh1OXN5ZG5JUmhYUVJfenBfRHFfY2JWRng1c3N6d3NSWEE"
+  },
+  {
+    "id": "ext-ad031b97cb2a",
+    "type": "external",
+    "title": "Startup news and updates: Daily roundup (August 27, 2026)",
+    "date": "2026-08-27",
+    "year": 2026,
+    "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Thursday, August 27, 2026.",
+    "url": "https://yourstory.com/2026/08/startup-news-and-updates-daily-roundup-august-27-2026",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiiwFBVV95cUxOV3V5aDR0SmtoamEtMFZTaUROYUc0d09NUVlKX1o5dmk3LVNmOS05VTgyNjYtS2ktSF9tVHMtX2wyUUJXMWVZVzIwVHM0UGRrNmhZQjhtT2pwdTByWDdfdDRodWJjZllGT2s3UG12WGtVRkZ5RmR5djVBblRQMGRrNHQwY1JQLVpXMFBv"
   }
 ]
