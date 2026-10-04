@@ -180,21 +180,6 @@
     "gnId": "CBMirwFBVV95cUxPR3pxNHdiWkZUZUMtZGhIQUl5VFA4RFhydHVNTlFnNk5EdzlnZWFTTkNiZ29nc1lUOHRRMUJyTEVDYjgyTTQwSDdzR29pNVY5RjFha01PVDhILUFKeWVLay1OZl9hS2xNblJsdkEwelYwMGZaTlBlYVR0eFZ3TGJJRDJnZHVmckV2U1Q1bjVMdjlTdHlDaWxmcDFWcHVZNVdhYUQ0M0lrXzJxcVdIaFZz"
   },
   {
-    "id": "ext-7cf9945180b6",
-    "type": "external",
-    "title": "Bengaluru tech startups raise $4.4 billion, outpace 5 rival cities combined",
-    "date": "2026-09-25",
-    "year": 2026,
-    "summary": "The city-wise numbers underline how concentrated India",
-    "url": "https://www.moneycontrol.com/city/bengaluru-tech-startups-raise-4-4-billion-outpace-5-rival-cities-combined-article-14038259.html",
-    "source": "Moneycontrol",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMiyAFBVV95cUxPYUdwRWVZeUxkc0tmR3VFZExlMkdzQnpESmhaN2lZMjBjRkxzczlJaG9wMFJWcjdkTzAzXzJoYk14clVyZHhwblc5WTVTR0p3TW1uWUlyR0N4MTE2SHoxSjFtS2ZIR0x3MnhJNEg0M21BdjJzOE80S0FHbldTUTU2dWRqVGtwMjFKYmd3MnlMUy1sbW1SeVFfRzY1TkIxT0p2d2dfX0VUamhSNXAtNmhpWE5qUERHRk1MR0VkaUlWUkppbEo4Sm5VWtIBzgFBVV95cUxNMV9Ubjh6b1VDX3h5cFhuMXlOaTVZX3owMGpCX04yUU9iSVdGWHdOaE90bFpIV0dqcE0zR1RaUjlhSmFFdUthM0xVZTNlNk5DU2V6QVp6aHd5UWJHandxdEF3WDVoMjE3TFI1ZWpkOTZjUmhhenRHVV9ZOVBQMDVOcDNrM0F1ejE2emFkS2pTbk11dTZaaFRxSlVleTVnTVFiWlVCUjZuYkRvMXdYc0VUbHhOQW1wSlYxY3F2amhqaGVRRDAzZU9LeUZFdGIxZw"
-  },
-  {
     "id": "ext-bb90a04d99ca",
     "type": "external",
     "title": "India\u2019s startup cash keeps finding one address, with $4.4 billion going to Bengaluru",
@@ -208,6 +193,21 @@
       "Business"
     ],
     "gnId": "CBMi3wFBVV95cUxQZ2dtMVRnTFBnZEdCUVBSRGhFR3M2a1c0X2hkaWFaTGp3MUtYczVhTDRRRWoxc3RpYld5OXVwREFVbXBIdTB0Ml9valZCV25XM1pJRnBUNlpINXRzRE1UVVVfaE5ZVVRydFdjUFA4dEtsaFpySk0yaEF1VDRqM211eWFuWkwzN0t0T09ZTGdfcmZWX1ZJRUxseUdfYm9vUnpNemdTRUdTX0o3S3VadE1aMXgwTFdZbW1UZk84VDlTYVNCNWRhUkloQ1pjcjFHc0hiWnY0bnp5NkhSS3Fybllv0gHkAUFVX3lxTE8tSndVRk93U0xzSEN0VXU2eW41M1NsMG1PVk4yMzEyYWIzWXVzRzU4Sm9YWUstc0s0cjF6Sk5vcGN5Q2REZ1FBd3lPcVFMX1pKMmZ1WHdVdV83Z1JPN1FxRkp3Rm1oYkZjMXBUWmNTNW5IMHVnZ0k0eWpPMEJNaTBibXB2bW90UXNoOVRTSEliMWhRdUxlVS1nbHozNS1UbUxiNFFYUDVxYzFvZjhoTjhTYWhsajVjUUE4Qjl6cGZxNTJxYWdRYkpWblI4T1dOYzNDSWpsRURaMnlKU0M3NVhOUDNraA"
+  },
+  {
+    "id": "ext-7cf9945180b6",
+    "type": "external",
+    "title": "Bengaluru tech startups raise $4.4 billion, outpace 5 rival cities combined",
+    "date": "2026-09-25",
+    "year": 2026,
+    "summary": "The city-wise numbers underline how concentrated India",
+    "url": "https://www.moneycontrol.com/city/bengaluru-tech-startups-raise-4-4-billion-outpace-5-rival-cities-combined-article-14038259.html",
+    "source": "Moneycontrol",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMiyAFBVV95cUxPYUdwRWVZeUxkc0tmR3VFZExlMkdzQnpESmhaN2lZMjBjRkxzczlJaG9wMFJWcjdkTzAzXzJoYk14clVyZHhwblc5WTVTR0p3TW1uWUlyR0N4MTE2SHoxSjFtS2ZIR0x3MnhJNEg0M21BdjJzOE80S0FHbldTUTU2dWRqVGtwMjFKYmd3MnlMUy1sbW1SeVFfRzY1TkIxT0p2d2dfX0VUamhSNXAtNmhpWE5qUERHRk1MR0VkaUlWUkppbEo4Sm5VWtIBzgFBVV95cUxNMV9Ubjh6b1VDX3h5cFhuMXlOaTVZX3owMGpCX04yUU9iSVdGWHdOaE90bFpIV0dqcE0zR1RaUjlhSmFFdUthM0xVZTNlNk5DU2V6QVp6aHd5UWJHandxdEF3WDVoMjE3TFI1ZWpkOTZjUmhhenRHVV9ZOVBQMDVOcDNrM0F1ejE2emFkS2pTbk11dTZaaFRxSlVleTVnTVFiWlVCUjZuYkRvMXdYc0VUbHhOQW1wSlYxY3F2amhqaGVRRDAzZU9LeUZFdGIxZw"
   },
   {
     "id": "ext-effa6353fbc4",
@@ -283,21 +283,6 @@
       "Business"
     ],
     "gnId": "CBMi0gFBVV95cUxOMm92WHNWN3BSczFoMzFQNzdPV3B3V0hfTzJnc2M2OU5mbnFYeXUwR0ZIYjlxNVFqVlJkVVlXS0trcnlobXdla2tDQ2ZCU3Z3Qy1mVUJwZzBMOG9OaDNjVW9CX0hkelkzdHVnWVNjSUFqZGY0QzJNejNKWkZaRXMtRVFBTlpkZG0wTXhWOTE4SDVPaXJxelV5RHVlNEFXaXBWSS1jTDd5RkVzdEgtWjdDby1fYjUtQ0FlSEg3U1R2MlZ5c2piZGxTQ1M0YmtZeDgtcXfSAdcBQVVfeXFMUE1fQllqOV9HYlpvZ1o5UmZLV2xyX210M1JtVkVwR3NWNTNiZTE3RmgtaU1BZ3dEbmNITHhKVy11Vl81MnNOSTA0T21Sc2tZdWZpZXVCbWpDNF9iZEsxaEtFdXlVUUFwaWM1eDlOcWhVQTlET0E2Qm53Z0dYUlVBQmhaMnNuRGNwOUk5MDk1NXNId0ZlTHh4V0Q3S19GenpOeU11c25mRjhrb0czQl9GQ3BJSU9kMGdFbm5aWWZEMXJ4ZC1wSEEwcF9IVUlHSWxjV093bXREaUU"
-  },
-  {
-    "id": "ext-18baec66e682",
-    "type": "external",
-    "title": "India\u2019s Spacetech Dreams Enter The Commercialisation Phase",
-    "date": "2026-09-20",
-    "year": 2026,
-    "summary": "Rising valuations, limited revenue and a crowded startup landscape are putting greater pressure on startups to prove demand and scalability.",
-    "url": "https://inc42.com/features/indias-spacetech-gold-rush-is-here-but-whats-making-investors-jumpy/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMimwFBVV95cUxOeWMyVkxmRm12RHhELVlHclBoUTFScldrdF9CbnhKV0ctTzdvelM0NFBZbjNzZ08wOFJobWtwYThhaVl5SWxzbW1DUjBRcmRxRzBnV19ZREtEMmphbVFVQVNXZi0tRk8zNUpteHZ5c2t5Y3ZFWmQwekd5ZmdyNEVYdkhWcE9uSGpJYlcybjZKTXYwbkdLdmJubE41WQ"
   },
   {
     "id": "ext-6faf2e04e71f",
@@ -525,21 +510,6 @@
     "gnId": "CBMivwFBVV95cUxOUnUtei1BczhtQ0lEeUxvQ2VlLWZCQUpXOGxkQjU5eFlDbGhhaTdNdnFTTTRjN09QWkh6TThueWpMb0hLMm5Ec2RzSFVYMGhTT21TZVE5X1cxbVdPb3ptTHNFSUpGcE9nbk1aZVFha1hLZTVRYmlGbGNldzIzZXhLTFAxNmwxN3FvRGpSaGFwc19Oenh6MkpHdjZiZ1NMRnRmOEdnc3VjZ1JTczg2Rm5zYmlGdFFqVHZrOGRLTjJDWdIBvwFBVV95cUxOUnUtei1BczhtQ0lEeUxvQ2VlLWZCQUpXOGxkQjU5eFlDbGhhaTdNdnFTTTRjN09QWkh6TThueWpMb0hLMm5Ec2RzSFVYMGhTT21TZVE5X1cxbVdPb3ptTHNFSUpGcE9nbk1aZVFha1hLZTVRYmlGbGNldzIzZXhLTFAxNmwxN3FvRGpSaGFwc19Oenh6MkpHdjZiZ1NMRnRmOEdnc3VjZ1JTczg2Rm5zYmlGdFFqVHZrOGRLTjJDWQ"
   },
   {
-    "id": "ext-723056287c78",
-    "type": "external",
-    "title": "Quick food-delivery startup Swish raises another $24 mn in less than six months",
-    "date": "2026-09-10",
-    "year": 2026,
-    "summary": "Bengaluru-based foodtech startup Swish has secured $24 million (around Rs 229 crore) in fresh capital in a round led by Bertelsmann India Investments...",
-    "url": "https://www.vccircle.com/quickfood-delivery-startup-swish-raises-another-24-mn-in-less-than-six-months-",
-    "source": "VCCircle",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Funding"
-    ],
-    "gnId": "CBMipgFBVV95cUxNU0R0ZHVUSVN4ZEtsTFJCSlpNS0FBQ2tZR0l5aUdIZ0lHeWx2SjBSOVRFS3ZMVlZJQXpRQkh5M0t1MXhkYVljMi01NC1rakFuMVRXNklKVUFVVXpSVkVjRkRCSExSdWN3R2xReERod0tfZGtidVhlNElhcnNkUFNDTE5nMkhBRk9NRjdQazFuQU0xUnp1TU9tNE1VSHJhUXVZTy1WMXhR"
-  },
-  {
     "id": "ext-abc66632d711",
     "type": "external",
     "title": "India Funds Its Startups. Why Won't It Buy From Them?",
@@ -598,5 +568,35 @@
       "Business"
     ],
     "gnId": "CBMizwFBVV95cUxQYlZ2Sll0MkRTbkktSW5PcFBGRzFkQjhhYkZONWhnSFhEd0R1S1J0UU9sMzdGVTM5UElYOWJ4M1FrQnNNbGJxYjdDZVZ6RVpkVGJJS2FRdy1JVDhWTktkTDlhYW4zWHdILURMWThIMm02TkVRVHRITzRzYnYyUkZrZWhKWFk5aTVQQXlrWDJZUzduUHFKa2lYUGFEX0Q4SzZLM0lpUUJNbjVXZ3VrNHFXMlNoSy1FUmp6MlpsZmh1ZngwUkpMVkhrNUtXR1Mzc1nSAdQBQVVfeXFMUF9mendLQkN5X05vSTM0SkdnOG4tTm1yczVMLTZHWFA0ZFJXS2d6WEprdXUwTGtYajRiblBiaGxGZU9jVXAycVBoM19FUHpFQWNId2xIdG9aSUZtdXUxWXNkZHVVRF9TUWR5S3VUOXYyblZaZXBfZGJVZFRweFJoOHBkbndnbFZxdGtHVzdWVmN3U1BndTRTOHJ1Y2w1UU9MZ2loc2w3ZXQwNTJkN2tuamFTQm1TVnh1Tk5acGVDSW9ENVlWX2MtU2FQRFlMVUU2Q05talM"
+  },
+  {
+    "id": "ext-870c84560bde",
+    "type": "external",
+    "title": "Deeptech Startup Jaipur Robotics Raises \u20ac4.3 Mn, Eyes India Expansion",
+    "date": "2026-09-07",
+    "year": 2026,
+    "summary": "Jaipur Robotics plans to use the fresh capital to accelerate product development, expand its international sales presence, and grow its team",
+    "url": "https://inc42.com/buzz/deeptech-startup-jaipur-robotics-raises-e4-3-mn-eyes-india-expansion/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMilwFBVV95cUxPWVlxZ195X1llRGhYeXdJdWJMSUNkdmZUWXhTZGNlYWtHWm5YQk5nZVE0bHJvaEdSV25SQ3R2SU9YVGRvT3ZCUkxYLVhhdVdZdm1fRzNhaWJXLVB4b25uMVFNaW9RaG55SjlaazJIRHJsaFBoM3d2ZFRONmdoSHJqc2ZQRlctbXhQZDVYSXZucDB2WW1EYzh3"
+  },
+  {
+    "id": "ext-f6e55bed2cc2",
+    "type": "external",
+    "title": "Google-backed Indian space startup raises $100 million in latest funding round",
+    "date": "2026-09-06",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.reuters.com/science/google-backed-indian-space-startup-raises-100-million-latest-funding-round-2026-09-07/",
+    "source": "Reuters",
+    "sourceTier": "Wire",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMiugFBVV95cUxPckhZX3NWQWUyYUdvMjlFb25xTFhUN0VmNmIwX0dwd3JhVnU3b01WR3ZpZUhzQ3J3c19mMHFOakVKSnlwMFhkNmF5TlBGYl80WW80ckIyOXRpaFFMUlMtNlMyc3VpQ2psYk1kZGx4Slh0SUdLcHhONEk4Vkd0czMtSUQtckhYM01GNGJicTZxaVVCdGwxLXVLQjdQOE9rd3RMY2FzME5DeWdwWThqM3VVbnZndG1sZThDcHc"
   }
 ]
