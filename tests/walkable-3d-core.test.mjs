@@ -1,26 +1,20 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
-  CAMERA_DISTANCE,
-  CAMERA_PITCH,
   KIND_HEIGHT,
   KIND_ORDER,
   LAND_BASE,
   SEA_FLOOR,
   blurGrid,
   buildHeightField,
-  cameraOffset,
   coastFalloff,
   damp,
   decorArchetype,
-  distanceToPitch,
   fbmNoise2D,
   lerpAngle,
   sampleGrid,
   valueNoise2D,
-  zoomToDistance,
 } from "../site/walkable-3d-core.js";
-import { MAX_ZOOM, MIN_ZOOM } from "../site/walkable-core.js";
 
 test("value noise is deterministic, bounded, and seed-sensitive", () => {
   const first = valueNoise2D("terrain");
@@ -131,33 +125,6 @@ test("sampleGrid interpolates bilinearly and clamps at the edges", () => {
   assert.equal(sampleGrid(grid, width, height, 0.5, 0.5), 2);
   assert.equal(sampleGrid(grid, width, height, -10, -10), 0);
   assert.equal(sampleGrid(grid, width, height, 10, 10), 8);
-});
-
-test("zoom maps monotonically onto camera distance within the rig's range", () => {
-  const zooms = [MIN_ZOOM, 0.65, 1, 1.3, MAX_ZOOM];
-  const distances = zooms.map((zoom) => zoomToDistance(zoom, MIN_ZOOM, MAX_ZOOM));
-  for (let index = 1; index < distances.length; index += 1) {
-    assert.ok(distances[index] < distances[index - 1], "more zoom must mean a closer camera");
-  }
-  assert.equal(distances[0], CAMERA_DISTANCE.far);
-  assert.equal(distances.at(-1), CAMERA_DISTANCE.near);
-  // Out-of-range zooms clamp instead of overshooting the rig.
-  assert.equal(zoomToDistance(99, MIN_ZOOM, MAX_ZOOM), CAMERA_DISTANCE.near);
-  assert.equal(zoomToDistance(0.01, MIN_ZOOM, MAX_ZOOM), CAMERA_DISTANCE.far);
-});
-
-test("camera pitch eases between its bounds as distance changes", () => {
-  assert.equal(distanceToPitch(CAMERA_DISTANCE.near), CAMERA_PITCH.near);
-  assert.equal(distanceToPitch(CAMERA_DISTANCE.far), CAMERA_PITCH.far);
-  const middle = distanceToPitch((CAMERA_DISTANCE.near + CAMERA_DISTANCE.far) / 2);
-  assert.ok(middle > CAMERA_PITCH.near && middle < CAMERA_PITCH.far);
-});
-
-test("cameraOffset puts azimuth zero due south at the requested distance", () => {
-  const offset = cameraOffset(0, Math.PI / 4, 10);
-  assert.ok(Math.abs(offset.x) < 1e-9);
-  assert.ok(offset.y > 0 && offset.z > 0);
-  assert.ok(Math.abs(Math.hypot(offset.x, offset.y, offset.z) - 10) < 1e-6);
 });
 
 test("damp approaches one with time and lerpAngle takes the short way round", () => {

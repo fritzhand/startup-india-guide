@@ -59,7 +59,8 @@ underneath would corrupt that reading.
 
 ## Decor
 
-`placeDecor` in `walkable-core.js` still scatters 760 props with the same
+`placeDecor` in `walkable-core.js` scatters 5,200 props (enough to keep the
+land as full at the network's walker scale) with the same
 deterministic rejection sample — on land, spaced, and clear of everything
 clickable. The eight 2D sprite names now map onto instanced low-poly
 archetypes (`decorArchetype`): round trees, pines (`tree-simple-c`), shrubs
@@ -68,32 +69,52 @@ reads as geography: rock along the Ghats, scrub in the Thar, trees through
 the Gangetic plain and the northeast. Four instanced meshes render all 760
 props in four draw calls.
 
-## Scale, movement, and camera
+## Scale, movement, and camera: the network's
 
-- Map space: `1000 × 1113` world units (1 unit = 1 SVG map unit)
-- Walk speed: `20` units per second — the 2D contract (`WALK_SPEED / WORLD_SCALE`),
-  so `estimateTraverseSeconds` still holds: Jammu and Kashmir–Tamil Nadu is
-  about 45 seconds on foot
-- Spawn: Madhya Pradesh, giving a central starting point
-- Avatar: ~7 units tall, straw hat and all, with a walk cycle and idle breath
+The walk is the Portfolio Map Network's (fritzhand/portfolio-map-3d's walk
+engine, which Embarc Collective's, Ambition Accelerated's and the Florida
+Ecosystem Map's walk worlds run), so a visitor who crosses from one world to
+another finds the same walker, pace and camera. Its values are ported into
+`site/network-walk.js` (pure, tested in `tests/network-walk.test.mjs`) and its
+explorer into `site/network-avatar.js`; change them there, deliberately, and only
+to match the network.
 
-Movement supports arrow keys, WASD, a touch D-pad, and a floating thumbstick:
-touching the canvas spawns the stick under the finger, and its deflection
-(75 px for full throw, length-clamped) walks the avatar at analog speed.
-Stick movement is camera-relative — pushing up walks away from the camera —
-while keys and the D-pad stay compass-locked, so "up walks north" holds for
-discrete controls no matter where the camera points. The avatar is constrained
-to India's state/UT land geometry, with coast-sliding so shorelines don't
-snag. Enter opens the state or union territory under the avatar. The stick is
-decorative feedback only (`aria-hidden`); the D-pad remains the accessible
-touch control.
-
-The zoom control keeps its 2D contract (50%–165%, default 65%) and maps onto
-the follow camera's distance (150 down to 26 units). Pulled out, the camera
-pitches down and reads like a map; zoomed in, it hugs the horizon like a
-third-person game. Dragging the canvas (or Q/E) orbits the camera; pinch and
-wheel zoom; Recenter swings the camera back behind the avatar and resets the
-orbit. The camera never clips into a mountainside.
+- **Scale:** the network's walkable Floridas are drawn at 1.5 network units to
+  the km. India is about three times Florida's length, so it is drawn at
+  `INDIA_UNITS_PER_KM` (0.5), and the walk across it takes about as long as the
+  walk down Florida. The scene stays in map units (3.1 km each); one network
+  unit is `NU` map units. Props, pins and hills were drawn against a 7-unit
+  explorer, so they shrink by `SIZE` and keep their proportions to the walker;
+  pins stand about 1.5 explorers to the head, as the network's do.
+- **Explorer:** the network's, 1.8 network units tall, with a look of the
+  visitor's own (kept in this browser), a walk and run cycle and an idle breath.
+- **Pace:** 9 network units a second walking, 1.9 times that with Shift. Jammu
+  and Kashmir to Tamil Nadu (about 2,600 km of route) is about 2.4 minutes on
+  foot, 75 seconds running.
+- **Controls:** arrow keys, WASD, the D-pad and the floating thumbstick all walk
+  relative to the camera (up walks away from it). Q/E orbit the camera while
+  held, drag looks around, the wheel, pinch and +/− zoom; Recenter swings the
+  camera back behind the walker. Pins are obstacles the walker goes around.
+- **Camera:** the network's follow camera, 8 to 70 network units out (22 to
+  start; the readout calls that 100%), pitched low and close or high and far,
+  aiming a little ahead of the walker when close, with a 50° field of view (wider
+  on a phone held upright) and fog that moves out with it. It never sinks into
+  the ground.
+- **Meeting:** within 4.5 network units of a pin, the HUD offers "Learn about …";
+  pin names show within 16, state landmarks within 340. No label covers the
+  portal from behind.
+- **The portal:** the network's ring of light (`site/network-portal.js`, the same
+  size, colors and rule as in the other maps) stands 15 network units ahead of
+  the arrival in Madhya Pradesh, 28° to the left, its face turned to the spawn.
+  Within 7.5 units the HUD offers "Step through to the Nexus" (a pin in meeting
+  range comes first); Enter or stepping through the ring shows a short card in
+  the network's colors, then opens the Nexus at this map's world. "Stay here",
+  Escape or walking away cancels. Its posts are obstacles and decor keeps clear
+  of it.
+- **From the Nexus:** links from the Nexus land here (the home page forwards
+  `?from=nexus` to `walkable-map.html?from=nexus`); a link to an incubator
+  (`?incubator=<its network id>`) starts the walk in front of its pin. A note at
+  the top of the intro card offers the way back.
 
 ## States, incubators, and wayfinding
 

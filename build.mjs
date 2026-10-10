@@ -13,6 +13,8 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildManifest, incubatorIds } from "./scripts/network-manifest.mjs";
+import { MANIFEST_FILE, NETWORK_NAME, NEXUS_META, nexusHref } from "./scripts/portfolio-map-protocol.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const DATA = join(ROOT, "data");
@@ -29,6 +31,14 @@ const SITE_NAME = CONFIG.siteName || "Startup Schemes Playbook";
 const SITE_BASE = CONFIG.siteBase || "https://fritzhand.github.io/startup-india-guide/"; // sitemap + og
 const PATH_PREFIX = CONFIG.pathPrefix ?? "/startup-india-guide/"; // 404 page absolute links
 const REPO_URL = CONFIG.repo || "https://github.com/fritzhand/startup-india-guide";
+// The Portfolio Map Network (site.config.json "network"): the walkable map is one of the worlds in
+// the Nexus at wearenexus.xyz. Its manifest is /portfolio-map.json (scripts/network-manifest.mjs);
+// every page carries the portfolio-map:nexus meta tag and the footer's link, the About page says
+// so, and the 3D walk's portal leads there.
+const NETWORK = CONFIG.network || null;
+const NEXUS_HREF = NETWORK ? nexusHref(NETWORK.id) : "";
+const PORTAL_HREF = NETWORK ? nexusHref(NETWORK.id, "portal") : "";
+const PKG = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8"));
 
 /* ---------------- utilities ---------------- */
 const readJSON = (f) => JSON.parse(readFileSync(join(DATA, f), "utf8"));
@@ -255,6 +265,44 @@ if (errors.length) {
   process.exit(1);
 }
 
+/* ---------------- the Portfolio Map Network manifest (/portfolio-map.json) ----------------
+   Built from the incubators the 3D map places, checked against the protocol (a manifest that
+   breaks it fails the build). The ring of state colors and the world's accent come from
+   tokens.css. The network id of each incubator is also its ?incubator= link into the walk. */
+const INCUBATOR_IDS = incubatorIds(incubators.incubators);
+let NETWORK_MANIFEST = null;
+if (NETWORK) {
+  const tokens = readFileSync(join(SITE, "tokens.css"), "utf8");
+  const token = (name) => tokens.match(new RegExp(`--${name}:\\s*(#[0-9a-fA-F]{6})`))?.[1];
+  const ring = [...tokens.matchAll(/--network-ring-\d+:\s*(#[0-9a-fA-F]{6})/g)].map((m) => m[1]);
+  const typeLabels = { Academic: "Academic incubator", TBI: "Technology Business Incubator", AIC: "Atal Incubation Centre", Government: "Government incubator", "Sector-specific": "Sector-specific incubator", Private: "Private incubator" };
+  const base = NETWORK.url.replace(/\/+$/, "");
+  const { manifest, left, problems } = buildManifest({
+    network: { ...NETWORK, framework: { name: PKG.name, version: PKG.version } },
+    incubators: incubators.incubators,
+    ids: INCUBATOR_IDS,
+    // Lakshadweep has no outline in the map data; the walk draws its islets at cy 964.4 (site/walkable-3d.js).
+    states: Object.entries(indiaMap.states).map(([name, shape]) => ({ name, cy: shape.d ? shape.cy : name === "Lakshadweep" ? 964.4 : shape.cy })),
+    ring,
+    typeLabels,
+    accent: token("brand-saffron"),
+    logo: `${base}/assets/favicon.svg`,
+    updated: new Date().toISOString().slice(0, 10),
+  });
+  if (!ring.length) problems.push("tokens.css: no --network-ring-* colors");
+  if (problems.length) {
+    console.error(`\n✗ BUILD FAILED — ${MANIFEST_FILE} breaks the Portfolio Map Network protocol:\n  ${problems.join("\n  ")}`);
+    process.exit(1);
+  }
+  for (const name of left) warn(`${MANIFEST_FILE}: "${name}" is left out (its name is longer than the network's 80 characters)`);
+  NETWORK_MANIFEST = manifest;
+}
+/* The Nexus links into this map at <home>?from=nexus, and to an incubator at
+   <home>?from=nexus&company=<its network id>. The home page (the registry's address, where the
+   Nexus reads the manifest and the meta tag) sends both on to the 3D walk: the second stands the
+   visitor in front of that incubator's pin. */
+const nexusRedirect = NETWORK ? `<script>(function(){var q=new URLSearchParams(location.search),c=q.get("company");if(q.get("from")!=="nexus")return;document.documentElement.classList.add("is-redirecting");location.replace("walkable-map.html?from=nexus"+(c&&/^[a-z0-9](?:[a-z0-9]|-(?=[a-z0-9])){1,47}$/.test(c)?"&incubator="+c:""))})();</script>` : "";
+
 /* ---------------- shared shell ---------------- */
 const NAV_PAGES = [
   { group: "Get oriented", items: [
@@ -333,7 +381,7 @@ const brandThin = brandParts.length > 1 ? brandParts[brandParts.length - 1] : ""
 function shell({ root, active, title, description, body, extraHead = "", pageClass = "", toc = "", immersive = false }) {
   const fullTitle = title ? `${title} · ${SITE_NAME}` : `${SITE_NAME} — Government Schemes for Indian Startups`;
   return `<!doctype html>
-<html lang="en" data-root="${root}">
+<html lang="en" data-root="${root}"${NEXUS_HREF ? ` data-nexus-href="${attr(NEXUS_HREF)}"` : ""}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -342,6 +390,7 @@ ${analyticsTag}
 <meta name="description" content="${attr(description)}">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#1f3864">
+${NEXUS_HREF ? `<meta name="${NEXUS_META}" content="${attr(NEXUS_HREF)}">` : ""}
 <meta property="og:title" content="${attr(fullTitle)}">
 <meta property="og:description" content="${attr(description)}">
 <meta property="og:type" content="website">
@@ -403,6 +452,7 @@ ${immersive ? "" : `
     <a href="${root}assets/${PDF_NAME}" download>Source PDF</a>
     <a href="https://www.startupindia.gov.in/" target="_blank" rel="noopener">startupindia.gov.in ↗</a>
     <a href="${attr(REPO_URL)}" target="_blank" rel="noopener">GitHub ↗</a>
+    ${NEXUS_HREF ? `<a href="${attr(NEXUS_HREF)}">${NETWORK_NAME} ↗</a>` : ""}
   </div>
 </div></footer>`}
 <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Search">
@@ -580,7 +630,7 @@ ${tickerHTML}
 </div>`;
 
   write("index.html", shell({
-    root: "", active: "index.html", title: "",
+    root: "", active: "index.html", title: "", extraHead: nexusRedirect,
     description: `${schemes.length} Government of India schemes for startups — grants, equity, loans, incubation and market access — searchable, filterable and explained in plain English.`,
     body,
   }));
@@ -828,6 +878,7 @@ ${sorted.map((st) => st.url ? `
 {
   const leanIncubators = incubators.incubators.map((incubator, index) => ({
     slug: `${slugify(incubator.name)}-${index + 1}`,
+    nid: INCUBATOR_IDS[index],
     name: incubator.name,
     shortName: incubator.name.length > 34 ? incubator.name.split(/\s+/).slice(0, 5).join(" ") : incubator.name,
     host: incubator.host || "",
@@ -839,7 +890,7 @@ ${sorted.map((st) => st.url ? `
   const minimapStates = stateSchemes.states.map((state) =>
     `<button type="button" data-state="${attr(state.state)}" aria-label="Open ${attr(state.state)}"><span class="sr-only">${esc(state.state)}</span></button>`).join("");
   const walkableBody = `
-<div class="walkable-map" id="walkable-map">
+<div class="walkable-map" id="walkable-map"${PORTAL_HREF ? ` data-portal-href="${attr(PORTAL_HREF)}"` : ""}>
   <div class="walkable-viewport" role="application" aria-label="3D walkable map of India's startup incubator ecosystem. Use arrow keys or WASD to walk.">
     <canvas class="walkable-canvas" aria-hidden="true"></canvas>
     <div class="walkable-overlay">
@@ -864,8 +915,8 @@ ${sorted.map((st) => st.url ? `
     <button class="walkable-intro-close" id="walkable-intro-close" type="button" aria-label="Dismiss instructions">${ICONS.close}</button>
     <div class="walkable-kicker">Walk India</div>
     <h1>Explore the incubator ecosystem on foot</h1>
-    <p>Walk India’s real shape in 3D—over the Himalaya, across the Deccan, down to both island chains. Follow state wayfinders and open a state when you arrive. Incubator pins show state membership—not street addresses. If you get lost, choose Recenter to swing the camera back behind you.</p>
-    <div class="walkable-keyhint"><span><kbd>WASD</kbd>, arrows, or touch-drag to walk</span><span><kbd>Enter</kbd> to open your current state</span><span>Mouse-drag, <kbd>Q</kbd>/<kbd>E</kbd> to look · pinch to zoom</span></div>
+    <p>Walk India’s real shape in 3D—over the Himalaya, across the Deccan, down to both island chains. Follow state wayfinders and open a state when you arrive. Incubator pins show state membership—not street addresses. If you get lost, choose Recenter to swing the camera back behind you.${PORTAL_HREF ? ` The ring of light by Madhya Pradesh, where you start, is a portal to the Nexus, the shared world of every map in the ${NETWORK_NAME}.` : ""}</p>
+    <div class="walkable-keyhint"><span><kbd>WASD</kbd>, arrows, or touch-drag to walk · <kbd>Shift</kbd> to run</span><span><kbd>Enter</kbd> to open your current state</span><span>Mouse-drag, <kbd>Q</kbd>/<kbd>E</kbd> to look · <kbd>+</kbd>/<kbd>−</kbd> or pinch to zoom</span></div>
   </section>
 
   <div class="walkable-actions">
@@ -875,6 +926,19 @@ ${sorted.map((st) => st.url ? `
     <button class="walkable-help" id="walkable-help" type="button" aria-label="Show map instructions">?</button>
   </div>
   <button class="walkable-nearby" id="walkable-nearby" type="button" hidden></button>
+${PORTAL_HREF ? `
+  <a class="walkable-nearby walkable-portal-prompt" id="walkable-portal" href="${attr(PORTAL_HREF)}" hidden><i class="walkable-portal-dot" aria-hidden="true"></i>Step through to <strong>the Nexus</strong><span>Enter</span></a>
+  <div class="walkable-portal-departure" id="walkable-portal-departure" role="alertdialog" aria-labelledby="walkable-portal-go" aria-describedby="walkable-portal-what" hidden>
+    <div class="walkable-portal-card">
+      <i class="walkable-portal-dot" aria-hidden="true"></i>
+      <p id="walkable-portal-go"><strong>Through the portal to the Nexus…</strong></p>
+      <p id="walkable-portal-what" class="walkable-portal-what">The shared world of every map in the ${NETWORK_NAME}. You will arrive at this map's world there, with a way back.</p>
+      <div class="walkable-portal-actions">
+        <a class="btn btn-primary" href="${attr(PORTAL_HREF)}">Go now</a>
+        <button type="button" class="btn btn-ghost" id="walkable-portal-stay">Stay here</button>
+      </div>
+    </div>
+  </div>` : ""}
 
   <aside class="walkable-minimap" aria-label="India inset map">
     <div class="walkable-minimap-head"><strong>India</strong><span>You are here</span></div>
@@ -887,16 +951,16 @@ ${sorted.map((st) => st.url ? `
 
   <div class="walkable-zoom" aria-label="Map zoom controls">
     <button id="walkable-zoom-in" type="button" aria-label="Zoom in">+</button>
-    <output id="walkable-zoom-level" aria-live="polite">65%</output>
+    <output id="walkable-zoom-level" aria-live="polite">100%</output>
     <button id="walkable-zoom-out" type="button" aria-label="Zoom out">−</button>
-    <button id="walkable-zoom-reset" type="button" aria-label="Reset zoom to 65 percent">Reset</button>
+    <button id="walkable-zoom-reset" type="button" aria-label="Reset zoom">Reset</button>
   </div>
 
   <div class="walkable-dpad" aria-label="Movement controls">
-    <button type="button" data-direction="up" aria-label="Walk north">↑</button>
-    <button type="button" data-direction="left" aria-label="Walk west">←</button>
-    <button type="button" data-direction="down" aria-label="Walk south">↓</button>
-    <button type="button" data-direction="right" aria-label="Walk east">→</button>
+    <button type="button" data-direction="up" aria-label="Walk forward">↑</button>
+    <button type="button" data-direction="left" aria-label="Walk left">←</button>
+    <button type="button" data-direction="down" aria-label="Walk back">↓</button>
+    <button type="button" data-direction="right" aria-label="Walk right">→</button>
   </div>
 
   <div class="walkable-drawer" id="state-drawer" hidden>
@@ -1184,6 +1248,9 @@ ${(about.supportCategories || []).map((c) => `
 <div class="prose" style="margin-top:36px">
   <h2>About this website</h2>
   <p>This site is an independent, navigable edition of the official playbook PDF. Every scheme page was extracted from the source document and machine-verified against it — amounts, eligibility bullets and links are reproduced as printed, and each page cites the playbook page it came from. The source document is included: <a href="assets/${PDF_NAME}" download>download the PDF</a>.</p>
+  ${NETWORK_MANIFEST ? `<h2>Part of the ${NETWORK_NAME}</h2>
+  <p>The <a href="walkable-map.html">walkable 3D map</a> is one of the worlds in the Nexus, a shared 3D space where maps built with the open source framework <a href="https://github.com/fritzhand/portfolio-map-3d" target="_blank" rel="noopener">portfolio-map-3d</a>, and maps that link to it, stand side by side. Visitors can see them all and travel between them. The Nexus lists the map's ${NETWORK_MANIFEST.counts.companies} incubators by name, state, website and type, from <a href="${MANIFEST_FILE}">${MANIFEST_FILE}</a>; the portal in the 3D map leads there too.</p>
+  <p><a class="btn btn-ghost" href="${attr(NEXUS_HREF)}">Open the Nexus</a></p>` : ""}
   <h2>Disclaimer</h2>
 </div>
 <div class="callout tone-warn"><span class="ic">${ICONS.info}</span><div>${esc(about.disclaimer)}</div></div>`;
@@ -1383,6 +1450,7 @@ cpSync(join(SITE, "site.js"), join(OUT, "assets", "site.js"));
 cpSync(join(SITE, "walkable-core.js"), join(OUT, "assets", "walkable-core.js"));
 cpSync(join(SITE, "walkable-3d-core.js"), join(OUT, "assets", "walkable-3d-core.js"));
 cpSync(join(SITE, "walkable-3d.js"), join(OUT, "assets", "walkable-3d.js"));
+for (const f of ["network-walk.js", "network-avatar.js", "network-portal.js"]) cpSync(join(SITE, f), join(OUT, "assets", f));
 cpSync(join(SITE, "vendor"), join(OUT, "assets", "vendor"), { recursive: true }); // three.js (MIT)
 if (existsSync(join(SITE, "og.png"))) cpSync(join(SITE, "og.png"), join(OUT, "assets", "og.png"));
 if (existsSync(join(SITE, "jeremy.png"))) cpSync(join(SITE, "jeremy.png"), join(OUT, "assets", "jeremy.png"));
@@ -1396,6 +1464,7 @@ writeFileSync(join(OUT, "assets", "favicon.svg"), `<svg xmlns="http://www.w3.org
 <rect x="12" y="40" width="40" height="7" rx="3.5" fill="#359a4c"/>
 </svg>`);
 writeFileSync(join(OUT, ".nojekyll"), "");
+if (NETWORK_MANIFEST) writeFileSync(join(OUT, MANIFEST_FILE), `${JSON.stringify(NETWORK_MANIFEST, null, 2)}\n`);
 writeFileSync(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_BASE}sitemap.xml\n`);
 writeFileSync(join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

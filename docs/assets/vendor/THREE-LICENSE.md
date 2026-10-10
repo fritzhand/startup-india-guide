@@ -1,6 +1,12 @@
+# three.js (vendored)
+
+`three.module.min.js` and `three.core.min.js` are three.js r180 (npm `three@0.180.0`), copied
+unchanged from the package's `build/` folder: the same version the Portfolio Map Network's other walk
+worlds run. The build rewrites the core import with a content hash (build.mjs).
+
 The MIT License
 
-Copyright © 2010-2024 three.js authors
+Copyright © 2010-2025 three.js authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

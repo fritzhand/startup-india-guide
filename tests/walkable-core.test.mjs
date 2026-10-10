@@ -1,16 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
-  DEFAULT_ZOOM,
-  WALK_SPEED,
-  WORLD_SCALE,
-  clampCamera,
-  clampZoom,
-  estimateTraverseSeconds,
-  normalizeMovement,
   placeDecor,
   placeOrganizations,
+  routeLength,
 } from "../site/walkable-core.js";
+import { INDIA_UNITS_PER_KM, networkUnitsPerMapUnit, traverseSeconds } from "../site/network-walk.js";
 
 test("incubator placement is deterministic, contained, and collision-spaced", () => {
   const organizations = Array.from({ length: 20 }, (_, index) => ({
@@ -34,26 +29,6 @@ test("incubator placement is deterministic, contained, and collision-spaced", ()
       assert.ok(Math.hypot(first[index].x - first[other].x, first[index].y - first[other].y) >= 4);
     }
   }
-});
-
-test("diagonal movement is normalized to axial speed", () => {
-  const diagonal = normalizeMovement(1, 1);
-  assert.ok(Math.abs(Math.hypot(diagonal.x, diagonal.y) - 1) < 1e-12);
-  assert.deepEqual(normalizeMovement(0, -1), { x: 0, y: -1 });
-});
-
-test("camera centers and clamps at the world edges", () => {
-  assert.deepEqual(clampCamera({ x: 500, y: 400 }, { width: 200, height: 100 }, { width: 1000, height: 800 }), { x: 400, y: 350 });
-  assert.deepEqual(clampCamera({ x: 10, y: 20 }, { width: 200, height: 100 }, { width: 1000, height: 800 }), { x: 0, y: 0 });
-  assert.deepEqual(clampCamera({ x: 990, y: 790 }, { width: 200, height: 100 }, { width: 1000, height: 800 }), { x: 800, y: 700 });
-});
-
-test("zoom stays inside the supported range", () => {
-  assert.equal(DEFAULT_ZOOM, 0.65);
-  assert.equal(clampZoom(0.2), 0.5);
-  assert.equal(clampZoom(0.5), 0.5);
-  assert.equal(clampZoom(1), 1);
-  assert.equal(clampZoom(2), 1.65);
 });
 
 test("decor is deterministic, on land, spaced, and clear of interactive targets", () => {
@@ -91,7 +66,8 @@ test("decor is deterministic, on land, spaced, and clear of interactive targets"
   assert.notDeepEqual(placeDecor({ ...options, seed: "other" }), first, "the seed actually varies the scatter");
 });
 
-test("a representative north-to-south India route is fast to traverse", () => {
+test("at the network's pace, the walk from Jammu and Kashmir to Tamil Nadu takes about 2.4 minutes", () => {
+  // Jammu and Kashmir, Delhi, Madhya Pradesh, Telangana, Tamil Nadu (state anchors).
   const route = [
     { x: 241.4, y: 134 },
     { x: 311.8, y: 315.3 },
@@ -99,6 +75,11 @@ test("a representative north-to-south India route is fast to traverse", () => {
     { x: 380, y: 702.9 },
     { x: 353.5, y: 951.7 },
   ];
-  const seconds = estimateTraverseSeconds(route, WORLD_SCALE, WALK_SPEED);
-  assert.ok(seconds >= 40 && seconds <= 58, `expected 40–58 seconds, received ${seconds}`);
+  // data/india-map.json's projection: 35.92 map units to the degree, so 3.1 km to the unit,
+  // drawn at INDIA_UNITS_PER_KM (about 2,600 km of route).
+  const length = routeLength(route) * networkUnitsPerMapUnit(35.917286940741604, INDIA_UNITS_PER_KM);
+  const walk = traverseSeconds(length);
+  const run = traverseSeconds(length, true);
+  assert.ok(walk >= 135 && walk <= 155, `expected 135–155 seconds walking, received ${walk}`);
+  assert.ok(run >= 70 && run <= 82, `expected 70–82 seconds running, received ${run}`);
 });

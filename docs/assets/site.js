@@ -811,4 +811,33 @@
     });
     render();
   }
+  /* ---------- arriving from the Nexus ----------
+     The Portfolio Map Network's Nexus links into this map with ?from=nexus. Say where the
+     visitor came from and give the way back, until they close it (once per visit). */
+  {
+    const back = document.documentElement.getAttribute("data-nexus-href");
+    let fromNexus = false;
+    let closed = false;
+    try { fromNexus = new URLSearchParams(location.search).get("from") === "nexus"; } catch {}
+    try { closed = sessionStorage.getItem("nexus-arrival-closed") === "1"; } catch {}
+    if (back && fromNexus && !closed) {
+      const note = document.createElement("div");
+      note.className = "nexus-arrival";
+      note.setAttribute("role", "status");
+      note.innerHTML = `<span class="nexus-arrival-dot" aria-hidden="true"></span><span>You came from the Nexus, the shared world of the Portfolio Map Network. <a href="${esc(back)}">Back to the Nexus</a></span><button type="button" class="nexus-arrival-x" aria-label="Close">×</button>`;
+      note.querySelector("button").addEventListener("click", () => {
+        note.remove();
+        try { sessionStorage.setItem("nexus-arrival-closed", "1"); } catch {}
+      });
+      // In the 3D walk it heads the intro card, clear of the scene and the HUD.
+      const intro = $(".walkable-intro");
+      if (intro) {
+        note.classList.add("is-inline");
+        intro.classList.add("is-open");
+        intro.insertBefore(note, $(".walkable-kicker", intro) || intro.firstChild);
+      } else {
+        document.body.append(note);
+      }
+    }
+  }
 })();

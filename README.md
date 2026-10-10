@@ -72,6 +72,26 @@ docs/  →  GitHub Pages                          85 static pages, ⌘K search, 
 3. **Build** — `build.mjs` turns `data/` + `site/` into `docs/`: directory, wizard, compare, search index, sitemap, per-scheme pages.
 4. **Deploy** — pushing to `main` publishes `docs/` to the `gh-pages` branch via the included workflow.
 
+## The Portfolio Map Network
+
+The walkable 3D map is one of the worlds in the [Nexus](https://wearenexus.xyz), the shared 3D world
+of the Portfolio Map Network ([fritzhand/portfolio-map-3d](https://github.com/fritzhand/portfolio-map-3d)),
+next to Embarc Collective's member map, Ambition Accelerated's community map and the Florida
+Ecosystem Map. It walks the way they do (the network's explorer, pace and follow camera; see
+[WALKABLE_MAP.md](WALKABLE_MAP.md)), and the build writes what the network reads:
+
+- **`/portfolio-map.json`**, the manifest: the map's name and publisher, India's 36 states and union
+  territories as the network's districts (north to south, colored from `--network-ring-*` in
+  `tokens.css`, checked on the Nexus's dark ground), and every incubator the 3D map places, with its
+  name, state, website and keywords from its own fields. No emails, phones or contacts. The build
+  stops if it breaks the protocol (`scripts/portfolio-map-protocol.mjs`, ported from the network).
+- **The backlink:** the `portfolio-map:nexus` meta tag on every page, the footer's link, a section on
+  the About page, and the portal in the 3D map by the Madhya Pradesh arrival.
+- **The way in:** the Nexus links to `/?from=nexus`, which the home page forwards to the 3D map, and
+  to `/?from=nexus&company=<id>`, which stands the visitor in front of that incubator's pin.
+
+The registry entry is `registry/instances/india-ecosystem-map.json` in portfolio-map-3d.
+
 ## Use this as a template
 
 The engine is content-agnostic: it turns any structured reference corpus — a scheme catalogue, a benefits handbook, an internal policy binder — into this site. Click **[Use this template](https://github.com/fritzhand/startup-india-guide/generate)**, then:

@@ -4,6 +4,12 @@
    Afternoon": a small explorer on painterly terrain, with the
    guide's real state geometry, terrain, and all 224 incubators.
 
+   The walk itself is the Portfolio Map Network's: the same
+   explorer, pace, controls and follow camera as every walk world in
+   the network (site/network-walk.js, site/network-avatar.js), with
+   India drawn at INDIA_UNITS_PER_KM, and the network's portal to the
+   Nexus (site/network-portal.js).
+
    Everything interactive stays native DOM projected over the
    canvas — buttons and links keep their accessible names, the
    state drawer is the same one the 2D map used, and every
@@ -11,17 +17,9 @@
    ============================================================ */
 import * as THREE from "./vendor/three.module.min.js";
 import {
-  DEFAULT_ZOOM,
-  MAX_ZOOM,
   MAP_HEIGHT,
   MAP_WIDTH,
-  MIN_ZOOM,
-  WALK_SPEED,
-  WORLD_SCALE,
-  ZOOM_STEP,
-  clampZoom,
   distance,
-  normalizeMovement,
   placeDecor,
   placeOrganizations,
   seededRandom,
@@ -29,29 +27,52 @@ import {
 import {
   KIND_ORDER,
   buildHeightField,
-  cameraOffset,
-  damp,
   decorArchetype,
-  distanceToPitch,
-  lerpAngle,
   sampleGrid,
   valueNoise2D,
-  zoomToDistance,
 } from "./walkable-3d-core.js";
+import {
+  AREA_LABEL_RANGE,
+  AVATAR_HEIGHT,
+  AVATAR_RADIUS,
+  DRAG_PITCH,
+  DRAG_YAW,
+  INDIA_UNITS_PER_KM,
+  LABEL_RANGE,
+  MEET_RANGE,
+  ORBIT_RATE,
+  PITCH_OFFSET,
+  RUN_MULTIPLIER,
+  WALK_SPEED,
+  ZOOM_DEFAULT,
+  ZOOM_MAX,
+  ZOOM_MIN,
+  ZOOM_STEP,
+  cameraPlace,
+  cameraRelative,
+  clamp,
+  damp,
+  fogRange,
+  fovFor,
+  lerpAngle,
+  lookLift,
+  networkUnitsPerMapUnit,
+  pitchFor,
+} from "./network-walk.js";
+import { createAvatarKit, visitorSpec } from "./network-avatar.js";
+import { buildPortal, portalAt, portalFootprint, portalPosts, portalStateAt } from "./network-portal.js";
 
-/** Zoom at or above which terrain names and peak markers appear. */
-const DETAIL_ZOOM = 1;
-/** Decor scatter — same budget and determinism as the 2D map carried. */
-const DECOR_COUNT = 760;
-/** Avatar speed in map units per second (the 2D contract, ÷ world scale). */
-const AVATAR_SPEED = WALK_SPEED / WORLD_SCALE;
-/** Proximity radius for the "Learn about …" prompt, in map units. */
-const NEARBY_RADIUS = 620 / WORLD_SCALE;
+/** Camera distance (network units) at or within which terrain names and peak markers appear. */
+const DETAIL_DISTANCE = 18;
+/** Decor scatter budget — instanced, so this stays cheap to render. */
+const DECOR_COUNT = 5200;
+/** The explorer the props, pins and hills were first drawn against, in map units. */
+const LEGACY_EXPLORER_HEIGHT = 7;
+/** Pins stand taller than props, as the network's pins do: about 1.5 explorers to the head. */
+const PIN_SCALE = 2;
 /** Height-field raster resolution. */
 const GRID_W = 300;
 const GRID_H = Math.round(GRID_W * MAP_HEIGHT / MAP_WIDTH); // 334
-/** Overlay draw distances, in map units. */
-const RANGE = { org: 95, landmark: 340, wayfinder: 300, transfer: 560, label: 380 };
 
 const root = document.querySelector("#walkable-map");
 
@@ -81,6 +102,23 @@ function main(root) {
     };
   }
 
+  /* ---------------- the network's scale ----------------
+     The scene is drawn in map units (3.1 km each: data/india-map.json's
+     projection), and this world at INDIA_UNITS_PER_KM, so one network unit
+     is NU map units. Props, pins and the hills were first drawn against a
+     7-unit explorer; the network's explorer is AVATAR_HEIGHT network units,
+     so they shrink by SIZE and keep their proportions to the walker. */
+  const NU = 1 / networkUnitsPerMapUnit(map?.proj?.s || 35.917286940741604, INDIA_UNITS_PER_KM);
+  const SIZE = (AVATAR_HEIGHT * NU) / LEGACY_EXPLORER_HEIGHT;
+  /** Overlay draw distances, in map units. */
+  const RANGE = {
+    org: LABEL_RANGE * NU,
+    landmark: AREA_LABEL_RANGE * NU,
+    wayfinder: 300 * SIZE,
+    transfer: 560 * SIZE,
+    label: 380 * SIZE,
+  };
+
   /* ---------------- DOM ---------------- */
   const viewport = root.querySelector(".walkable-viewport");
   const canvas = root.querySelector(".walkable-canvas");
@@ -105,6 +143,11 @@ function main(root) {
   const drawerTitle = root.querySelector("#state-drawer-title");
   const drawerClose = root.querySelector("#state-drawer-close");
   const motionOK = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* The Nexus portal (network-portal.js): its prompt, and the card shown on the way through. */
+  const PORTAL_HREF = root.dataset.portalHref || "";
+  const portalPrompt = root.querySelector("#walkable-portal");
+  const portalDeparture = root.querySelector("#walkable-portal-departure");
+  const portalStay = root.querySelector("#walkable-portal-stay");
 
   /* ---------------- renderer, or the graceful exit ---------------- */
   let renderer;
@@ -305,9 +348,9 @@ function main(root) {
   });
   const heightAt = (x, y) => {
     const grid = toGrid({ x, y });
-    return sampleGrid(heightGrid, GRID_W, GRID_H, grid.x, grid.y);
+    return sampleGrid(heightGrid, GRID_W, GRID_H, grid.x, grid.y) * SIZE;
   };
-  const groundAt = (x, y) => Math.max(heightAt(x, y), 0.35);
+  const groundAt = (x, y) => Math.max(heightAt(x, y), 0.35 * SIZE);
 
   /* ---------------- ground texture ---------------- */
   const TEXTURE_W = 2048;
@@ -373,11 +416,11 @@ function main(root) {
 
   /* ---------------- scene ---------------- */
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(52, 1, 0.5, 6000);
+  const camera = new THREE.PerspectiveCamera(50, 1, 0.08, 6000);
   const centerX = MAP_WIDTH / 2;
   const centerZ = MAP_HEIGHT / 2;
 
-  scene.fog = new THREE.Fog(new THREE.Color(palette.fog), 320, 1500);
+  scene.fog = new THREE.Fog(new THREE.Color(palette.fog), fogRange(ZOOM_DEFAULT).near * NU, fogRange(ZOOM_DEFAULT).far * NU);
 
   // Sky dome: a vertical gradient, unaffected by fog.
   const skyUniforms = {
@@ -418,13 +461,16 @@ function main(root) {
   const sun = new THREE.DirectionalLight(new THREE.Color(palette.sun), palette.dark ? 2.6 : 2.3);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
-  sun.shadow.camera.near = 40;
-  sun.shadow.camera.far = 700;
-  sun.shadow.camera.left = -150;
-  sun.shadow.camera.right = 150;
-  sun.shadow.camera.top = 150;
-  sun.shadow.camera.bottom = -150;
-  sun.shadow.bias = -0.0005;
+  /* The shadow box follows the walker, sized to what the follow camera sees. */
+  const SHADOW_HALF = 60 * NU;
+  sun.shadow.camera.near = 1;
+  sun.shadow.camera.far = 400 * NU;
+  sun.shadow.camera.left = -SHADOW_HALF;
+  sun.shadow.camera.right = SHADOW_HALF;
+  sun.shadow.camera.top = SHADOW_HALF;
+  sun.shadow.camera.bottom = -SHADOW_HALF;
+  sun.shadow.bias = -0.0004;
+  sun.shadow.normalBias = 0.02;
   scene.add(sun);
   scene.add(sun.target);
 
@@ -559,8 +605,13 @@ function main(root) {
     { x: 840, y: 950, label: "Return to Tamil Nadu", destination: "Tamil Nadu" },
   ];
 
+  /* The Nexus portal stands ahead of the arrival in Madhya Pradesh (network-portal.js PORTAL_PLACE). */
+  const portal = PORTAL_HREF && portalPrompt && stateAnchors["Madhya Pradesh"] ? portalAt(stateAnchors["Madhya Pradesh"], NU) : null;
+
   const decor = placeDecor({
     count: DECOR_COUNT,
+    spacing: 7 * SIZE * 1.6,
+    clearance: 14 * SIZE,
     contains: containsLand,
     kindAt,
     avoid: [
@@ -568,6 +619,7 @@ function main(root) {
       ...Object.values(stateAnchors),
       ...signs.map(({ x, y }) => ({ x, y })),
       ...transfers.map(({ x, y }) => ({ x, y })),
+      ...(portal ? portalFootprint(portal) : []),
     ],
   });
 
@@ -590,6 +642,9 @@ function main(root) {
       const spin = seededRandom(`decor-spin:${item.x.toFixed(2)}:${item.y.toFixed(2)}`)();
       quaternion.setFromAxisAngle(up, spin * Math.PI * 2);
       const { position, scale } = place(item, ground);
+      // Drawn against the old explorer: shrink to the network's, heights above the ground with them.
+      position.y = ground + (position.y - ground) * SIZE;
+      scale.multiplyScalar(SIZE);
       matrix.compose(position, quaternion, scale);
       mesh.setMatrixAt(index, matrix);
       mesh.setColorAt(index, colorOf(item, index));
@@ -691,9 +746,10 @@ function main(root) {
       pinCones.dispose();
       pinHeads.dispose();
     }
-    const coneGeometry = new THREE.ConeGeometry(1.1, 3.1, 10);
+    const pin = SIZE * PIN_SCALE;
+    const coneGeometry = new THREE.ConeGeometry(1.1 * pin, 3.1 * pin, 10);
     coneGeometry.rotateX(Math.PI); // tip down
-    const headGeometry = new THREE.SphereGeometry(1.15, 12, 10);
+    const headGeometry = new THREE.SphereGeometry(1.15 * pin, 12, 10);
     const material = new THREE.MeshLambertMaterial();
     pinCones = new THREE.InstancedMesh(coneGeometry, material.clone(), placedIncubators.length);
     pinHeads = new THREE.InstancedMesh(headGeometry, material.clone(), placedIncubators.length);
@@ -702,10 +758,10 @@ function main(root) {
     placedIncubators.forEach((incubator, index) => {
       const ground = groundAt(incubator.x, incubator.y);
       const color = new THREE.Color(palette.orgTypes[typeKeys[incubator.type] || "private"]);
-      matrix.makeTranslation(incubator.x, ground + 2, incubator.y);
+      matrix.makeTranslation(incubator.x, ground + 2 * pin, incubator.y);
       pinCones.setMatrixAt(index, matrix);
       pinCones.setColorAt(index, color);
-      matrix.makeTranslation(incubator.x, ground + 4.1, incubator.y);
+      matrix.makeTranslation(incubator.x, ground + 4.1 * pin, incubator.y);
       pinHeads.setMatrixAt(index, matrix);
       pinHeads.setColorAt(index, color);
     });
@@ -714,64 +770,26 @@ function main(root) {
   }
   buildPins();
 
-  /* ---------------- avatar ---------------- */
-  const avatar = new THREE.Group();
-  const avatarParts = {};
-  {
-    const skin = new THREE.MeshLambertMaterial({ color: new THREE.Color("#9a6238") });
-    const shirt = new THREE.MeshLambertMaterial({ color: new THREE.Color("#f3ead2") });
-    const shorts = new THREE.MeshLambertMaterial({ color: new THREE.Color("#7a9c53") });
-    const straw = new THREE.MeshLambertMaterial({ color: new THREE.Color("#e5c268") });
-    const leg = () => {
-      const pivot = new THREE.Group();
-      const limb = new THREE.Mesh(new THREE.CapsuleGeometry(0.34, 1.5, 3, 8), skin);
-      limb.position.y = -1.05;
-      limb.castShadow = true;
-      pivot.add(limb);
-      pivot.position.y = 2.5;
-      return pivot;
-    };
-    const arm = (side) => {
-      const pivot = new THREE.Group();
-      const limb = new THREE.Mesh(new THREE.CapsuleGeometry(0.27, 1.35, 3, 8), skin);
-      limb.position.y = -0.95;
-      limb.castShadow = true;
-      pivot.add(limb);
-      pivot.position.set(1.05 * side, 4.55, 0);
-      pivot.rotation.z = 0.16 * side;
-      return pivot;
-    };
-    avatarParts.leftLeg = leg();
-    avatarParts.leftLeg.position.x = -0.42;
-    avatarParts.rightLeg = leg();
-    avatarParts.rightLeg.position.x = 0.42;
-    avatarParts.leftArm = arm(-1);
-    avatarParts.rightArm = arm(1);
-    const hip = new THREE.Mesh(new THREE.CylinderGeometry(0.78, 0.72, 1.1, 10), shorts);
-    hip.position.y = 2.8;
-    hip.castShadow = true;
-    const torso = new THREE.Mesh(new THREE.CylinderGeometry(0.68, 0.82, 1.75, 10), shirt);
-    torso.position.y = 4.1;
-    torso.castShadow = true;
-    const head = new THREE.Mesh(new THREE.SphereGeometry(0.95, 14, 12), skin);
-    head.position.y = 5.85;
-    head.castShadow = true;
-    const brim = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.6, 0.16, 14), straw);
-    brim.position.y = 6.4;
-    brim.castShadow = true;
-    const crown = new THREE.Mesh(new THREE.CylinderGeometry(0.72, 0.85, 0.65, 12), straw);
-    crown.position.y = 6.75;
-    crown.castShadow = true;
-    avatarParts.body = new THREE.Group();
-    avatarParts.body.add(hip, torso, head, brim, crown, avatarParts.leftArm, avatarParts.rightArm);
-    const blob = new THREE.Mesh(
-      new THREE.CircleGeometry(1.5, 20),
-      new THREE.MeshBasicMaterial({ color: 0x1c2a1a, transparent: true, opacity: 0.16, depthWrite: false }),
-    );
-    blob.rotation.x = -Math.PI / 2;
-    blob.position.y = 0.06;
-    avatar.add(avatarParts.leftLeg, avatarParts.rightLeg, avatarParts.body, blob);
+  /* ---------------- the Nexus portal ---------------- */
+  const portalStone = () => `#${new THREE.Color(cssColor("--nexus-ground", "#0a081e")).lerp(new THREE.Color(palette.rock), 0.25).getHexString()}`;
+  const portalModel = portal ? buildPortal(THREE, portal, {
+    a: cssColor("--nexus-a", "#3ee6ff"),
+    b: cssColor("--nexus-b", "#8b5cf6"),
+    text: cssColor("--nexus-text", "#ffffff"),
+    stone: portalStone(),
+  }, { font: cssColor("--font-body", "system-ui, sans-serif") }) : null;
+  if (portalModel) {
+    portalModel.group.position.set(portal.x, groundAt(portal.x, portal.y), portal.y);
+    scene.add(portalModel.group);
   }
+  /* The posts are obstacles the walker goes around (through the ring, between them). */
+  const portalBlocks = portal ? portalPosts(portal).map((post) => ({ x: post.x, y: post.y, r: post.r + AVATAR_RADIUS * NU })) : [];
+
+  /* ---------------- the explorer (the network's) ---------------- */
+  const { buildAvatar } = createAvatarKit(THREE);
+  const explorer = buildAvatar(visitorSpec());
+  const avatar = explorer.root;
+  avatar.scale.setScalar(NU); // built in network units
   scene.add(avatar);
 
   /* ---------------- overlay elements ---------------- */
@@ -795,7 +813,7 @@ function main(root) {
     button.innerHTML = `${icon(incubator.type)}<span>${escapeHTML(incubator.shortName || incubator.name)}</span>`;
     button.addEventListener("click", () => openState(incubator.region, button, incubator.slug));
     orgLayer.append(button);
-    track(button, incubator.x, incubator.y, { lift: 6, range: RANGE.org });
+    track(button, incubator.x, incubator.y, { lift: 6 * SIZE * PIN_SCALE, range: RANGE.org });
   }
 
   for (const state of stateRecords) {
@@ -809,7 +827,7 @@ function main(root) {
     button.setAttribute("aria-label", `Open ${state.state}`);
     button.addEventListener("click", () => openState(state.state, button));
     landmarkLayer.append(button);
-    track(button, anchor.x, anchor.y, { lift: 8, range: RANGE.landmark, scaleBias: 1.05 });
+    track(button, anchor.x, anchor.y, { lift: 8 * SIZE * PIN_SCALE, range: RANGE.landmark, scaleBias: 1.05 });
   }
 
   for (const sign of signs) {
@@ -823,7 +841,7 @@ function main(root) {
     signpost.querySelectorAll("button").forEach((button) =>
       button.addEventListener("click", () => openState(button.dataset.state, button)));
     wayfinderLayer.append(signpost);
-    track(signpost, sign.x, sign.y, { lift: 5, range: RANGE.wayfinder });
+    track(signpost, sign.x, sign.y, { lift: 5 * SIZE * PIN_SCALE, range: RANGE.wayfinder });
   }
 
   for (const transfer of transfers) {
@@ -834,7 +852,7 @@ function main(root) {
     button.setAttribute("aria-label", `${transfer.label}. Move avatar to ${transfer.destination}.`);
     button.addEventListener("click", () => travelTo(transfer.destination));
     wayfinderLayer.append(button);
-    track(button, transfer.x, transfer.y, { lift: 2.5, range: RANGE.transfer });
+    track(button, transfer.x, transfer.y, { lift: 2.5 * SIZE * PIN_SCALE, range: RANGE.transfer });
   }
 
   const labelledRelief = relief.filter((region) => region.lx && region.name);
@@ -844,14 +862,14 @@ function main(root) {
     label.dataset.kind = region.kind;
     label.textContent = region.name;
     labelLayer.append(label);
-    track(label, region.lx, region.ly, { lift: 12, range: RANGE.label });
+    track(label, region.lx, region.ly, { lift: 12 * SIZE, range: RANGE.label });
   }
   for (const peak of terrain.peaks || []) {
     const label = document.createElement("div");
     label.className = "walkable-peak";
     label.innerHTML = `<span class="walkable-peak-mark" aria-hidden="true"></span><strong>${escapeHTML(peak.name)}</strong><small>${peak.elevation.toLocaleString("en-IN")} m</small>`;
     labelLayer.append(label);
-    track(label, peak.x, peak.y, { lift: 6, range: RANGE.label });
+    track(label, peak.x, peak.y, { lift: 6 * SIZE, range: RANGE.label });
   }
 
   /* ---------------- minimap ---------------- */
@@ -865,29 +883,73 @@ function main(root) {
     button.addEventListener("click", () => openState(button.dataset.state, button));
   });
 
-  /* ---------------- state: position, camera, zoom ---------------- */
+  /* ---------------- state: the walker and the follow camera ----------------
+     As the network's walk engine keeps them: distances in network units,
+     positions in map units. A link from the Nexus to an incubator
+     (?incubator=<its network id>) starts the walk in front of its pin. */
   let position = { ...stateAnchors["Madhya Pradesh"] };
-  let heading = 0; // avatar facing, radians about +y
-  let zoom = DEFAULT_ZOOM;
-  let azimuth = 0; // camera yaw offset — 0 looks north
-  let pitchOffset = 0;
+  let heading = 0; // the walker's facing, radians about +y (0 faces +z, south)
+  let yaw = 0; // camera orbit: 0 puts the camera south of the walker, looking north
+  {
+    const wanted = new URLSearchParams(location.search).get("incubator");
+    const target = wanted && placedIncubators.find((incubator) => incubator.nid === wanted);
+    // Three units from the pin on dry land (south first, so the camera looks north at it), facing it.
+    const spot = target && [[0, 3], [0, -3], [3, 0], [-3, 0]]
+      .map(([dx, dy]) => ({ x: target.x + dx * NU, y: target.y + dy * NU }))
+      .find((point) => containsLand(point));
+    if (spot) {
+      position = spot;
+      heading = Math.atan2(target.x - spot.x, target.y - spot.y);
+      yaw = heading + Math.PI;
+    }
+  }
+  let speed01 = 0; // 0 idle, 1 walking, up to RUN_MULTIPLIER running
+  let running = false;
+  let yawTarget = yaw;
+  let dist = ZOOM_DEFAULT;
+  let distTarget = ZOOM_DEFAULT;
+  let pitchOff = 0;
+  const orbit = { q: false, e: false };
   let nearbyState = "";
   let nearbyIncubator = null;
+  let portalState = "far"; // "far" | "near" | "inside" (network-portal.js portalStateAt)
+  let leaving = false;
+  let leaveTimer = 0;
   let lastTrigger = null;
-  let walkPhase = 0;
   const pressed = new Set();
-  const cameraPosition = new THREE.Vector3();
   const cameraTarget = new THREE.Vector3();
+  /* Pins are obstacles the walker goes around, as in every network walk world. */
+  const pinRadius = (1.15 * SIZE * PIN_SCALE * 0.6) + AVATAR_RADIUS * NU;
+
+  function placeCamera(elapsed, instant) {
+    const ground = groundAt(position.x, position.y);
+    yaw = instant ? yawTarget : lerpAngle(yaw, yawTarget, damp(12, elapsed));
+    dist = instant ? distTarget : dist + (distTarget - dist) * damp(9, elapsed);
+    const pitch = clamp(pitchFor(dist) + pitchOff, 0.1, 1.32);
+    const tx = position.x;
+    const ty = ground + 1.35 * NU;
+    const tz = position.y;
+    if (instant) cameraTarget.set(tx, ty, tz);
+    else {
+      const k = damp(11, elapsed);
+      cameraTarget.x += (tx - cameraTarget.x) * k;
+      cameraTarget.y += (ty - cameraTarget.y) * k;
+      cameraTarget.z += (tz - cameraTarget.z) * k;
+    }
+    const place = cameraPlace(cameraTarget, yaw, pitch, dist * NU);
+    // Never below the ground: check the camera's spot and halfway back to the walker.
+    const floor = Math.max(groundAt(place.x, place.z), groundAt((place.x + tx) / 2, (place.z + tz) / 2)) + 1.1 * NU;
+    camera.position.set(place.x, Math.max(place.y, floor), place.z);
+    camera.lookAt(cameraTarget.x, cameraTarget.y + (0.25 + lookLift(dist)) * NU, cameraTarget.z);
+    const fog = fogRange(dist);
+    scene.fog.near = fog.near * NU;
+    scene.fog.far = fog.far * NU;
+  }
   {
     const startGround = groundAt(position.x, position.y);
     avatar.position.set(position.x, startGround, position.y);
-    const dist = zoomToDistance(zoom, MIN_ZOOM, MAX_ZOOM);
-    const pitch = distanceToPitch(dist);
-    const offset = cameraOffset(azimuth, pitch, dist);
-    cameraTarget.set(position.x, startGround + 5, position.y);
-    cameraPosition.set(position.x + offset.x, startGround + offset.y, position.y + offset.z);
-    camera.position.copy(cameraPosition);
-    camera.lookAt(cameraTarget);
+    avatar.rotation.y = heading;
+    placeCamera(0, true);
   }
 
   function updateNearby() {
@@ -901,7 +963,7 @@ function main(root) {
       const candidate = { incubator, distance: distance(position, incubator) };
       if (!nearestIncubator || candidate.distance < nearestIncubator.distance) nearestIncubator = candidate;
     }
-    const nextIncubator = nearestIncubator && nearestIncubator.distance < NEARBY_RADIUS
+    const nextIncubator = nearestIncubator && nearestIncubator.distance < MEET_RANGE * NU
       ? nearestIncubator.incubator : null;
     if (nextIncubator?.slug !== nearbyIncubator?.slug) {
       nearbyIncubator = nextIncubator;
@@ -909,6 +971,13 @@ function main(root) {
       if (nearbyIncubator) {
         root.querySelector(`.walkable-org[data-slug="${CSS.escape(nearbyIncubator.slug)}"]`)?.classList.add("is-nearby");
       }
+    }
+    // Beside the portal, with no pin in meeting range: the way to the Nexus.
+    const portalShown = portalState !== "far" && !nearbyIncubator && !leaving;
+    if (portalPrompt) portalPrompt.hidden = !portalShown;
+    if (portalShown || leaving) {
+      nearbyButton.hidden = true;
+      return;
     }
     if (nearbyIncubator) {
       nearbyButton.hidden = false;
@@ -933,7 +1002,31 @@ function main(root) {
   const projectVector = new THREE.Vector3();
   let viewWidth = 1;
   let viewHeight = 1;
+  /* Labels never cover the portal from behind (as the network's area labels
+     never cover a landmark): one farther from the camera than the ring whose
+     box would fall on it steps aside while it does. */
+  const portalBox = { on: false, x0: 0, y0: 0, x1: 0, y1: 0, depth: 0 };
+  function measurePortal() {
+    portalBox.on = false;
+    if (!portalModel) return;
+    const ground = groundAt(portal.x, portal.y);
+    const ux = Math.cos(portal.facing);
+    const uz = -Math.sin(portal.facing);
+    const half = portal.r + 0.8 * NU;
+    let x0 = Infinity; let y0 = Infinity; let x1 = -Infinity; let y1 = -Infinity;
+    for (const side of [-1, 1]) {
+      for (const lift of [0, portalModel.top]) {
+        projectVector.set(portal.x + ux * side * half, ground + lift, portal.y + uz * side * half).project(camera);
+        if (projectVector.z >= 1) return;
+        const sx = (projectVector.x * 0.5 + 0.5) * viewWidth;
+        const sy = (-projectVector.y * 0.5 + 0.5) * viewHeight;
+        x0 = Math.min(x0, sx); x1 = Math.max(x1, sx); y0 = Math.min(y0, sy); y1 = Math.max(y1, sy);
+      }
+    }
+    Object.assign(portalBox, { on: true, x0, y0, x1, y1, depth: camera.position.distanceTo(projectVector.set(portal.x, ground, portal.y)) });
+  }
   function projectOverlay() {
+    measurePortal();
     for (const entry of tracked) {
       const range = Math.hypot(entry.x - position.x, entry.z - position.y);
       let show = range <= entry.range;
@@ -952,7 +1045,15 @@ function main(root) {
           sy = (-projectVector.y * 0.5 + 0.5) * viewHeight;
           const cameraDistance = camera.position.distanceTo(
             projectVector.set(entry.x, groundAt(entry.x, entry.z), entry.z));
-          scale = Math.min(1.15, Math.max(0.5, 62 / cameraDistance)) * entry.scaleBias;
+          scale = Math.min(1.15, Math.max(0.5, (ZOOM_DEFAULT * NU * 1.25) / cameraDistance)) * entry.scaleBias;
+          if (portalBox.on && cameraDistance > portalBox.depth && sx > portalBox.x0 - 160 && sx < portalBox.x1 + 160 &&
+              sy > portalBox.y0 && sy < portalBox.y1 + 80) {
+            // Only now read the label's size (kept from when it last showed: a hidden one measures 0).
+            if (entry.el.offsetWidth) { entry.ow = entry.el.offsetWidth; entry.oh = entry.el.offsetHeight; }
+            const w = ((entry.ow || 0) * scale) / 2;
+            const h = (entry.oh || 0) * scale;
+            if (sx + w > portalBox.x0 && sx - w < portalBox.x1 && sy > portalBox.y0 && sy - h < portalBox.y1) show = false;
+          }
         }
       }
       if (show) {
@@ -968,75 +1069,83 @@ function main(root) {
     }
   }
 
-  /* ---------------- frame loop ---------------- */
+  /* ---------------- frame loop ----------------
+     The network's step: every control is camera-relative (forward walks away
+     from the camera), Shift runs, Q / E orbit the camera, a long frame is
+     sub-stepped so the walker cannot tunnel through a pin, and the walker
+     stays on India's land, sliding along the coast. */
   const clock = new THREE.Clock();
+  const tryMove = (from, dx, dy) => {
+    let next = { x: from.x + dx, y: from.y + dy };
+    // Around pins, not through them.
+    for (const pin of placedIncubators) {
+      const ox = next.x - pin.x;
+      const oy = next.y - pin.y;
+      if (Math.abs(ox) > pinRadius || Math.abs(oy) > pinRadius) continue;
+      const d = Math.hypot(ox, oy);
+      if (d >= pinRadius) continue;
+      next = d < 1e-6 ? { x: pin.x + pinRadius, y: pin.y } : { x: pin.x + (ox / d) * pinRadius, y: pin.y + (oy / d) * pinRadius };
+    }
+    for (const post of portalBlocks) {
+      const ox = next.x - post.x;
+      const oy = next.y - post.y;
+      const d = Math.hypot(ox, oy);
+      if (d >= post.r) continue;
+      next = d < 1e-6 ? { x: post.x + post.r, y: post.y } : { x: post.x + (ox / d) * post.r, y: post.y + (oy / d) * post.r };
+    }
+    if (containsLand(next)) return next;
+    if (containsLand({ x: next.x, y: from.y })) return { x: next.x, y: from.y }; // slide along the coast
+    if (containsLand({ x: from.x, y: next.y })) return { x: from.x, y: next.y };
+    return from;
+  };
   function frame() {
     const elapsed = Math.min(0.05, clock.getDelta());
     const time = clock.elapsedTime;
+    const free = drawer.hidden;
 
-    let movement;
-    if (stickDelta.x || stickDelta.y) {
-      /* Thumbstick input is camera-relative — pushing up walks away from the
-         camera, matching what the thumb sees — while keys and the D-pad stay
-         compass-locked. Deflection under full throw walks proportionally
-         slower, which is what makes a stick feel analog. */
-      const forwardX = -Math.sin(azimuth);
-      const forwardZ = -Math.cos(azimuth);
-      movement = normalizeMovement(
-        -forwardZ * stickDelta.x - forwardX * stickDelta.y,
-        forwardX * stickDelta.x - forwardZ * stickDelta.y,
-      );
-    } else {
-      const horizontal = (pressed.has("right") ? 1 : 0) - (pressed.has("left") ? 1 : 0);
-      const vertical = (pressed.has("down") ? 1 : 0) - (pressed.has("up") ? 1 : 0);
-      movement = normalizeMovement(horizontal, vertical);
+    let forward = 0;
+    let right = 0;
+    if (free) {
+      if (pressed.has("up")) forward += 1;
+      if (pressed.has("down")) forward -= 1;
+      if (pressed.has("right")) right += 1;
+      if (pressed.has("left")) right -= 1;
+      forward -= stickDelta.y;
+      right += stickDelta.x;
     }
-    const moving = (movement.x || movement.y) && drawer.hidden;
-    if (moving) {
-      const next = {
-        x: position.x + movement.x * AVATAR_SPEED * elapsed,
-        y: position.y + movement.y * AVATAR_SPEED * elapsed,
-      };
-      if (containsLand(next)) {
-        position = next;
-      } else if (containsLand({ x: next.x, y: position.y })) {
-        position = { ...position, x: next.x }; // slide along the coast
-      } else if (containsLand({ x: position.x, y: next.y })) {
-        position = { ...position, y: next.y };
+    const rot = free ? (orbit.q ? 1 : 0) - (orbit.e ? 1 : 0) : 0;
+    if (rot) {
+      yawTarget += rot * ORBIT_RATE * elapsed;
+      if (!motionOK) yaw = yawTarget;
+    }
+    const magnitude = Math.min(1, Math.hypot(forward, right));
+    if (magnitude < 0.05) {
+      speed01 += (0 - speed01) * damp(14, elapsed);
+      if (speed01 < 0.01) speed01 = 0;
+    } else {
+      const direction = cameraRelative(forward, right, yaw);
+      const speed = WALK_SPEED * NU * (running ? RUN_MULTIPLIER : 1) * magnitude;
+      const travel = speed * elapsed;
+      const steps = Math.max(1, Math.ceil(travel / (0.35 * NU)));
+      const start = position;
+      for (let step = 0; step < steps; step += 1) {
+        position = tryMove(position, (direction.x * travel) / steps, (direction.z * travel) / steps);
       }
-      heading = lerpAngle(heading, Math.atan2(movement.x, movement.y),
-        motionOK ? damp(12, elapsed) : 1);
-      walkPhase += elapsed * 9 * Math.min(1, Math.hypot(movement.x, movement.y) + 0.25);
+      const moved = Math.hypot(position.x - start.x, position.y - start.y);
+      const want = Math.atan2(direction.x, direction.z);
+      heading = motionOK ? lerpAngle(heading, want, damp(14, elapsed)) : want;
+      const actual = elapsed > 0 ? moved / elapsed / (WALK_SPEED * NU) : 0;
+      speed01 += (Math.min(RUN_MULTIPLIER, actual) - speed01) * damp(16, elapsed);
     }
 
     const ground = groundAt(position.x, position.y);
     avatar.position.set(position.x, ground, position.y);
     avatar.rotation.y = heading;
-    if (motionOK) {
-      const swing = moving ? Math.sin(walkPhase) * 0.55 : 0;
-      avatarParts.leftLeg.rotation.x = swing;
-      avatarParts.rightLeg.rotation.x = -swing;
-      avatarParts.leftArm.rotation.x = -swing * 0.8;
-      avatarParts.rightArm.rotation.x = swing * 0.8;
-      avatarParts.body.position.y = moving
-        ? Math.abs(Math.sin(walkPhase)) * 0.18
-        : Math.sin(time * 1.8) * 0.05;
-    }
+    explorer.animate(elapsed, time, speed01, !motionOK);
 
-    const dist = zoomToDistance(zoom, MIN_ZOOM, MAX_ZOOM);
-    const pitch = Math.min(1.25, Math.max(0.16, distanceToPitch(dist) + pitchOffset));
-    const offset = cameraOffset(azimuth, pitch, dist);
-    cameraTarget.set(position.x, ground + 5, position.y);
-    const desired = new THREE.Vector3(
-      position.x + offset.x, ground + offset.y, position.y + offset.z);
-    // Never sink the camera into a mountainside.
-    desired.y = Math.max(desired.y, groundAt(desired.x, desired.z) + 3);
-    const follow = motionOK ? damp(4.5, elapsed) : 1;
-    cameraPosition.lerp(desired, follow);
-    camera.position.copy(cameraPosition);
-    camera.lookAt(cameraTarget);
+    placeCamera(elapsed, !motionOK);
 
-    sun.position.set(position.x - 160, 260, position.y + 120);
+    sun.position.set(position.x - 160 * NU, 260 * NU, position.y + 120 * NU);
     sun.target.position.set(position.x, 0, position.y);
 
     if (motionOK) {
@@ -1045,6 +1154,17 @@ function main(root) {
         cloud.position.x += cloud.userData.speed * elapsed;
         if (cloud.position.x > 1900) cloud.position.x = -750;
       }
+    }
+
+    if (portal) {
+      const state = portalStateAt(portal, position.x, position.y);
+      if (state !== portalState) {
+        portalState = state;
+        // Stepping into the ring starts the way through; walking away from the portal cancels it.
+        if (state === "inside") leaveThroughPortal();
+        else if (state === "far" && leaving) stayHere();
+      }
+      portalModel.update(time, !motionOK);
     }
 
     updateNearby();
@@ -1063,28 +1183,35 @@ function main(root) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(viewWidth, viewHeight);
     camera.aspect = viewWidth / Math.max(1, viewHeight);
+    camera.fov = fovFor(camera.aspect);
     camera.updateProjectionMatrix();
   }
   resize();
   window.addEventListener("resize", resize);
 
-  /* ---------------- zoom & camera controls ---------------- */
-  function setZoom(nextZoom) {
-    zoom = clampZoom(nextZoom);
-    root.dataset.detail = zoom >= DETAIL_ZOOM ? "on" : "off";
-    zoomLevel.value = `${Math.round(zoom * 100)}%`;
+  /* ---------------- zoom & camera controls ----------------
+     The network's follow camera: from ZOOM_MIN to ZOOM_MAX network units out,
+     ZOOM_DEFAULT to start; the readout is relative to that start (100%). */
+  function setDistance(next) {
+    distTarget = clamp(next, ZOOM_MIN, ZOOM_MAX);
+    if (!motionOK) dist = distTarget;
+    root.dataset.detail = distTarget <= DETAIL_DISTANCE ? "on" : "off";
+    zoomLevel.value = `${Math.round((ZOOM_DEFAULT / distTarget) * 100)}%`;
     zoomLevel.textContent = zoomLevel.value;
-    zoomIn.disabled = zoom >= MAX_ZOOM;
-    zoomOut.disabled = zoom <= MIN_ZOOM;
-    zoomReset.disabled = zoom === DEFAULT_ZOOM;
+    zoomIn.disabled = distTarget <= ZOOM_MIN + 1e-6;
+    zoomOut.disabled = distTarget >= ZOOM_MAX - 1e-6;
+    zoomReset.disabled = distTarget === ZOOM_DEFAULT;
   }
-  zoomIn.addEventListener("click", () => setZoom(zoom + ZOOM_STEP));
-  zoomOut.addEventListener("click", () => setZoom(zoom - ZOOM_STEP));
-  zoomReset.addEventListener("click", () => setZoom(DEFAULT_ZOOM));
+  const zoomBy = (factor) => setDistance(distTarget * factor);
+  zoomIn.addEventListener("click", () => zoomBy(ZOOM_STEP));
+  zoomOut.addEventListener("click", () => zoomBy(1 / ZOOM_STEP));
+  zoomReset.addEventListener("click", () => setDistance(ZOOM_DEFAULT));
+  /* Recenter: swing the camera back behind the walker and level the orbit (zoom is kept). */
   recenter.addEventListener("click", () => {
     pressed.clear();
-    azimuth = 0;
-    pitchOffset = 0;
+    yawTarget = heading + Math.PI;
+    pitchOff = 0;
+    if (!motionOK) yaw = yawTarget;
   });
 
   /* Pointer input, by device:
@@ -1150,7 +1277,7 @@ function main(root) {
       if (touchPoints.size === 2) {
         const [first, second] = [...touchPoints.values()];
         pinchDistance = Math.hypot(second.x - first.x, second.y - first.y);
-        pinchZoom = zoom;
+        pinchZoom = distTarget;
         endStick();
         return;
       }
@@ -1172,7 +1299,8 @@ function main(root) {
       if (touchPoints.size === 2 && pinchDistance) {
         event.preventDefault();
         const [first, second] = [...touchPoints.values()];
-        setZoom(pinchZoom * Math.hypot(second.x - first.x, second.y - first.y) / pinchDistance);
+        const now = Math.hypot(second.x - first.x, second.y - first.y);
+        if (now > 0) setDistance(pinchZoom * (pinchDistance / now));
         return;
       }
       if (event.pointerId === stickPointer) {
@@ -1186,8 +1314,9 @@ function main(root) {
     const dy = event.clientY - dragLast.y;
     if (dragMoved || Math.hypot(dx, dy) > 4) {
       dragMoved = true;
-      azimuth -= dx * 0.0055;
-      pitchOffset = Math.min(0.5, Math.max(-0.45, pitchOffset + dy * 0.0035));
+      yawTarget -= dx * DRAG_YAW;
+      if (!motionOK) yaw = yawTarget;
+      pitchOff = clamp(pitchOff + dy * DRAG_PITCH, PITCH_OFFSET.min, PITCH_OFFSET.max);
       dragLast = { x: event.clientX, y: event.clientY };
     }
   });
@@ -1233,7 +1362,8 @@ function main(root) {
   }
   viewport.addEventListener("wheel", (event) => {
     event.preventDefault();
-    setZoom(zoom - event.deltaY * (event.ctrlKey ? 0.004 : 0.0016));
+    const delta = event.deltaMode === 1 ? event.deltaY * 16 : event.deltaY;
+    zoomBy(Math.exp(clamp(delta, -200, 200) * (event.ctrlKey ? 0.004 : 0.0012)));
   }, { passive: false });
 
   /* ---------------- keyboard & D-pad ---------------- */
@@ -1245,35 +1375,51 @@ function main(root) {
     if (!destination) return;
     pressed.clear();
     position = { ...destination };
-    cameraPosition.set(0, 0, 0); // forces the lerp to snap next frame
-    const ground = groundAt(position.x, position.y);
-    const dist = zoomToDistance(zoom, MIN_ZOOM, MAX_ZOOM);
-    const offset = cameraOffset(azimuth, distanceToPitch(dist), dist);
-    cameraPosition.set(position.x + offset.x, ground + offset.y, position.y + offset.z);
+    placeCamera(0, true);
   }
   const keyDirection = {
     ArrowUp: "up", w: "up", W: "up", ArrowDown: "down", s: "down", S: "down",
     ArrowLeft: "left", a: "left", A: "left", ArrowRight: "right", d: "right", D: "right",
   };
   window.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && portal && portalState !== "far" && !nearbyIncubator && !leaving && drawer.hidden &&
+        !/^(INPUT|SELECT|TEXTAREA|BUTTON|A)$/.test(document.activeElement?.tagName || "")) {
+      event.preventDefault();
+      leaveThroughPortal();
+      return;
+    }
     if (event.key === "Enter" && nearbyState && drawer.hidden && !/^(INPUT|SELECT|TEXTAREA|BUTTON|A)$/.test(document.activeElement?.tagName || "")) {
       event.preventDefault();
       openState(nearbyState, nearbyButton, nearbyIncubator?.region === nearbyState ? nearbyIncubator.slug : "");
       return;
     }
-    if ((event.key === "q" || event.key === "Q") && drawer.hidden) { azimuth += 0.14; return; }
-    if ((event.key === "e" || event.key === "E") && drawer.hidden) { azimuth -= 0.14; return; }
+    if (event.key === "Shift") running = true;
+    const typing = /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement?.tagName || "");
+    if (!typing && drawer.hidden) {
+      if (event.code === "KeyQ") { orbit.q = true; return; }
+      if (event.code === "KeyE") { orbit.e = true; return; }
+      if (event.key === "+" || event.key === "=") { zoomBy(ZOOM_STEP); return; }
+      if (event.key === "-" || event.key === "_") { zoomBy(1 / ZOOM_STEP); return; }
+    }
     const direction = keyDirection[event.key];
-    if (!direction || !drawer.hidden || /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement?.tagName || "")) return;
+    if (!direction || !drawer.hidden || typing) return;
     event.preventDefault();
     setDirection(direction, true);
   });
   window.addEventListener("keyup", (event) => {
     const direction = keyDirection[event.key];
     if (direction) setDirection(direction, false);
+    if (event.key === "Shift") running = false;
+    if (event.code === "KeyQ") orbit.q = false;
+    if (event.code === "KeyE") orbit.e = false;
   });
-  window.addEventListener("blur", () => pressed.clear());
-  document.addEventListener("visibilitychange", () => { if (document.hidden) pressed.clear(); });
+  const releaseAll = () => {
+    pressed.clear();
+    running = false;
+    orbit.q = orbit.e = false;
+  };
+  window.addEventListener("blur", releaseAll);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) releaseAll(); });
   root.querySelectorAll(".walkable-dpad button").forEach((button) => {
     const release = () => setDirection(button.dataset.direction, false);
     button.addEventListener("pointerdown", (event) => {
@@ -1383,6 +1529,40 @@ function main(root) {
   help.addEventListener("click", () => root.querySelector(".walkable-intro").classList.toggle("is-open"));
   root.querySelector("#walkable-intro-close").addEventListener("click", () => root.querySelector(".walkable-intro").classList.remove("is-open"));
 
+  /* ---------------- through the portal ----------------
+     A short card in the network's colors says where the visitor is going,
+     then the Nexus opens. "Stay here" (or Escape) cancels; so does walking
+     away from the portal. */
+  const PORTAL_DELAY_MS = 1600;
+  function leaveThroughPortal() {
+    if (!portal || leaving || !portalDeparture) return;
+    leaving = true;
+    portalDeparture.hidden = false;
+    portalDeparture.classList.toggle("is-still", !motionOK);
+    portalStay?.focus({ preventScroll: true });
+    leaveTimer = window.setTimeout(() => window.location.assign(PORTAL_HREF), motionOK ? PORTAL_DELAY_MS : PORTAL_DELAY_MS + 600);
+  }
+  function stayHere() {
+    if (!leaving) return;
+    leaving = false;
+    window.clearTimeout(leaveTimer);
+    portalDeparture.hidden = true;
+    viewport.focus({ preventScroll: true });
+  }
+  portalStay?.addEventListener("click", stayHere);
+  window.addEventListener("keydown", (event) => {
+    if (leaving && event.key === "Escape") {
+      event.preventDefault();
+      stayHere();
+    }
+  });
+  portalPrompt?.addEventListener("click", (event) => {
+    event.preventDefault();
+    leaveThroughPortal();
+  });
+  // Coming back with the browser's Back button restores this page from the cache, mid-departure.
+  window.addEventListener("pageshow", (event) => { if (event.persisted) stayHere(); });
+
   /* ---------------- theme switching ---------------- */
   function applyPalette() {
     palette = readPalette();
@@ -1401,6 +1581,7 @@ function main(root) {
     for (const cloud of clouds) cloud.material.color.set(palette.cloud);
     buildDecor();
     buildPins();
+    portalModel?.restyle(portalStone());
   }
   const themeObserver = new MutationObserver((mutations) => {
     if (mutations.some((mutation) => mutation.attributeName === "data-theme")) applyPalette();
@@ -1409,6 +1590,6 @@ function main(root) {
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", applyPalette);
 
   /* ---------------- go ---------------- */
-  setZoom(DEFAULT_ZOOM);
+  setDistance(ZOOM_DEFAULT);
   updateNearby();
 }

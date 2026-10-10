@@ -1806,3 +1806,71 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
   border-bottom: 1px solid var(--border);
 }
 .ss-pick:hover { background: var(--surface-alt); color: var(--link); }
+
+/* ---------- the Portfolio Map Network ----------
+   The note a visitor from the Nexus sees, in the network's colors (the same in
+   every map of the network and in both themes), and the blank moment while the
+   home page sends a Nexus link (?company=) on to the record's own page. */
+.is-redirecting body { visibility: hidden; }
+.nexus-arrival {
+  position: fixed; z-index: 66; top: 68px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 10px;
+  width: max-content; max-width: calc(100vw - 24px);
+  padding: 7px 6px 7px 14px; border-radius: var(--radius-pill);
+  background: var(--nexus-ground); color: var(--nexus-text);
+  border: 1px solid color-mix(in srgb, var(--nexus-a) 50%, transparent);
+  box-shadow: var(--shadow-3); font-size: 0.84rem; line-height: 1.35;
+}
+.nexus-arrival a { color: var(--nexus-a); font-weight: 600; white-space: nowrap; }
+.nexus-arrival-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex: none;
+  background: linear-gradient(135deg, var(--nexus-a), var(--nexus-b));
+}
+.nexus-arrival-x {
+  flex: none; width: 30px; height: 30px; border-radius: 50%;
+  color: var(--nexus-muted); font-size: 1.15rem; line-height: 1;
+}
+.nexus-arrival-x:hover { background: color-mix(in srgb, var(--nexus-text) 12%, transparent); color: var(--nexus-text); }
+@media (max-width: 560px) {
+  .nexus-arrival { border-radius: var(--radius-lg); top: 64px; }
+}
+
+/* The walk's portal to the Nexus: its prompt and the card on the way through,
+   in the network's colors as in every map of the network. */
+.walkable-portal-prompt {
+  text-decoration: none;
+  color: var(--nexus-text);
+  background: var(--nexus-ground);
+  border: 1px solid color-mix(in srgb, var(--nexus-a) 55%, transparent);
+}
+.walkable-portal-prompt:hover { text-decoration: none; color: var(--nexus-text); }
+.walkable-portal-prompt span { color: var(--nexus-ground); background: var(--nexus-text); }
+.walkable-portal-dot {
+  display: inline-block; width: 12px; height: 12px; border-radius: 50%; flex: none;
+  background: conic-gradient(var(--nexus-a), var(--nexus-b), var(--nexus-a));
+}
+.walkable-portal-departure {
+  position: absolute; inset: 0; z-index: 40; display: grid; place-items: center; padding: 16px;
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--nexus-a) 55%, transparent), color-mix(in srgb, var(--nexus-b) 60%, transparent) 45%, color-mix(in srgb, var(--nexus-ground) 92%, transparent) 80%);
+  animation: walkable-portal-in 700ms var(--ease) both;
+}
+.walkable-portal-departure[hidden] { display: none; }
+.walkable-portal-departure.is-still { animation: none; }
+@keyframes walkable-portal-in { from { opacity: 0; transform: scale(1.08); } }
+.walkable-portal-card {
+  max-width: 420px; padding: 22px 22px 18px; border-radius: var(--radius-lg); text-align: center;
+  background: color-mix(in srgb, var(--nexus-ground) 82%, transparent); color: var(--nexus-text);
+  border: 1px solid color-mix(in srgb, var(--nexus-a) 50%, transparent); box-shadow: var(--shadow-3);
+}
+.walkable-portal-card > .walkable-portal-dot { width: 26px; height: 26px; }
+.walkable-portal-card p { margin: 8px 0 0; }
+.walkable-portal-what { color: var(--nexus-muted); font-size: 0.9rem; }
+.walkable-portal-actions { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+.walkable-portal-actions .btn { text-decoration: none; min-height: 44px; }
+.walkable-portal-actions .btn-primary { background: var(--nexus-text); color: var(--nexus-ground); border-color: var(--nexus-text); }
+.walkable-portal-actions .btn-ghost { color: var(--nexus-text); border: 1px solid color-mix(in srgb, var(--nexus-text) 40%, transparent); background: transparent; }
+@media (prefers-reduced-motion: reduce) { .walkable-portal-departure { animation: none; } }
+.nexus-arrival.is-inline {
+  position: static; transform: none; width: auto; max-width: none;
+  margin: 0 0 12px; border-radius: var(--radius-sm); box-shadow: none; font-size: 0.8rem;
+}

@@ -3,5 +3,15 @@
   "siteBase": "https://fritzhand.github.io/startup-india-guide/",
   "pathPrefix": "/startup-india-guide/",
   "repo": "https://github.com/fritzhand/startup-india-guide",
-  "analyticsId": "G-4993PH3ZP5"
+  "analyticsId": "G-4993PH3ZP5",
+  "network": {
+    "id": "india-ecosystem-map",
+    "name": "India Ecosystem Map",
+    "url": "https://fritzhand.github.io/startup-india-guide",
+    "tagline": "India's startup incubators by state on a walkable 3D map, from the Startup Schemes Playbook, a guide to central and state startup schemes.",
+    "publisher": {
+      "name": "Jeremy Fritzhand",
+      "website": "https://fritzhand.github.io"
+    }
+  }
 }

@@ -1,11 +1,8 @@
+/* Deterministic layout for the walkable map, in map units (data/india-map.json).
+   How the explorer walks and how the camera follows is the Portfolio Map
+   Network's (network-walk.js). */
 export const MAP_WIDTH = 1000;
 export const MAP_HEIGHT = 1113;
-export const WORLD_SCALE = 18;
-export const WALK_SPEED = 360;
-export const DEFAULT_ZOOM = 0.65;
-export const MIN_ZOOM = 0.5;
-export const MAX_ZOOM = 1.65;
-export const ZOOM_STEP = 0.2;
 
 export function hashString(value) {
   let hash = 2166136261;
@@ -27,34 +24,17 @@ export function seededRandom(seed) {
   };
 }
 
-export function normalizeMovement(x, y) {
-  const length = Math.hypot(x, y);
-  return length > 1 ? { x: x / length, y: y / length } : { x, y };
-}
-
-export function clampZoom(value, minimum = MIN_ZOOM, maximum = MAX_ZOOM) {
-  return Math.max(minimum, Math.min(maximum, value));
-}
-
-export function clampCamera(position, viewport, world) {
-  const maxX = Math.max(0, world.width - viewport.width);
-  const maxY = Math.max(0, world.height - viewport.height);
-  return {
-    x: Math.max(0, Math.min(maxX, position.x - viewport.width / 2)),
-    y: Math.max(0, Math.min(maxY, position.y - viewport.height / 2)),
-  };
-}
-
 export function distance(a, b) {
   return Math.hypot(a.x - b.x, a.y - b.y);
 }
 
-export function estimateTraverseSeconds(points, scale = WORLD_SCALE, speed = WALK_SPEED) {
+/** The length of a route through points, in map units. */
+export function routeLength(points) {
   let length = 0;
   for (let index = 1; index < points.length; index += 1) {
     length += distance(points[index - 1], points[index]);
   }
-  return length * scale / speed;
+  return length;
 }
 
 /* Which watercolour sprites belong on which terrain. Ranges get rock, the
@@ -97,6 +77,32 @@ export function placeDecor({
   // Bounded work: rejection sampling over a mostly-water box can never be
   // allowed to spin, so the attempt budget is fixed rather than a while-true.
   const attempts = count * 40;
+  // Spatial hashes, so the spacing and clearance checks look only at nearby
+  // points; the land test (the expensive one) runs last. A candidate must pass
+  // all three, so the order does not change which ones survive.
+  const cell = Math.max(spacing, clearance, 1);
+  const cellKey = (cx, cy) => cx * 65536 + cy;
+  const addTo = (grid, point) => {
+    const key = cellKey(Math.floor(point.x / cell), Math.floor(point.y / cell));
+    const list = grid.get(key);
+    if (list) list.push(point);
+    else grid.set(key, [point]);
+  };
+  const anyWithin = (grid, point, radius) => {
+    const cx = Math.floor(point.x / cell);
+    const cy = Math.floor(point.y / cell);
+    const span = Math.ceil(radius / cell);
+    for (let i = -span; i <= span; i += 1) {
+      for (let j = -span; j <= span; j += 1) {
+        const list = grid.get(cellKey(cx + i, cy + j));
+        if (list && list.some((other) => distance(point, other) < radius)) return true;
+      }
+    }
+    return false;
+  };
+  const avoidGrid = new Map();
+  for (const target of avoid) addTo(avoidGrid, target);
+  const placedGrid = new Map();
 
   for (let attempt = 0; attempt < attempts && placed.length < count; attempt += 1) {
     const point = { x: random() * width, y: random() * height };
@@ -104,11 +110,13 @@ export function placeDecor({
     // the sequence for the ones that follow — that is what keeps this stable.
     const roll = random();
     const scale = 0.78 + random() * 0.5;
+    if (anyWithin(avoidGrid, point, clearance)) continue;
+    if (anyWithin(placedGrid, point, spacing)) continue;
     if (!contains(point)) continue;
-    if (avoid.some((other) => distance(point, other) < clearance)) continue;
-    if (placed.some((other) => distance(point, other) < spacing)) continue;
     const kit = kits[kindAt(point)] || kits.other;
-    placed.push({ ...point, sprite: kit[Math.floor(roll * kit.length)], scale });
+    const prop = { ...point, sprite: kit[Math.floor(roll * kit.length)], scale };
+    placed.push(prop);
+    addTo(placedGrid, prop);
   }
 
   return placed.sort((a, b) => a.y - b.y);

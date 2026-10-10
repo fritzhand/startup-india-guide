@@ -174,39 +174,6 @@ export function sampleGrid(grid, width, height, x, y) {
   return top * (1 - ty) + bottom * ty;
 }
 
-/* The zoom control keeps its 2D contract — 50% to 165%, default 65% — and
-   maps onto the follow camera's distance from the avatar. More zoom, closer
-   camera. The pitch eases from a low, horizon-hugging angle up close to a
-   steeper, map-reading angle when pulled out. */
-export const CAMERA_DISTANCE = { near: 26, far: 150 };
-export const CAMERA_PITCH = { near: 0.34, far: 0.98 };
-
-export function zoomToDistance(zoom, minZoom, maxZoom, range = CAMERA_DISTANCE) {
-  const clamped = Math.min(maxZoom, Math.max(minZoom, zoom));
-  const t = (1 / clamped - 1 / maxZoom) / (1 / minZoom - 1 / maxZoom);
-  return range.near + (range.far - range.near) * t;
-}
-
-export function distanceToPitch(distanceValue, range = CAMERA_DISTANCE, pitch = CAMERA_PITCH) {
-  const t = Math.min(1, Math.max(0,
-    (distanceValue - range.near) / (range.far - range.near)));
-  return pitch.near + (pitch.far - pitch.near) * t;
-}
-
-/**
- * Positions the follow camera on a spherical offset behind the avatar.
- * Azimuth 0 puts the camera due south of the avatar looking north, so the
- * compass D-pad matches the screen by default.
- */
-export function cameraOffset(azimuth, pitchValue, distanceValue) {
-  const horizontal = Math.cos(pitchValue) * distanceValue;
-  return {
-    x: Math.sin(azimuth) * horizontal,
-    y: Math.sin(pitchValue) * distanceValue,
-    z: Math.cos(azimuth) * horizontal,
-  };
-}
-
 /** Frame-rate-independent exponential smoothing factor. */
 export function damp(lambda, elapsed) {
   return 1 - Math.exp(-lambda * elapsed);

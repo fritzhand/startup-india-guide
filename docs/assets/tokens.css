@@ -33,6 +33,36 @@
   /* ---- motion ---- */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --speed: 180ms;
+
+  /* ---- the Portfolio Map Network ----
+     The Nexus's colors, for the walk's portal and the network's notes: the
+     same in every map of the network, in both themes. */
+  --nexus-a: #3ee6ff;
+  --nexus-b: #8b5cf6;
+  --nexus-ground: #0a081e;
+  --nexus-text: #ffffff;
+  --nexus-muted: #d7d3ff;
+  /* This map's world in the Nexus: its accent is --brand-saffron, and its
+     states take these colors in turn, north to south (the manifest's
+     districts; the site itself does not color-code states). Checked as a
+     ring, in this order with the first repeated at the end, on the Nexus's
+     dark ground (#0a081e) with the dataviz skill's validate_palette.js
+     --mode dark: all in the lightness band, chroma >= 0.10, worst adjacent
+     CVD dE 9.4, worst normal-vision dE 19.3, all >= 3:1. build.mjs reads
+     them into /portfolio-map.json. */
+  --network-ring-1: #3987e5;
+  --network-ring-2: #a0782e;
+  --network-ring-3: #c45bd1;
+  --network-ring-4: #6f9a1a;
+  --network-ring-5: #5f7fd0;
+  --network-ring-6: #e66767;
+  --network-ring-7: #2aa5c0;
+  --network-ring-8: #008300;
+  --network-ring-9: #d55181;
+  --network-ring-10: #c98500;
+  --network-ring-11: #9085e9;
+  --network-ring-12: #199e70;
+  --network-ring-13: #d95926;
 }
 
 /* ============ LIGHT (default) ============ */
