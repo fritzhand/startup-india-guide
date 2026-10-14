@@ -1,8 +1,53 @@
 [
   {
+    "id": "ext-96593f5f94e3",
+    "type": "external",
+    "title": "IBM and MeitY Startup Hub sign MoU to help deep-tech startups turn innovations into commercial solutions",
+    "date": "2026-10-14",
+    "year": 2026,
+    "summary": "IBM has signed an MoU with MeitY Startup Hub to transform India",
+    "url": "https://cfo.economictimes.indiatimes.com/amp/news/strategy-operations/ibm-and-meity-startup-hub-sign-mou-to-help-deep-tech-startups-turn-innovations-into-commercial-solutions/134930789",
+    "source": "The Economic Times",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMikgJBVV95cUxOd256ZHhtUDZ3TzRnRzV2WXF6d2dFa2dkMmJPN1NyN3EzVW1XYmlueG1RQmhCd2tJaW5jbng1aU44NUZVQ3VrcUlaZElWaThCZzdJcDl5cFRqWnU0UEV1MlNHem1EZnNPWV9UTFZsREZyc1JGc0N0dHM0UmswSFBndTZ4bDY2SjRjZUZMYm91cUVmaUJHcFVTak9mb19kVklNb1BJNEpNSjZsaGFueGEzVzNWVUsxam4yTGxMUXJlUV9XTHFaYWNpa2pEcGtqMFpmNUVITjVqbmk4REtsYXVNT1ZYMFN3UjdweU1TR2RFRHRBLTNka2EzRFR4SlRnSjloaEdxVnRqLWxPM2NLOFUyWXNR0gGSAkFVX3lxTE53bnpkeG1QNndPNGdHNXZZcXp3Z0VrZ2QyYk83U3I3cTNVbVdiaW54bVFCaEJ3a0lpbmNueDVpTjg1RlVDdWtxSVpkSVZpOEJnN0lwOXlwVGpadTRQRXUyU0d6bURmc09ZX1RMVmxERnJzUkZzQ3R0czRSazBIUGd1NnhsNjZKNGNlRkxib3VxRWZpQkdwVVNqT2ZvX2RWSU1vUEk0Sk1KNmxoYW54YTNXM1ZVSzFqbjJMbExRcmVRX1dMcVphY2lrakRwa2owWmY1RUhONWpuaThES2xhdU1PVlgwU3dSN3B5TVNHZEVEdEEtM2RrYTNEVHhKVGdKOWhoR3FWdGotbE8zY0s4VTJZc1E"
+  },
+  {
+    "id": "ext-a4a8b5d4c5fd",
+    "type": "external",
+    "title": "IBM and MeitY Startup Hub sign MoU to accelerate deep-tech ecosystem from Tier 2&3 cities",
+    "date": "2026-10-13",
+    "year": 2026,
+    "summary": "IBM and MeitY Startup Hub sign MoU to accelerate India's deep-tech startups from Tier 2-3 cities with access to IBM technologies and mentorship.",
+    "url": "https://www.thehindubusinessline.com/companies/ibm-and-meity-startup-hub-sign-mou-to-accelerate-deep-tech-ecosystem-from-tier-23-cities/article71580016.ece",
+    "source": "BusinessLine",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi6wFBVV95cUxQYm9zUEhYcmxQWXJyN21zVUVqVThLZlZFWnh4Qmo0czB3NjhTallvQTktYWtWNThTUEFrRk1LT0tWUUxUWnlFcU9MNWJ0Y2tsY01JTXd3Qk5ka0RldU11NGNBMVNoLVFIcHEwUTZ0MUNkbVdPbmVWa1p1V3duS1R1LVJkdjltYUNDU09ZVW5zdW1fQW9oaEl2VThNNC1pT2Q4YnZkTHJnM3dLRWJFMElPRllCQXFfYmxoMlc0UHJfRWJCXzRTLXRhYXYxTHlZQlVxclB4NGdyZkF1NEdLZkUxLXdVUzBJU2xVQjFz0gHyAUFVX3lxTE5oOWtBSVhLODVpcTdfemNYQ05TTHpmNVIwVzBZZ0VKX1JTOVI5OWs0bU1DanNIdFE1RG85d29yVl83V0Y5dDVxUGVBX0FIZkRMdlVFRHQ4TWNCYXVFaXlvZlF2NkF5MmpOZnE3bk9DNXpMZXN6VjhaaklOM1VyS0RWaFdrdzZlckZwR0VLNjJBY01XTmpNZDRPSXYteUNBU0lWdElxRXRIXzFZWURsR1ByekJQQnFVWXpUbURjZjBJLVhtYndsUjNpWUdCM0R0QTFxVnMtRXQzRjI3WVVtalRqVEVWMVJOUjF0R2lzUmwxOHJR"
+  },
+  {
+    "id": "ext-1d888ed61649",
+    "type": "external",
+    "title": "Tech30 2026: Meet the 30 startups building India\u2019s next generation of technology",
+    "date": "2026-10-13",
+    "year": 2026,
+    "summary": "From spacetech and defence to clean energy, advanced materials, and construction, YourStory's Tech30 spotlights 30 promising startups developing technologies for India and beyond.",
+    "url": "https://yourstory.com/2026/10/tech30-2026-startups-india-next-generation-of-technology",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMijwFBVV95cUxQNGc2OXptVjZqSjdveXExY0Z2SndRbEtnaVowbFR5RjJ0QzQwN0ItYnlNaUFXQlhRN1pzU2xJS2JHY212bHc5cy11T0R1dkFJSXg5aDR0X1l0YkJ3OHVLVnc5QXVsd25VZjU5WGVxYjUxRXdneUtXWWs2SGl6LVJlMzBMUkJOSFNBQWFIQkdLUQ"
+  },
+  {
     "id": "ext-53ecf79ba390",
     "type": "external",
-    "title": "The ET Startup Awards 2026 special",
+    "title": "Celebrating Innovation: ET Startup Awards 2026 Highlights Success of Indian Startups",
     "date": "2026-10-12",
     "year": 2026,
     "summary": "",
@@ -12,7 +57,7 @@
     "tags": [
       "Business"
     ],
-    "gnId": "CBMivwFBVV95cUxQOGl6WC1KZUNaWTFsRlNBdlBEYjRGT2N2WUZ4VUlRZ2lISEdGNjMzc3IwUnQ0dlJDbGg1ZWFyeWJhQ3Jna1Bxd0FvMUJFbERuLUdFbXBnb1hMM0w1V01tUWJodlphY1ZiQ1o0cjNySWt2OEZNbnNmM1JoUl9DMlduS1dRZjRJay05QWJlTHpSZGw5YkJVTmNxQ05uSXkyYUtQVVhOaFV5b1U2bVY0SzV3Z1daR0wtMXR5U0lBazl6WdIBxAFBVV95cUxPRGV5bHVRN2l4eVo2N2h6UnlWako1dC1UbzF2QkZ5S09FMXgwUjZsTkxoYXdiV0VCZmRxdGxLbGQ5NEZKMmhJSFptQV9qRUxwMzRybmNHdEo4QnlMRkNRNjZqalpCNFJYT2VlRkJqYXM1cTZWT1VRQXlaMDBLQjVTeUFOSHBUckRJcEp1NW1ZR21jM3Zwak1tdnBUUnBkM19tendtY0lpV21tTlp6ZEJLRFRVQlpqOXp4Q1dmSldfNVRqbUxw"
+    "gnId": "CBMivwFBVV95cUxQOGl6WC1KZUNaWTFsRlNBdlBEYjRGT2N2WUZ4VUlRZ2lISEdGNjMzc3IwUnQ0dlJDbGg1ZWFyeWJhQ3Jna1Bxd0FvMUJFbERuLUdFbXBnb1hMM0w1V01tUWJodlphY1ZiQ1o0cjNySWt2OEZNbnNmM1JoUl9DMlduS1dRZjRJay05QWJlTHpSZGw5YkJVTmNxQ05uSXkyYUtQVVhOaFV5b1U2bVY0SzV3Z1daR0wtMXR5U0lBazl6WQ"
   },
   {
     "id": "ext-882746ce6c10",
@@ -43,6 +88,21 @@
       "Business"
     ],
     "gnId": "CBMi5wFBVV95cUxQenpLOHJyVjFHUGh6UGUyTWY5X2JSanQ1Ui1RWXd6N2FNeVFWdm5pN0dkbThWRkJBS1FQYTA4eV9iLW93cUlLYnNYcWE2TUx3TTllNDM1Z21WazBSTnp3elpqOFpiWEhhV0RJVlhBQ0VPRFRkY3VUNFZiQ2xxQzNPbG02Uk40QWNveXd5TlYxSGYwaWZYdVo3VEg3Nkk4aDRBWW1iU0o2Q0E0SjF2ZTJmbEtOUlRMdmFCYVdLVDNPQmFKVzZFUkt2MmRLSDlta1c3UFd1aGctSnpBVEs2WExBNXVtNHo3UU3SAewBQVVfeXFMTUJSWlhOYWdzV1l5ZTdqR2VOSERLLWpMM1NUZXJua25PLXpWU2hCbnctaTNkSHhVc1JWOEJDWWk5emFkcHRuTlNfU28ySUtwc09oM2w2c01mVlRjaHBuWTQ3NGRla3ZEQURpWG5HOVJUYVpHemN1VlllVkJOWlFzTEQzQW0ybENzbEk0WjB3VC1SVjh4a3p4WnhLWk9OQm8ya191bFBSemUtTmJSWW9CSjBaOThwSG04dExXZGpnYzFxMkYxZmpSRjdiUzFyUENVU3R0YnV1VEdDeGx6U1cyakNYd0I2VnRsUklDN1A"
+  },
+  {
+    "id": "ext-c0c7f05442b7",
+    "type": "external",
+    "title": "ET Startup Awards 2026 | Govt backing and patient capital propel India's leap into AI and chips: Satyan Ga",
+    "date": "2026-10-12",
+    "year": 2026,
+    "summary": "Gajwani said the ecosystem, once driven by fintech, food delivery, SaaS, commerce, quick commerce and direct-to-consumer brands, was witnessing founders focused on deep, proprietary technology. Indian startups are now building semiconductor chips, AI, robotics, clean energy techn",
+    "url": "https://m.economictimes.com/tech/startups/et-startup-awards-2026-govt-backing-and-patient-capital-propel-indias-leap-into-ai-and-chips-satyan-gajwani/articleshow/134874377.cms",
+    "source": "The Economic Times",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMihgJBVV95cUxPVUNfdExITVMyVVI5TWgzbV9RalRjeHpFYmxEVkEydFp4aUcwektDYVRKRmdzT3ptSE9hN0l1YUdnTmpGQ3FEN3BaUlVPdDhhUG1QZzRibHRtWWQwX2w3OFFuX1JOVnE5UV9JYlpTbWtvY0RNRzctRmFVWTZKeU1DOGdobW5OdkduUklOSkxqeUtlSDNReEt2VUpVdHhheDBlbWRVU3VIZHNHV0s3ai05dTFINWxpRXdmUHF6LUxsVzFIemNQNWVKSTJJRkdYaUVrZW5UN21LRnFGb0tHdnhDWXczUVJPVVlYQmYxUklWcFkxVzBrZXhuTTZoQ3EtRWJNVlA0VnRB0gGLAkFVX3lxTE55ajBnN3NYTUZtSjdEcENyd29EdGxWOTRaei05TGRBTFROeFJVOVJvMjlrQlU4SW41TmNyd3RLamlJV2w2QjJPMlB0bFZCdFRBbXhaRlJHaVp0OVNXTDBUaE02cmNxUzhYdU8zVmlQOS16dTVDc1dDM0ZJQjBsSXRhT2s1LUN1X1ROT1VvN2hHMXg4QnlhMWxDckxxSGl1d2VocjEteDZrR1doclFqenU1em4xV1h0WHdfOW4yMktFWlE1eWI2bm9yQXBBRUxLSkxNejhMMHZFRE5JR05CMnVzMDkyX1R4MXlyRWhBcEwybHZCOVYwbVFZVG8xbHJ3LWlaaDNhcUdjc2tsSQ"
   },
   {
     "id": "ext-d33bea50fcf2",
@@ -118,21 +178,6 @@
       "Business"
     ],
     "gnId": "CBMi3AFBVV95cUxQVlV2RkJULTYwUk1QbV9vd3lhRE9ES0pQSzBrU0I3R3dOcDU5UlJsc2dkQV9LTDd1U01IMEJnNWpCTENfZEdRTVR1b0JqdGNlMFJGZFMxOG12eHNvZUE5MVAtcUZ1c3ZpU185OGFvRmRFMTRqN1Zodm5xajgtVnJuYy0tM1gweFNEMnFPN3NVSzNYSF9ib2VtcUp4d1R6S0RBUlBURWJSOExLajVOYUh2VGcwakpyUkZCNEc1ZHAwanpSeXBsNG1iOVE0MWpfb3hZS2NKeXMwaWxSYkFf0gHiAUFVX3lxTE0zd0xjMjBXQmdMZjBrTjFMdERHVVNETVFIdTNpOWh6TU0yT1RwSWRVZ2FfWVRUYUM3UXVCczQyYVNkVnc5VGYzeGtoN2RiQkp0cWhJYVpveGZJWVpNZ3FDQUtSVDJzQ2FKNWVwd1ROLUxRak9oVE9oUUxILTRwMDlMMU1RclpGRFFLb0RpNEcyZnVtb0JuY3M4YzZDQ2RVV0hoLW1STTB4d2ZEaXBNX2d5U2c1Y0xCYWdmLTlBUUVIUVJRNG1mdUY3T09ySEotdWR4ZHJ2R04wSlhOYkp3MGxIb1E"
-  },
-  {
-    "id": "ext-cf11cf851546",
-    "type": "external",
-    "title": "(Weekly funding roundup Oct 3-9) Steep decline in VC inflow",
-    "date": "2026-10-09",
-    "year": 2026,
-    "summary": "Venture capital funding into Indian startups recorded a sharp decline in the second week of October and this was primarily due to absence of large deals.",
-    "url": "https://yourstory.com/2026/10/weekly-funding-roundup-oct-3-9-steep-decline-in-vc-inflow",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMikAFBVV95cUxQVTZZbWJUUUtDdkJFYU8zSHd0T3VTWGp1aTU1c0xRc2s4Q29xQUE5VkpQNGNkWFBfR3lpb0E3VWlnTmRkRzlDeGJlbjc4MmJLODFwOVJUdFZieHdaTzFaMl9UZDUtMU1RNVg1a29jUzhXNk1La0d2VzV3bldPSGRSdm5GSktXbEc4NkN1TVZDODk"
   },
   {
     "id": "ext-1fe78fea0273",
@@ -238,21 +283,6 @@
       "Business"
     ],
     "gnId": "CBMi4AFBVV95cUxOYzJ1UEhiYTJ5MmJtc3c0bnFyNm1KZXM4MS1RVlFVUnphOGE1V2tXMWcxTEhLTUVJRUR2cVJqLTlRY21maWN1LXhXcXVWZkNoWXN5aW1odTQxMllCYnNGOTJFM3RLaGo4ajdMQUpvWUd6ZU5vY3RRVkR5VjhZRkZLSDVFd3dwS3BndUtmUEJFaVZhUHlHTGk5Y1NEZ2Y1cXlyWlVtY0RsdzladzZwZlJadW1uSlZZV21iMGJJYjVYYWNQRXVNaFhsbGh4RGx0OEZiTF9LellEeXNvRjlwWk9RatIB5gFBVV95cUxNdjRKMVp6SXNCWkVkd3RzaGVtX2N1RG5wVGNMY003RXM0N1lvejBUbXJscUExSjczLXBiWThpc2tEVGVyYmJObFl1VFA1YmlTdEd0TlIyVnBXTWdDc3JhOWJib2JmQThPc1hLZ2VqOUwwaFdYTXlwZW9UYmRldWlvOS1FcWJES2dMU3g3TTRrUUJEYUlwUkVIRVp1UW54Ny0tZk13SXB1ZFpCTFZId3JONXM0N24ybmV0cE1CWTBDNWhzMjNhNTBIazUwdlhDbER5N1JxNkZhQlczcUdZVW1seDY3bG8xUQ"
-  },
-  {
-    "id": "ext-24abcb90dd4c",
-    "type": "external",
-    "title": "Startups vs innovation",
-    "date": "2026-10-03",
-    "year": 2026,
-    "summary": "",
-    "url": "https://www.financialexpress.com/life/lifestyle/startups-vs-innovation/4353091/",
-    "source": "The Financial Express",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMihgFBVV95cUxQOEdBOFFXWDVZU3dLVTE5Wmg1WGtoOWExLTFjM25TV0xxVmFtTHRkdkhPSm9rS3JteVpsTXVRbW9qWTlXaHRQNi1ZMV9NLXlRTjJybnN5emdlci1DZHRvbDltLS04RmQ1RUxUZEh2TUMyNVIyRnY0d3AtV0xKd2FxckIza0drQdIBjAFBVV95cUxPRm5nUWFaWGg3QnFiLTFBSmVSaGV3SmRyNkhXbWtVaEQ1VHk1SUxLUVZ4VEVLQW5EZG9xUnp1MTVlakVjdjdaVGJwN29PLWM2WW5PWGp5Tk5MeXJoN1lNcW1WNl95TzNWaWlXY0FxRGRZQzVKX1gwOUNOcXg4bUdLX1ZoZGhLVXdONFlhaw"
   },
   {
     "id": "ext-453f080e0fa1",
@@ -525,6 +555,21 @@
     "gnId": "CBMi3AFBVV95cUxORjUzSU5xN3ZEeUdULWNUcHR5U0hpMUVsWjlQcE1Ra0k1bG1iZnI3MWRVQ3ZaSDduQXJ3d0hJM1VuZFV6ajl0bGVaWWx3ZFZSRFhGR01LMU90Szk5enlWTDRuYlVOS0IweTAwLXVILTFuOWJqZGRUd1FIWWt1OHBkSzZlR1gtOXBqbHZLZFdpNjBPUmtBdXJHRndSYVJWcVc3SUltekUxRU56WWdGanc3RXg0dzlfdktqTmV4VUhkamhWWVlCd1docU5NSU5mUkJIci1OTXhZcGJ6Yk950gHiAUFVX3lxTFBXczdPRzRSamhRcDZwcXpudF9MdlVUSG90THpRLTRoaVEzZmFqSV9HcUZqV3J6WHkweVVfTnRlT2ltUGlQa25xNWlRRWpHYjZEaEVGOWNYWmRwTzd0aVpKSnpsT0xzTWpxeG5QcEpsQkdfaWtJQmp6aHBwdm5kT1lBdnEtckh6bDRjR2lqdUFjMDFyaXF2X0pBeTRxRVJCTG1xeTA5YlItNjZJVFdNVy1iVGJ3UUpxVXZsTUlTWEN5dUxoMEZPVGV3Q1lTZWF3RW9YaG56VzJtWEF6QUR6UHVWZmc"
   },
   {
+    "id": "ext-90c5e0b33893",
+    "type": "external",
+    "title": "Beauty quick commerce startup Firi raises $3 Mn led by 360 ONE Asset",
+    "date": "2026-09-16",
+    "year": 2026,
+    "summary": "Gurugram-based beauty and personal care quick commerce startup Firi has raised $3 million in a funding round led by 360 ONE Asset. Snippets.",
+    "url": "https://entrackr.com/snippets/beauty-quick-commerce-startup-firi-raises-3-mn-led-by-360-one-asset-12538816",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiqgFBVV95cUxNZXVFWHNweVc3eEtOOENrNHVVRzRJYlhDQ2hfNjhBWnNRUVpmM2ppVGxrdGY5NUVRSWJVdXNiSDIwMzR2TjlBdGt5djUtMjd4X0xRc3oyWWhRN0RzZEtBTE5kNXd6ckNQQ1VCTWZVRlg4YjBfVm5CS2YzVk9zVkFwMXFkcVItUGV3bnIteHFWMDF4SXZneUl6Q2kyVFBOX0NjbDEyaUkyV3F5UdIBqgFBVV95cUxNZXVFWHNweVc3eEtOOENrNHVVRzRJYlhDQ2hfNjhBWnNRUVpmM2ppVGxrdGY5NUVRSWJVdXNiSDIwMzR2TjlBdGt5djUtMjd4X0xRc3oyWWhRN0RzZEtBTE5kNXd6ckNQQ1VCTWZVRlg4YjBfVm5CS2YzVk9zVkFwMXFkcVItUGV3bnIteHFWMDF4SXZneUl6Q2kyVFBOX0NjbDEyaUkyV3F5UQ"
+  },
+  {
     "id": "ext-6b76529e87dc",
     "type": "external",
     "title": "India's spacetech startups seek fresh capital as investors test appetite",
@@ -553,50 +598,5 @@
       "Startups"
     ],
     "gnId": "CBMipwFBVV95cUxPN3kwdmpiVGVIRXExQ2t6WlJOZ3VlSlFzMGxKOHlQaU5ybEw2VmZQSHlGTjlUVjF4VnREc3ZUcDM5NDZrUEFQdHpQZGZhTjBvaDhVSDF5d1pKQ1dPVWdLUEJBZDhERGMxSGlsTWRMTDJka3NqRjJUb25ZZFRURG1kVlpGTXZmTkxfdmVxZFRpYkx1RWFRUlFBR0tMY1RJWm5NVVdGV2hUQdIBpwFBVV95cUxPN3kwdmpiVGVIRXExQ2t6WlJOZ3VlSlFzMGxKOHlQaU5ybEw2VmZQSHlGTjlUVjF4VnREc3ZUcDM5NDZrUEFQdHpQZGZhTjBvaDhVSDF5d1pKQ1dPVWdLUEJBZDhERGMxSGlsTWRMTDJka3NqRjJUb25ZZFRURG1kVlpGTXZmTkxfdmVxZFRpYkx1RWFRUlFBR0tMY1RJWm5NVVdGV2hUQQ"
-  },
-  {
-    "id": "ext-59ddc6a5f16a",
-    "type": "external",
-    "title": "Amazon adds 176 facilities ahead of India\u2019s festive rush",
-    "date": "2026-09-15",
-    "year": 2026,
-    "summary": "The four Indian startups selected for the inaugural cohort are applying AI, satellite intelligence, remote sensing and drones to challenges ranging from sustainable agriculture and agroforestry to carbon removal and biodiversity.",
-    "url": "https://yourstory.com/2026/09/amazon-adds-176-facilities-ahead-of-indias-festive-rush",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMijgFBVV95cUxOMVg1ck1HUnRJZkEzT3RFT2VhRGxPQ01XNEhoM2IwaFZkWW15MXN6bG1hNC1fYzhIam13WUVjWjlVazRGQlpJTHY4LXRSUmJYY0lZQWdsTUZfOTVwWk9pMk1fUVhabVJBRUR3cXJOYzBRbU9uUXpGV25CWm5KT1FUd3hoZ19rLTJ5VDVkRVln"
-  },
-  {
-    "id": "ext-6e6683f0679c",
-    "type": "external",
-    "title": "Four Indian startups selected for Google DeepMind Accelerator",
-    "date": "2026-09-14",
-    "year": 2026,
-    "summary": "These startups are part of Google\u2019s Asia-Pacific accelerator programme which aims to address environmental challenges using artificial intelligence.",
-    "url": "https://yourstory.com/2026/09/four-indian-startups-selected-for-google-deepmind-accelerator",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMilgFBVV95cUxOOUh5VTczWVk3ZE1qcndtaThYUWVkRXExVVRxc0xCZFVuNUlsTXdVWWpJS3dBWlFweTVqRUIzaEFSV0NZc3ZjRDNaV2Q4OV9xZzhGbGZCT2NKQjJ5YU96TllQLWxDdGpwS2llUGtiaUJIYzlKZVhPN0hxcDd5cFFRWWpBNDVNS0hKT0ZCR2RNM3RreTQ1VXc"
-  },
-  {
-    "id": "ext-5754fb6f6bff",
-    "type": "external",
-    "title": "Google picks 4 Indian startups for inaugural DeepMind AI accelerator",
-    "date": "2026-09-14",
-    "year": 2026,
-    "summary": "Google selects four Indian startups for its first DeepMind climate accelerator, backing AI-led solutions in agriculture, carbon removal and biodiversity",
-    "url": "https://www.business-standard.com/companies/start-ups/google-picks-4-indian-startups-for-inaugural-deepmind-ai-accelerator-126091400788_1.html",
-    "source": "Business Standard",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi2gFBVV95cUxPUEtWc2p0V0FBajdVUndBemtHS2FTS2Q4UzdNck5FdjRPaWdFUmJBUzVhYjBPM0I4XzhzREkxbmJ5T3hEX1FZYmZtdFNvWmhHaEdoOEVwOERaM0F3QkVHaHBOSFN6WEU0VVMwTkRxMGM5ajJoSkJMRmF3Yjhfb1FNZ1hxSGV6U21hdkdXNGtYRGZINnNaakJVNUFtamF1dlFPMmlWTWN0Zm1wcVRrbGlWd1dyQVZjZjY1ODlLLWVjSXl6cGpUMkg0NnMxMy1aMHNaNDFHUW9LejFYZ9IB3wFBVV95cUxOOEZlMlBwVXRjdHphVXk4N0tndE55eVU1eVFZUkZtZ2Eyd1RZUjQxbG9DS0NqVU01TThNdWVMUEctaVMwcFhxT3BCMDE3ak5IcnhLeWVnclhmUW5BZGdYWmNrQUpwT3VraUhmdnBOZExDMk14TkJubXU0NWh2a0hjREVTOTR4S1d5YlNDWDlSUUdwOWtDUVVwelNWcTREdU8zREs0ekl1YWstd0M4aWlUUXY5T0xIYy1nWksyZTA1VWV3eEM3TW1SQkRYVHQzbDFydGNDQUpNR2E2SWIxU21J"
   }
 ]
