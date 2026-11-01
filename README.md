@@ -46,6 +46,7 @@ Four views from the [live site](https://fritzhand.github.io/startup-india-guide/
 | [What do you need?](https://fritzhand.github.io/startup-india-guide/needs.html) | From a need (grant / loan / lab / buyers / IP) to the schemes that provide it |
 | [Explore India map](https://fritzhand.github.io/startup-india-guide/ecosystem-map.html) | Choose a full-screen 3D walkable India experience, the conventional incubator map, or the state-schemes map. The walkable view includes keyboard/touch movement, drag-to-look, pinch zoom, state wayfinders, type-coloured incubator pins, and policy-rich state drawers |
 | [State & UT schemes](https://fritzhand.github.io/startup-india-guide/state-schemes.html) | 320+ state-level startup schemes & incentives (seed grants, subsidies, reimbursements, procurement) across every state and UT — straight from each official state startup policy, by-state / all-schemes / map views. Kept separate from the central schemes |
+| [Grants & funding directory](https://fritzhand.github.io/startup-india-guide/grants.html) | Grants, seed funds, loans, subsidies, accelerators, incubation programmes and challenges from government bodies, incubators, corporates and foundations — search, and filter by status, type, state, stage and sector. Added after the playbook edition from publicly available sources, and kept separate from the verified central-scheme pages |
 | [Incubators directory](https://fritzhand.github.io/startup-india-guide/incubators.html) | 220+ technology business incubators, Atal Incubation Centres & startup hubs on an interactive India map (choropleth + city markers) — searchable, filterable, cards / table / state-wise views, with locations, websites and contacts |
 | [PSU & regulators](https://fritzhand.github.io/startup-india-guide/psu.html) · [States & UTs](https://fritzhand.github.io/startup-india-guide/states.html) | 17 PSU/regulator programs; every state startup portal |
 | [Glossary](https://fritzhand.github.io/startup-india-guide/glossary.html) · [About](https://fritzhand.github.io/startup-india-guide/about.html) | Definitions, abbreviations, disclaimer, method |
@@ -64,7 +65,7 @@ site/tokens.css + site.css + site.js            the skin (PDF-sampled palette) +
       │
       │  node build.mjs                         zero dependencies, fails loudly
       ▼
-docs/  →  GitHub Pages                          85 static pages, ⌘K search, no runtime deps
+docs/  →  GitHub Pages                          86 static pages, ⌘K search, no runtime deps
 ```
 
 1. **Extract** — every PDF page rendered to text *and* image; scheme one-pagers parsed to structured JSON; hyperlinks taken from the PDF's link annotations, never retyped.
@@ -115,6 +116,7 @@ startup-india-guide/
 │   ├── lifecycle.json       # stage → schemes map
 │   ├── needs-index.json     # need → schemes map
 │   ├── state-schemes.json   # 320+ state/UT startup schemes & incentives, by state
+│   ├── grants.json          # grants & funding opportunities: type, amount, status, deadline, location, stage, sector, official link
 │   ├── incubators.json      # 220+ incubators: location, type, sectors, website, contacts, lat/lng
 │   ├── india-map.json       # projected + simplified India state/UT outlines (see scripts/) for the maps
 │   ├── india-terrain.json   # relief, rivers, lakes and named peaks for the walkable map
@@ -162,6 +164,8 @@ permanent profiles, or location history.
 ## How the data was made
 
 Each of the playbook's 107 pages was extracted to text and rendered to an image; every scheme one-pager was parsed into structured JSON and then **independently re-verified against the source page** — ₹ amounts, eligibility bullets, benefits and URLs are reproduced as printed, and each scheme page cites the playbook page it came from. Hyperlinks come from the PDF's link annotations, never reconstructed by hand.
+
+The **Grants & funding directory** is the one dataset that does not come from the playbook. It was added after the MVP from publicly available sources, covers opportunities well beyond the central schemes, and is shown on its own page so it is never mistaken for the verified scheme pages. Its status, deadline and amount fields are a snapshot (stamped with an as-of date on the page); where a source did not state a field it is left blank rather than guessed.
 
 ## Honest limitations
 

@@ -811,6 +811,101 @@
     });
     render();
   }
+
+  /* ================= GRANTS & FUNDING DIRECTORY ================= */
+  const grRoot = $("#grants");
+  if (grRoot) {
+    const D = window.GRANTS_DATA || { grants: [], stage: {}, sector: {} };
+    const ALL = D.grants;
+    const PAGE = 30;
+    const gst = { q: "", status: "", type: "", where: "", stage: "", sector: "", shown: PAGE };
+    const els = {
+      q: $("#g-q"), status: $("#g-status"), type: $("#g-type"), where: $("#g-where"), stage: $("#g-stage"), sector: $("#g-sector"),
+      count: $("#g-count"), out: $("#g-out"), more: $("#g-more"), reset: $("#g-reset"),
+    };
+    const tCls = (t) => t.toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "");
+    const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "official site"; } };
+    const fmtDate = (iso) => { const d = new Date(iso + "T00:00:00Z"); return isNaN(d) ? iso : d.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }); };
+
+    const hay = new Map(ALL.map((g) => [g.id, `${g.name} ${g.provider} ${g.type} ${g.amount} ${g.summary} ${g.state} ${g.scope} ${g.sectorText}`.toLowerCase()]));
+    const matches = (g) =>
+      (!gst.status || g.status === gst.status) &&
+      (!gst.type || g.type === gst.type) &&
+      (!gst.where || g.state === gst.where || (!g.state && g.scope === gst.where)) &&
+      (!gst.stage || g.stages.includes(gst.stage)) &&
+      (!gst.sector || g.sectors.includes(gst.sector)) &&
+      (!gst.q || hay.get(g.id).includes(gst.q));
+
+    const deadlineText = (g) => {
+      if (g.closes) return `${g.status === "Closed" ? "Closed" : "Closes"} ${fmtDate(g.closes)}`;
+      if (g.rolling) return "Rolling applications";
+      return "";
+    };
+
+    const card = (g) => {
+      const where = g.state || g.scope;
+      const dl = deadlineText(g);
+      const clip = (t, n) => (t.length > n ? t.slice(0, n - 3).replace(/[,;]?\s+\S*$/, "") + "…" : t);
+      const chips = [
+        ...(g.stageText ? [`Stage: ${clip(g.stageText, 44)}`] : []),
+        ...(g.sectorText ? [clip(g.sectorText, 60)] : g.sectors.map((x) => D.sector[x]).filter(Boolean)),
+      ];
+      return `
+      <article class="ss-scheme gr-card">
+        <div class="ss-scheme-top">
+          <span class="ss-badge s-${tCls(g.type)}">${esc(g.type)}</span>
+          <span class="gr-status st-${tCls(g.status)}">${esc(g.status === "Open" ? "Open" : g.status)}</span>
+          ${g.amount ? `<span class="ss-benefit">${esc(g.amount)}</span>` : ""}
+          <span class="ss-state-tag">${esc(where)}</span>
+        </div>
+        <h4>${g.url ? `<a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.name)}</a>` : esc(g.name)}</h4>
+        ${g.provider ? `<p class="gr-provider">${esc(g.provider)}</p>` : ""}
+        ${g.summary ? `<p class="ss-desc">${esc(g.summary)}</p>` : ""}
+        <div class="gr-foot">
+          ${dl ? `<span class="gr-deadline">${esc(dl)}</span>` : ""}
+          ${chips.slice(0, 4).map((c) => `<span class="inc-sec">${esc(c)}</span>`).join("")}
+          ${g.url ? `<a class="i-chip" href="${esc(g.url)}" target="_blank" rel="noopener">${esc(host(g.url))} ↗</a>` : ""}
+        </div>
+      </article>`;
+    };
+
+    let filtered = ALL;
+    const render = () => {
+      filtered = ALL.filter(matches);
+      const nOpen = filtered.filter((g) => g.status === "Open").length;
+      els.count.innerHTML = `Showing <b>${Math.min(gst.shown, filtered.length)}</b> of <b>${filtered.length}</b> matching · ${nOpen} listed as open · ${ALL.length} indexed`;
+      if (!filtered.length) {
+        els.out.innerHTML = `<div class="empty-state"><div class="big">🔍</div><p>No opportunities match those filters.</p><p class="small"><button class="btn-ghost btn" id="g-reset2">Reset all filters</button></p></div>`;
+        const r2 = $("#g-reset2"); r2 && r2.addEventListener("click", reset);
+        els.more.hidden = true;
+        return;
+      }
+      els.out.innerHTML = filtered.slice(0, gst.shown).map(card).join("");
+      els.more.hidden = gst.shown >= filtered.length;
+      els.more.textContent = `Show ${Math.min(PAGE, filtered.length - gst.shown)} more`;
+    };
+
+    const reset = () => {
+      gst.q = gst.status = gst.type = gst.where = gst.stage = gst.sector = ""; gst.shown = PAGE;
+      els.q.value = "";
+      ["status", "type", "where", "stage", "sector"].forEach((k) => (els[k].value = ""));
+      render();
+    };
+
+    els.q.addEventListener("input", () => { gst.q = els.q.value.trim().toLowerCase(); gst.shown = PAGE; render(); });
+    ["status", "type", "where", "stage", "sector"].forEach((k) => els[k].addEventListener("change", () => { gst[k] = els[k].value; gst.shown = PAGE; render(); }));
+    els.reset.addEventListener("click", reset);
+    els.more.addEventListener("click", () => { gst.shown += PAGE; render(); });
+
+    // deep links: grants.html?q=...&status=Open&type=Grant&where=Kerala&stage=ideation&sector=...
+    const params = new URLSearchParams(location.search);
+    if (params.get("q")) { gst.q = params.get("q").toLowerCase(); els.q.value = params.get("q"); }
+    ["status", "type", "where", "stage", "sector"].forEach((k) => {
+      const v = params.get(k) || (k === "where" ? params.get("state") : "");
+      if (v && [...els[k].options].some((o) => o.value === v)) { gst[k] = v; els[k].value = v; }
+    });
+    render();
+  }
   /* ---------- arriving from the Nexus ----------
      The Portfolio Map Network's Nexus links into this map with ?from=nexus. Say where the
      visitor came from and give the way back, until they close it (once per visit). */

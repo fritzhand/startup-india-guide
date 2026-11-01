@@ -68,6 +68,7 @@ const indiaMap = readJSON("india-map.json");
    terrain tint underneath would corrupt that reading. */
 const indiaTerrain = readJSON("india-terrain.json");
 const stateSchemes = readJSON("state-schemes.json");
+const grantsData = readJSON("grants.json");
 
 /* ---- external news (optional): a vetted feed powering the overview ticker.
    data/news.json is a flat array of { title, url, source, date }. If the file
@@ -319,6 +320,7 @@ const NAV_PAGES = [
   { group: "Beyond central schemes", items: [
     { href: "ecosystem-map.html", title: "Explore India map", icon: "compass" },
     { href: "state-schemes.html", title: "State & UT schemes", icon: "layers" },
+    { href: "grants.html", title: "Grants & funding directory", icon: "banknote" },
     { href: "incubators.html", title: "Incubators directory", icon: "pin" },
     { href: "psu.html", title: "PSU & regulator programs", icon: "building" },
     { href: "states.html", title: "State portals", icon: "map" },
@@ -619,6 +621,7 @@ ${tickerHTML}
 <h2 class="home-h2">Beyond central schemes</h2>
 <div class="grid grid-3">
   <a class="card" href="state-schemes.html"><h3><span class="card-icon tone-green">${ICONS.layers}</span>State &amp; UT schemes</h3><p>${stateSchemes.states.flatMap((s) => s.schemes).length} state-level startup schemes &amp; incentives — seed grants, subsidies, reimbursements — that stack on top of central schemes. By state, searchable, on a map.</p><span class="go">${ICONS.arrow}</span></a>
+  <a class="card" href="grants.html"><h3><span class="card-icon tone-amber">${ICONS.banknote}</span>Grants &amp; funding directory</h3><p>${grantsData.grants.length} grants, seed funds, loans, accelerators and challenges from government bodies, incubators, corporates and foundations — filter by state, stage, sector and whether they are open now.</p><span class="go">${ICONS.arrow}</span></a>
   <a class="card" href="incubators.html"><h3><span class="card-icon tone-teal">${ICONS.pin}</span>Incubators directory</h3><p>${incubators.incubators.length} technology business incubators, Atal Incubation Centres and startup hubs across India — on an interactive map, searchable and state-wise.</p><span class="go">${ICONS.arrow}</span></a>
   <a class="card" href="psu.html"><h3><span class="card-icon tone-blue">${ICONS.building}</span>PSU &amp; regulator programs</h3><p>${psu.programs.length} startup initiatives run by public sector undertakings and regulators — ONGC, BHEL, GAIL, IFSCA and more.</p><span class="go">${ICONS.arrow}</span></a>
   <a class="card" href="states.html"><h3><span class="card-icon tone-green">${ICONS.map}</span>State &amp; UT startup portals</h3><p>Every state and union territory runs its own startup policy — find your state's portal and incentives.</p><span class="go">${ICONS.arrow}</span></a>
@@ -1187,6 +1190,66 @@ ${crumbs("", [["Home", "index.html"], ["State & UT schemes", null]])}
   }));
 }
 
+/* ================= GRANTS & FUNDING DIRECTORY ================= */
+{
+  const GR_TYPE = ["Grant", "Equity", "Loan", "Subsidy", "Incentive", "Competition", "Hackathon", "Accelerator", "Incubation", "Fellowship", "Other"];
+  const all = grantsData.grants;
+  const usedTypes = new Set(all.map((g) => g.type));
+  const usedStates = [...new Set(all.map((g) => g.state).filter(Boolean))].sort();
+  const usedScopes = ["Pan-India", "North East", "International"].filter((x) => all.some((g) => g.scope === x));
+  const nOpen = all.filter((g) => g.status === "Open").length;
+  const nProviders = new Set(all.map((g) => g.provider).filter(Boolean)).size;
+
+  const typeOpts = GR_TYPE.filter((t) => usedTypes.has(t)).map((t) => `<option value="${attr(t)}">${esc(t)}</option>`).join("");
+  const whereOpts = `${usedScopes.map((x) => `<option value="${attr(x)}">${esc(x)}</option>`).join("")}<optgroup label="State / UT">${usedStates.map((x) => `<option value="${attr(x)}">${esc(x)}</option>`).join("")}</optgroup>`;
+  const stageOpts = Object.entries(STAGE_LABEL).filter(([k]) => all.some((g) => g.stages.includes(k))).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+  const sectorOpts = Object.entries(SECTOR_LABEL).filter(([k]) => all.some((g) => g.sectors.includes(k))).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+
+  // heavy payload ships as a cached script, not inline HTML
+  const slim = all.map(({ place, ...g }) => g);
+  writeFileSync(join(OUT, "assets", "grants-data.js"), `window.GRANTS_DATA=${JSON.stringify({ asOf: grantsData.asOf, stage: STAGE_LABEL, sector: SECTOR_LABEL, grants: slim })};`);
+
+  const body = `
+${crumbs("", [["Home", "index.html"], ["Grants & funding", null]])}
+<div class="page-head">
+  <div class="kicker">Beyond the playbook</div>
+  <h1>Grants &amp; funding directory</h1>
+  <p class="lede">Grants, seed funds, loans, subsidies, accelerators, incubation programmes and challenges open to Indian startups — from government bodies, incubators, corporates and foundations. Search by name, or filter by state, stage, sector and whether applications are open.</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="n">${all.length}</div><div class="l">Opportunities indexed</div></div>
+  <a class="stat" href="grants.html?status=Open"><div class="n">${nOpen}</div><div class="l">Listed as open →</div></a>
+  <div class="stat"><div class="n">${usedStates.length}</div><div class="l">States &amp; UTs covered</div></div>
+  <div class="stat"><div class="n">${nProviders}</div><div class="l">Providers</div></div>
+</div>
+
+<div id="grants">
+  <div class="toolbar">
+    <div class="field">${ICONS.search}<input id="g-q" type="search" placeholder="Search name, provider, sector, keyword…" aria-label="Search grants and funding"></div>
+    <select id="g-status" aria-label="Filter by status"><option value="">Status: all</option><option value="Open">Open / rolling</option><option value="Upcoming">Upcoming</option><option value="Closed">Closed</option></select>
+    <select id="g-type" aria-label="Filter by type"><option value="">Type: all</option>${typeOpts}</select>
+    <select id="g-where" aria-label="Filter by location"><option value="">Where: anywhere</option>${whereOpts}</select>
+    <select id="g-stage" aria-label="Filter by stage"><option value="">Stage: any</option>${stageOpts}</select>
+    <select id="g-sector" aria-label="Filter by sector"><option value="">Sector: any</option>${sectorOpts}</select>
+    <button class="btn btn-ghost" id="g-reset" type="button">Reset</button>
+  </div>
+  <div class="result-count" id="g-count" role="status" aria-live="polite"></div>
+  <h2 class="sr-only">Grants and funding opportunities</h2>
+  <div id="g-out" class="ss-schemes ss-flat"></div>
+  <div class="gr-more"><button class="btn btn-secondary" id="g-more" type="button" hidden>Show more</button></div>
+</div>
+
+<div class="callout tone-info" style="margin-top:30px"><span class="ic">${ICONS.info}</span><div>These listings were added after the playbook's June 2026 edition from publicly available sources, and are <strong>kept separate from the verified central-scheme pages</strong>. Status, deadlines and amounts reflect what was listed on ${esc(grantsData.asOf)} and change often; a field is left blank rather than guessed. Many programmes are run by third parties, and some gate their full eligibility behind a sign-up. Always confirm on the provider's own site before applying. Spotted an error or a missing opportunity? <a href="${attr(REPO_URL)}" target="_blank" rel="noopener">Open an issue on GitHub</a>.</div></div>
+<script src="assets/grants-data.js"></script>`;
+
+  write("grants.html", shell({
+    root: "", active: "grants.html", title: "Grants & Funding Directory",
+    description: `A searchable directory of ${all.length} grants, seed funds, loans, accelerators and challenges for Indian startups — filter by state, stage, sector and whether applications are open.`,
+    body,
+  }));
+}
+
 /* ================= GLOSSARY ================= */
 {
   const items = glossary.terms.map((t) => ({ ...t, id: slugify(t.term) }));
@@ -1439,6 +1502,10 @@ write("404.html", shell({
   for (const st of stateSchemes.states) {
     if (st.schemes.length) idx.push({ t: `${st.state} startup schemes`, u: `state-schemes.html?state=${encodeURIComponent(st.state)}`, k: "state-scheme", d: st.policy || `${st.schemes.length} state schemes & incentives`, g: st.state });
     for (const sc of st.schemes) idx.push({ t: sc.name, m: st.state, u: `state-schemes.html?state=${encodeURIComponent(st.state)}&q=${encodeURIComponent(sc.name)}`, k: "state-scheme", d: `${st.state} · ${sc.type}${sc.benefit ? ` · ${sc.benefit}` : ""}`, g: `${st.state} ${sc.type}` });
+  }
+  for (const g of grantsData.grants) {
+    if (g.status === "Closed") continue; // keep the index light: closed calls are still findable on the directory page
+    idx.push({ t: g.name, m: g.provider, u: `grants.html?q=${encodeURIComponent(g.name)}`, k: "grant", d: [g.type, g.state || g.scope, g.amount].filter(Boolean).join(" · "), g: `${g.sectorText || ""} ${g.type}` });
   }
   writeFileSync(join(OUT, "assets", "search-index.js"), `window.SEARCH_INDEX=${JSON.stringify(idx)};`);
 }
