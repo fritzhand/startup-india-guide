@@ -1807,6 +1807,26 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 }
 .ss-pick:hover { background: var(--surface-alt); color: var(--link); }
 
+/* ---------- grants & funding directory (grants.html) ----------
+   Reuses the .ss-* card vocabulary from the state schemes page. */
+#grants { margin-top: 6px; }
+.ss-badge.s-equity { background: var(--cat-equity-tint); color: var(--cat-equity); }
+.ss-badge.s-loan { background: var(--warning-tint); color: var(--warning); }
+.ss-badge.s-accelerator { background: var(--cat-market-tint); color: var(--cat-market); }
+.ss-badge.s-competition, .ss-badge.s-hackathon { background: var(--cat-mixed-tint); color: var(--cat-mixed); }
+.ss-badge.s-fellowship { background: var(--cat-incubation-tint); color: var(--cat-incubation); }
+.gr-status {
+  font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: var(--radius-pill);
+  background: var(--surface-sunken); color: var(--text-muted); border: 1px solid var(--border);
+}
+.gr-status.st-open { background: var(--success-tint); color: var(--success); border-color: transparent; }
+.gr-status.st-upcoming { background: var(--warning-tint); color: var(--warning); border-color: transparent; }
+.gr-provider { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
+.gr-foot { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: auto; padding-top: 4px; }
+.gr-deadline { font-size: 0.74rem; font-weight: 700; color: var(--text-muted); margin-right: 4px; }
+.gr-card { display: flex; flex-direction: column; }
+.gr-more { text-align: center; margin: 24px 0 4px; }
+
 /* ---------- the Portfolio Map Network ----------
    The note a visitor from the Nexus sees, in the network's colors (the same in
    every map of the network and in both themes), and the blank moment while the
