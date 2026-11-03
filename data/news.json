@@ -1,5 +1,95 @@
 [
   {
+    "id": "ext-a84c0f59c96e",
+    "type": "external",
+    "title": "India-Bangladesh Startup Network offers entrepreneurial training at IIT Madras",
+    "date": "2026-11-03",
+    "year": 2026,
+    "summary": "The initiative aims to strengthen entrepreneurship through collaboration between IIT Madras Pravartak and leading Bangladeshi universities, while leveraging Bangladesh's rapidly growing startup ecosystem.",
+    "url": "https://www.tbsnews.net/foreign-policy/india-bangladesh-startup-network-offers-entrepreneurial-training-iit-madras-1591631",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMivwFBVV95cUxPVGZKRmR5V09qY2FyajZ5X19LajBhc3Q3ZXV1MVRJRWkwUTh3Tlc3RDVaWlFyV3prZWUzMy1XaE5WdllTUzhSTmNJTTF4b0c1UVRkY3N0WTVvRDJTN3B3V0pLSzJiYmJVR3FyUjFQZFdBQlk2cjlKaThXR2phWHJfTFpnbVQtX0NrQVFCS1NPblpXSVd0cVd6eXluVG1GcHpLTVpFRDZmMEtEeTNvS045bTl2ZERGS1ZHQ2tJczlwdw"
+  },
+  {
+    "id": "ext-59292a3847f1",
+    "type": "external",
+    "title": "Jewellery startup Giva raises $100 mn in funding round led by Multiples PE, others",
+    "date": "2026-11-03",
+    "year": 2026,
+    "summary": "This investment will enable Giva to strengthen its leadership team, build manufacturing capabilities and expand its offline presence.",
+    "url": "https://www.livemint.com/companies/news/jewellery-startup-giva-fundraise-multiples-pe-india-jewellery-market-11793696281070.html",
+    "source": "Mint",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMixwFBVV95cUxNVjRuSEw0Nk9GOHY5aWlBYUNpVDZJQXBLYlNHMllBZkdOT18zX2NGVzZPSnYtbjBiNkZZNXA1U3ctWW5RbWp5QTBaTlBDYWxZLXNpTEZydC1adjZsTmZzLTJBb0VEMXROTEhEbmVKcUhXMl81eFJTOEZRYnJMNDBSYlNLZVBRRFk4ZDdOZFFuYTlyYkpiRXpJMnZyc1ZRYXZKNjNJZWp6bDhGcnRtcElFUmFZakR6WHlwMVp6SzBEd2xrbk9SMW4w0gHMAUFVX3lxTFBKY3VDLVV3LV95X2xlUkpGZ2pQWVJ6Q1ZjSXNXZ1pvX2ZSR0ZHV2NCUDRTZnowcExaX2RXYlVUTTBqZFRoVkdxYnBlVjdVUl9nV1N3cGhaVTJPeEF0WXV0UDZPQ1NGRzEzR2xaNVVORXRNUHdCNHAzN2Q1SGI1cGkzeDRQUXNpa2pqX2h4dTAxMlJOZzJqT2llYlVYS2Nldmw5ZFpHbDF3bHo3LTE2NFF2WjByM0RVTkRnQzJ0TTh6dVdSM0RCYjFCQ0F5TQ"
+  },
+  {
+    "id": "ext-155f822a6c90",
+    "type": "external",
+    "title": "VC funding into Indian startups plunges 66% in October",
+    "date": "2026-11-03",
+    "year": 2026,
+    "summary": "The steep drop in venture capital funding into Indian startups has been primarily due to near absence of large value deals in the month of October.",
+    "url": "https://yourstory.com/2026/11/vc-funding-into-indian-startups-plunges-66-in-october",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiiwFBVV95cUxOdXM5NHRERGpiZFVJOEh1ZkZHYnNOZHY1LWhQMjQ3dUF2TWdlbk5OSXpXTXhWYjVnVmNEei1EeHptSEFrVnpQMnFUMDMtZ3BjeE5tYkhhdFRTNzl5cGNMd0pSaXp5RUlwd2Q2VTJoV2wwWjlScGs4SllycHBSNVJfYU8wUFkyTHRWZGlN"
+  },
+  {
+    "id": "ext-4bb84af98ba5",
+    "type": "external",
+    "title": "India's startup funding slows as global investors turn cautious, capital shifts to US",
+    "date": "2026-11-03",
+    "year": 2026,
+    "summary": "Late-stage and angel funding have fallen sharply from their peaks as tighter investment criteria, competition from US AI companies and regulatory changes reshape India's startup financing landscape.",
+    "url": "https://www.livemint.com/companies/start-ups/indias-startup-funding-slows-as-global-investors-turn-cautious-capital-shifts-to-us-11793537717839.html",
+    "source": "Mint",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi4gFBVV95cUxOWXVvVE1hNHBqR0FnUW9RMkVnanFhSWtockFQNmE3eXp5UWFySDVLX0RfbmYteXFxYVlsMGhtc1dxTzI1YW5qVzRSVzJOanZ6T3pTR1BlXzdRSW5jd3Y3a0Z2bDNhenBYRUJzRW5HUjlGQUNvdTVhVWhTX0NFdlgxT2doSlZ1eXJJbDVGTWRncWhYV3JxSU5aajUxdFlRajhUWS13d2k5ODZyLWM4aFBaVFd4NFR5QlNEdkpmUlU1WHRLNlMwcVNMY1NHSzNrTndKR0s3RG9hTzZ3MkxVVnpvME5B0gHnAUFVX3lxTE45cTZuU2dEUDJaSGVOdW83R2p6Wk5VMklnWTMtc3BDSjRKVVZMQnY3VkE1X3lscWIxTGF6VHA5a2hlNnc1ZklSYjAtbW8tOE1QMnd4WHZtYjB4a0NySVBKanVfakNUTUNybmdjMWE5ajNwOWVDY1lHSTRkdkZqc1k5VFFpUFZzUzBDR1JON0YxNndGd016d09fYnF1MkNuRXlHazFxTHJpQXNJT0ozbzdwMXRYOWtRc0NUQlZFVFYzLXRzbWRIOXFEcVREZnhRejM1eHhPbVR1ZGNZR2Nia0p2cElORGlBbw"
+  },
+  {
+    "id": "ext-7ae4c045a1df",
+    "type": "external",
+    "title": "Deeptech startups gain VC attention as India\u2019s investment landscape evolves",
+    "date": "2026-11-02",
+    "year": 2026,
+    "summary": "During a panel discussion at TechSparks 2026, an incubator, early stage venture capital firm and a late stage investor provided interesting perspectives on the evolving investment landscape in India, particularly in the areas of artificial intelligence and deeptech.",
+    "url": "https://yourstory.com/2026/11/deeptech-startups-gain-investor-attention-as-indias-investment-landscape-evolves-vcs",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMitAFBVV95cUxQS1FtMzVfSmV5WDYxQTRtazNTc2c1SEtEZ1NVNWFPd2xkSmY3RTIxb1NPbmR1V3BFQXZXWWRwT0ZoYVBMaENLeC0zQzY5Wktzbzl2TG5UTjRtZEFsV3FuUjlSSXhETVh1RXNqakJUWWtOWWIzbWR0UlFPaEN4dHd1Z1Z3MXowWFpzUFBXQ3lfQ3o0ZXIxSWh3VXdRVXl2Q2hodUNuUDVzSTBkZVZBZjViODRJdkM"
+  },
+  {
+    "id": "ext-a7b1a14d026c",
+    "type": "external",
+    "title": "Antler India leads pre-seed round in last-mile delivery startup Dispatch Network",
+    "date": "2026-11-02",
+    "year": 2026,
+    "summary": "The fresh capital will be used to expand the company",
+    "url": "https://entrackr.com/snippets/antler-india-leads-pre-seed-round-in-last-mile-delivery-startup-dispatch-network-12775883",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiuwFBVV95cUxQeWhEQlIzdmc0WmFaVWFlbTNXUFJRVDRFazFDRHVuRG54b3g0NXd4bzltRzZuSzRPcGhaZ3RfTnJ2N3dDRFVXLXRudzdjbldVM1BrMUJGdjh0b1diTkhjLXFVcHBLVXJnRVpNeW41dXRSbzUwTDBUcjVMYzdCWUFJUW5NRURRTjl4NTZ4TzZ1c0d1MW1vMTFkYUFmQnVMampvbXhTby1XT3RRWktSSk95czhkV3pSRXpIdlc00gG7AUFVX3lxTFB5aERCUjN2ZzRaYVpVYWVtM1dQUlFUNEVrMUNEdW5EbnhveDQ1d3hvOW1HNm5LNE9waFpndF9OcnY3d0NEVVctdG53N2NuV1UzUGsxQkZ2OHRvV2JOSGMtcVVwcEtVcmdFWk15bjV1dFJvNTBMMFRyNUxjN0JZQUlRbk1FRFFOOXg1NnhPNnVzR3UxbW8xMWRhQWZCdUxqam9teFNvLVdPdFFaS1JKT3lzOGRXelJFekh2VzQ"
+  },
+  {
     "id": "ext-f90f2c53495d",
     "type": "external",
     "title": "22,000 startups, 46% Of VC funding: How Karnataka is driving India's innovation growth",
@@ -43,6 +133,21 @@
       "Startups"
     ],
     "gnId": "CBMioAFBVV95cUxPV2VvRUJZaVE4NFJIVjZDSy1MSUtPbFVKOEFjamxnYXY5bGJLSXFEekNxSk1WX1RRakR4ejEzT1M3eW81bTJpSWNza1lwMDZfVjBhZUFGRTNYZE0wZ3l2b2FNZmNQNDdTamRPWmhBSlNpbTl1NkdCc3NzSlZJRkpQY1VnNWpuODBsMXY3T3lMbGgyUGlMTmh6X2JXeWxjalNx"
+  },
+  {
+    "id": "ext-d33bea50fcf2",
+    "type": "external",
+    "title": "Indian Startup IPO Tracker 2026",
+    "date": "2026-11-01",
+    "year": 2026,
+    "summary": "As per Inc42 data, 29 startups have already filed their DRHPs, while another 25 are in various stages of finalising their IPO plans.",
+    "url": "https://inc42.com/features/indian-startup-ipo-tracker-2026/",
+    "source": "Inc42",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMia0FVX3lxTFBnS183TEQzMHI1QjlKSDhLSmhWSWhMLTBYanJITEFPYU9wSEJDYTZTMXhMUDAtV1hQYnZETzBCLWJGYTV4aVhUcDUyQ2xDbU5BMnBfWVNSN0YxNVhmakQ1U0tNLXgzOUxhbkJN"
   },
   {
     "id": "ext-598b3b3d02f6",
@@ -105,6 +210,21 @@
     "gnId": "CBMi9gFBVV95cUxPUmwzVExSLXphTkFVVVNjTVpfbXFWOXR5bUpDTHlmdFlnVzdMMWhzaDA4SU5fQm1odm84bXdIWUJyNklhUlpxY0hQOXN6UlJiMGRnYVl3NnAzb2JKX1BfQmZTYlhieWxld1ZKNWNmdXk4OFJCRTA3MnlNWm9kWmFEbTZEdDBmUUM5WkpoOFNtWVZZbHZOdnhrN2lkYURpMlV6T3h5M3ZVR0RBMTNZSlBOdzNtdEItUWxaQU4wY1RfTXhsRURuSUFadUNGei1xZ2RsVjQtTkRSdWVCRmNyd05sa2VTQzdubEdfVFhsSFVpX3ZQLUhfdHfSAfsBQVVfeXFMTmZBckNsV1czYnItMFdpUkREVEN2cUVfcERNX3duU1Rxejl6ME80Q3EwVjNRTEpQM0Q3X3lmTmhwYjliVDJUZ3lYaWtYSGdWYmw2eExEZHFIMjVUOEhlRHk2NkFGZktXc3JSRnpkU29OQlJ0UFY1LVhDN0VVMi10OHdFSnV3cGdrNjIwR2VfRU53c0Q4bVhkdkxwcE9aenVIR0tjUGhBLVBxRkMwVElpVVZ5bndXUkZZNXhJLVJ5N3lIeFBicVBndFlFcmI1NGhnV2laNGVXRzc0dllRaWpwTWt5QUlYVWlQekh3aGh0QXNhdGdtdGlNSXJVMVk"
   },
   {
+    "id": "ext-49002047d786",
+    "type": "external",
+    "title": "Physical AI startup Tensrai raises Rs 3.4 Cr in pre-seed round",
+    "date": "2026-10-29",
+    "year": 2026,
+    "summary": "The startup is targeting applications such as autonomous material handling and cleaning across factories, warehouses, airports, hospitals, shopping malls and commercial",
+    "url": "https://entrackr.com/snippets/physical-ai-startup-tensrai-raises-rs-34-cr-in-pre-seed-round-12764908",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiogFBVV95cUxQc1FwQS1lRnN4Um9razdrUXFhemN5VTdGRXVRbTFsRjFLdTBfQ3pZbkhybnlvNWN5eVpVSk1Qb2RlMDJuY3N4Z3ZNU1R1UXZNR2JKLXBrM3J1NEFCYTN4eU9tZmFHemRqMndIZjlFRTVUdE5zUmt4V0lSVVFRTHRWc3FjMVdENEo4azJnZ0hxeGdhWlo2aW9lR2I5MEp3cjd2elHSAaIBQVVfeXFMUHNRcEEtZUZzeFJva2s3a1FxYXpjeVU3RkV1UW0xbEYxS3UwX0N6WW5Icm55bzVjeXlaVUpNUG9kZTAybmNzeGd2TVNUdVF2TUdiSi1wazNydTRBQmEzeHlPbWZhR3pkajJ3SGY5RUU1VHROc1JreFdJUlVRUUx0VnNxYzFXRDRKOGsyZ2dIcXhnYVpaNmlvZUdiOTBKd3I3dnpR"
+  },
+  {
     "id": "ext-b4d5870a8029",
     "type": "external",
     "title": "EPFO plans to invest in startups, AIFs five years after govt approval",
@@ -118,21 +238,6 @@
       "Business"
     ],
     "gnId": "CBMi2gFBVV95cUxNZjl3VUpCMjEzbmVyeTlXcC14U3hmRzQ1Z1V2enhJX3d2cHViN2stM0pac1VjMEo5OVpkc3o0NmVFR2hMY0ZrSkdNSUFuZVB1azJfNlFiOC05a3dxbnpoR2dfSElaTGdsZHh0UkQ3T29NTXdGYlp0TE9fTTlxVFVrRjdTMGh4RmNETFJJSUR5MTBkRkhTV3R5OFRMTk52Sk5zcWRkcG10b2dVM2NKcF93Ymk0RTg3TzN1dUdOWjdya0R3TGRXb0tfeU1IVXplWnJPUUdBTE8yUWU1Z9IB3wFBVV95cUxNRk9CclA0Q3pqQjU1RENydEFhdDh4WDhYWDU4dVNVbXhXYS1EbGZrYldEWFNFVG9iY0Q0U2ZvaW1xamZ2d01RUVIwZEZnWllmTjg3M3JwT1dYNVhEN3lWSG5TMnQ2MEhvUTVoYWxMLXpqTzVlcHk4alQ1WnJvdUEwOURZU1h2QVdVekxnM2dEYlNmeUc0Y09HQTJMZWRKMWZVcDFlb2gzX2JqYzk3UTNsV1NFdTZLYjcxVlUzTUFha2xYWXExY3VESWxjRlM0YmRDUlRRQnZoYmwzeHlEREt3"
-  },
-  {
-    "id": "ext-be43beb321b5",
-    "type": "external",
-    "title": "Nobel laureate Novoselov flags startup funding gap in India's critical minerals, advanced materials...",
-    "date": "2026-10-28",
-    "year": 2026,
-    "summary": "LOHUM, an Indian critical minerals company, has partnered with Novoselov to establish an advanced materials engineering and incubation centre in Uttar Pradesh to take technologies from laboratory research to pilot-scale demonstration and commercialisation. The centre is expected ",
-    "url": "https://www.moneycontrol.com/news/business/nobel-laureate-novoselov-flags-startup-funding-gap-in-india-s-critical-minerals-advanced-materials-sectors-14062776.html",
-    "source": "Moneycontrol",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi9gFBVV95cUxOcWxGclB3SktBM0Fsalo5M3gyd25PdlBfQ3MzTWJ4RDY0T1ZxWERwTFZ1NllqZ0RxOTZ0N244VmJaSkMteS1nTkE2WWZsdDY5OTRhZ3h2amJKX0hRbVBPRnVzN09xdmxVWVNkMkRaRFhMekxjTGJUNHl3Q1B0VHo3XzBXSEctOENGMFRiaFh4eXFYTDZ1TE9sT3dYQmZlam5fbFY5TEtHVVdfbGRfYlRmWFZhdHA4TjRPbU9Pek9IVnVjbk8wbk5GUmZHQjdERHNiRnNqYjFuM3IySDBqd1dPQjljTUxwdFZBdzJ6bVV1NEY5X1hFamfSAfsBQVVfeXFMTWRySlBFZEJEeXRSczU2enY2aTM3bTVoNGdyYU5pekpPYTREcWtvTmlvYjhlZ0s1RG9KV1d3bUpzcXMwaUJ4VTFRTzFxeDBMZlpFT2J2Q0lFbmZuYmlLSHU5cFZJT0kyN3JtdWRvaGNuR3FHNzRsSGZNQ3RIU0hPMS1nRHQ4a0x3aGFZOEJkVURkdENGbVFmVEVtRjRNNTFmZU1temRSUVR0bUoxVkp1eWJTcWl5b0JWQk1RNmlxa3VETTR0bmw5TlloTDE2YUFRRXBfR0pTSEFuNGlVSjJrdktCR1dDNEtmWEJJYU9lNk9pZlppSXdUZ3dLYUU"
   },
   {
     "id": "ext-210b57dd86fa",
@@ -210,21 +315,6 @@
     "gnId": "CBMikAFBVV95cUxPUzNEeUsyRlBBWkpQc3QwWDl1OHR0S2tlR0h6ZW8zeHJIWm9YQ1FGRUQybnBKOWRGamYxU0dBQ2gwUGRSSmVGX3Fjc19rOVNFcHI0QzNTdE5OTjdiTW1YcFNzeU1wcGxrWEItSE1ITjQtTm1mbWZ1cEM0clRZRDhhVVQ1NWNFVzN2VWxDZy1iZC0"
   },
   {
-    "id": "ext-4c19591aecb9",
-    "type": "external",
-    "title": "DPIIT advances trust-based governance to ease business regulations across India",
-    "date": "2026-10-27",
-    "year": 2026,
-    "summary": "",
-    "url": "https://m.economictimes.com/industry/banking/finance/dpiit-advances-trust-based-governance-to-ease-business-regulations-across-india/articleshow/135229300.cms",
-    "source": "The Economic Times",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi7wFBVV95cUxQRW9zaUtyM3VMT3FlQTAzUVI4clZPaTFJc1BmT09NQWR4a3lYVEVKNHdRLXBEemowTU51VTkzOHJ3ZEZUN2NhMUlnQXo2Nmg3NkdfYU1KeEs3V2hMN2g2cFNvRTBZcV9LNkJOWmctd2xTNlNBNnhXMk1fQk5KZXlPS1h3QTV3TVlYM1hVTkIyUjFGRkFERlZGYl8yaGI4dkZpcHBaT1FqSDJxRTFkM250NXBjY2pESDFfRHhCMXVyQUtZcjdoX2tpbk5mdFBiWHo2T0lYU0JuTmlXMWVxQm1HR0ZoZFdyZnV2cUs3Q0xWTdIB9AFBVV95cUxNVXJCX3VYOVIxcUd3LTU4SzRjRV9QNUtfVkg5bVBUVWlrOWJOa3psYjhmV1F3MFFPc2FqbFEtSDNOWVVoOS1ra2pPTkViWm9ZSDNFbFliQkE4R21LXzJhZXlPY25rMXNGOU01UWRjQjhOMWR1aHhzdFFqLWZNUk9tMGNPUFpZdjV1bi1QNVJvbmgtZ1RPWGZ3QThyaDEwWWhpcFFDVGI5VDR1a3lrY0haRVY0NFc2X1JRMkpfcUFZTHI1Wjh0ZDE1V1dYMTE4bWhPWXgyS2NXMXdOQ3lEOTZhYmRibG9lTzJRa1JvLWplZ3NnX195"
-  },
-  {
     "id": "ext-963f1935ed9d",
     "type": "external",
     "title": "India has over 2.5 lakh recognised startups, generating 25.42 lakh jobs: DPIIT",
@@ -238,21 +328,6 @@
       "Business"
     ],
     "gnId": "CBMizgFBVV95cUxNR0tOUWFSbUVteXkyUTJad1h3alRhSEplTGNBS0RxXzItWDJLZ1FJU1Rsd3RlMUhQemtxWTdlQ2dPdTAyWWhvaG9JZklJcVIwMlJxRlJ1aE9RQk1tQzNFMy0tWnlFR2trN0dWcTdSejZIUWdNWnAzT3pSRlBGNm11QUsxcXVKRTdCVlZoN1JXdWZrdjJzWkRqLU03S0JYRW5fTzlLUWNKclBPMFNrYUtFODhHWGs2WTAwVFJubFZYc1dHLTBNb21adTZGQW5mQdIB0wFBVV95cUxPZzBXQUZuQ28wcDNUODdnTXoxZ2JoZVFLcXZYZzV6YVpvZl8xa0Flb0tzZFh1UHhhU0FOS3o5Vk1NbGxwR19mYUdLbk15UHMwandCUHdFQXE2LVhxU0VaWXBDSElZcS1PM0lNbV8tS1I5ZXBKdG9ra2xsOEltVzNxMXN2eUN0R0RMdG9YaFRWQXVBbXBwVTdGbUplV3hyV3pOVzZLeER5WGp4c0xadDl1SWJiNnZPbm15OExsQVNTclJ2cHV3dmNjZHpvUHFRTFJwODNv"
-  },
-  {
-    "id": "ext-5e1943c02509",
-    "type": "external",
-    "title": "Ladakh to launch Rs 100 crore startup policy next month, aims to benefit 1,000 startups",
-    "date": "2026-10-25",
-    "year": 2026,
-    "summary": "",
-    "url": "https://m.economictimes.com/news/india/ladakh-to-launch-rs-100-crore-startup-policy-next-month-aims-to-benefit-1000-startups/articleshow/135187701.cms",
-    "source": "The Economic Times",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi5AFBVV95cUxPaGstOWZLQmh6cWhQM3Bzb21NQlRCaGZNWFBDRklmZ1RMSVZJREJmZmhxaGJhRHNQVFVjMEt5MG9SeUdXSWVLV21sSFhNYUx4Y25yMDU0bUdhNjU0WXZhcVV6R0NZX0FvUzV3MDRWX2pPUUxSNHlpNVh5alVkSTNkeTdvQk5UVGZTa2w3eVhyeW94WTU0WnR4SWQ0NnRvVDFTWEdHSXBaWE1TQ3UyLVBULXAzV203X1k4YTlTczY4VGRsYno5ajdRcklzSHIzUlR4WTBjaGFXMGZEaFQ3UzRLNDNGV1bSAeoBQVVfeXFMUDc3WEhzSXU1dWdhUEozRjQ5MFYyX2c2RWh4enRudV9ydnlwUDBzbkFseDBqNmZIdF85VnRmY3RtNXVTSm1KYkgyNThpYWhoOTRnRVRqcEZJR1FvUG5QOEgwSWtBbjJVWE1SY0JiZkJBV0xUYndoWnQ2OEdlN3poN3pMNklCTE1kTjZJNnlkN2tkMk5YbFp1dXViYnF2alhsMGJCM2RzQWU3QldIQXNkUXVSbDFmZF9iREVmWHdKRTBnS2lXVzZlWXo0dkNLb0VodWhzckZ5TE8xNFQyUXBGcGhQVkNxa0RkUlBn"
   },
   {
     "id": "ext-424d6f30e0ad",
@@ -330,21 +405,6 @@
     "gnId": "CBMi6gFBVV95cUxPeWZvZ3hPaXZhNkRvS3FXaXRxUFNaWlVKNVRhRFNIRFA5QWZVV3VvSVU5LU5HMnpsYTA5TDBsZTByRkxlckptWVFlRWt2dmZQckFVOW1LOEVYWGNtcGJDWFVOeUdaek9xZnJURHhBYzh2VjN2QWt5azBFLWFrZ2dUVXBoMzd5bkd4LXZCY3dGdUlCMnJCQjM4VFFMQVNxdzkwYjJFYWxiS21rMDJlVDh2Vk0zc1NzaHJSUnBJb2g5SFJrbndkVTMzR3JZNTg1TEwyTlB0THRVTTc3MGxNWlhFMXNmekxkQUhoU0HSAe8BQVVfeXFMT3E5VUNDMkVxVlRmcGlrdWNBdHBLTGotQVp5MnFBWWw3anJpdmN3dTBGak45TkQ4OHNRVHF3ZGJGNjZDTmhZanQ4MGE2MVhfYVFqRTN1TUFFUWNQREE4WHh3YzJYMVV6NWE5SW5iQnZpYmJ0NVp6VjhJZktyUHN0UU9jVTk5VmFFaFFvRWpGd2E0OHdETEtZMXlUb2JMcWl5clBveWdtWnFBenFxa3g3Z3hsMlJFamJFT0pfWnpVNjg0TzZsSUpRVkdMWmgya1dCVmY1ZTI3b0dqSktwakIwTVNsX1ZBNHloVzhhUkxyczg"
   },
   {
-    "id": "ext-a036b85d81a0",
-    "type": "external",
-    "title": "India must spend $100 bn on R&D: Peak XV Partners MD Rajan Anandan",
-    "date": "2026-10-18",
-    "year": 2026,
-    "summary": "Rajan Anandan, MD of Peak XV Partners spoke about opportunities in India's startup ecosystem, the role of govt policy, the Research, Development and Innovation Fund, and Peak XV's investment strategy",
-    "url": "https://www.business-standard.com/companies/people/india-s-r-d-achilles-heel-needs-a-100-billion-fix-peak-xv-partners-md-126101800597_1.html",
-    "source": "Business Standard",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi1wFBVV95cUxNMVJBbmFhalJtSEY4NTdScDNzZWl2U0hpdlFhZjIzWnkxOW9QNWdyRmZrNWZNeGZnS1JnN0dZYkpadlJTR21iY3pTdDJCRVRic0hEbzVScDlOR2o4Z2ZPdHItMnM5YWw2WlNrTUZuZWdXd2lMdXlmZE9EMFJZNUg3bzZiUm9XOEh5TGpmQ0xqOHd1MTR4UUdPWnZSMS0xSGpNajFfYmNObS1wcjVVQ3pobzB4a2pWMGtzdjQ2Q1lYMTAxdnBHbWduczV2MzFlLWQ3cmNHaEpEY9IB3AFBVV95cUxNRnJabzJjTWJPR3dhYk44Sms0cm9ydkYwX0lQYjIwaUFFdHljU0RPRnhkclJKdnBnTWRTMjhDeGlSc2lDTlk3cGFBVnZlRS1vMUcyMmZYQmRjd0ZycnQ5RnE5UlU3ZzlZMFNBbnJ2dVBRaXMtUTlscEpEV0djM1g4MEhtbW5HbDIyWnRPT0w4S0hwbDlMMVBpS1VyMHpIRllPYW1pRWlwT3lXNFpXVTk2YlFQdDhmdUo2MWZPMms4aUhGNFhjM0E3a1ZtWFg5RktRRmRjcVdGVXdyN056"
-  },
-  {
     "id": "ext-a4a8b5d4c5fd",
     "type": "external",
     "title": "IBM and MeitY Startup Hub sign MoU to accelerate deep-tech ecosystem from Tier 2&3 cities",
@@ -405,51 +465,6 @@
     "gnId": "CBMiiwJBVV95cUxQeWQxbHFoUEotWkpmNEdWRncyZGxmVDFtTkd4QUtKWEVSSW1HZVR6S2w2SnVnYzZDeVNxVlB2RlVKYlR0LUFzekVIc2RXSXVEaTZFVjB3MHZFbUd2d1RudlRKQXhPZ0h3Zjh3SldFNUNRVERoS0pEWm5HWnpsdjNaUzVCLS1zMlVISjRyT3FqYmJWSWNDNzZEXzJ5eldKRm1qUmg2VWdkdDFYejRxTXNEMWItSDVHNHI4UFB3bEpId0FfTG54VV81QnpfQjNUMVdZY29RNXd4VXZDY0t2SkNkNE9uZkstSlhjZDRKVlZ0Z3VEOGhZVlVFSGNqYmN2SDJPanMtN2JBNHE1YmfSAZACQVVfeXFMTTdZVnlVZkM2Y0syb3Nzd3dTUkk0b0lvTF8wc1V0UFRhSFVYbzVZc3QxQ3RyUUw3eXFrbTlHQ01iR1ZLMXlIZXZUbFFYT3pQR1lPSzE0blkzMm5ud2R3MjRZYXlPT2JkRUpYYXNqYkVxMXQyZ21hQ1puSDZqYVBwYXJYRWhDc0FYYU00bXg2cU9ob3JQOTlfeFRxZlhOMnpkN2lzQkpPNHR5VEdhOXZxekFvY2JzdTBXMUdINWNIYklsckVYdEktN3Vscm9xY05XLXhLRTRNdFdUX08zZnAxT3pnNERLVUtCTEg1ejNxZWFiMXV3ZVpfSjI3TDg4b1pkbG9CcXhVUzlvYkdXa3NhR0Q"
   },
   {
-    "id": "ext-8a9a885e1ac5",
-    "type": "external",
-    "title": "Healthtech startup Confido Health raises $12.5 million in funding led by Z47",
-    "date": "2026-10-14",
-    "year": 2026,
-    "summary": "Founded in 2022 by Chetan Reddy and Vichar Shroff, Confido Health develops artificial intelligence (AI) agents that automate administrative tasks for healthcare providers, including patient calls, appointment scheduling, insurance verification, prescription refills and payment fo",
-    "url": "https://m.economictimes.com/tech/startups/healthtech-startup-confido-health-raises-12-5-million-in-funding-led-by-z47/articleshow/134947006.cms",
-    "source": "The Economic Times",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi2wFBVV95cUxQTW00UnI0X0VpdzNtcmw3X1B2ZGx5UURqSThGMkFfSGE3OGpwdjFmNE1qSnZXWlhkTTdZSDN5ZlVlRk5RWDN0V1pyTTZZdjE4RXloWjRxWmRtNkFVdVp4TUN0MS1QTnZWT1Q5VjV4b3M4UGxzeExQek9pMUctNUJ1cWVjU3R3ODQtWG40Ujh3SjA4LW82bEJzTDRPZ2Y5bUc1UVcyeEtMUlZyTGphNzNhXzVCMXluVklNYXhYbFkxLVVyc3JFV0NBempyWGhGaERNNnlrTWlpOFVkc1HSAeABQVVfeXFMTW80Q052MlpjQ3lLWjNudS1ESFlyeE14UXRnQ1RYNnYxb1JkYlpSWDFuM1VMNG5WYzFsdGpsYXRWOUVGMExoY01Na21wOEpKUGwzVXJIN3BHbVlfNUdDN3UyVFk0MWdacTNtOTdIQkMxUUozRDljYzhiaWNUXzNwaGRKejNRQXE0NkRQVVRuOWxCR1VpYy1kRnV0Y2piTmE0T0drUmVvc1dMWGtEZW1mUXUwMVViWU5JUmd6OU5QMksxUDVodUV4dWFtMzV1c2hjcW15WkZWS1V4OEFnYmlvWXU"
-  },
-  {
-    "id": "ext-6f296ecf9255",
-    "type": "external",
-    "title": "Policy reforms, risk capital fuel India's fast-growing space-tech ecosystem",
-    "date": "2026-10-14",
-    "year": 2026,
-    "summary": "Space-tech funding has surged as policy reforms, government-backed risk capital and access to Isro infrastructure allow private companies to move from development to commercial deployment",
-    "url": "https://www.business-standard.com/companies/start-ups/india-space-tech-startups-funding-skyroot-inspace-rdi-fund-private-sector-126093001143_1.html",
-    "source": "Business Standard",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi4AFBVV95cUxQcFdRT2VPVTBRSTVsRWt2a3lLam1tclhDTUdKbklkYmRLbjdTRWhaanMxV2dyUVprSTIxR2tYTEdVSDZrMWJOcG1mV3BZRDlpX3pGVGdaRzAyR2tvSGJyN1NLa0M1dVRUdlNzd1FBMG1yWVNVMDdyVElrclFocXFHTzR6QXM0N1hBcHkwUFU4aFVzMVFsZGlveTJkdmZNeFBoa2VrRjROSS1CSDVSbnNnYVl2WVhRemlTQ3owbVVIU0lSdWM0SUZnLUEzZWt0TUpla1JCcW1qZVYtSFR6MlBzZ9IB5gFBVV95cUxPYU9PbnFBb1c1RUlNYUk4ZERNNkFkUk1kanYySE40aGtQOUx6ZllqWjU4ejd1VF8xX1hKcUEwQXZlRnd4TW1zam1kWmpEYmJZYkthaFJOYmNNcDNteXNLR3dRc3Y5bHh5TUl0cUtKS1hGejkydHN6cnhfeDVRVWF0c1hSZzE2QWp6MU5IcnRuRlFvS0ppMXNSZUJ5ZVhKR0w2WVJ0NXBURVoyVmR3RDBxelN4MGZqdGZEZ2cwUjhFc2lQdzhFbThlakxUSVF0dmxWallqUVJoUnBSMWFta0ZFVEpOTnZ5Zw"
-  },
-  {
-    "id": "ext-28f501998109",
-    "type": "external",
-    "title": "Manufacturing Startup ThinkMetal Raises \u20b927 Cr To Initiate Commercialisation",
-    "date": "2026-10-13",
-    "year": 2026,
-    "summary": "ThinkMetal has raised \u20b927 Cr in a funding round led by India Angel Network\u2019s VC fund IAN Alpha Fund",
-    "url": "https://inc42.com/buzz/manufacturing-startup-thinkmetal-raises-%E2%82%B927-cr-to-initiate-commercialisation/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMirAFBVV95cUxQLW93eHlqZUhMYkJJdUJabnRJLTdFRHhGQmQzZmM5M1VlRzBvS0JsSEdaN0pRQXY5SmtrR29uaVhMR0p5Z3E2NjU3YUVaZ1BmdWF5V1VKN1E5S1BCOUhpOUlSRDVUX1E5NU5jRlI3eHFRRnYyb2djVkNwdXJEVXlXMk5uSmM0aGJONExTeVYtZ1VhUzhNUjhMeEpPcWkxSlBjbFRSLWdELWkteG16"
-  },
-  {
     "id": "ext-882746ce6c10",
     "type": "external",
     "title": "Supply-chain shifts, policy push fuel India\u2019s manufacturing startup boom",
@@ -463,36 +478,6 @@
       "Business"
     ],
     "gnId": "CBMiwwFBVV95cUxQTmpIdzJ5bG1QZ3dwZ0NvUjBQS1RpX2VvWERkOXg5YWJhWl9xS1I0bUlGQnAta0hNNGR3UXc4Q2NXNzJWMGJzZm82WGZZUVRrdlk0RTlWSmJvMEZSbXdoTXJnT085dHF4bDJndmpUSnBTdWxXeGVZdWgyTUplMHF2T2tYMmU1em9HSjRZbDk1TWpJaERuZ1JPak1Jb1JranpzaUIxNVVHMGZVYlJMckNxeUVFeW9IaFRoQjVpY2Z6RnBOeVXSAcgBQVVfeXFMT2ZCUVpjY1ltMmNSSnpqalNRYk01a1N0Tk1XYmRjZHI0U0Y0NEwwVGxLcVVERXhaU0MtZmJkQWlPSlVpeE5EY3Yxc3M5NE00TzNvVEhMb25GUEV3Ukp0ekg2NS1icnhxRWRsbjFVQnVPMXQ1SFRJLW9QQWx2ZmUzLXpZUThKT1FjV0pfVUtYS3hTMmRxTk5XSEJzbm81N08yNkxCcDk3UmJoUURKQXpOdUo5WHRNbEliNWFNVHpaOUwxMWd1bTBucno"
-  },
-  {
-    "id": "ext-53ecf79ba390",
-    "type": "external",
-    "title": "The ET Startup Awards 2026 special",
-    "date": "2026-10-11",
-    "year": 2026,
-    "summary": "",
-    "url": "https://m.economictimes.com/tech/newsletters/morning-dispatch/the-et-startup-awards-2026-special/articleshow/134880370.cms",
-    "source": "The Economic Times",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMivwFBVV95cUxQOGl6WC1KZUNaWTFsRlNBdlBEYjRGT2N2WUZ4VUlRZ2lISEdGNjMzc3IwUnQ0dlJDbGg1ZWFyeWJhQ3Jna1Bxd0FvMUJFbERuLUdFbXBnb1hMM0w1V01tUWJodlphY1ZiQ1o0cjNySWt2OEZNbnNmM1JoUl9DMlduS1dRZjRJay05QWJlTHpSZGw5YkJVTmNxQ05uSXkyYUtQVVhOaFV5b1U2bVY0SzV3Z1daR0wtMXR5U0lBazl6WdIBxAFBVV95cUxPRGV5bHVRN2l4eVo2N2h6UnlWako1dC1UbzF2QkZ5S09FMXgwUjZsTkxoYXdiV0VCZmRxdGxLbGQ5NEZKMmhJSFptQV9qRUxwMzRybmNHdEo4QnlMRkNRNjZqalpCNFJYT2VlRkJqYXM1cTZWT1VRQXlaMDBLQjVTeUFOSHBUckRJcEp1NW1ZR21jM3Zwak1tdnBUUnBkM19tendtY0lpV21tTlp6ZEJLRFRVQlpqOXp4Q1dmSldfNVRqbUxw"
-  },
-  {
-    "id": "ext-dd940b5fea04",
-    "type": "external",
-    "title": "From DailyObjects To StockGro \u2014 Indian Startups Raised About $123 Mn This Week",
-    "date": "2026-10-10",
-    "year": 2026,
-    "summary": "Indian startups raised $122.9 Mn across 25 deals between October 5 and October 9, marking a 47.4% decline from the $233.6 Mn raised in the previous week",
-    "url": "https://inc42.com/buzz/from-dailyobjects-to-stockgro-indian-startups-raised-about-123-mn-this-week/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMioAFBVV95cUxQMFZCaUx2d3o0dnhXWHM5MEFjdUlfOXZRV01pUklyY00yUWR4U0xhVFVZdTNBMVR5aHYzalhhLTc2S2xrZVpzQm9UbUJ1RmJtUHdJSmxPNFdMLVh3UWNVZFFnNzdRSjFBRWVtN2MtWG90akh2N1lmZE9EcGdLeWl4Z0pHVGNDRXlQaWJJOVZSaDdjd25YT3M5YnhMc19rcWhv"
   },
   {
     "id": "ext-de5d39c4d120",
@@ -525,21 +510,6 @@
     "gnId": "CBMilAFBVV95cUxQV25uUkZVbXFjbUNfVkEtelJXZGxtdExHcTFvdHFKWGJBallKRGNIRUVxRHAzQy1ZYkF3Q3R2MWRsVWlxamp5Zm1Vci1JVWpRNEs5ZXFYZzViQjBEM3JuTzVKNWdjN1lVQklvc2t5U3JWc1Vmc3MzTllCSjRxakFkWDVTTnA2NFhZdkgwTmtEZUR3SUJ5"
   },
   {
-    "id": "ext-cf11cf851546",
-    "type": "external",
-    "title": "(Weekly funding roundup Oct 3-9) Steep decline in VC inflow",
-    "date": "2026-10-09",
-    "year": 2026,
-    "summary": "Venture capital funding into Indian startups recorded a sharp decline in the second week of October and this was primarily due to absence of large deals.",
-    "url": "https://yourstory.com/2026/10/weekly-funding-roundup-oct-3-9-steep-decline-in-vc-inflow",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMikAFBVV95cUxQVTZZbWJUUUtDdkJFYU8zSHd0T3VTWGp1aTU1c0xRc2s4Q29xQUE5VkpQNGNkWFBfR3lpb0E3VWlnTmRkRzlDeGJlbjc4MmJLODFwOVJUdFZieHdaTzFaMl9UZDUtMU1RNVg1a29jUzhXNk1La0d2VzV3bldPSGRSdm5GSktXbEc4NkN1TVZDODk"
-  },
-  {
     "id": "ext-1fe78fea0273",
     "type": "external",
     "title": "IIM Calcutta Innovation Park: Rewriting India's startup map",
@@ -555,36 +525,6 @@
     "gnId": "CBMiwwFBVV95cUxNWDNXZWVFZEZucm1MM1JrOUE2bUJVNWFjOGx5RVZKQXZfTG9XSnY2dUhFX01xbjZWMEt4UUlLb3lrejNxWnZRU2RJYVJUMElIempFcHE0LTZmczVuWFRxRERNN2FKZHI3bnlqeFVGd3BPSEM5T09jaXZ4SFBSSTJLUEtoTW5xMjkyU1F4S2JEam0ydFBDUlJHdTY3OFFtaHU3anFUVllKeTFFQjU5S2xObVF4SFpZQ180UnE1NFBrbHZ1OUXSAcgBQVVfeXFMT0pkSEsxbDFGMWhrS3E4ZDFZYmFQWldTdGttUFI0M3pzQTUwbVowa0tzZ0ZSRGp5dGJsa3NVX0xMUHZCX3lhUFpsU2ZpMjd5VWJ1ZWFZLXozNmNUUnQtSmlLQnY4Z2QxVnZGVkkyRDFtNF9xZXh1U0F3RzVYa1daRmJGajhJV2xvbnJSaFpFV00tSVNJc0FMWHlkMjJ3MTJYWU9GRmNyWnN2WUlSSzNQRS0tQU1fb3o1bGJFd2YweGVxcktxMlktM1U"
   },
   {
-    "id": "ext-cf5c7c2b93e2",
-    "type": "external",
-    "title": "Why Growth Stage Startup Funding Outpaced Late Stage Investments In Q3",
-    "date": "2026-10-07",
-    "year": 2026,
-    "summary": "India\u2019s startup funding recovery is skewing towards growth stage, with funding rising 46% in Q3 2026 as late-stage capital remains constrained",
-    "url": "https://inc42.com/buzz/why-growth-stage-startup-funding-outpaced-late-stage-investments-in-q3/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMimgFBVV95cUxQNVpMazd3NFdEaXhqSlRsOVpEV0xmVGExU2NJTUNiUV9uSy0ydHZtbEJsYzdpZjY5ZEt2dTFKN3lMRENveDktWTNRLTRKeGRMR0RwQWc4ckNEZTJFd0JTb2dDLXlCVGV3bGs3dlQ4RW5EZDFLamhJMHdWd1gwMW4zVVpfZHdVWi1HM0NkRHJLSDV4U2kwN1M1WTNB"
-  },
-  {
-    "id": "ext-c7271e82fc0d",
-    "type": "external",
-    "title": "Agentic AI startup Desible.ai raises Rs 32 Cr led by Prime Venture Partners",
-    "date": "2026-10-07",
-    "year": 2026,
-    "summary": "Bengaluru based AI startup Desible.ai has raised Rs 32 crore in a seed plus round led by Prime Venture Partners, with participation from existing investor Invention Engine.\u00a0Snippets",
-    "url": "https://entrackr.com/snippets/agentic-ai-startup-desibleai-raises-rs-32-cr-led-by-prime-venture-partners-12632530",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiswFBVV95cUxQVmU2b052dWVjV3RvX0pNVG93eFRuWHZfSEdhOVZ4cEpTUXlzR2JsR0tpSng2ZVlNTnNWUEM1OGR3S3dmOWtDcFpMa1Y2QzlXcVlibURhMTlva0FrLXQzcVZKa2dBLWZwZ3RJRTNIbEEwdTRVRk5aQUFDcWtSUXFsZ0ZsMnBiWVB6U0F0d1ptbFFyTTdwdE5ielZWemh4OFBCdUxwM2ZDTldZYndZM1pHV2R2d9IBswFBVV95cUxQVmU2b052dWVjV3RvX0pNVG93eFRuWHZfSEdhOVZ4cEpTUXlzR2JsR0tpSng2ZVlNTnNWUEM1OGR3S3dmOWtDcFpMa1Y2QzlXcVlibURhMTlva0FrLXQzcVZKa2dBLWZwZ3RJRTNIbEEwdTRVRk5aQUFDcWtSUXFsZ0ZsMnBiWVB6U0F0d1ptbFFyTTdwdE5ielZWemh4OFBCdUxwM2ZDTldZYndZM1pHV2R2dw"
-  },
-  {
     "id": "ext-6ed7fda9e270",
     "type": "external",
     "title": "Startup Policy Forum unveils DeepVerse to boost India's deep-tech ecosystem",
@@ -598,5 +538,65 @@
       "Business"
     ],
     "gnId": "CBMi5AFBVV95cUxQOFY3ZmgtMVVLZTZvTkRiWHB5ek4tUDk1cTYxMUxnOEhkRkxQR0tZUFRjOTQtbnRKa0Y1cE9KTVBWTFN5UFZNNXZMTVpmTi1uU0JDaHhRY0FFOVQyUTM3TGp6N25seGxGd2JnSE1SNFpucE5mSFhBQUVFTGxMclhYUkxMUzBROUdHY1JDY2w5dl82VkdXZThYM3kyTXB6UjhUcXhBenpTdWVLMUhXTlowODhRbFluc1Bha3VRemtwbVpyWDUwbzEtZVpDZEFHR3JhUFB6Uk1QeXJKS2N2NUw4THJKRHrSAeoBQVVfeXFMTzhJc3VLMUhWSk5BRHprWm9YQmtPd3dtVE9iZ0VPdG1ib05vWW1kZUZKajdLU3NSZ1NjNENsRGllTmFERThDSkhBcDVZbEd5NGoxWVVPNW5xRGVqb0tpNUhreU0xRmZHMTdqRlpTQjJGVDhsWC0xRm02NkU2R0lKUTJHT3FlQXNnM3BBSjcxMC1tVTNCQWlwQzJkZE1RbVYycWtwbmI5MmVhMzYwT0RqV2tvU0dRTlM3cVB4aFMxRjJlZTVUc21UUkJEa0JSQW01eTlENklkenVPWnI0cTRMNlQwNC1aZTFEUTNR"
+  },
+  {
+    "id": "ext-8f15df976c3f",
+    "type": "external",
+    "title": "VC funding for September 2026 sees a 8.2% dip",
+    "date": "2026-10-05",
+    "year": 2026,
+    "summary": "However, VC funding rose 15.5% compared to August, revealing the divergent trends in capital inflow.",
+    "url": "https://yourstory.com/2026/10/vc-funding-in-september-dips-year-on-year",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMie0FVX3lxTFBzSWtkYXhtTWVETHRHZ1lIRHZ6M0ZuWWlPU1J6TWVOd2k2MTdXNnoyRjNMcHZ2X0JZSXp6QmJYMWRiamIyYU1RM2N3NzUxOVZaM2ZvS0d2amwtMTRXQ2dGRV9Ld2V5OUFCdUxfUnZPQ3ExRGlNc1ZOOHpjMA"
+  },
+  {
+    "id": "ext-0a5df03e14ed",
+    "type": "external",
+    "title": "Sales hiring startup Scooter raises Rs 1.5 Cr pre-seed round",
+    "date": "2026-10-05",
+    "year": 2026,
+    "summary": "Pune based sales hiring startup Scooter has raised Rs 1.5 crore in a pre-seed round led by Aviral Bhatnagar\u2019s AJVC.\u00a0The proceeds will be used. Snippets",
+    "url": "https://entrackr.com/snippets/sales-hiring-startup-scooter-raises-rs-15-cr-pre-seed-round-12624249",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMinwFBVV95cUxPOTFTeldXN1kxUmtZS2stQnhvU081cTEwZWpxeWJKVWxuVUtKRFBmMHpoUFVpOHZLNUZkRXF2Vm9FLWQ2el9pMUJRb3UxYksxR1FNTUR3MU9QeHI2TUd5V0poNUZZcUZURDJ4MzBjSW1SUzJheHZRT1N3SHRIRkZVRVl4aWRlMEs4VTJsUHltMW9DYmhDTzRWSVZUSll1RFXSAZ8BQVVfeXFMTzkxU3pXVzdZMVJrWUtrLUJ4b1NPNXExMGVqcXliSlVsblVLSkRQZjB6aFBVaTh2SzVGZEVxdlZvRS1kNnpfaTFCUW91MWJLMUdRTU1EdzFPUHhyNk1HeVdKaDVGWXFGVEQyeDMwY0ltUlMyYXh2UU9Td0h0SEZGVUVZeGlkZTBLOFUybFB5bTFvQ2JoQ080VklWVEpZdURV"
+  },
+  {
+    "id": "ext-453f080e0fa1",
+    "type": "external",
+    "title": "Funding and acquisitions in Indian startups this week [Sep 28 - Oct 3]",
+    "date": "2026-10-03",
+    "year": 2026,
+    "summary": "This week, 24 Indian startups raised $411.46 million across five growth-stage deals, 13 early-stage deals, and 6 undisclosed rounds. Weekly Funding Report",
+    "url": "https://entrackr.com/report/weekly-funding-report-weekly-funding-report/funding-and-acquisitions-in-indian-startups-this-week-sep-28-oct-3-12618694",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMi4AFBVV95cUxQaUpvaFNPb0RjRjJsT1oxX1hUenFORGRqeFYzMkduWkdRVUZiUWJZdHBPdWxYNVJYWWdpcXBYZ1ZNRWVXU1FaUjhBTU9ZNEVMSmpKNEJFekRJNjQ4a180aE94YkE2NXBaazZXLW9xZ2M4dTVOX3JETkdjYUVhNndlZlp4NVdIYnVEZU1uamgtNmF5YUR0MGxDWHdlbk5QTDBvMW4zWVYzYTlQeDNzMUFsNmhFengxTHRlbmV4NVZrbW1MWFZNVEZLaVBqTkhjNWQ5bVRXNFJqMDBKNFZxc2UzZtIB4AFBVV95cUxQaUpvaFNPb0RjRjJsT1oxX1hUenFORGRqeFYzMkduWkdRVUZiUWJZdHBPdWxYNVJYWWdpcXBYZ1ZNRWVXU1FaUjhBTU9ZNEVMSmpKNEJFekRJNjQ4a180aE94YkE2NXBaazZXLW9xZ2M4dTVOX3JETkdjYUVhNndlZlp4NVdIYnVEZU1uamgtNmF5YUR0MGxDWHdlbk5QTDBvMW4zWVYzYTlQeDNzMUFsNmhFengxTHRlbmV4NVZrbW1MWFZNVEZLaVBqTkhjNWQ5bVRXNFJqMDBKNFZxc2UzZg"
+  },
+  {
+    "id": "ext-e2995cd85470",
+    "type": "external",
+    "title": "Indian startups raise $2.9 Bn in Q3 2026 as EV, AI drive funding",
+    "date": "2026-10-01",
+    "year": 2026,
+    "summary": "Indian startups raised less than $3 billion in funding in Q3 2026, down from $3.5 billion in Q2 and $3.87 billion in Q1. The quarter. Quarterly Funding Report",
+    "url": "https://entrackr.com/report/quarterly-funding-report/indian-startups-raise-29-bn-in-q3-2026-as-ev-ai-drive-funding-12612860",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMiwAFBVV95cUxNcHZMcUViSzNSZUw4NDNTdHY4NkhZVVV2RkcxanNoY3NGTmtNV2lkbkRjVDMzQ3M4SXBFS3FwdENQV3k2QlVBeXhpWTZUdUd2SU5tUHI0enFNWThRbEw4RTNMZnQzeFh5T2VRaC1FZGRVUVp2bU0tSmJKNU9yVVlRMDRrYlFwZVdMamtFNmg5MkxJQ2V3UXFidkstUWlVRnVQcHkzOWdxTVE2amtaWC1rdThVbmUzUjJ2RF9PVkx0eDnSAcABQVVfeXFMTXB2THFFYkszUmVMODQzU3R2ODZIWVVVdkZHMWpzaGNzRk5rTVdpZG5EY1QzM0NzOElwRUtxcHRDUFd5NkJVQXl4aVk2VHVHdklObVByNHpxTVk4UWxMOEUzTGZ0M3hYeU9lUWgtRWRkVVFadm1NLUpiSjVPclVZUTA0a2JRcGVXTGprRTZoOTJMSUNld1FxYnZLLVFpVUZ1UHB5MzlncU1RNmprWlgta3U4VW5lM1IydkRfT1ZMdHg5"
   }
 ]
