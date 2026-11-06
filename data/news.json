@@ -1,18 +1,63 @@
 [
   {
-    "id": "ext-ac710d54fc68",
+    "id": "ext-e4f7de4afb41",
     "type": "external",
-    "title": "Cosmoserve unveils Hyderabad facility for space debris removal, refuelling",
+    "title": "Office of the Principal Scientific Adviser and DPIIT Launches API Integration between Startup India and I-STEM Portals to Strengthen Access to National Research Infrastructure",
+    "date": "2026-11-06",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID",
+    "source": "Press Information Bureau",
+    "sourceTier": "Government",
+    "tags": [
+      "Policy"
+    ],
+    "gnId": "CBMia0FVX3lxTE5HVXR3Tk1oWHgtUkR2QjRsUl9EU0NuOEgzeXpjSnFPRVVHVU55bjVYRXNmVTdjVDhsZEVPbWNwZmo4M0lPb1FyaFpqNi1wS25Yb2s0ZWd6bFJGcVJ0MXVfZnFRUDNCWnF1TV9R"
+  },
+  {
+    "id": "ext-43ffcf987e7e",
+    "type": "external",
+    "title": "MeitY approves 12 projects under component PLI scheme with estimated investment of Rs 7,503 crore",
+    "date": "2026-11-06",
+    "year": 2026,
+    "summary": "With this round of approval, India is also slated to get its first cathode active material manufacturing unit",
+    "url": "https://www.moneycontrol.com/technology/meity-approves-12-projects-under-component-pli-scheme-with-estimated-investment-of-rs-7-503-crore-article-14072924.html",
+    "source": "Moneycontrol",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi8AFBVV95cUxOUTVWWDRqX3JQWFRpdVJXU05UMDdRSmdxRHRrR2JURVU2WU9vUmlxVDBPWm5OMWgzM0Nnd25DS3BzQzExUkhoRDVlak1KUzZhVnZGX29TX3lpT3gtbWJ4NFdhOUZhS0hMVEltNVJHdG85aHhlcUZaLVUxSzdJRVFkeEl6ZEJ2ald1WUl6OUpYOXZKXzE2YmpoM08tZm1PcEdESDhxbzZzRWhPY0VMOXcwYUp1TnNyN2ZfMm56VmlqdUpyODN5UkRkajJxblNKMEZTdGxPQTNUYks3Ung2Q2Zpc3FVN2ExUHA3T1hrWWF4T0bSAfYBQVVfeXFMTlVfXzllNnVLSHBRZk14aS1yUHl4bkVEZWpuMTVGS3J3bGxnOUhqOU9wdGNFYk1MdVRWRHRZV0IzZFQ1MmFRUk9MWFI4ZDVMZklLaWVtUFdzWUw3WEhqUklvdjBqQXlvTUZRaE9taHJsOERlZWtvVjExXzdjXzR3b3FJZGtHd1BFQVNRNTJJRWhHR1RacWUxbExuQ3ZRcHNxSmdPalJQRjBEbTRYT2RnUXB2NHNWQW9oMEFwdENhcGZldEF3MWduSW9pZmxLWV9JTUVJcVpCYzNqOHdFYmdmRGNwNlNuaDBlV2V5alctOXRUYzZSUnJn"
+  },
+  {
+    "id": "ext-ee2b9aeae6b7",
+    "type": "external",
+    "title": "Bengaluru startup Aina unveils AI ring to predict users' next actions",
     "date": "2026-11-05",
     "year": 2026,
-    "summary": "Cosmoserve Space unveils Base 1 in Hyderabad for space debris removal and satellite servicing, raises $6 million in seed funding and targets commercial operations by 2028",
-    "url": "https://www.business-standard.com/companies/start-ups/cosmoserve-unveils-hyderabad-facility-for-space-debris-removal-refuelling-126110501673_1.html",
+    "summary": "Founded by former Ultrahuman executive Apoorv Shankar, Aina has unveiled an AI-powered ring that anticipates user needs and controls apps and devices, with pre-orders from $399",
+    "url": "https://www.business-standard.com/companies/start-ups/bengaluru-startup-aina-unveils-ai-ring-to-predict-users-next-actions-126110502214_1.html",
     "source": "Business Standard",
     "sourceTier": "Business daily",
     "tags": [
       "Business"
     ],
-    "gnId": "CBMi4AFBVV95cUxOSkdiUThXMUZGb3dqM3JQdFBlYTVlekw2SGZBV251Y2I2Tl9EUjhmZ2xGTGdUTDNoZmx1TnZzTEV6NVBsTWN6R1gwX1J6VVVNZmphWFk5SUtka0d2V3RfaEliaHU5LWhvbzlkTnRQZ1NhdG1PQnZWbEtOYzZjWFphN1NMaGVGRTRka2hWX1ViUVIzdkh5SG1IZmM2TW1uN1J3NDU3TzhhSWhfY091aGdpeTF6dWNNSDZWaDE3R3lRT0xNcUU2M2xMTFdjOFpZRDVnNk1mWU93OWVMY09JOWtHOdIB5gFBVV95cUxPOXg3bDhvUHRKclJiOWJRcG9DYTJyUm5aV0diVFhCbS1icEFvSXZScWpfMTd6dDZGQmNPNHlUMEZET0ZqdGVfWkZMc19pVnYteVgyLTZvRHZTd2Qxai1SSzB3aUQ1WlJMX3FCZHhRaTg5QUdteEF5VDhqbUVuRDdFdk9sSzI2NjlWemtnZTNtYThYbUtna3BsbWh0ZFczQnR2NHRSV1lBeGE3a1ZwOThjTEZ5SEJJX2dOT202ckowRF91QzNubkVrQ2RKajZVbW53SThpRHpJbnhBSHRpb2dZZHVzTHBBUQ"
+    "gnId": "CBMi2gFBVV95cUxOZjVjemxmejF3VW4ydnJxMklEbVpfZ0lmOEtYWGhjd3BkSVNSc1FoZkx6TGZXdVpkSkxXNEsydjRycXFUdm9wdXhqQllxLTJDbVI4dG5DWU5PUnF4am9MUG4yT3R6empNM0pPMTNkeXk0QmhSWjAwM0RQOUxTNE5WX0FxNTdBWU53N21SRWh6dllhZ0taTk5WNV9KWFVhY2ZZZm12bzBvcTJTUjg4RXYwZ05pMi1zNjVfS2NhNGhCLXp5YkEyeVYyM0lrcFhyalkyVzRqTmNlcWVmUdIB3wFBVV95cUxNd1ExWUEyNmYtMlY3NDdwVlFCOHBIVjlRNi1mNGMyNnhYaDBSQXdoQmo0M0V3SnVlUTV1X1ZNOHpPb2hHQnNueDZCdXhkMzgybmZNc3pzeHBNYnZjdUNjdVVKcUxEUGxSR2RNMmpZNl9DYVhWcEZxcGJfRjQ4TWRRd0R0UXVCU2I3X0o3a1p1U2pWeW9PSzBmQllRb2hqekdvNFl4SzFRVlc1Y2VNM2ZscWFLUkowb1hVaWJ3X2o1dzVFUkFYQWRMcVpOczNBTnFYb1laSHk3UVEzLVJfUHNZ"
+  },
+  {
+    "id": "ext-d7a011f0ed88",
+    "type": "external",
+    "title": "Spacetech startup Cosmoserve Space raises $6 Mn in seed round",
+    "date": "2026-11-05",
+    "year": 2026,
+    "summary": "According to the company, Base 1 is the world\u2019s sixth facility equipped with space vision effects and microgravity simulation capabilities. It brings together infrastru",
+    "url": "https://entrackr.com/snippets/spacetech-startup-cosmoserve-space-raises-6-mn-in-seed-round-12787035",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMioAFBVV95cUxOZncyUmtTTmpmSFVWUWpnWU5kRXdnWGxGQTZRd2VteDZGVVJ3SGJLS29hMDRuM05GQUhOWEhCYWctaGFyTDhzTjF1aVh6QTlMczFUNnQxWVJGa0N2dXB2Vk11YURQbGlPQTEwMHQ0ZHZVMkowWHhKWXJmZjFFcGhuaXRNdEVlejZHay1tOHZ0ZGM1V0syVTFROFBuVXdlYTlr0gGgAUFVX3lxTE5mdzJSa1NOamZIVVZRamdZTmRFd2dYbEZBNlF3ZW14NkZVUndIYktLb2EwNG4zTkZBSE5YSEJhZy1oYXJMOHNOMXVpWHpBOUxzMVQ2dDFZUkZrQ3Z1cHZWTXVhRFBsaU9BMTAwdDRkdlUySjBYeEpZcmZmMUVwaG5pdE10RWV6NkdrLW04dnRkYzVXSzJVMVE4UG5Vd2VhOWs"
   },
   {
     "id": "ext-8ffdbe26496b",
@@ -30,36 +75,6 @@
     "gnId": "CBMiswFBVV95cUxPeThQVl90SDBWaDdOdEozZnV2emhFZHlqdVJ4ZktCSFhBOTZIclhSNkthYzhoU1ZWN2NWejBlVjlhS3BlbU82X2ZzX2w5MjlIMUdkNURlXzkxV3lzakxaeXlXSURweUFJalNIYlFHWTB5VWtXczNFTTNfY0RRWHc2amotM3ZPNk5sTEJwUC1za0xEc21kNl9xWjlpbENaTU5yQmpJQlAzSXYyZkh6YTEybWZVRdIBswFBVV95cUxPeThQVl90SDBWaDdOdEozZnV2emhFZHlqdVJ4ZktCSFhBOTZIclhSNkthYzhoU1ZWN2NWejBlVjlhS3BlbU82X2ZzX2w5MjlIMUdkNURlXzkxV3lzakxaeXlXSURweUFJalNIYlFHWTB5VWtXczNFTTNfY0RRWHc2amotM3ZPNk5sTEJwUC1za0xEc21kNl9xWjlpbENaTU5yQmpJQlAzSXYyZkh6YTEybWZVRQ"
   },
   {
-    "id": "ext-b3987154d311",
-    "type": "external",
-    "title": "From fresh produce to electric scooters: 10 Indian startups that have raised the most funding",
-    "date": "2026-11-04",
-    "year": 2026,
-    "summary": "From agritech and fintech to SaaS and electric vehicles, India's most heavily funded young companies are rewriting the start-up playbook. According to the 2026 ASK Private Wealth Hurun India Gazelle Index, the 51 Gazelles have together raised about \u20b987,780 crore. Here are the 10 ",
-    "url": "https://www.cnbctv18.com/photos/business/startup/from-fresh-produce-to-electric-scooters-10-indian-startups-that-have-raised-the-most-funding-20026968.htm",
-    "source": "CNBC-TV18",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi6gFBVV95cUxNdzJ2M0pRXzVsM3lQS25fWERwdU1McTc3YTVhdW5CYjBGc3FZYU9XZDBaNVBKYmRmVDl4TzZRZ1pMVHJjTloycU4yZFRvbkdfU3NhTXlqdkxkVFp1bHFQYWNBVnRsaUdiM1JTRE1uLXR1TktIU0ktS2hwMjRCRGxmdVo2RGxCNUoyWi1BWXlKUjJJRWRrQllncWp6ekp2ZG04QXY1R1IzY3JxZTdaVWNHMzZaTWJUT3htTWZCVVVfWEN1a0pGMWcyTFNlTHpYQ2l5cFNHSnp6UnZiZ1JxNVFOM2xnaEhVZjdrOEHSAe8BQVVfeXFMT05CdG9sSkJ1SWthU2FIT1RmUmN0RTk2VlBGaXhhaGdEbmxSa1c2cnA1OHprRmY0V0ExYU9xakRTQTZsbDlVZWJQNmdKV0hUWHFwaHk4LVVXQzBCcVVsejU0RHdEbUZGXzZuZEZ2bGdLNDRLMGRIT1JEY3ZlNVJvUnY3Smhlc3hXb1ZHTE1fbXY0anEzNVBRMWxKSjgwQUFjQ1FCcG9idWN1UE1idU1WU0FqWHhGQ0IyVXVOaWdPOWlLYTVJVWFVWE90ZmcwbWc1VUdVX2hQM1F0OFMycTBkenRrbXpVbmhqMFgzYUt1b0U"
-  },
-  {
-    "id": "ext-7fe97b09d4de",
-    "type": "external",
-    "title": "Enrission India Capital participates in Ottonomy\u2019s Rs 40.6 Cr funding round",
-    "date": "2026-11-04",
-    "year": 2026,
-    "summary": "Ottonomy operates in the autonomous delivery and robotics segment, where companies are developing AI-powered solutions to address last-mile logistics, workforce shortages",
-    "url": "https://entrackr.com/snippets/enrission-india-capital-participates-in-ottonomys-rs-406-cr-funding-round-12782975",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMisgFBVV95cUxNaUMwNm0tX2o3azU0djZta21HVzB3SmR0cFl0YXFFQjlFMEJzVnBsWmlyVjFsN2dISVJVV0lKN0VYaXRvZ0Vab3o2cVJDX1ktc2tiaDZfeS00Q0tiUU5ZNXJhSGdyQThZU0dFd3pLak9TZEZFVm1YRzUtcmRKYjJvV1A2bWdHTW9xQVFGU3Q2NTA1Yl9VMmxzTGNpSGtGN0F1WXFXQkRhQ1IxOU9nQTFFamVB0gGyAUFVX3lxTE1pQzA2bS1fajdrNTR2Nm1rbUdXMHdKZHRwWXRhcUVCOUUwQnNWcGxaaXJWMWw3Z0hJUlVXSUo3RVhpdG9nRVpvejZxUkNfWS1za2JoNl95LTRDS2JRTlk1cmFIZ3JBOFlTR0V3ektqT1NkRkVWbVhHNS1yZEpiMm9XUDZtZ0dNb3FBUUZTdDY1MDViX1UybHNMY2lIa0Y3QXVZcVdCRGFDUjE5T2dBMUVqZUE"
-  },
-  {
     "id": "ext-ae84c8d01f37",
     "type": "external",
     "title": "Fintech infra startup OneStack raises Rs 12.5 Cr from Shepherd's Hill, others",
@@ -73,6 +88,21 @@
       "Startups"
     ],
     "gnId": "CBMiswFBVV95cUxNeGx3Wml3UXE1VnQxUmlTV0JXdlhKNjh6OS1MekZBTElWajZCd0JxVHA3d0VtMlBMSUM2MmZFOTRpdVNaVXR6RGxIeVpRS2VDVHRJOGFpV2l5bEhMYkhUd1VhUEFJZFFCT2ZjVUVVcTlPYjllQnNjVlI4VS0zVS1FcEgwa3FfUVFnSV8tbmlLWndqX1ZMV0J1LVNsTEZ5bUk3OUdRVkd3eWFfMzBSSTRHOEVrZ9IBswFBVV95cUxNeGx3Wml3UXE1VnQxUmlTV0JXdlhKNjh6OS1MekZBTElWajZCd0JxVHA3d0VtMlBMSUM2MmZFOTRpdVNaVXR6RGxIeVpRS2VDVHRJOGFpV2l5bEhMYkhUd1VhUEFJZFFCT2ZjVUVVcTlPYjllQnNjVlI4VS0zVS1FcEgwa3FfUVFnSV8tbmlLWndqX1ZMV0J1LVNsTEZ5bUk3OUdRVkd3eWFfMzBSSTRHOEVrZw"
+  },
+  {
+    "id": "ext-c8363045dbef",
+    "type": "external",
+    "title": "Space-tech startup Inbound Aerospace eyes $10 mn seed funding round",
+    "date": "2026-11-03",
+    "year": 2026,
+    "summary": "Chennai-based Inbound Aerospace is in talks with investors to raise around $10 million to develop its reusable space re-entry vehicle and autonomous landing system ahead of a 2028 mission",
+    "url": "https://www.business-standard.com/companies/start-ups/space-tech-startup-inbound-aerospace-eyes-10-mn-seed-funding-round-126110301726_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi1wFBVV95cUxPcWpoeDRhLWNNaXBOUm1VZGhhSTluVDdpYlU4QldPRk1yOXRjcnFTaHcwVmZmVkVQSEF0bmQ0T1BCZFI1QmUwUElOaGRXaTM4VEJ1Z185ajh3ZFBxN19LcnpFbFUzaXg3RUxyVnhRRUpzLUtlSlBhdkVCUFBHYjhOYUwxaVRDX2NHOS1RaUFiWU4weUxwYXBocGpFRVd6Vkg0NnR0ZXBTMDhfZlZFQ3VPME8yc3I5RGFDc25MaWdITzVPTERsX2paUnItQy1CeURQcVE0NW1KWdIB3AFBVV95cUxOZk9fRldXakxoUGt3SEk3azNHRHlZM21ZRVg5MTl4MjJVQmtfaEstd21rMkxxME1uaHcza3hxSTZ5VUlOQTZsSHFQVC00T0ZCTzRCV3RmblRLcHd0YXFFVENWMTdKTnZsU0NsU3cxVUUyUDM1NGRwRTlnVlJBeUN5bklpYi1Nd0FoNnVITDBDUEp2VndjdU5uaW52ZFcxVWFhWmQ2MXJqY0oxYzNiSW1YR1NkMWJsUXhpak5QakR2X3FnemRORjVDLThwaXJpQlh5bTd3bkxhZlBNY3Fp"
   },
   {
     "id": "ext-155f822a6c90",
@@ -103,21 +133,6 @@
       "Business"
     ],
     "gnId": "CBMi4gFBVV95cUxOWXVvVE1hNHBqR0FnUW9RMkVnanFhSWtockFQNmE3eXp5UWFySDVLX0RfbmYteXFxYVlsMGhtc1dxTzI1YW5qVzRSVzJOanZ6T3pTR1BlXzdRSW5jd3Y3a0Z2bDNhenBYRUJzRW5HUjlGQUNvdTVhVWhTX0NFdlgxT2doSlZ1eXJJbDVGTWRncWhYV3JxSU5aajUxdFlRajhUWS13d2k5ODZyLWM4aFBaVFd4NFR5QlNEdkpmUlU1WHRLNlMwcVNMY1NHSzNrTndKR0s3RG9hTzZ3MkxVVnpvME5B0gHnAUFVX3lxTE45cTZuU2dEUDJaSGVOdW83R2p6Wk5VMklnWTMtc3BDSjRKVVZMQnY3VkE1X3lscWIxTGF6VHA5a2hlNnc1ZklSYjAtbW8tOE1QMnd4WHZtYjB4a0NySVBKanVfakNUTUNybmdjMWE5ajNwOWVDY1lHSTRkdkZqc1k5VFFpUFZzUzBDR1JON0YxNndGd016d09fYnF1MkNuRXlHazFxTHJpQXNJT0ozbzdwMXRYOWtRc0NUQlZFVFYzLXRzbWRIOXFEcVREZnhRejM1eHhPbVR1ZGNZR2Nia0p2cElORGlBbw"
-  },
-  {
-    "id": "ext-7ae4c045a1df",
-    "type": "external",
-    "title": "Deeptech startups gain VC attention as India\u2019s investment landscape evolves",
-    "date": "2026-11-02",
-    "year": 2026,
-    "summary": "During a panel discussion at TechSparks 2026, an incubator, early stage venture capital firm and a late stage investor provided interesting perspectives on the evolving investment landscape in India, particularly in the areas of artificial intelligence and deeptech.",
-    "url": "https://yourstory.com/2026/11/deeptech-startups-gain-investor-attention-as-indias-investment-landscape-evolves-vcs",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMitAFBVV95cUxQS1FtMzVfSmV5WDYxQTRtazNTc2c1SEtEZ1NVNWFPd2xkSmY3RTIxb1NPbmR1V3BFQXZXWWRwT0ZoYVBMaENLeC0zQzY5Wktzbzl2TG5UTjRtZEFsV3FuUjlSSXhETVh1RXNqakJUWWtOWWIzbWR0UlFPaEN4dHd1Z1Z3MXowWFpzUFBXQ3lfQ3o0ZXIxSWh3VXdRVXl2Q2hodUNuUDVzSTBkZVZBZjViODRJdkM"
   },
   {
     "id": "ext-a7b1a14d026c",
@@ -222,7 +237,7 @@
     "tags": [
       "Business"
     ],
-    "gnId": "CBMi2gFBVV95cUxQT0haUkIxMGk4NVJJZUpDNm5QdUdmbElGR2JRekNCQTQxZTl4dmxYU1dQRmxqX2RhOGZwY0l1Y0x5eWZZaWdkWWIyU2FOWWRGVjVOVnhrbXRQeXowT0FFTzZIQlNXTGhDNDdoTnZSSUJ6YlNUNHhCQ1pQUHJXT0JfNXZ3QlpldFBRWk8zN3VEMlJWOHZSUlVkSF9pRmdsbVJPeVB3eVU2bmZ1QVdjcXBiYkZQQUE3QWJPMmJBTVpselBSSGVlLTFHbDVRcWpNa1ZrOGNJRVZXb1lWdw"
+    "gnId": "CBMi2gFBVV95cUxQT0haUkIxMGk4NVJJZUpDNm5QdUdmbElGR2JRekNCQTQxZTl4dmxYU1dQRmxqX2RhOGZwY0l1Y0x5eWZZaWdkWWIyU2FOWWRGVjVOVnhrbXRQeXowT0FFTzZIQlNXTGhDNDdoTnZSSUJ6YlNUNHhCQ1pQUHJXT0JfNXZ3QlpldFBRWk8zN3VEMlJWOHZSUlVkSF9pRmdsbVJPeVB3eVU2bmZ1QVdjcXBiYkZQQUE3QWJPMmJBTVpselBSSGVlLTFHbDVRcWpNa1ZrOGNJRVZXb1lWd9IB3wFBVV95cUxPdkxFLWNOTzE1dFhyckJDTFZCXzdmMjFEcE9xY202UkR1clMwWWcyZC1iRnVBMVB3aU1pQVFiWWlpQ1JZNkxodkdaZkFTQlpTTDg1UGZPUVVQMkd3MzVNd08zVkNTVzBkSFN0c0Q5Q3ZHZ3ZTUTVCYlN5TFhFMmJRTXdmdDFPVzN4Wmp0OVZGUXctN0xmVjlXN3hqV0lZdTVwSVgwejVDeHpINTFPLUJxZ2txVk1VNXlUTHBfd3FUeEFjOUdjejZkMnRicXpwNHFtZ3Bfb2xiUV9qbVItUUFF"
   },
   {
     "id": "ext-97bdf404da4c",
@@ -298,6 +313,21 @@
       "Business"
     ],
     "gnId": "CBMiggJBVV95cUxPc2E5M1ZwZzdQbTBGalNYdTNaZjc5dlk4Rjlfb1ZPYVJIanA2LUkwVWhpQmJINVUtbHVjWHh2dUhNQ3FETloxckxhWHRFN25wcERUT3dZV0RPamk4WF9qRFI4NVZfbDBSRUs5bWZid2loYlNySGV2bkgwYUhzYWl2WjNHTTZmZ25zYXE2YXFTellTWmZNVFR2aE1DeFFIVDhXSXZDd2tSS0RNVlJIWU9UNzl1b01Wc1hTQ2l5emlkZklQVWxUS2pKTnZFV25UcFZ1enBiX3N6bVpKd0dGTUZIdDhocVB2OEs3VS0xQ3pyRkZIbTVwdmtkYUoyb0RQWlh5dVHSAYcCQVVfeXFMTWRnQnk2MWhnTG81UlppNjl0QVlubFRpRGtSTUttaXRyTk5jOTBhU2cwSU56OEgtZ3V5aWJEZ0R5azcyRFlVWmlpc1ZBeC1xLVZwSElmMHdVekdXR1dPN1lwai1VSXhWaERxa3hKdWpuVHlRYVNpaTVTMkdrbFJJaFJ4VWd4OTA4RTBVYTVIUG42OUo5MlV3UEZpcEtWWU9ETUFaaEx6b0RhZ1EyUFk5QW5vTXNfbDdWamNhTnFJOFRpczdMb1AzWnQwbEtHSnlXU05zSlpHUGxIQ1Z6RlhicmZsS2NyWmJFVF9RclU4QWJ6LWEzN0lvLS1icWRseXFIcU1XNTZWZWM"
+  },
+  {
+    "id": "ext-3171dab9f9e8",
+    "type": "external",
+    "title": "India Billionaire Firm Leads $106 Million AI Loan Startup Round",
+    "date": "2026-10-21",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.bloomberg.com/news/articles/2026-10-21/india-billionaire-firm-leads-106-million-ai-loan-startup-round",
+    "source": "Bloomberg",
+    "sourceTier": "Wire",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMiswFBVV95cUxPbEJoaGdrYkM2Y1FKSFZhWUdFYmMwekVUbnB5UFd6UVJVa3pzOS1vbDZzV244VWVoOVBITVBXaXpHSnJ4N21ldDhVXzBXdWZraHFyUnQ2OUdxQW5WTmwyQUEzdGdfVTNwSWVUc2tiMkVxRURUNHIzYkZOU01wN3lwcHh5cE5pQm84UWRHTjVEZ0dsMDIyelBWMlgtWVBRQWtjR3c1X0hwUURqYThhMk13ZlBuUQ"
   },
   {
     "id": "ext-0186b243983b",
@@ -568,35 +598,5 @@
       "Startups"
     ],
     "gnId": "CBMikAFBVV95cUxQT2h3Mkpyb3FpcTdsYjRKZ1dtWlhCbDkwQmhncGNYckJ4LUd5SXBVQUN1S3ZUaFNvR2txTXBtQVc3UE81VVY2U1d4VnVGN25pSFR1M2dWMDlHb2QwVFRwSkVxclBnOGNyV0R1TGhVdmcydGdON2U0M2FCVG1ZWl9HcUFBTE1sUmlDWnJYOHF1SlU"
-  },
-  {
-    "id": "ext-68f34e8d95bd",
-    "type": "external",
-    "title": "L\u2019Or\u00e9al onboards two Indian startups in second L\u2019AcceleratOR cohort",
-    "date": "2026-09-18",
-    "year": 2026,
-    "summary": "he 13 companies will enter an acceleration phase led by the Cambridge Institute for Sustainability Leadership (CISL) innovation team, with a focus on pilot readiness.",
-    "url": "https://entrackr.com/snippets/lor%C3%A9al-onboards-two-indian-startups-in-second-laccelerator-cohort-12548975",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMirgFBVV95cUxQdHM0dTZSTHdZQVp2WFhkWEs0a1Exd2dxLXFZN25sMFJpbHBFb3dyTlY3c1c4ZkI5MF9TTllZNW5ZR2NPc0xTVXBWRDVjcXl2X1lQcnpBa1VYQmJRSFM3X1lPTGpPaDJ6YnNGMjEyS0lRQzJoVFpIbTFpZnZUNXVzWVRhTWcxZHNyMjFJSmpRcmZmV2Exa0lPY0I1SlVFVWR0NUR1QkMzakt5OEtkRWfSAa4BQVVfeXFMUHRzNHU2Ukx3WUFadlhYZFhLNGtRMXdncS1xWTdubDBSaWxwRW93ck5WN3NXOGZCOTBfU05ZWTVuWUdjT3NMU1VwVkQ1Y3F5dl9ZUHJ6QWtVWEJiUUhTN19ZT0xqT2gyemJzRjIxMktJUUMyaFRaSG0xaWZ2VDV1c1lUYU1nMWRzcjIxSUpqUXJmZldhMWtJT2NCNUpVRVVkdDVEdUJDM2pLeThLZEVn"
-  },
-  {
-    "id": "ext-90c5e0b33893",
-    "type": "external",
-    "title": "Beauty quick commerce startup Firi raises $3 Mn led by 360 ONE Asset",
-    "date": "2026-09-16",
-    "year": 2026,
-    "summary": "Gurugram-based beauty and personal care quick commerce startup Firi has raised $3 million in a funding round led by 360 ONE Asset. Snippets.",
-    "url": "https://entrackr.com/snippets/beauty-quick-commerce-startup-firi-raises-3-mn-led-by-360-one-asset-12538816",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiqgFBVV95cUxNZXVFWHNweVc3eEtOOENrNHVVRzRJYlhDQ2hfNjhBWnNRUVpmM2ppVGxrdGY5NUVRSWJVdXNiSDIwMzR2TjlBdGt5djUtMjd4X0xRc3oyWWhRN0RzZEtBTE5kNXd6ckNQQ1VCTWZVRlg4YjBfVm5CS2YzVk9zVkFwMXFkcVItUGV3bnIteHFWMDF4SXZneUl6Q2kyVFBOX0NjbDEyaUkyV3F5UdIBqgFBVV95cUxNZXVFWHNweVc3eEtOOENrNHVVRzRJYlhDQ2hfNjhBWnNRUVpmM2ppVGxrdGY5NUVRSWJVdXNiSDIwMzR2TjlBdGt5djUtMjd4X0xRc3oyWWhRN0RzZEtBTE5kNXd6ckNQQ1VCTWZVRlg4YjBfVm5CS2YzVk9zVkFwMXFkcVItUGV3bnIteHFWMDF4SXZneUl6Q2kyVFBOX0NjbDEyaUkyV3F5UQ"
   }
 ]
