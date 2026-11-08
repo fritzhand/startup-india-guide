@@ -1,5 +1,20 @@
 [
   {
+    "id": "ext-1b635cd17640",
+    "type": "external",
+    "title": "WaveX Invites Startups to Participate in WAVES Bazaar at IFFI Goa 2026",
+    "date": "2026-11-07",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID",
+    "source": "Press Information Bureau",
+    "sourceTier": "Government",
+    "tags": [
+      "Policy"
+    ],
+    "gnId": "CBMiaEFVX3lxTFB5RXcySFdnWTJkY01yVzBnUlNwTXUtWHcxTGhsa0ZkTXBob0FVRGEtNjNkek5jSnhJdzd1WjItTEV2QXNKS0phb1VPTWx5RldkSGo5aXc4RDNGcXBXS0pNSUtPQklIOVBI"
+  },
+  {
     "id": "ext-704c0535400a",
     "type": "external",
     "title": "Funding and acquisitions in Indian startups this week [Nov 02- Nov 07]",
@@ -58,21 +73,6 @@
       "Business"
     ],
     "gnId": "CBMi0gFBVV95cUxPa3hpSlItSTYtSi1Vd0tDdVo2T05MRDk0eXBaNF9EaTZoV0xMNGdZYlU4dWFjX0pUeE5PRDlpWGNfUHpjb0lOUDJEc0VscE9TM1Q5d2lwX3VUVWFFeTU4d3hldHozdGp0eUxZbkpYV0QxTV9VNEZ6NWd1SEhkajlGdWJvQ3lEQWFiUEFNX3VCbW9LbklBTDg3eHFDTUlLNloySFVjYW1taHRfbzFmX3NrdlV6VXgzLTc0QUhaQWkzdlJFOE5rbzlsM0Fpa3VBTkpUSFHSAdcBQVVfeXFMUEl2MmRIMUl2bW1FVkItbElPM1JndHhHWnpmak4xTU9ISGdtYkRmeVM2TFBHc3RpRzAyNUd4VUdKQTRYSDAwYkNrVWdlWnVTZmNLdkNKOTFSdGpBVWl0dHo0OXV5UnVIbzdEUVB1ZV9KRkNzSGxVdUpEdkNvZnhiU25idEFUdmFwOWI3X3lQcnF4czZNNGJ4SHloRVdhTE5xS3F0MUJJNS1JS3VDTE84ZUtHNF9oY3REdGNWWDdiNmtCekFDLTFYSENNSDVUelhPZURTYnE0cVE"
-  },
-  {
-    "id": "ext-6d290dfadecd",
-    "type": "external",
-    "title": "Govt clears 12 fresh proposals worth \u20b97,503 cr under Electronics Components Manufacturing Scheme",
-    "date": "2026-11-06",
-    "year": 2026,
-    "summary": "MeitY Secretary S Krishnan says ECMS outlay has been enhanced to \u20b940,000 crore from over \u20b922,000 crore; scheme continues to receive applications as India pushes upstream electronics manufacturing.",
-    "url": "https://www.businesstoday.in/latest/economy/story/govt-clears-12-fresh-proposals-worth-rs7503-cr-under-electronics-components-manufacturing-scheme-566189-2026-11-06",
-    "source": "Business Today",
-    "sourceTier": "Business",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMi9wFBVV95cUxOVXBiQW82WDcxS0t5RkZ5cmtLNDlQUUd2MXlKbEZpcXlNdzg5aGxJWHhwbUpZekl4UmUweEhNdmZKNzBidEFvVklpaWNfY2FkcmNUbFo3UGZTUHllNkxabHJyVTd3cDVmX01OdHFLTjFOREx2MHlZalQzQVMxdEZxajNXTlZlX01WaVBzd2xNTkFZM1RZdmtaQ0JtRDVmY3ZFNUdNQmU5ZXh1ajBJVkpGWHVFeF9GRVNDaWlIbEN1S1pDRTMtSTZILWx4X0h6dGdqbkI1OTQxSVRDNWdPZjQyQm53THNFUmRTZEdVQzlmS1dlbFM2LTNJ0gH8AUFVX3lxTE15ZlcwSVNkaW4wcllkSV9veThIT19HTnROUFZtTnp5Qi1uRjF0RW45czlTejJzVWk2N0ZWa3ROd1dQMnBCb1d6X0hqV0w0cE5YVVpRMWtoNXdFblo2eEdoaHFuZkp4eWthS1oxZjJHVGhLSzlzNmZLbjN5ZWd0MnRDbHcybzFoM3VsM3daWnJUUG9iTWFLd0pPMGJQYy1VWklPWk1YSkdyQnp3cEhnNWcySG9zU21ZSXp4QUQ4NmNzSGVIWWRjam00NnV5TVo2NHNiS0k4c1FyTWtBYzA1N1BWdWJSSFRnNDd0SUJXaDVlMi1fSTFMQ0o3NXNEZg"
   },
   {
     "id": "ext-43ffcf987e7e",
@@ -148,6 +148,21 @@
       "Startups"
     ],
     "gnId": "CBMiswFBVV95cUxPeThQVl90SDBWaDdOdEozZnV2emhFZHlqdVJ4ZktCSFhBOTZIclhSNkthYzhoU1ZWN2NWejBlVjlhS3BlbU82X2ZzX2w5MjlIMUdkNURlXzkxV3lzakxaeXlXSURweUFJalNIYlFHWTB5VWtXczNFTTNfY0RRWHc2amotM3ZPNk5sTEJwUC1za0xEc21kNl9xWjlpbENaTU5yQmpJQlAzSXYyZkh6YTEybWZVRdIBswFBVV95cUxPeThQVl90SDBWaDdOdEozZnV2emhFZHlqdVJ4ZktCSFhBOTZIclhSNkthYzhoU1ZWN2NWejBlVjlhS3BlbU82X2ZzX2w5MjlIMUdkNURlXzkxV3lzakxaeXlXSURweUFJalNIYlFHWTB5VWtXczNFTTNfY0RRWHc2amotM3ZPNk5sTEJwUC1za0xEc21kNl9xWjlpbENaTU5yQmpJQlAzSXYyZkh6YTEybWZVRQ"
+  },
+  {
+    "id": "ext-b3987154d311",
+    "type": "external",
+    "title": "From fresh produce to electric scooters: 10 Indian startups that have raised the most funding",
+    "date": "2026-11-04",
+    "year": 2026,
+    "summary": "From agritech and fintech to SaaS and electric vehicles, India's most heavily funded young companies are rewriting the start-up playbook. According to the 2026 ASK Private Wealth Hurun India Gazelle Index, the 51 Gazelles have together raised about \u20b987,780 crore. Here are the 10 ",
+    "url": "https://www.cnbctv18.com/photos/business/startup/from-fresh-produce-to-electric-scooters-10-indian-startups-that-have-raised-the-most-funding-20026968.htm",
+    "source": "CNBC-TV18",
+    "sourceTier": "Business",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi6gFBVV95cUxNdzJ2M0pRXzVsM3lQS25fWERwdU1McTc3YTVhdW5CYjBGc3FZYU9XZDBaNVBKYmRmVDl4TzZRZ1pMVHJjTloycU4yZFRvbkdfU3NhTXlqdkxkVFp1bHFQYWNBVnRsaUdiM1JTRE1uLXR1TktIU0ktS2hwMjRCRGxmdVo2RGxCNUoyWi1BWXlKUjJJRWRrQllncWp6ekp2ZG04QXY1R1IzY3JxZTdaVWNHMzZaTWJUT3htTWZCVVVfWEN1a0pGMWcyTFNlTHpYQ2l5cFNHSnp6UnZiZ1JxNVFOM2xnaEhVZjdrOEHSAe8BQVVfeXFMT05CdG9sSkJ1SWthU2FIT1RmUmN0RTk2VlBGaXhhaGdEbmxSa1c2cnA1OHprRmY0V0ExYU9xakRTQTZsbDlVZWJQNmdKV0hUWHFwaHk4LVVXQzBCcVVsejU0RHdEbUZGXzZuZEZ2bGdLNDRLMGRIT1JEY3ZlNVJvUnY3Smhlc3hXb1ZHTE1fbXY0anEzNVBRMWxKSjgwQUFjQ1FCcG9idWN1UE1idU1WU0FqWHhGQ0IyVXVOaWdPOWlLYTVJVWFVWE90ZmcwbWc1VUdVX2hQM1F0OFMycTBkenRrbXpVbmhqMFgzYUt1b0U"
   },
   {
     "id": "ext-7fe97b09d4de",
@@ -330,6 +345,21 @@
     "gnId": "CBMikAFBVV95cUxPUzNEeUsyRlBBWkpQc3QwWDl1OHR0S2tlR0h6ZW8zeHJIWm9YQ1FGRUQybnBKOWRGamYxU0dBQ2gwUGRSSmVGX3Fjc19rOVNFcHI0QzNTdE5OTjdiTW1YcFNzeU1wcGxrWEItSE1ITjQtTm1mbWZ1cEM0clRZRDhhVVQ1NWNFVzN2VWxDZy1iZC0"
   },
   {
+    "id": "ext-0299fe89e851",
+    "type": "external",
+    "title": "Child-care startup Maasi raises Rs 6 Cr in pre-seed round",
+    "date": "2026-10-27",
+    "year": 2026,
+    "summary": "The startup said its public launch on October 20 generated a waitlist of more than 4,000 parents within five days. It has served over 1,200 parents through a network of",
+    "url": "https://entrackr.com/snippets/child-care-startup-maasi-raises-rs-6-cr-in-pre-seed-round-12757624",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMinAFBVV95cUxNNXZUaGFXWVh5MVFfU3kwc280NGEyeE41VHFjYTZuQ0twbkRvb3VBbmhyVGo0SE5rdVN3V1p0YWVqZHRXT3ZpQ2V1U1luVGN6NlNVQVpLbFluZUc0SmlkSFhLUzJYdHk4WFBFMXJ3QnRYaDQ0SEFJeGFBT0ZrbE95MHJlOEwwcFhqNWt6MUVyNWZHQnFoRTRXbnZiZVbSAZwBQVVfeXFMTTV2VGhhV1lYeTFRX1N5MHNvNDRhMnhONVRxY2E2bkNLcG5Eb291QW5oclRqNEhOa3VTd1dadGFlamR0V092aUNldVNZblRjejZTVUFaS2xZbmVHNEppZEhYS1MyWHR5OFhQRTFyd0J0WGg0NEhBSXhhQU9Ga2xPeTByZThMMHBYajVrejFFcjVmR0JxaEU0V252YmVW"
+  },
+  {
     "id": "ext-424d6f30e0ad",
     "type": "external",
     "title": "[Weekly funding roundup Oct 17-23] VC funding falls below $100M amid lack of big deals",
@@ -418,21 +448,6 @@
       "Business"
     ],
     "gnId": "CBMi6wFBVV95cUxQYm9zUEhYcmxQWXJyN21zVUVqVThLZlZFWnh4Qmo0czB3NjhTallvQTktYWtWNThTUEFrRk1LT0tWUUxUWnlFcU9MNWJ0Y2tsY01JTXd3Qk5ka0RldU11NGNBMVNoLVFIcHEwUTZ0MUNkbVdPbmVWa1p1V3duS1R1LVJkdjltYUNDU09ZVW5zdW1fQW9oaEl2VThNNC1pT2Q4YnZkTHJnM3dLRWJFMElPRllCQXFfYmxoMlc0UHJfRWJCXzRTLXRhYXYxTHlZQlVxclB4NGdyZkF1NEdLZkUxLXdVUzBJU2xVQjFz0gHyAUFVX3lxTE5oOWtBSVhLODVpcTdfemNYQ05TTHpmNVIwVzBZZ0VKX1JTOVI5OWs0bU1DanNIdFE1RG85d29yVl83V0Y5dDVxUGVBX0FIZkRMdlVFRHQ4TWNCYXVFaXlvZlF2NkF5MmpOZnE3bk9DNXpMZXN6VjhaaklOM1VyS0RWaFdrdzZlckZwR0VLNjJBY01XTmpNZDRPSXYteUNBU0lWdElxRXRIXzFZWURsR1ByekJQQnFVWXpUbURjZjBJLVhtYndsUjNpWUdCM0R0QTFxVnMtRXQzRjI3WVVtalRqVEVWMVJOUjF0R2lzUmwxOHJR"
-  },
-  {
-    "id": "ext-3b9c28888bdf",
-    "type": "external",
-    "title": "IBM and MeitY Startup Hub sign MoU to help deep-tech startups turn innovations into commercial solutions",
-    "date": "2026-10-14",
-    "year": 2026,
-    "summary": "IBM has signed an MoU with MeitY Startup Hub to transform India",
-    "url": "https://cfo.economictimes.indiatimes.com/news/strategy-operations/ibm-and-meity-startup-hub-sign-mou-to-help-deep-tech-startups-turn-innovations-into-commercial-solutions/134930789",
-    "source": "The Economic Times",
-    "sourceTier": "Business daily",
-    "tags": [
-      "Business"
-    ],
-    "gnId": "CBMijAJBVV95cUxPcHJBUTNRUVRlLUk1YTNjU0xSRktnOHdPUFVtNG5XV0lqRlQ0eHRVcEFKWVQ0UndTZHRsZU45dm40SlVENGIzeGpxY0ZOOElnTW5qMzdxQVdXUHM3N2gxZC1rUFFPVzRhTGRBb01pVnVqY2NoQTlWQmhFNlgxRDlmSERNSVdSTUNqNnRzRk5VRmdadW1tOXlCSlFBUFd6YnZqLTFaU2N6Yk5KMXhFMWpWVDktbnQxQlFBelBnX3I0bHU4dXZzMnpDekx2N2tKaW1BaDRxWS0wSTFTLXg1UGdYOGRfZWlaNlhib05OMjRKbEJxOEQ0OExzSDFMaExHejBvMFh0amRWRzJhcXRz0gGSAkFVX3lxTE53bnpkeG1QNndPNGdHNXZZcXp3Z0VrZ2QyYk83U3I3cTNVbVdiaW54bVFCaEJ3a0lpbmNueDVpTjg1RlVDdWtxSVpkSVZpOEJnN0lwOXlwVGpadTRQRXUyU0d6bURmc09ZX1RMVmxERnJzUkZzQ3R0czRSazBIUGd1NnhsNjZKNGNlRkxib3VxRWZpQkdwVVNqT2ZvX2RWSU1vUEk0Sk1KNmxoYW54YTNXM1ZVSzFqbjJMbExRcmVRX1dMcVphY2lrakRwa2owWmY1RUhONWpuaThES2xhdU1PVlgwU3dSN3B5TVNHZEVEdEEtM2RrYTNEVHhKVGdKOWhoR3FWdGotbE8zY0s4VTJZc1E"
   },
   {
     "id": "ext-882746ce6c10",
@@ -583,20 +598,5 @@
       "Business"
     ],
     "gnId": "CBMiwAFBVV95cUxPcERzYmszZFV2UHR3TGEtQXdWd2o0TXhTM19zZ3RIRFk5dkdBaW5kUFFEMU5qa2JCUkVPSFdvMlVDRmwwZkVOYzB0bTBmNkhObHZYNW9ENmxoSzEyUGRUVUVocVRVTU5zVF80VEdlTjlyTGx4cW14RjdWWTZkb3liY0tIM0xpQkVqOE5IOXF5NDlxM0g2cmxuMFRkWnJiellBVi1pSEtVWlFvbzdhWDMzSWFlMjZzZjNLQ09uaXFENlPSAccBQVVfeXFMTzFYa3l4amtQcTY2SFRmMk44NU1OT1BMT1ZjRVJPYmtJLV9GWFhkS2FLOFg2czFPLUN1RTU2RDJ6NEY1UGRvQkMzamdUMmlZamJuYzVXdU9RcGpaNnNjQ1JuNHlKLWxBd2VxX3E3bDQ1am12cE83OTdFVEozQTVfQmVPb2xtQ3J4bE9RQW1VcFU3NWl4UmdXbkdEcGhCMEx6cHozWkpoTWhtLTZrbmNFSU95ZkpQZXJmb0dnQUF0MGtrUG91cmU0OA"
-  },
-  {
-    "id": "ext-2359eac047a3",
-    "type": "external",
-    "title": "Indian Tech Startup Funding Report, Q3 2026",
-    "date": "2026-09-29",
-    "year": 2026,
-    "summary": "",
-    "url": "https://inc42.com/reports/indian-tech-startup-funding-report-q3-2026/",
-    "source": "Inc42",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMieEFVX3lxTFBPdTVEZ1M5WFI1TjdvTUtPZHc2Q1RCakE4QkJUd05yRzdXMXp2WlF4SnVCdGJ0aWtHNEhKRmJwOUpTVXBlNDZoRzFoTjRQSDNvUy1YSlRsaVF2UnN3NVhXeVJ0bnJpMXkxS0ZwY3ZZZWZvRzNoWV81OQ"
   }
 ]
