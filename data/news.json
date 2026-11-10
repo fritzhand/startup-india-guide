@@ -1,5 +1,20 @@
 [
   {
+    "id": "ext-35ae4972bff6",
+    "type": "external",
+    "title": "Drone startup funding slumps in 2026",
+    "date": "2026-11-09",
+    "year": 2026,
+    "summary": "India has the world's second-largest pool of defence-tech companies, but its share of investor backing lags",
+    "url": "https://www.business-standard.com/blueprint-defence-magazine/data/drone-startup-funding-slumps-in-2026-126110700593_1.html",
+    "source": "Business Standard",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMivwFBVV95cUxQQmktSUtscV9rRXhrSnJRdldXcXdnUE1SNzZBU3pfN0k2VktmRE82WmhSdlVieUNBR1lWcnd6VmE4OVlhSVg0czJrdVk4bHFDX042X2t3aHNHbGFPaUVDZHZURlViR0hrRjl0dnZqUlNXb3pqUTFtYmlGS2dhS2VMVmJ3aE5CX1FaUWkyeTNDaGRpWGkxalZVM2JPdU5SeFMxTU05TG56bTNQWHVnQV9rVHNYZG9kXy05Wk82Z2NSZ9IBxAFBVV95cUxPVkQ4bDBTRk9SZDRfRE10SjRsWlp0STJDUE5nZkNOVm4taTRXbm5WcURrdXFiWXUwT1RSdTZIQ1hwelIwSHQ2am5MczFpTmhDNUVwU05oTGJxc2FXc0tBdjNweE95UEM4R0VTdm5nT0pSSXBiQWhHUTQ3LWFYa094U2dBQlFqZ3lRZnpfS1hCUFVTbkcwZzl0ZXpPV0dqdW0zMUdaZ0VqQ2RNNG9KOUJNZW5rRjN3TUY0aWloZlRSaTk2ZGN0"
+  },
+  {
     "id": "ext-95905eb444b1",
     "type": "external",
     "title": "Startups step in to give gig workers a place to rest",
@@ -75,6 +90,21 @@
     "gnId": "CBMimgFBVV95cUxOWEVTTVBkN25KM3hQZ0VQZ0RvVXFjQWFVZF9DN3MzZTNTYUU5Sm5XcllUcjJmR0d5cTBfQ00zeVlZNUN2b0x5U0RLdWlocnFtOWt4WGloY0hoZEJXeVBPUmFNREgtY1JrTkFyeXQxT18xOWl4Q1NjenpnUmdYTFB0UFRxVm55QVFMY0FXUkRjZGE3ajBKM1NKaFZ3"
   },
   {
+    "id": "ext-e4f7de4afb41",
+    "type": "external",
+    "title": "Office of the Principal Scientific Adviser and DPIIT Launches API Integration between Startup India and I-STEM Portals to Strengthen Access to National Research Infrastructure",
+    "date": "2026-11-06",
+    "year": 2026,
+    "summary": "",
+    "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID",
+    "source": "Press Information Bureau",
+    "sourceTier": "Government",
+    "tags": [
+      "Policy"
+    ],
+    "gnId": "CBMia0FVX3lxTE5HVXR3Tk1oWHgtUkR2QjRsUl9EU0NuOEgzeXpjSnFPRVVHVU55bjVYRXNmVTdjVDhsZEVPbWNwZmo4M0lPb1FyaFpqNi1wS25Yb2s0ZWd6bFJGcVJ0MXVfZnFRUDNCWnF1TV9R"
+  },
+  {
     "id": "ext-defb744f0e10",
     "type": "external",
     "title": "Ashwini Vaishnaw asks MeitY to cancel approvals of 18-19 \u2018non-serious\u2019 ECMS projects",
@@ -135,6 +165,21 @@
     "gnId": "CBMioAFBVV95cUxOZncyUmtTTmpmSFVWUWpnWU5kRXdnWGxGQTZRd2VteDZGVVJ3SGJLS29hMDRuM05GQUhOWEhCYWctaGFyTDhzTjF1aVh6QTlMczFUNnQxWVJGa0N2dXB2Vk11YURQbGlPQTEwMHQ0ZHZVMkowWHhKWXJmZjFFcGhuaXRNdEVlejZHay1tOHZ0ZGM1V0syVTFROFBuVXdlYTlr0gGgAUFVX3lxTE5mdzJSa1NOamZIVVZRamdZTmRFd2dYbEZBNlF3ZW14NkZVUndIYktLb2EwNG4zTkZBSE5YSEJhZy1oYXJMOHNOMXVpWHpBOUxzMVQ2dDFZUkZrQ3Z1cHZWTXVhRFBsaU9BMTAwdDRkdlUySjBYeEpZcmZmMUVwaG5pdE10RWV6NkdrLW04dnRkYzVXSzJVMVE4UG5Vd2VhOWs"
   },
   {
+    "id": "ext-c2c6890a186d",
+    "type": "external",
+    "title": "Bio-tech startup Venomics AI raises $2.7 Mn in pre-seed round",
+    "date": "2026-11-05",
+    "year": 2026,
+    "summary": "he Bengaluru-based startup aims to investigate this diversity at scale. Its platform combines molecular sequencing and venom biology to build the Venom Atlas, uses AI to",
+    "url": "https://entrackr.com/snippets/bio-tech-startup-venomics-ai-raises-27-mn-in-pre-seed-round-12785718",
+    "source": "Entrackr",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMinwFBVV95cUxQQXZ4LTh1bnRiM0E2UU05UXZUem56WDRJUVJIRHBPS2V5NzBlRnprX0FLQm1pd3kxWFlIa0Fic3RpY3o4R3NMeWFtSlV5UXJUamtTVkZSTWV4YkRMcm52cWI2NW0wS3V3WC1sdlpfdk9Od1NTOGhiYk4wdlV0cDNFY21HTUZrRGdKVF9qMzV6V25qSFVlRndsQTFxajB0V1nSAZ8BQVVfeXFMUEF2eC04dW50YjNBNlFNOVF2VHpuelg0SVFSSERwT0tleTcwZUZ6a19BS0JtaXd5MVhZSGtBYnN0aWN6OEdzTHlhbUpVeVFyVGprU1ZGUk1leGJETHJudnFiNjVtMEt1d1gtbHZaX3ZPTndTUzhoYmJOMHZVdHAzRWNtR01Ga0RnSlRfajM1elduakhVZUZ3bEExcWowdFdZ"
+  },
+  {
     "id": "ext-8ffdbe26496b",
     "type": "external",
     "title": "Specialty chemicals startup altM raises $10.3 Mn led by Rainmatter, Mela Ventures",
@@ -150,49 +195,19 @@
     "gnId": "CBMiswFBVV95cUxPeThQVl90SDBWaDdOdEozZnV2emhFZHlqdVJ4ZktCSFhBOTZIclhSNkthYzhoU1ZWN2NWejBlVjlhS3BlbU82X2ZzX2w5MjlIMUdkNURlXzkxV3lzakxaeXlXSURweUFJalNIYlFHWTB5VWtXczNFTTNfY0RRWHc2amotM3ZPNk5sTEJwUC1za0xEc21kNl9xWjlpbENaTU5yQmpJQlAzSXYyZkh6YTEybWZVRdIBswFBVV95cUxPeThQVl90SDBWaDdOdEozZnV2emhFZHlqdVJ4ZktCSFhBOTZIclhSNkthYzhoU1ZWN2NWejBlVjlhS3BlbU82X2ZzX2w5MjlIMUdkNURlXzkxV3lzakxaeXlXSURweUFJalNIYlFHWTB5VWtXczNFTTNfY0RRWHc2amotM3ZPNk5sTEJwUC1za0xEc21kNl9xWjlpbENaTU5yQmpJQlAzSXYyZkh6YTEybWZVRQ"
   },
   {
-    "id": "ext-7fe97b09d4de",
+    "id": "ext-3be4454863bd",
     "type": "external",
-    "title": "Enrission India Capital participates in Ottonomy\u2019s Rs 40.6 Cr funding round",
-    "date": "2026-11-04",
-    "year": 2026,
-    "summary": "Ottonomy operates in the autonomous delivery and robotics segment, where companies are developing AI-powered solutions to address last-mile logistics, workforce shortages",
-    "url": "https://entrackr.com/snippets/enrission-india-capital-participates-in-ottonomys-rs-406-cr-funding-round-12782975",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMisgFBVV95cUxNaUMwNm0tX2o3azU0djZta21HVzB3SmR0cFl0YXFFQjlFMEJzVnBsWmlyVjFsN2dISVJVV0lKN0VYaXRvZ0Vab3o2cVJDX1ktc2tiaDZfeS00Q0tiUU5ZNXJhSGdyQThZU0dFd3pLak9TZEZFVm1YRzUtcmRKYjJvV1A2bWdHTW9xQVFGU3Q2NTA1Yl9VMmxzTGNpSGtGN0F1WXFXQkRhQ1IxOU9nQTFFamVB0gGyAUFVX3lxTE1pQzA2bS1fajdrNTR2Nm1rbUdXMHdKZHRwWXRhcUVCOUUwQnNWcGxaaXJWMWw3Z0hJUlVXSUo3RVhpdG9nRVpvejZxUkNfWS1za2JoNl95LTRDS2JRTlk1cmFIZ3JBOFlTR0V3ektqT1NkRkVWbVhHNS1yZEpiMm9XUDZtZ0dNb3FBUUZTdDY1MDViX1UybHNMY2lIa0Y3QXVZcVdCRGFDUjE5T2dBMUVqZUE"
-  },
-  {
-    "id": "ext-ae84c8d01f37",
-    "type": "external",
-    "title": "Fintech infra startup OneStack raises Rs 12.5 Cr from Shepherd's Hill, others",
-    "date": "2026-11-04",
-    "year": 2026,
-    "summary": "he company claims to serve more than 200 banks across India, including state cooperative banks, district central cooperative banks (DCCBs) and non-scheduled urban",
-    "url": "https://entrackr.com/snippets/fintech-infra-startup-onestack-raises-rs-125-cr-from-shepherds-hill-others-12782259",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMiswFBVV95cUxNeGx3Wml3UXE1VnQxUmlTV0JXdlhKNjh6OS1MekZBTElWajZCd0JxVHA3d0VtMlBMSUM2MmZFOTRpdVNaVXR6RGxIeVpRS2VDVHRJOGFpV2l5bEhMYkhUd1VhUEFJZFFCT2ZjVUVVcTlPYjllQnNjVlI4VS0zVS1FcEgwa3FfUVFnSV8tbmlLWndqX1ZMV0J1LVNsTEZ5bUk3OUdRVkd3eWFfMzBSSTRHOEVrZ9IBswFBVV95cUxNeGx3Wml3UXE1VnQxUmlTV0JXdlhKNjh6OS1MekZBTElWajZCd0JxVHA3d0VtMlBMSUM2MmZFOTRpdVNaVXR6RGxIeVpRS2VDVHRJOGFpV2l5bEhMYkhUd1VhUEFJZFFCT2ZjVUVVcTlPYjllQnNjVlI4VS0zVS1FcEgwa3FfUVFnSV8tbmlLWndqX1ZMV0J1LVNsTEZ5bUk3OUdRVkd3eWFfMzBSSTRHOEVrZw"
-  },
-  {
-    "id": "ext-c8363045dbef",
-    "type": "external",
-    "title": "Space-tech startup Inbound Aerospace eyes $10 mn seed funding round",
+    "title": "Startup news and updates: Daily roundup (November 3, 2026)",
     "date": "2026-11-03",
     "year": 2026,
-    "summary": "Chennai-based Inbound Aerospace is in talks with investors to raise around $10 million to develop its reusable space re-entry vehicle and autonomous landing system ahead of a 2028 mission",
-    "url": "https://www.business-standard.com/companies/start-ups/space-tech-startup-inbound-aerospace-eyes-10-mn-seed-funding-round-126110301726_1.html",
-    "source": "Business Standard",
-    "sourceTier": "Business daily",
+    "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Tuesday, November 03, 2026.",
+    "url": "https://yourstory.com/2026/11/startup-news-updates-daily-roundup-november-3-2026",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
     "tags": [
-      "Business"
+      "Startups"
     ],
-    "gnId": "CBMi1wFBVV95cUxPcWpoeDRhLWNNaXBOUm1VZGhhSTluVDdpYlU4QldPRk1yOXRjcnFTaHcwVmZmVkVQSEF0bmQ0T1BCZFI1QmUwUElOaGRXaTM4VEJ1Z185ajh3ZFBxN19LcnpFbFUzaXg3RUxyVnhRRUpzLUtlSlBhdkVCUFBHYjhOYUwxaVRDX2NHOS1RaUFiWU4weUxwYXBocGpFRVd6Vkg0NnR0ZXBTMDhfZlZFQ3VPME8yc3I5RGFDc25MaWdITzVPTERsX2paUnItQy1CeURQcVE0NW1KWdIB3AFBVV95cUxOZk9fRldXakxoUGt3SEk3azNHRHlZM21ZRVg5MTl4MjJVQmtfaEstd21rMkxxME1uaHcza3hxSTZ5VUlOQTZsSHFQVC00T0ZCTzRCV3RmblRLcHd0YXFFVENWMTdKTnZsU0NsU3cxVUUyUDM1NGRwRTlnVlJBeUN5bklpYi1Nd0FoNnVITDBDUEp2VndjdU5uaW52ZFcxVWFhWmQ2MXJqY0oxYzNiSW1YR1NkMWJsUXhpak5QakR2X3FnemRORjVDLThwaXJpQlh5bTd3bkxhZlBNY3Fp"
+    "gnId": "CBMihwFBVV95cUxPeDk3WGN4eV84OXNvNTVOdE1wa0FPc2h2LWJrR1A2WXFQUHl6RkZ4cVp2ajF4U2lQRDlCTk1wZENDYmpZc0xOdjVrc19Qclc2RHN1WWNqVGNxRDUxbDg1TjNBT3J6eXBwMTMtc2tad1drbHhaYkYxZkJLQ0g0UHVGOVJOVmxHM3c"
   },
   {
     "id": "ext-155f822a6c90",
@@ -255,21 +270,6 @@
     "gnId": "CBMizgFBVV95cUxNSGtTNzdlRFNleVZKTDJmTW8wTUJFSkhrRnB3NmhjNE1hMXpwS2FKODFKQzg4R2FuMXpSVXJQSHhFQjZUT2JYNG5ONlh3TmJWWm54Z0FMajBwNC1FZ3U5YTB1Z1RMbW5saF91S3R0R2E1YXNQN1Y3Z3RpblprYWpnZWtaRHJjR2JlS1hzWWJtZmY5VXkyY2wwVS1FS3FNZy1uU0gzS2NzdDUxVkpTZnJ4TC03YllVYVk4cjRXTU1VdExIQmtIdV9GRThNRVVZZ9IBzgFBVV95cUxNSGtTNzdlRFNleVZKTDJmTW8wTUJFSkhrRnB3NmhjNE1hMXpwS2FKODFKQzg4R2FuMXpSVXJQSHhFQjZUT2JYNG5ONlh3TmJWWm54Z0FMajBwNC1FZ3U5YTB1Z1RMbW5saF91S3R0R2E1YXNQN1Y3Z3RpblprYWpnZWtaRHJjR2JlS1hzWWJtZmY5VXkyY2wwVS1FS3FNZy1uU0gzS2NzdDUxVkpTZnJ4TC03YllVYVk4cjRXTU1VdExIQmtIdV9GRThNRVVZZw"
   },
   {
-    "id": "ext-f59659210524",
-    "type": "external",
-    "title": "[Weekly funding roundup Oct 24-30] VC inflow continues to remain modest",
-    "date": "2026-11-01",
-    "year": 2026,
-    "summary": "The inflow of venture capital into Indian startups remained lukewarm for the month of October and this trend was reflected in the last week also.",
-    "url": "https://yourstory.com/2026/10/weekly-funding-roundup-oct-24-30-vc-inflow-continues-to-remain-modest",
-    "source": "YourStory",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMioAFBVV95cUxPV2VvRUJZaVE4NFJIVjZDSy1MSUtPbFVKOEFjamxnYXY5bGJLSXFEekNxSk1WX1RRakR4ejEzT1M3eW81bTJpSWNza1lwMDZfVjBhZUFGRTNYZE0wZ3l2b2FNZmNQNDdTamRPWmhBSlNpbTl1NkdCc3NzSlZJRkpQY1VnNWpuODBsMXY3T3lMbGgyUGlMTmh6X2JXeWxjalNx"
-  },
-  {
     "id": "ext-d33bea50fcf2",
     "type": "external",
     "title": "Indian Startup IPO Tracker 2026",
@@ -328,21 +328,6 @@
       "Business"
     ],
     "gnId": "CBMikAFBVV95cUxPUzNEeUsyRlBBWkpQc3QwWDl1OHR0S2tlR0h6ZW8zeHJIWm9YQ1FGRUQybnBKOWRGamYxU0dBQ2gwUGRSSmVGX3Fjc19rOVNFcHI0QzNTdE5OTjdiTW1YcFNzeU1wcGxrWEItSE1ITjQtTm1mbWZ1cEM0clRZRDhhVVQ1NWNFVzN2VWxDZy1iZC0"
-  },
-  {
-    "id": "ext-0299fe89e851",
-    "type": "external",
-    "title": "Child-care startup Maasi raises Rs 6 Cr in pre-seed round",
-    "date": "2026-10-27",
-    "year": 2026,
-    "summary": "The startup said its public launch on October 20 generated a waitlist of more than 4,000 parents within five days. It has served over 1,200 parents through a network of",
-    "url": "https://entrackr.com/snippets/child-care-startup-maasi-raises-rs-6-cr-in-pre-seed-round-12757624",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMinAFBVV95cUxNNXZUaGFXWVh5MVFfU3kwc280NGEyeE41VHFjYTZuQ0twbkRvb3VBbmhyVGo0SE5rdVN3V1p0YWVqZHRXT3ZpQ2V1U1luVGN6NlNVQVpLbFluZUc0SmlkSFhLUzJYdHk4WFBFMXJ3QnRYaDQ0SEFJeGFBT0ZrbE95MHJlOEwwcFhqNWt6MUVyNWZHQnFoRTRXbnZiZVbSAZwBQVVfeXFMTTV2VGhhV1lYeTFRX1N5MHNvNDRhMnhONVRxY2E2bkNLcG5Eb291QW5oclRqNEhOa3VTd1dadGFlamR0V092aUNldVNZblRjejZTVUFaS2xZbmVHNEppZEhYS1MyWHR5OFhQRTFyd0J0WGg0NEhBSXhhQU9Ga2xPeTByZThMMHBYajVrejFFcjVmR0JxaEU0V252YmVW"
   },
   {
     "id": "ext-424d6f30e0ad",
@@ -540,21 +525,6 @@
     "gnId": "CBMiwAFBVV95cUxNcHZMcUViSzNSZUw4NDNTdHY4NkhZVVV2RkcxanNoY3NGTmtNV2lkbkRjVDMzQ3M4SXBFS3FwdENQV3k2QlVBeXhpWTZUdUd2SU5tUHI0enFNWThRbEw4RTNMZnQzeFh5T2VRaC1FZGRVUVp2bU0tSmJKNU9yVVlRMDRrYlFwZVdMamtFNmg5MkxJQ2V3UXFidkstUWlVRnVQcHkzOWdxTVE2amtaWC1rdThVbmUzUjJ2RF9PVkx0eDnSAcABQVVfeXFMTXB2THFFYkszUmVMODQzU3R2ODZIWVVVdkZHMWpzaGNzRk5rTVdpZG5EY1QzM0NzOElwRUtxcHRDUFd5NkJVQXl4aVk2VHVHdklObVByNHpxTVk4UWxMOEUzTGZ0M3hYeU9lUWgtRWRkVVFadm1NLUpiSjVPclVZUTA0a2JRcGVXTGprRTZoOTJMSUNld1FxYnZLLVFpVUZ1UHB5MzlncU1RNmprWlgta3U4VW5lM1IydkRfT1ZMdHg5"
   },
   {
-    "id": "ext-49b78a79900c",
-    "type": "external",
-    "title": "Former Livspace executives\u2019 startup Gravity raises $15 Mn led by Info Edge Ventures and 3one4 Capital",
-    "date": "2026-09-30",
-    "year": 2026,
-    "summary": "Home interior materials startup Gravity has raised $15 million in a mix of equity and debt funding led by Info Edge Ventures and 3one4 Capital.",
-    "url": "https://entrackr.com/news/former-livspace-executives-startup-gravity-raises-15-mn-led-by-info-edge-ventures-and-3one4-capital-12593710",
-    "source": "Entrackr",
-    "sourceTier": "Startup trade",
-    "tags": [
-      "Startups"
-    ],
-    "gnId": "CBMizwFBVV95cUxNSW1yVUtuR0tZOUo3RktuMXhDMHFzRkk4Y29GVk9vNTdROElWaW1nWDgtWVp3Y21KSVUzMFc2LUF5QXcxbDluYld4bFFhMTZYWGxXcFpzVDZOWi02WUdkcUoxUkQtQS1CMzJPNm84aExQTnNqd1hvWmwwUE9iWklpeWo5N2ZQMnJWaU03cVUwNXRCV2tpdDVRWm02V01NRlRxUWNka3M0R1dUVWdNMURxZlYwb3JOTWZJdV83cE5ZUWhLLWNRNHFIM2dHTnVzQmfSAc8BQVVfeXFMTUltclVLbkdLWTlKN0ZLbjF4QzBxc0ZJOGNvRlZPbzU3UThJVmltZ1g4LVlad2NtSklVMzBXNi1BeUF3MWw5bmJXeGxRYTE2WFhsV3Bac1Q2TlotNllHZHFKMVJELUEtQjMyTzZvOGhMUE5zandYb1psMFBPYlpJaXlqOTdmUDJyVmlNN3FVMDV0QldraXQ1UVptNldNTUZUcVFjZGtzNEdXVFVnTTFEcWZWMG9yTk1mSXVfN3BOWVFoSy1jUTRxSDNnR051c0Jn"
-  },
-  {
     "id": "ext-41f1d9cc3c36",
     "type": "external",
     "title": "Bengaluru based biotech startup raises Rs 16 cr in pre-seed funding",
@@ -598,5 +568,35 @@
       "Business"
     ],
     "gnId": "CBMi3wFBVV95cUxQZ2dtMVRnTFBnZEdCUVBSRGhFR3M2a1c0X2hkaWFaTGp3MUtYczVhTDRRRWoxc3RpYld5OXVwREFVbXBIdTB0Ml9valZCV25XM1pJRnBUNlpINXRzRE1UVVVfaE5ZVVRydFdjUFA4dEtsaFpySk0yaEF1VDRqM211eWFuWkwzN0t0T09ZTGdfcmZWX1ZJRUxseUdfYm9vUnpNemdTRUdTX0o3S3VadE1aMXgwTFdZbW1UZk84VDlTYVNCNWRhUkloQ1pjcjFHc0hiWnY0bnp5NkhSS3Fybllv0gHkAUFVX3lxTE8tSndVRk93U0xzSEN0VXU2eW41M1NsMG1PVk4yMzEyYWIzWXVzRzU4Sm9YWUstc0s0cjF6Sk5vcGN5Q2REZ1FBd3lPcVFMX1pKMmZ1WHdVdV83Z1JPN1FxRkp3Rm1oYkZjMXBUWmNTNW5IMHVnZ0k0eWpPMEJNaTBibXB2bW90UXNoOVRTSEliMWhRdUxlVS1nbHozNS1UbUxiNFFYUDVxYzFvZjhoTjhTYWhsajVjUUE4Qjl6cGZxNTJxYWdRYkpWblI4T1dOYzNDSWpsRURaMnlKU0M3NVhOUDNraA"
+  },
+  {
+    "id": "ext-9143a4952060",
+    "type": "external",
+    "title": "India's Fintech-Bank Partnerships Can Take 18 Months to Launch - or Just Weeks, New Playbook Finds",
+    "date": "2026-09-25",
+    "year": 2026,
+    "summary": "Released by IIMA Ventures and MSC, the Partnerships Playbook 2.0 serves as a resource for fintechs in India to forge partnerships with financial institutions. It outlines operational timelines and the importance of trust-building, showcasing effective collaborations driving finan",
+    "url": "https://www.livemint.com/focus/indias-fintech-bank-partnerships-can-take-18-months-to-launch-or-just-weeks-new-playbook-finds-11790322343793.html",
+    "source": "Mint",
+    "sourceTier": "Business daily",
+    "tags": [
+      "Business"
+    ],
+    "gnId": "CBMi3gFBVV95cUxOcURRTXYzYWVmWlAySmdJOUdhR09YUVpoSlI1Z2tyNWhqZnFId2NTaFFiWXNSTDBfeHZyenFaTkNRVDhVNXdzS0J5Skd6bWU2dWlaVDFhQ0FYVE1OcHBPMVgxaXJqeXhfZk5udFVaeVRCbF85Z3hjV0RYeUx2MU1UMmNBOEQwTmp6cktiektVd2lpbTZRZmpoLXVheUJVU04wMzlydFdvQXdtRmRzd2N1dEFoOWN4LVFER0xBRGltdWU0V2NSZkdiVXhmbXFtTVdHdlVESHBpc1VkNlZxTEE"
+  },
+  {
+    "id": "ext-d870a256cac2",
+    "type": "external",
+    "title": "AgInvest 2026 in Coimbatore puts farm economics at the centre of AgriTech investment",
+    "date": "2026-09-23",
+    "year": 2026,
+    "summary": "AgInvest 2026 brings AgriTech founders and investors to Coimbatore as funding shifts from scale to measurable value and new pilots",
+    "url": "https://yourstory.com/2026/09/aginvest-2026-coimbatore-agritech-startups-investors-funding-india",
+    "source": "YourStory",
+    "sourceTier": "Startup trade",
+    "tags": [
+      "Startups"
+    ],
+    "gnId": "CBMinAFBVV95cUxPRjVMdUhLekhIU3RTSzBYMkZNc3R5U1ZBaXVnUmxqeWdQbm9lRURTdTdZd1VkQUJ6RFhXT2RCOW1iMFRVdmI3aUNHZ3AtbnNyekJORVhkbFduZjc0RlQtck5qczdKakFqc1puT0pwcldxZ2RidDRoaHBSaXYzdFozOVhDakVDaGdGcTBxRzdwdnFwN3hvX0t2MU42WTE"
   }
 ]
